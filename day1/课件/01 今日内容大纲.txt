@@ -1,0 +1,64 @@
+Python2x：源码重复，不规范
+python3x：整合源码，更清晰简单优美。
+
+Python2x：默认的编码是ascii,
+			解决方式：# -*- encoding:utf-8 -*-
+Python3x：默认的编码是utf-8
+
+Python2x：long int 
+		print 'abc'   print('abc')
+
+Python3x：无long int
+		print('abc')
+
+Python2x：raw_input()
+		  input() 只能输入数字类型
+		  
+Python3x：input 
+
+		
+		
+1,python的应用
+
+python语言的划分；
+	
+	编译型：将你的代码一次性全部编译成二进制，然后在运行。
+		缺点：开发效率低，不能跨平台。
+		优点：执行效率高。
+		代表：c
+		
+	
+	
+	
+	解释型：当程序开始运行时，将代码一行一行的解释成二进制，执行。
+		缺点：执行效率低。
+		优点：开发效率高，可以跨品台。
+		代表：python
+	
+	
+2，Python的历史。
+3，python语言的分类。
+4，python的优缺点。
+
+运行第一个Python代码：
+Python2x：默认的编码是ascii,
+			解决方式：# -*- encoding:utf-8 -*-
+Python3x：默认的编码是utf-8
+指定解释器： #!/usr/bin/env python
+			 # -*- encoding:utf-8 -*-
+
+5，变量
+
+
+
+6常量。
+7注释。
+8，基础数据类型。
+9，用户交互。input
+12，格式化输出。
+10，if
+11，while。
+13，初始编码。
+14，基础数据类型的简单介绍。
+作业思路。
+
