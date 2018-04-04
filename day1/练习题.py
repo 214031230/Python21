@@ -33,6 +33,3 @@ while count <= 100:
         sums = count + sums
     count += 1
 print(sums)
-
-li = [1,2,3,4,5,1]
-print(li.count(1))

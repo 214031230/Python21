@@ -267,9 +267,9 @@ s = 'fdsagfdagasd'
 #input username password
 #while i
 #可以支持多用户登录
-li = [{'username':'alex','password':'SB'},
-    {'username':'wusir','password':'sb'},
-    {'username':'taibai','password':'男神'},
+li = [{'username': 'alex','password': 'SB'},
+    {'username': 'wusir','password': 'sb'},
+    {'username': 'taibai','password': '男神'},
       ]
 #客户输入了三次机会，都没成功，给它一个选择，让它在试试
 # Y 再给他三次机会...不输入了，print('臭不要脸.....')
