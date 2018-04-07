@@ -139,7 +139,150 @@
 #         li.append(choice)
 
 
+# s = 'python自动化运维21期'
+# s1 = s[0]
+# print(s1)
+# s2 = s[:3]
+# print(s2)
+# s3 = s[:]
+# print(s3)
+# s4 = s[::2]
+# print(s4)
+# s5 = s[-1:-4:-1]
+# print(s5)
+
+# list
+# li = ["alex", "老男孩", "光头", "wusir"]
+# # 增
+# li.append("孙鹏飞")
+# li.insert(1, "spf")
+# li.extend([1,2,3])
+# print(li)
+
+# # 删
+# # 按索引删,有返回值
+# li.pop(1)
+# # 按元素删
+# li.remove("孙鹏飞")
+# # 按切片删
+# del li[:2]
+# print(li)
+
+# # 改
+# li[0] = "孙鹏飞"
+# li[4:] = [1, 2, 3, 4]
+# print(li)
+
+# # 查
+# print(li[0])
+# print(li[:3])
+# print(li.index(4))
+
+# 其他
+# li = [4,1,2,3]
+# # print(len(li))
+# # print(li.count(2))
+# li.sort()
+# print(li)
+# li.reverse()
+# print(li)
+#
+# l1 = [1, 2, 'alex', 'wusir',['oldboy', 'ritian', 99], 'taibai']
+# l1[2] = l1[2].upper()
+# print(l1)
+# li = [3,5,2,2,1]
+# li.sort()
+# print(li)
+
+# str操作
+# s = "sunpengFei"
+# s1 = s.upper()
+# s2 = s.capitalize()
+# s3 = s.lower()
+# s4 = s.index("u")
+# s5 = s.count("n")
+# s6 = s.isdigit()
+# s7 = s.strip()
+# s8 = s.strip("si")
+# s9 = s.startswith("sun")
+# s10 = s.split()
+# s2 = list(s)
+# s11 = s.center(30, "*")
+# s12 = s.find("n")
+# s = "{0} {1} {2}"
+# s13 = s.format("name", "age", "hoppy")
+# s14 = s.replace("n", "WWW")
+# print(s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s2, s11)
+# print(s12, s13, s14)
+# print(s14)
+# print(len(s))
+
+# dict
+# dic = {'name': 'taibai', 'age': 21, 'hobby': 'girl', }
+# # 增
+# dic["high"] = 180
+# dic.setdefault("job", "IT")
+# dic.setdefault("job", "IT")
+# print(dic)
+
+# # 删
+# dic.pop("name") # 有返回值
+# dic.popitem() # 随机删除 有返回值
+# del dic["name"]
+
+# 改
+# dic["name"] = "spf"
+# print(dic)
+# dic2 = {"name": "spf", "Job": "IT"}
+# dic2.update(dic)
+# print(dic2)
+
+# # 查
+# print(dic.get("name"))
+# print(dic.items())
+# print(dic.get("name1",)) # 返回值为None ,可以修改返回值
+# print(dic.get("name1", "没有此键"))
+#
+# dic3 = dict.fromkeys([1, 2, 3], "spf")
+# print(dic3)
+#
+#
+# for k, v in dic.items():
+#     print(k, v)
 
 
+# dic = {
+#     'name_list': ['b哥', '张帝', '人帅', 'kitty'],
+#     '老男孩': {
+#         'name': '老男孩',
+#         'age': 46,
+#         'sex': 'ladyboy',
+#     },
+# }
+# # 1,['b哥', '张帝', '人帅', 'kitty']追加一个元素，'骑兵'
+# dic["name_list"].append("骑兵")
+# print(dic)
+# # 2，将kitty全部变成大写。
+# dic["name_list"][3] = dic["name_list"][3].upper()
+# print(dic)
+# # 3，将老男孩 改成oldboy。
+# dic["老男孩"]["name"] = "oldboy"
+# print(dic)
+# # 4，将ladyboy首字母大写。
+# dic["老男孩"]["sex"] = dic["老男孩"]["sex"].capitalize()
+# print(dic)
 
 
+# l1 = ['alex', 'wusir', 'taibai', 'barry', '老男孩']
+#
+# del l1[::2]
+#
+# dic = {'k1':'v1','k2':'v2','k3':'v3',"4":666}
+#
+# for i in dic.keys():
+#     # print(type(i))
+#     if i.isalnum():
+#         if i.startswith("k"):
+#             print(i)
+#             dic.pop(i)
+# print(dic)
