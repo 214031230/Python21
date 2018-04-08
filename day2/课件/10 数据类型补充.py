@@ -1,5 +1,5 @@
-l1 = ['alex', 'wusir', 'taibai', 'barry', '老男孩']
-#1
+# l1 = ['alex', 'wusir', 'taibai', 'barry', '老男孩']
+# 1
 # del l1[1::2]
 # print(l1)
 #
@@ -33,23 +33,32 @@ l1 = ['alex', 'wusir', 'taibai', 'barry', '老男孩']
 #         del l1[i]
 # print(l1)
 
-# dict 再循环字典时，不要改变字典的大小。
+# # dict 删除以"k"开头的key
 # dic = {'k1':'v1','k2':'v2','k3':'v3','r':666}
+#
+# # 错误写法：
+# for i in dic.keys():
+#     if "k" in i:
+#         dic.pop(i)
+# # RuntimeError: dictionary changed size during iteration
+#
+# # 正确写法
+# # 把包含k的key添加到列表里
 # l1 = []
 # for i in dic:
 #     if 'k' in i:
 #         l1.append(i)
-# # print(l1)
-#
+# # 删除key
 # for i in l1:
 #     del dic[i]
 # print(dic)
 
 #tu 如果元组里面只有一个元素并且没有逗号隔开，那么他的数据类型与该元素一致。
 # tu1 = (1)
-# print(tu1,type(tu1))
+# print(tu1,type(tu1)) # 1 <class 'int'>
+#
 # tu2 = ('alex')
-# print(tu2,type(tu2))
+# print(tu2,type(tu2)) # alex <class 'str'>
 #
 # tu3 = (['alex',1,2])
-# print(tu3,type(tu3))
+# print(tu3,type(tu3)) # ['alex', 1, 2] <class 'list'>

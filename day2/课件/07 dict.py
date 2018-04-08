@@ -13,7 +13,7 @@
 # print(dic)
 dic = {'name': 'taibai', 'age': 21, 'hobby': 'girl', }
 #增
-#  dic['high'] 有则覆盖，无则添加
+# dic['high'] # 有则覆盖，无则添加
 # dic['high'] = 180
 # dic['name'] = 'ritian'
 # print(dic)
@@ -38,7 +38,7 @@ dic = {'name': 'taibai', 'age': 21, 'hobby': 'girl', }
 # 改
 # dic['name'] = '老男孩'
 # print(dic)
-
+#
 # dic = {"name":"jin","age":18,"sex":"male"}
 # dic2 = {"name":"alex","weight":75}
 # dic2.update(dic)  # 将dic的键值对覆盖添加到dic2中，dic不变。
@@ -49,16 +49,16 @@ dic = {'name': 'taibai', 'age': 21, 'hobby': 'girl', }
 # print(dic.get('name'))
 # print(dic.get('name1'))
 # print(dic.get('name1','没有此key，sb'))
-
-#keys() values() items()
+#
+# keys() values() items()
 # print(list(dic.keys()))
 # for i in dic.keys():
 #     print(i)
-
+#
 # print(dic.values())
 # for i in dic.values():
 #     print(i)
-
+#
 # print(list(dic.items()))
 # for i in dic.items():
 #     print(i)
@@ -83,38 +83,37 @@ dic = {'name': 'taibai', 'age': 21, 'hobby': 'girl', }
 #fromkeys
 # dic1 = dict.fromkeys('abc','张三')
 # dic2= dict.fromkeys([1,2,3],'李四')
+# print(dic1)
 # print(dic2)
-
+#
 # dic3 = dict.fromkeys('abc',[])
-# # print(dic3)
+# print(dic3)
 # dic3['a'].append('老男孩')
 # print(dic3)
 
 #字典的嵌套
 
-dic = {
-    'name_list':['b哥', '张帝', '人帅', 'kitty'],
-    '老男孩':{
-        'name':'老男孩',
-        'age': 46,
-        'sex': 'ladyboy',
-    },
-}
-#1,['b哥', '张帝', '人帅', 'kitty']追加一个元素，'骑兵'
+# dic = {
+#     'name_list':['b哥', '张帝', '人帅', 'kitty'],
+#     '老男孩':{
+#         'name':'老男孩',
+#         'age': 46,
+#         'sex': 'ladyboy',
+#     },
+# }
+# #1,['b哥', '张帝', '人帅', 'kitty']追加一个元素，'骑兵'
 # dic['name_list'].append('骑兵')
 # print(dic)
-#2，将kitty全部变成大写。
-# l1 = dic['name_list']
-# print(l1[-1].upper())
-# l1[-1] = l1[-1].upper()
-# print(dic)
+#
+# #2，将kitty全部变成大写。
 # dic['name_list'][-1] = dic['name_list'][-1].upper()
 # print(dic)
-
-#3，将老男孩 改成oldboy。
+#
+# #3，将老男孩 改成oldboy。
 # dic['老男孩']['name'] = 'oldboy'
 # print(dic)
-#，将ladyboy首字母大写。
+#
+# #4，将ladyboy首字母大写。
 # dic['老男孩']['sex'] = dic['老男孩']['sex'].capitalize()
 # print(dic)
 
