@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import time
 """
 购物车需求：
 1、用户登录以后才可以购买商品
@@ -9,81 +10,158 @@ import os
 5、购买商品，如果商品总额大于总资产，提示账户余额不足，否则，购买成功。
 6、用户退出以后打印购物车
 7、用户登录可以查购物历史
-注释：  用户信息存在user_file文件里面
+8、用户约不足的时候可以充值余额
+注释： 用户信息存在user_file文件里面
        被锁定用户存在user_lock_file文件里面
-       用户余额存在user_money
-       用户购买历史存在user_buy_his
+       用户余额存在%user_money
+       用户购买历史存在%user_his
 """
 goods = [{"name": "电脑", "price": 1999},
          {"name": "鼠标", "price": 10},
          {"name": "游艇", "price": 20},
          {"name": "美女", "price": 998}]
 
-count = 0
 fail_user = []
-shopping_car = {}
 flag = True
+print("".center(35, "="))
+print("\033[0;34;0m<欢迎访问SPF商城>\033[0m".rjust(32, " "))
+print("".center(35, "="))
+print("\033[0;31;0m<请先登录，登录后才可以购买商品!>\033[0m")
 while flag:
     flag_login = False
     flag_check_lock = False
-    print("".center(30,"-"))
-    print("\033[0;31;0m<欢迎访问SPF商城>\033[0m".rjust(30, " "))
-    print("".center(30, "-"))
-
     # 输入用户名和密码
-    username = input("请输入用户名：").strip()
-    password = input("请输入密码：").strip()
+    username = input(">>>请输入用户名：").strip()
+    password = input(">>>请输入密码：").strip()
 
-    # 判断用户是否被锁定 start
-    user_lock_file = open("./user_lock_file", mode="r")
+    # 判断用户名或密码不能为空
+    if username == "" or password == "":
+        print("\033[0;31;0m用户名或者密码不能为空\033[0m")
+        continue
+    # 判断用户是否被锁定
+    user_lock_file = open("./file/user_lock_file", mode="r")
     for i in user_lock_file.readlines():
         _username, = i.split()
         if _username == username:
-            print("用户已经被锁定！请联系管理员解锁！")
+            print("\033[0;31;0m用户已经被锁定！请联系管理员解锁！\033[0m")
             flag_check_lock = True
     user_lock_file.close()
     if flag_check_lock == True:
         continue
-    # 判断用户是否被锁定 end
 
-    # 打开user_file文件
-    userfile = open("./user_file", mode="r")
     # 判断用户登录
+    userfile = open("./file/user_file", mode="r")
     for i in userfile.readlines():
         _username,_password = i.split()
         if username == _username and password == _password:
-            print("登录成功！欢迎\033[0;31;0m<%s>\033[0m!" % (username,))
+            print("\033[0;33;0m登录成功！欢迎：\033[0;33;0m<%s>\033[0m\033[0m" % (username,))
             flag_login = True
             # 检查用户是否充值过金额,如果没有则充值金额
-            if os.path.exists("%s_money" % (username,)) != True:
+            if os.path.exists("./file/%s_money" % (username,)) != True:
                 # 充值金额
-                money = int(input("请充值金额："))
-                money_file = open("./%s_money" % (username,), mode="w")
-                money_file.write(str(money))
-                money_file.close()
+                while True:
+                    money = input(">>>请充值金额：").strip()
+                    if money.isdigit():
+                        money = int(money)
+                        money_file = open("./file/%s_money" % (username,), mode="w")
+                        money_file.write(str(money))
+                        money_file.close()
+                        break
+                    else:
+                        print("\033[0;31;0m请输入正确的金额！\033[0m")
+                        continue
             else:
                 # 显示用户余额
-                money_file = open("./%s_money" % (username,), mode="r")
-                print("您的账户余额：%s$" % (money_file.read(),))
+                money_file = open("./file/%s_money" % (username,), mode="r")
+                for x in money_file.readlines():
+                    money, = x.split()
                 money_file.close()
+                print("-" * 24)
+                print("\033[0;33;0m你的账户余额：%s$\033[0m" % (money,))
+                money = int(money)
             # 开始购物
             # 打印商品列表
-            print("商品列表".center(20, "-"))
-            for j in goods:
-                print("%d. %s %d$" % (goods.index(j), j["name"], j["price"]))
-            buy = input("请输入你要购买的商品名ID：")
-            if buy.isdigit():
-                buy = int(buy)
-                print(goods[buy])
+            while flag:
+                print("商品列表".center(20, "-"))
+                for j in goods:
+                    print("%d. %s %d$" % (goods.index(j), j["name"], j["price"]))
+                print("-" * 25)
+                buy = input(">>>请输入你要购买的商品名ID(\033[0;31;0mq退出/h查看购物车/s查看余额\033[0m)：")
+                # 购买商品
+                if buy.isdigit():
+                    buy = int(buy)
+                    # 判断用户输入的商品编号是否存在
+                    if buy > len(goods):
+                        print("你输入的商品ID不存在！")
+                        continue
+                    # 判断余额是否充足
+                    if goods[buy]["price"] < money:
+                        print("\033[0;33;0m你已经成功添加<%s>到购物车！\033[0m" % (goods[buy]["name"], ))
+                        # 保存购物车
+                        date = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime())
+                        money_file = open("./file/%s_his" % (username,), mode="a")
+                        money_file.write("%s  %s\n" % (goods[buy]["name"], date))
+                        money_file.close()
+                        money = money - goods[buy]["price"]
+                        # 保存余额
+                        money_file = open("./file/%s_money" % (username,), mode="w")
+                        money_file.write(str(money))
+                        money_file.close()
+                    else:
+                        choice = input("\033[0;31;0m>>>余额不足！是否进行充值Y/N：\033[0m")
+                        # 充值
+                        if choice == "y" or choice == "Y":
+                            recharge = input(">>>请充值金额：").strip()
+                            if recharge.isdigit():
+                                recharge = int(recharge)
+                                money_file = open("./file/%s_money" % (username,), mode="w")
+                                money_file.write(str(money + recharge))
+                                money_file.close()
+                                continue
+                            else:
+                                print("\033[0;31;0m请输入正确的金额！\033[0m")
+                                continue
+                        elif choice == "N" or choice == "n":
+                            continue
+                        else:
+                            print("请输入正确的指令！")
+                elif buy == "Q" or buy == "q":
+                    print("\033[0;33;0m Bye Bye!!!\033[0m")
+                    flag = False
+
+                # 查看购物车
+                elif buy == "h" or buy == "H":
+                    if os.path.exists("./file/%s_his" % (username,)) == True:
+                        buy_his = open("./file/%s_his" % (username,), mode="r")
+                        print("-" * 35)
+                        print("\033[0;33;0m历史订单：\033[0m")
+                        count_i = 1
+                        for his in buy_his.readlines():
+                            # print(his.split(),type(his.split()))
+                            shop, d = his.split()
+                            print("\033[0;33;0m%s.%s 购买时间：%s\033[0m" % (count_i, shop, d))
+                            count_i += 1
+                    else:
+                        print("\033[0;33;0m你还未购买任何商品！\033[0m")
+                # 查看账户余额
+                elif buy == "s" or buy == "S":
+                    money_file = open("./file/%s_money" % (username,), mode="r")
+                    for x in money_file.readlines():
+                        money, = x.split()
+                    money_file.close()
+                    money = int(money)
+                    print("-" * 24)
+                    print("\033[0;33;0m你的账户余额：%s$\033[0m" % (money,))
+                else:
+                    print("\033[0;31;0m请输入正确指令！\033[0m")
     userfile.close()
     # 用户登录失败操作
     if flag_login == False:
-        print("\033[0;31;0m登录失败！用户名或者密码错误！\033[0m")
+        print("\033[0;31;0m登录失败！用户名或者密码错误!\033[0m")
         # 如果用户连续输入错误超过3次，则锁定用户
         fail_user.append(username)
         if fail_user.count(username) == 3:
-            print("用户<%s>连续输入错误超过3次，用户将被锁定!" % (username,))
-            user_lock_file = open("./user_lock_file", mode="a")
+            print("\033[0;31;0m用户\034[0;31;0m<%s>\033[0m连续输入错误超过3次，用户将被锁定!\033[0;31;0m" % (username,))
+            user_lock_file = open("./file/user_lock_file", mode="a")
             user_lock_file.write(username+"\n")
             user_lock_file.close()
-    count += 1
