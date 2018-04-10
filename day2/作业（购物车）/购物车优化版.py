@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 import os
 import time
+
+# day2 博客地址：http://www.cnblogs.com/spf21/p/8734989.html
+
 """
 购物车需求：
 1、用户登录以后才可以购买商品
@@ -46,18 +49,20 @@ while flag:
             print("\033[0;31;0m用户已经被锁定！请联系管理员解锁！\033[0m")
             flag_check_lock = True
     user_lock_file.close()
-    if flag_check_lock == True:
-        continue
+
+    # 用户已经被锁定，则返回登录界面
+    if flag_check_lock == True:continue
 
     # 判断用户登录
-    userfile = open("./file/user_file", mode="r")
-    for i in userfile.readlines():
-        _username,_password = i.split()
+    user_file = open("./file/user_file", mode="r")
+    for i in user_file.readlines():
+        _username, _password = i.split()
         if username == _username and password == _password:
             print("-"*25)
             print("")
             print("\033[0;33;0m登录成功！欢迎：\033[0;33;0m<%s>\033[0m\033[0m" % (username,))
             flag_login = True
+
             # 检查用户是否充值过金额,如果没有则充值金额
             if os.path.exists("./file/%s_money" % (username,)) != True:
                 # 充值金额
@@ -92,12 +97,12 @@ while flag:
                     print("\033[0;33;0m%d        %s       %d$\033[0m" % (goods.index(j), j["name"], j["price"]))
                 print("")
                 print("-" * 25)
-                buy = input(">>>请输入你要购买的商品名ID(\033[0;31;0mq退出/h查看购物车/s查看余额\033[0m)：")
+                buy = input(">>>请输入你要购买的商品名ID(\033[0;31;0mq退出/h查看购物车/s查看余额\033[0m)：").strip()
                 # 购买商品
                 if buy.isdigit():
                     buy = int(buy)
-                    # 判断用户输入的商品编号是否存在
 
+                    # 判断用户输入的商品编号是否存在
                     if buy > (len(goods) - 1):
                         print("\033[0;31;0m你输入的商品ID不存在！\033[0m")
                         continue
@@ -116,7 +121,7 @@ while flag:
                         money_file.write(str(money))
                         money_file.close()
                     else:
-                        choice = input("\033[0;31;0m>>>余额不足！是否进行充值Y/N：\033[0m")
+                        choice = input("\033[0;31;0m>>>余额不足！是否进行充值Y/N：\033[0m").strip()
                         # 充值
                         if choice == "y" or choice == "Y":
                             recharge = input(">>>请充值金额：").strip()
@@ -165,7 +170,7 @@ while flag:
                 else:
                     print("-"*25)
                     print("\033[0;31;0m请输入正确指令！\033[0m")
-    userfile.close()
+    user_file.close()
     # 用户登录失败操作
     if flag_login == False:
         print("\033[0;31;0m登录失败！用户名或者密码错误!\033[0m")
