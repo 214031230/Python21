@@ -64,8 +64,8 @@ while flag:
             flag_login = True
 
             # 检查用户是否充值过金额,如果没有则充值金额
+            # 充值金额
             if os.path.exists("./file/%s_money" % (username,)) != True:
-                # 充值金额
                 while True:
                     money = input(">>>请充值金额：").strip()
                     if money.isdigit():
@@ -77,8 +77,8 @@ while flag:
                     else:
                         print("\033[0;31;0m请输入正确的金额！\033[0m")
                         continue
+            # 显示用户余额
             else:
-                # 显示用户余额
                 money_file = open("./file/%s_money" % (username,), mode="r")
                 for x in money_file.readlines():
                     money, = x.split()
@@ -87,8 +87,7 @@ while flag:
                 print("")
                 print("\033[0;35;0m你的账户余额：%s $\033[0m" % (money,))
                 money = int(money)
-            # 开始购物
-            # 打印商品列表
+            # 开始购物，打印商品列表
             while flag:
                 print("\033[0;33;0m商品列表\033[0m".center(35, "-"))
                 print("")
@@ -101,45 +100,53 @@ while flag:
                 # 购买商品
                 if buy.isdigit():
                     buy = int(buy)
-
                     # 判断用户输入的商品编号是否存在
                     if buy > (len(goods) - 1):
                         print("\033[0;31;0m你输入的商品ID不存在！\033[0m")
                         continue
-                    # 判断余额是否充足
-                    if goods[buy]["price"] < money:
-                        print("-"*25)
-                        print("\033[0;36;0m你已经成功添加<%s>到购物车！\033[0m" % (goods[buy]["name"], ))
-                        # 保存购物车
-                        date = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime())
-                        money_file = open("./file/%s_his" % (username,), mode="a")
-                        money_file.write("%s  %s\n" % (goods[buy]["name"], date))
-                        money_file.close()
-                        money = money - goods[buy]["price"]
-                        # 保存余额
-                        money_file = open("./file/%s_money" % (username,), mode="w")
-                        money_file.write(str(money))
-                        money_file.close()
-                    else:
-                        choice = input("\033[0;31;0m>>>余额不足！是否进行充值Y/N：\033[0m").strip()
-                        # 充值
-                        if choice == "y" or choice == "Y":
-                            recharge = input(">>>请充值金额：").strip()
-                            if recharge.isdigit():
-                                recharge = int(recharge)
-                                money_file = open("./file/%s_money" % (username,), mode="w")
-                                money_file.write(str(money + recharge))
-                                money_file.close()
-                                money = money + recharge
+                    # 选择购买数量
+                    choice_number = input(">>>请选择购买的数量：")
+                    if choice_number.isdigit():
+                        choice_number = int(choice_number)
+                        # 判断余额是否充足
+                        if (goods[buy]["price"] * int(choice_number)) < money:
+                            print("-"*25)
+                            print("\033[0;36;0m你已经成功添加%s个<%s>到购物车！\033[0m" % (choice_number, goods[buy]["name"]))
+                            # 保存购物车
+                            count = 1
+                            while count <= int(choice_number):
+                                date = time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime())
+                                user_his = open("./file/%s_his" % (username,), mode="a")
+                                user_his.write("%s  %s\n" % (goods[buy]["name"], date))
+                                user_his.close()
+                                count += 1
+                            # 保存余额
+                            money = money - (goods[buy]["price"] * int(choice_number))
+                            money_file = open("./file/%s_money" % (username,), mode="w")
+                            money_file.write(str(money))
+                            money_file.close()
+                        else:
+                            choice = input("\033[0;31;0m>>>余额不足！是否进行充值Y/N：\033[0m").strip()
+                            # 充值
+                            if choice == "y" or choice == "Y":
+                                recharge = input(">>>请充值金额：").strip()
+                                if recharge.isdigit():
+                                    recharge = int(recharge)
+                                    money_file = open("./file/%s_money" % (username,), mode="w")
+                                    money_file.write(str(money + recharge))
+                                    money_file.close()
+                                    money = money + recharge
+                                    continue
+                                else:
+                                    print("\033[0;31;0m请输入正确的金额！\033[0m")
+                                    continue
+                            elif choice == "N" or choice == "n":
                                 continue
                             else:
-                                print("\033[0;31;0m请输入正确的金额！\033[0m")
-                                continue
-                        elif choice == "N" or choice == "n":
-                            continue
-                        else:
-                            print("-"*25)
-                            print("\033[0;31;0m请输入正确的指令！\033[0m")
+                                print("-"*25)
+                                print("\033[0;31;0m请输入正确的指令！\033[0m")
+                    else:
+                        print("\033[0;31;0m请输入正确的数量！\033[0m")
                 elif buy == "Q" or buy == "q":
                     print("\033[0;33;0m Bye Bye!!!\033[0m")
                     flag = False
