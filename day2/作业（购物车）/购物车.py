@@ -64,8 +64,8 @@ while flag:
             flag_login = True
 
             # 检查用户是否充值过金额,如果没有则充值金额
+            # 充值金额
             if os.path.exists("./file/%s_money" % (username,)) != True:
-                # 充值金额
                 while True:
                     money = input(">>>请充值金额：").strip()
                     if money.isdigit():
@@ -77,8 +77,8 @@ while flag:
                     else:
                         print("\033[0;31;0m请输入正确的金额！\033[0m")
                         continue
+            # 显示用户余额
             else:
-                # 显示用户余额
                 money_file = open("./file/%s_money" % (username,), mode="r")
                 for x in money_file.readlines():
                     money, = x.split()
@@ -87,8 +87,7 @@ while flag:
                 print("")
                 print("\033[0;35;0m你的账户余额：%s $\033[0m" % (money,))
                 money = int(money)
-            # 开始购物
-            # 打印商品列表
+            # 开始购物，打印商品列表
             while flag:
                 print("\033[0;33;0m商品列表\033[0m".center(35, "-"))
                 print("")
@@ -101,7 +100,6 @@ while flag:
                 # 购买商品
                 if buy.isdigit():
                     buy = int(buy)
-
                     # 判断用户输入的商品编号是否存在
                     if buy > (len(goods) - 1):
                         print("\033[0;31;0m你输入的商品ID不存在！\033[0m")
