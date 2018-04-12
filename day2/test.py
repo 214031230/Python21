@@ -161,9 +161,18 @@
 # l1.append(4)
 # print(l2)
 
-import  copy
-l1 = [1, [1, 2], 3]
-l2 = copy.deepcopy(l1)
+# import  copy
+# l1 = [1, [1, 2], 3]
+# l2 = copy.deepcopy(l1)
+#
+# l1[1].append(3)
+# print(l2)
 
-l1[1].append(3)
-print(l2)
+a = " 123 "
+b = a.split()
+c = a.strip().split(" ")
+d = a.split("2")
+print(b)
+print(c)
+print(d)
+
