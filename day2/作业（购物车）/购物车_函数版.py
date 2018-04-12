@@ -12,10 +12,14 @@ import time
 6、用户退出以后打印购物车
 7、用户登录可以查购物历史
 8、用户约不足的时候可以充值余额
-注释：  用户信息存在user_file文件里面  测试用户：wxx 密码：123
+注释：  用户信息存在user_file文件里面  
        被锁定用户存在user_lock_file文件里面
        用户余额存在%user_money
        用户购买历史存在%user_his
+测试用户  密码
+wxx      123   
+spf      123   
+allen    123   
 """
 
 
