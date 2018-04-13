@@ -229,8 +229,12 @@
 
 
 
-
-
+#  计算 1+2+3 +100的和
+#
+# sum = 0
+# for i in range(101):
+#     sum += i # sum = sum + i
+# print(sum)
 
 
 
