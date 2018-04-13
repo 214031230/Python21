@@ -210,18 +210,18 @@ data = {
 }
 f1 = data
 f2 = []
-# f2 [data,data[choice]]
-# while True:
-#     for k in f1: # f1["北京"]  # f1["北京"]["昌平"]
-#         print(k)
-#     choice = input(">:").strip()
-#     if not choice:continue
-#     if choice in f1:
-#         # 保存当前层
-#         f2.append(f1) # f1 = data  #  f1  = f1["北京"]
-#         print(f2)
-#         f1 = f1[choice] # 进入下一层 f1[choice] = f1["北京"]  f1["北京"]  = f1["北京"]["昌平"]
-#     elif choice == "b":
-#         f1 = f2.pop()
-#     else:
-#         print("节点不存在！")
+f2 [data,data[choice]]
+while True:
+    for k in f1: # f1["北京"]  # f1["北京"]["昌平"]
+        print(k)
+    choice = input(">:").strip()
+    if not choice:continue
+    if choice in f1:
+        # 保存当前层
+        f2.append(f1) # f1 = data  #  f1  = f1["北京"]
+        print(f2)
+        f1 = f1[choice] # 进入下一层 f1[choice] = f1["北京"]  f1["北京"]  = f1["北京"]["昌平"]
+    elif choice == "b":
+        f1 = f2.pop()
+    else:
+        print("节点不存在！")
