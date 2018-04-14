@@ -235,6 +235,115 @@
 # for i in range(101):
 #     sum += i # sum = sum + i
 # print(sum)
+#
+# data = {
+#     '北京': {
+#         '海淀': {
+#             '五道口': {
+#                 'soho': {},
+#                 '网易': {},
+#                 'Google': {}
+#             },
+#             '中关村': {
+#                 '爱奇艺': {},
+#                 '汽车之家': {},
+#                 'youku': {},
+#             },
+#             '上地': {
+#                 '百度': {},
+#             }
+#         },
+#         '昌平': {
+#             '沙河': {
+#                 '老男孩': {},
+#                 '北航': {}
+#             },
+#             '天通苑': {},
+#             '回龙观': {}
+#         },
+#         '朝阳': {},
+#         '东城': {}
+#     },
+#     '上海': {},
+#     '湖北': {},
+#     '广东': {}
+# }
+#
+# current_layer = data
+# last_layer = []
+#
+# while True:
+#     for k in current_layer:
+#         print(k)
+#     choice = input(">:")
+#     if not choice:continue
+#     if choice in current_layer:
+#         last_layer.append(current_layer)
+#         current_layer = current_layer[choice]
+#     elif choice == "b":
+#         if len(last_layer) == 0:
+#             print("已经到最顶层！")
+#             continue
+#         current_layer = last_layer.pop()
+#     else:
+#         print("节点不存在！")
 
-
+#
+# goods = [{"name": "电脑", "price": 1999},
+#            {"name": "鼠标", "price": 10},
+#          {"name": "游艇", "price": 20},
+#          {"name": "美女", "price": 998},]
+#
+# shopping_car = []
+# flag = True
+# while flag:
+#     print("商品列表".center(30, "-"))
+#     for i in range(len(goods)):
+#         print("%s.%s %s" % (i, goods[i]["name"], goods[i]["price"]))
+#     money = input("请输入你要充值的金额：").strip()
+#     if money.isdigit():
+#         money = int(money)
+#         while flag:
+#             choice = input("请输入您要购买的商品ID（Q退出）：").strip()
+#             if choice.isdigit():
+#                 choice = int(choice)
+#                 if choice < len(goods):
+#                     choice_num = input("请输入你要购买的数量：").strip()
+#                     if choice_num.isdigit():
+#                         choice_num = int(choice_num)
+#                         if (goods[choice]["price"] * choice_num) < money:
+#                             shopping_car.append({"name": goods[choice]["name"],
+#                                                  "price": goods[choice]["price"],
+#                                                  "个数": choice_num})
+#                             money = money - (goods[choice]["price"] * choice_num)
+#                             print("余额：%s" % (money,))
+#                             go_no = input("是否继续购买Y/N：").strip().upper()
+#                             if go_no == "Y":
+#                                 continue
+#                             else:
+#                                 print("购物车".center(30, "-"))
+#                                 for i in range(len(shopping_car)):
+#                                     print("%s.%s %s￥ %s个" % (i, shopping_car[i]["name"],
+#                                                              shopping_car[i]["price"],
+#                                                              shopping_car[i]["个数"]))
+#                                 flag = False
+#                         else:
+#                             print("余额不足！")
+#
+#                     else:
+#                         print("请输入正确的金额！")
+#
+#                 else:
+#                     print("你输入的商品ID不存在！")
+#             elif choice == "q" or choice == "Q":
+#                 print("购物车".center(30, "-"))
+#                 for i in range(len(shopping_car)):
+#                     print("%s.%s %s￥ %s个" % (i, shopping_car[i]["name"],
+#                                                 shopping_car[i]["price"],
+#                                                 shopping_car[i]["个数"]))
+#                     flag = False
+#             else:
+#                 print("请输入正确的商品ID！")
+#     else:
+#         print("请输入正确的金额！")
 
