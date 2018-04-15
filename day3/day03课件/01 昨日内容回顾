@@ -1,0 +1,60 @@
+int:
+    bit_lenth
+str:
+    upper(),lower（） 全大写，全小写
+    catlize 首字母大写，其他字母小写
+    strip去除空格，去除换行符，制表符，等或者指定字符。
+    split（）分割，str ---> list
+    replace() 替换
+    startswith endswith  有切片，判断是以... 开头或者结尾
+    count 计算元素的个数 有切片
+    center() 居中，可以有填充物
+    join()  '_'.join(iterable)  list(每个元素必须是str) --> str
+    find，index 通过元素找索引。区别：index找不到会报错。
+    title 每个单词首字母大写。
+    isdigit()全部是数字
+    isalpha()全部是字母。
+    isalnum()数字或者字母组成。
+    swapcase()大小写反转。
+    fomart
+    len 测量长度，个数。
+
+list：
+    增：
+        append() 追加。
+        insert() 插入，指定位置。
+        extend() 迭代着追加。
+    删：
+        pop 按照索引，下标。有返回值。
+        remove，按照元素删除。
+        del：
+            1，按照索引删除。
+            2，按照切片删除。
+        clear：清空。
+    改：
+        索引：
+            li[1] = 666
+        切片：
+            li[1:4] = '1234'
+
+    查：
+        索引查，切片，for循环。
+
+字典：dic = {'name':’老男孩','age':45}
+    增：
+        1,setdefault:如果存在，则不变，否则，添加。
+        2，dic['key1'] = 'value1' 有则替换，无则添加。
+    删：
+        pop 按照键删除，有返回值。
+        popitem 随机删除。
+        clear清空。
+        del 按照键去删除。
+    改：
+        update：覆盖添加
+        dic['key1'] = 'value1'
+    查：
+        dic.get()
+        dic['key1']
+        dic.keys() dic.values() dic.items()
+id  is  ==
+

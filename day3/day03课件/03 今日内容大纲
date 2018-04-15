@@ -1,0 +1,85 @@
+1,文件操作。
+    护士主妇空姐老师联系方式.txt
+        1，文件路径
+        2，编码方式：utf-8。
+        3，动作mode，读，读写，写读.....
+
+    f1 = open('D:\空姐护士老师主妇.txt', encoding='utf-8', mode='r')
+    content = f1.read()
+    print(content)
+    f1,文件句柄，文件对象，file，f_handle，file_handle,f_obj
+    open打开的指令，windows的指令，
+    windows 默认编码方式gbk，linux默认编码方式utf-8,mac utf-8。
+
+    1，打开文件，产生文件句柄。
+    2，操作文件句柄。
+    3，关闭文件。
+    SyntaxError: (unicode error) 'unicodeescape' codec
+     can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+     f1 = open(r'D:\空姐护士老师主妇.txt', encoding='utf-8', mode='r')
+     # f1 = open('D:\\空姐护士老师主妇.txt', encoding='utf-8', mode='r')
+    EncodeDecodeErorr: 编码错误。
+
+
+    r  rb r+，r+b
+        read  read(n)  readline  readlines  for 循环
+    r :
+    rb: 非文字类的文件的操作。
+        unicode ---> bytes  encode()
+        bytes---> unicode  decode()
+
+    r+,r+b
+
+
+    w
+        1,没有文件，创建文件，写入内容
+        2,将原文件所有内容清空，写入新内容。
+    wb
+    w+，
+    w+b
+
+
+
+
+    a  ab a+，a+b
+    seek tell truncates,wrateble,readable,等等。
+    文件的改。
+
+
+
+2，函数的初识。
+    函数的定义，函数体，函数名。
+    函数的返回值return。
+    函数的参数。
+        实参：
+            三种
+
+        形参：
+            三种。
+            动态参数。
+3，函数的进阶。
+    名称空间，全局名称空间，局部名称空间，内置名称空间，
+    作用域。
+        globals locals
+        global，nonlocal
+    作用域链。
+    函数的名字。
+    闭包。
+4，装饰器。
+5，装饰器的进阶。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
