@@ -1,70 +1,81 @@
-# f1 = open('D:\空姐护士老师主妇.txt', encoding='utf-8', mode='r')
+# r = 只读模式，读的时候注意文件编码，如果被读文件是gbk编码，读的时候需指定encoding = "gbk"（在不知道文件编码的情况下，可以通过第三方模块chardet获取文件编码）
+# rb = 以二进制方式读，一般操作图片、视频等非文字类文件。
+# r+ = 以读写的方式读，先读在写入，顺序不能变！
+# r+b = 以二进制的方式进行读写。
+# read() 文件路径可以使用绝对路径和相对路径，如果文件和py在同一目录则使用相对路径
+# f1 = open('D:\logo.txt', encoding='utf-8', mode='r')
 # content = f1.read()
 # print(content)
 # f1.close()
-
-# read 全部读出
+#
+# # read 全部读出，mode默认是r
 # f1 = open('log1', encoding='utf-8')
-# content = f1.read()  #
+# content = f1.read()
 # print(content)
 # f1.close()
-
-#read(n)
+#
+# # read(n) 在mode=r的情况下按照字符读取
 # f1 = open('log1', encoding='utf-8')
 # content = f1.read(5)  # r 模式 按照字符读取。
 # print(content)
 # f1.close()
-
+#
+# # read(n) 在mode=rb的情况下按照字节读取，注意编码中文占的位数，位数不对会乱码
 # f1 = open('log1', mode='rb')
 # content = f1.read(3)  # rb模式 按照字节读取。
-# print(content.decode('utf-8'))
+# print(content.decode('utf-8'))  # utf-8 一个中文占3个字节
 # f1.close()
-
-#readline（）按行读取
+#
+# # readline() 逐行读取，每次只读取一行
 # f1 = open('log1', encoding='utf-8')
-# print(f1.readline())
-# print(f1.readline())
-# print(f1.readline())
-# print(f1.readline())
+# print(f1.readline())  # 读取第一行
+# print(f1.readline())  # 读取第二行
+# print(f1.readline())  # 读取第三行
+# print(f1.readline())  # 读取第四行
 # f1.close()
-
-#readlines() 将每一行作为列表的一个元素并返回这个列表
+#
+# # readlines() 将每一行作为列表的一个元素并返回这个列表
 # f1 = open('log1', encoding='utf-8')
 # print(f1.readlines())
 # f1.close()
-
-#for循环
+#
+# # for循环 推荐这一种，只占用一行内存空间
 # f1 = open('log1', encoding='utf-8')
 # for i in f1:
 #     print(i)
 # f1.close()
-
-
-# f2 = open('log1',mode='rb')
-# print(f2.read())
-# f2.close()
-#编码的补充：\
-# s1 = b'\xd6\xd0\xb9\xfa'
-# s2 = s1.decode('gbk')
-# s3 = s2.encode('utf-8')
-# print(s3)  # b'\xe4\xb8\xad\xe5\x9b\xbd'
-# s1 = b'\xd6\xd0\xb9\xfa'.decode('gbk').encode('utf-8')
-# print(s1)
-
-#r+ 读写
+#
+#
+# # r+ 读写
 # f1 = open('log1', encoding='utf-8', mode='r+')
 # print(f1.read())
 # f1.write('666')
 # f1.close()
 
+# seek 光标 按照字节去运转。
+# 读写模式下，先写后读需要调整光标，不建议这样写
 # f1 = open('log1', encoding='utf-8', mode='r+')
-# f1.seek(0,2)
+# f1.seek(0, 2)  # 调整光标到文件尾
 # f1.write('6666')
-# f1.seek(0)#调整光标
+# f1.seek(0)  # 调整光标到文件头
 # print(f1.read())
-# #光标 按照字节去运转 seek
 # f1.close()
+#
+# # rb 以二进制方式读
+# f2 = open('log1', mode='rb')
+# print(f2.read())
+# f2.close()
 
+# 编码的补充：\
+s1 = b'\xd6\xd0\xb9\xfa'
+s2 = s1.decode('gbk')
+print(s2)
+s3 = s2.encode('utf-8')
+print(s3)  # b'\xe4\xb8\xad\xe5\x9b\xbd'
+
+
+s1 = b'\xd6\xd0\xb9\xfa'.decode('gbk').encode('utf-8')
+print(s1)
 
 
 # w模式
