@@ -93,19 +93,39 @@
 # f()
 
 # 可以当做函数的参数和返回值
+#
+# def wrapper():
+#     def inner():
+#         name1 = 'alex'
+#         print(name1)
+# wrapper()
+#
+#
+# def wrapper():
+#     def inner():
+#         name1 = 'alex'
+#         print(name1)
+#
+# res = wrapper()
 
-def wrapper():
-    def inner():
-        name1 = 'alex'
-        print(name1)
-wrapper()
+# s = "中国"
+# s1 = s.encode("gbk")
+# print(s1)
+# s1 = b'\xd6\xd0\xb9\xfa' # gbk 的二进制 bytes
+# s2 = s1.decode("gbk")  # uncode
+# print(s2)
+# s3 = s2.encode("utf-8")
+# print(s3)
 
+# count = 1
+# def fun1():
+#     global count
+#     count += 1
+# fun1()
+# print(count)
 
-def wrapper():
-    def inner():
-        name1 = 'alex'
-        print(name1)
-
-res = wrapper()
-
+def func2(argv):
+    print(777)
+    return argv
+print(func2(3))
 
