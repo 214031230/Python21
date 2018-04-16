@@ -156,50 +156,49 @@
 # ret = func2(func1)
 # ret()
 
-# 闭包 内层函数对外层函数非全局变量的引用，叫做闭包
-# 闭包的好处：如果python 检测到闭包，
-# 他有一个机制，你的局部作用域不会随着函数的结束而结束。
-def wrapper():
-    name1 = '老男孩'
-    def inner():
-        print(name1)
-    inner()
-wrapper()
+# # 闭包 内层函数对外层函数非全局变量的引用，外层函数的返回值是内层函数。叫做闭包
+# # 闭包的好处：如果python 检测到闭包，
+# # 他有一个机制，你的局部作用域不会随着函数的结束而结束。
+# def wrapper():
+#     name1 = '老男孩'
+#     def inner():
+#         print(name1)
+#     inner()
+# wrapper()
+#
+# # 判断是不是闭包
+# def wrapper():
+#     name1 = '老男孩'
+#     def inner():
+#         print(name1)
+#     inner()
+#     print(inner.__closure__)  # 返回cell....则不是闭包
+# wrapper()
+#
+# # 判断是不是闭包
+# name1 = '老男孩'
+# def wrapper():
+#     def inner():
+#         print(name1)
+#     inner()
+#     print(inner.__closure__)  # 返回None则是闭包
+# wrapper()
+#
+# # 判断是不是闭包
+# name = 'alex'
+# def wrapper(argv):
+#     def inner():
+#         print(argv)
+#     inner()
+#     print(inner.__closure__)  # cell
+# wrapper(name)
 
-# 判断是不是闭包
-def wrapper():
-    name1 = '老男孩'
-    def inner():
-        print(name1)
-    inner()
-    print(inner.__closure__)  # 返回cell....则不是闭包
-wrapper()
 
-# 判断是不是闭包
-name1 = '老男孩'
-def wrapper():
-    def inner():
-        print(name1)
-    inner()
-    print(inner.__closure__)  # 返回None则是闭包
-wrapper()
-
-# 判断是不是闭包
-name = 'alex'
-def wrapper(argv):
-    def inner():
-        print(argv)
-    inner()
-    print(inner.__closure__)  # cell
-wrapper(name)
-
-from urllib.request import urlopen
-def index():
-    url = "http://www.cnblogs.com/jin-xin/articles/8259929.html"
-    def get():
-        return urlopen(url).read()
-    return get
-name1 = 'alex'
-content1 = index()()
-content2 = index()()
-print(content1)
+# from urllib.request import urlopen
+# def index():
+#     url = "http://www.cnblogs.com/jin-xin/articles/8259929.html"
+#     def get():
+#         return urlopen(url).read()
+#     return get
+# content1 = index()()
+# print(content1)

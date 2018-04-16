@@ -124,8 +124,50 @@
 # fun1()
 # print(count)
 
-def func2(argv):
-    print(777)
-    return argv
-print(func2(3))
+# def func2(argv):
+#     print(777)
+#     return argv
+# print(func2(3))
 
+# import time
+#
+# # 不带参数的装饰器，函数性能测试
+# # def timer(argv):
+# #     def inner():
+# #         start_time = time.time()
+# #         argv()
+# #         end_time = time.time()
+# #         res = end_time - start_time
+# #         return res
+# #     return inner
+# #
+# # @timer # fun1 = timer(fun1)
+# # def fun1():
+# #     print("Hello Word!")
+# #     time.sleep(1)
+# #
+# #
+# # print(fun1())
+#
+# # 带参数的装饰器，函数性能测试
+# def timer(argv):
+#     def inner():
+#         start_time = time.time()
+#         argv()
+#         end_time = time.time()
+#         res = end_time - start_time
+#         return res
+#     return inner
+#
+# @timer # fun1 = timer(fun1)
+# def fun1(argv):
+#     print(argv)
+#     time.sleep(1)
+#
+#
+# print(fun1())
+
+# for n in "xyz":
+#     print(n)
+s1 = "afs234ljL   dfljdfs   LJJ#$ LJDFl"
+print(s1.index("#"))
