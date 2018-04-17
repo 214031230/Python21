@@ -83,6 +83,18 @@ def fun6(argv):
 
 print(fun6(dic))
 # 8、写函数，接收两个数字参数，返回比较大的那个数字。
+
+
+def fun7(argv1, argv2):
+    if argv1 > argv2:
+        return argv1
+    else:
+        return argv2
+
+
+print(fun7(5, 1))
 # 9、写函数，用户传入修改的文件名，与要修改的内容，执行函数，完成整个文件的批量修改操作（进阶）。
+
+
 # 10、写一个函数完成三次登陆功能，再写一个函数完成注册功能(进阶)
 

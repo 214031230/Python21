@@ -169,5 +169,30 @@
 
 # for n in "xyz":
 #     print(n)
-s1 = "afs234ljL   dfljdfs   LJJ#$ LJDFl"
-print(s1.index("#"))
+# s1 = "afs234ljL   dfljdfs   LJJ#$ LJDFl"
+# print(s1.index("#"))
+
+#被装饰函数带返回值
+# import time
+# def timer(f1):
+#     def inner():
+#         start_time = time.time()
+#         f1()
+#         end_time = time.time()
+#         print('此函数的执行效率%s' %(end_time-start_time))
+#     return inner
+#
+#
+# # timer(f1) = inner
+# @timer  # func1 = timer(func1)
+# def func1():
+#     print('晚上回去吃烧烤....')
+#     time.sleep(0.3)
+# func1()
+
+
+# def fun1():
+#     return 789
+# res = fun1
+# print(res())
+
