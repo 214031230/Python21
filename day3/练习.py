@@ -196,3 +196,124 @@
 # res = fun1
 # print(res())
 
+# def fun1():
+#     b = 10
+#     def inner():
+#         nonlocal b
+#         b += 1
+#         print(b)
+#     return inner
+#
+# fun1 = fun1()
+# fun1()
+# fun1()
+
+# a = 1
+# def fun1(argv):
+#     a = 2
+#     print(a)
+# fun1(a)
+
+# dic1 = {}
+#
+# dic2 = {123:345}
+#
+# # dic3 = {[1,2,3]:'uestc'}
+#
+# dic4 = {(1,2,3):'uestc'}
+# print(dic4)
+
+# Kvps = {"1": 1,"2": 2}
+#
+# theCopy = Kvps
+#
+# Kvps["1"] = 5
+#
+# sum = Kvps["1"] + theCopy["1"]
+#
+# print(sum)
+
+# a = "a"
+# print(a < "b")
+
+# x = 43
+# ch = "A"
+# y = 1
+# # print(x >= y and ch < "b" and y)
+# print(x >= y and ch < "b" and y )
+# #  False and True and y
+
+# min = 2 if 2 > 3 else 3
+# print(min)
+#512 256 128 64 32 16 8 4 2 1
+#
+# k=1000
+# while k>1:
+#     print(k)
+#     k=k/2
+
+# for i in range(3):
+#     print(i)
+# tu = (1, 2, 3)
+# tu1 = list(tu)
+# print(tu1)
+# dic = dict.fromkeys(['barry','alex',],[])
+# dic['barry'].append(666)
+# print(dic)
+# l = [1,1,2,2,3,4,5,5,6,6,7,8]
+# l = set(l)
+# print(list(l))
+
+# l1 = [1,[22,33,44],3,4,]
+# l2 = l1
+# l3 = l1.copy()
+# l1.append(666)
+# l1[1].append('55')
+# print(l1,l2,l3)
+
+# l1 = [1,[22,33,44,55],3,4,666]
+# l2 = [1,[22,33,44,55],3,4,666]
+# l3 = [1,[22,33,44,55],3,4]
+# a = "1,2,3"
+# li = a.split(",")
+# print(li)
+#
+# li1 = ["1", "2", "3"]
+# count = 0
+# for i in li1:
+#     li1[count] = int(i)
+#     count += 1
+# print(li1)
+
+#   [1,4,9,16,25,36,64,81,100]
+# l1 = []
+# for i in range(100):
+#     l1.append(i)
+#
+# l2 = []
+# sums = 0
+# for i in l1:
+#     if i % 2 == 1:
+#         sums += i
+#         l2.append(sums)
+#         if sums == 100:
+#             break
+#
+# print(l2)
+a = 1
+
+def func1():
+    global a
+    a += 1
+    print(a)
+func1()
+
+
+def wrapper():
+    a = 1
+    def inner():
+        nonlocal a
+        a += 1
+        print(a)
+    inner()
+wrapper()
