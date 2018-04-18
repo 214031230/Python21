@@ -22,8 +22,8 @@ def check_login(argv):
 
 def update_login_status(argv):
     """修改用户登录状态"""
-    def inner(username, password=None):
-        res = argv(username, password)
+    def inner(*args):
+        res = argv(*args)
         if res == 0:
             import os
             with open("./file/user_pid") as f1, open("./file/user_pid.bak", mode="a") as f2:
@@ -35,11 +35,9 @@ def update_login_status(argv):
                         continue
                     else:
                         f2.write("%s %s\n" % (user, pid))
-                else:
-                    f2.write("%s %s\n" % (username, 1))
             os.remove("./file/user_pid")
             os.rename("./file/user_pid.bak", "./file/user_pid")
-        else:
+        elif res == 1:
             import os
             with open("./file/user_pid") as f1, open("./file/user_pid.bak", mode="a") as f2:
                 for i in f1:
@@ -50,10 +48,11 @@ def update_login_status(argv):
                         continue
                     else:
                         f2.write("%s %s\n" % (user, pid))
-                else:
-                    f2.write("%s %s\n" % (username, 0))
             os.remove("./file/user_pid")
             os.rename("./file/user_pid.bak", "./file/user_pid")
+        elif res == 2:
+            with open("./file/user_pid", mode="a") as f1:
+                f1.write("%s %s\n" % (username, 1))
     return inner
 
 
@@ -86,7 +85,7 @@ def registered(username, password):
         else:
             f2.write("%s %s\n" % (username, password))
             print("注册成功！")
-            return 0
+            return 2
 
 
 @check_login
@@ -112,19 +111,21 @@ def collection_page(username):
     """收藏页面"""
     pass
 
+
 @update_login_status
-def log_out(username, password=None):
+def log_out(username):
     """注销"""
     return 1
 
 
-
 def blog_exit():
+    exit()
     """退出"""
 
-username = input("请输入用户名：").strip()
-password = input("请输入密码：").strip()
-#
-login(username, password)
-# registered(username,password)
+# username = input("请输入用户名：").strip()
+# password = input("请输入密码：").strip()
+# username = "allen"
+# password = "123"
+# login(username, password)
+# registered(username, password)
 # log_out("wxx")

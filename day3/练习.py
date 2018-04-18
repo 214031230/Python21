@@ -367,16 +367,32 @@ def fun3():
 """
 
 
-def fun(argv):
-    def inner():
-        argv()
-        print("测试")
-    return inner
+# def fun(argv):
+#     def inner(*args):
+#         argv(*args)
+#         print("测试")
+#     return inner
+#
+# @fun
+# def fun2(name, password):
+#     print(name)
+#     print(password)
+# fun2("wxx","123")
 
-@fun
+# dic = {1:2}
+# print(dic.get(1,1))
+
+def fun1(argv):
+    def inner():
+        username = input(">:")
+        pasword = input(">:")
+        if username == "wxx" and pasword == "123":
+            argv()
+    return inner
+@fun1
 def fun2():
-    print("123")
-fun2()
-@fun
+    print("fun2")
+@fun1
 def fun3():
-    print("123")
+    print("fun3")
+fun2()
