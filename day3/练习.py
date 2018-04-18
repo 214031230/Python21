@@ -300,20 +300,83 @@
 #             break
 #
 # print(l2)
-a = 1
+# a = 1
+#
+# def func1():
+#     global a
+#     a += 1
+#     print(a)
+# func1()
+#
+#
+# def wrapper():
+#     a = 1
+#     def inner():
+#         nonlocal a
+#         a += 1
+#         print(a)
+#     inner()
+# wrapper()
+# def extendList(val,list=[]):
+#
+#     list.append(val)
+#     return list
+#
+# list1 = extendList(10)
+# print(list1)
 
-def func1():
-    global a
-    a += 1
-    print(a)
-func1()
+# li1 = []
+# #
+# li1.append(1)
+# li2 = li1
+# li1.append(2)
+# li3 = li1
+#
+#
+# print(li1) # []  #[1,2]
+# print(li2) # [1]  #[1,2]
+# print(li3) # [2]  #[1,2]
+#
+# li1 = []
+# li1.append(1)
+# print(li1)
+
+# print(li1.append(2))
+# print(li1)
+import  copy
+
+# li1 = [[1, 2, 3]]
+# li2 = li1
+# # li3 = copy.deepcopy(li1)
+# # li1.append(1)  # [[1, 2, 3],1]
+#
+# li1[0].append(4) # [[1, 2, 3,4],1]
+# print(li1)
+# print(li2)
+# print(li3)
+"""
+def fun():
+    print("测试")
+    
+def fun2():
+    fun()
+    print("123")
+def fun3():
+    fun()
+    print("123"
+"""
 
 
-def wrapper():
-    a = 1
+def fun(argv):
     def inner():
-        nonlocal a
-        a += 1
-        print(a)
-    inner()
-wrapper()
+        argv()
+        print("测试")
+    return inner
+
+@fun
+def fun2():
+    print("123")
+fun2()
+@fun
+def fun3():
+    print("123")

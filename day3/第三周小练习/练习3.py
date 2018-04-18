@@ -73,14 +73,38 @@
 # return list list1 = extendList(10) list2 = extendList(123,[]) list3 = extendList('a')  print('list1=%s'%list1) print('list2=%s'%list2) print('list3=%s'%list3)
 
 
-def extendList(val,list=[]):
-    list.append(val)
-    return list
+# def extendList(val,list=[]):  #  val = 123  list = []
+#     list.append(val)
+#     return list
+#
+# list1 = extendList(10)  # list1 = [10]
+# list2 = extendList(123,[])  # list2 = [123]
+# list3 = extendList('a') # list3 = ["a"]
+# print('list1=%s'%list1) #  [10]
+# print('list2=%s'%list2)# [123]
+# print('list3=%s'%list3)# ["a"]
 
-list1 = extendList(10)  # [10]  # list[10]
-list2 = extendList(123,[]) # [123]
-list3 = extendList('a') # ["a"]
-print('list1=%s'%list1)
-print('list2=%s'%list2)
-print('list3=%s'%list3)
-
+# def wrapper():
+#     a = 1
+#     def inner():
+#         print(a)
+#     return inner
+# wrapper = wrapper() # inner
+# wrapper() #inner()
+# def login(argv):
+#     def inner(*args):
+#         print("登录成功！")
+#         res = argv(*args)
+#         return res
+#     return inner
+#
+# @login  # f1 = login(f1)
+# def f1(a, b, c):
+#     return (a,b,c)
+# print(f1(1,2,3))
+# @login
+# def f2():
+#     pass
+# @login
+# def f3():
+#     pass
