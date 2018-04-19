@@ -382,17 +382,60 @@ def fun3():
 # dic = {1:2}
 # print(dic.get(1,1))
 
-def fun1(argv):
-    def inner():
-        username = input(">:")
-        pasword = input(">:")
-        if username == "wxx" and pasword == "123":
-            argv()
-    return inner
-@fun1
-def fun2():
-    print("fun2")
-@fun1
-def fun3():
-    print("fun3")
-fun2()
+# def fun1(argv):
+#     def inner():
+#         username = input(">:")
+#         pasword = input(">:")
+#         if username == "wxx" and pasword == "123":
+#             argv()
+#     return inner
+# @fun1
+# def fun2():
+#     print("fun2")
+# @fun1
+# def fun3():
+#     print("fun3")
+# fun2()
+
+
+# user_status = {"user": None, "status": False}
+#
+# print(user_status["user"] and user_status["status"])
+# def fun1():
+#     if user_status["user"] and user_status["status"]:
+#         username = input(">>")
+#         password = input(">>")
+#         if username == "wxx" and password == "123":
+#             print("登录成功！")
+#             user_status["user"] = username
+#             user_status["status"] = True
+#     else:
+#         print("登录成功！")
+# while True:
+#     fun1()
+
+# if None:
+#     print(123)
+# else:
+#     print(456)
+
+# user_status = {"user": None, "status": False}
+# while True:
+#     if user_status["user"] and user_status["status"]:
+#             username = input(">>")
+#             password = input(">>")
+#             if username == "wxx" and password == "123":
+#                 print("登录成功！")
+#                 user_status["user"] = username
+#                 user_status["status"] = True
+#         else:
+#             print("登录成功！")
+
+# a = False
+# while True:
+#     if a:
+#         print(a)
+#     else:
+#         a = True
+
+#

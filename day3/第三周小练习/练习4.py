@@ -57,11 +57,87 @@
 #
 # area("正方形",4)
 
+# 4.写函数，传入一个参数n，返回n的阶乘
+# 例如:cal(7)
+# 计算7*6*5*4*3*2*1
 
-
+# def fun3(n):
+#     count = 1
+#     sums = 1
+#     while count <= n:
+#         sums = sums * count
+#         count += 1
+#     return sums
+# print(fun3(4))
 # 编写装饰器，为多个函数加上认证的功能（用户的账号密码来源于文件)
 # 要求登录成功一次，后续的函数都无需再输入用户名和密码
 
+# 5、编写下载网页内容的函数，要求功能是：用户传入一个url，函数返回下载页面的结果（升级题）
+
+# from urllib.request import urlopen
+
+
+# def geturl(url):
+#     def inner():
+#         return urlopen(url).read()
+#     return inner
+#
+# geturl = geturl("http://www.baidu.com")
+# print(geturl())
+# print(geturl())
+
+
+# 5.1.为题目3编写装饰器，实现缓存网页内容的功能：（升级题）
+# 具体：实现下载的页面存放于文件中，如果网页有对应的缓存文件，
+# 就优先从文件中读取网页内容，否则，就去下载，然后存到文件中
+# from urllib.request import urlopen
+#
+#
+# def geturl(url):
+#     with open("./file/tmp_url", encoding="utf-8") as f1, open("./file/tmp_url", mode="a", encoding="utf-8") as f2:
+#         for i in f1:
+#             if url in i:
+#                 tmp_url = i.split("分隔符")
+#                 return "缓存内容：%s" % (tmp_url,)
+#         else:
+#             f2.write("%s分隔符%s\n" % (url, urlopen(url).read()))
+#             return urlopen(url).read()
+#
+# while True:
+#     usl_name = input("请输入网址：")
+#     if "http" in usl_name:
+#         res = geturl(usl_name)
+#         print(res)
+#     else:
+#         res = geturl("http://%s" % (usl_name,))
+#         print(res)
+
+
+# 6给每个函数写一个记录日志的功能，
+# 功能要求：每一次调用函数之前，要将函数名称，时间节点记录到log的日志中。
+# 所需模块：
+# import time
+# struct_time = time.localtime()
+# print(time.strftime("%Y-%m-%d %H:%M:%S",struct_time))
+
+import time
+
+
+def wrapper_log(func):
+    def inner():
+        with open("./file/fun_run.log",mode="a",encoding="utf-8") as f1:
+            timer = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+            f1.write("%s运行了：%s\n" % (timer, func))
+        func()
+    return inner
+
+
+@wrapper_log
+def fun1():
+    print("你好！")
+
+
+fun1()
 
 
 

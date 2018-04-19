@@ -1,29 +1,30 @@
 #!/usr/bin/env python3
+# day3博客地址：http://www.cnblogs.com/spf21/p/8850060.html
 
 
-def wrapper(argv):
-    """登录"""
+def wrapper(func):
+    """验证用户登录装饰器"""
     def inner():
-        if user_status["user"] != None and user_status["status"] != False:
-            argv()
+        if user_status["user"] and user_status["status"]:
+            func()
         else:
-            print("\033[0;32;0m\n>>>欢迎登录：")
+            print("\n\033[0;35;0m>>>欢迎登录：\033[0m")
             count = 0
             while count < 3:
-                username = input("\033[0;32;0m请输入用户名：\033[0m").strip()
-                password = input("\033[0;32;0m请输入密码：\033[0m").strip()
+                username = input("\033[0;35;0m请输入用户名：\033[0m").strip()
+                password = input("\033[0;35;0m请输入密码：\033[0m").strip()
                 if not username or not password:
-                    print("\033[0;32;0m用户名或密码不能为空\033[0m")
+                    print("\033[0;35;0m用户名或密码不能为空\033[0m")
                 with open("./file/user_list") as f1:
                     for i in f1:
                         user, passwd = i.split()
                         if username == user and password == passwd:
-                            print("\033[0;32;0m登录成功！\n\033[0;32;0m")
+                            print("\n\033[0;35;0m登录成功！欢迎:<%s>\n\033[0m" % (username,))
                             user_status["user"] = username
                             user_status["status"] = True
                             return username
                     else:
-                        print("\033[0;32;0m用户名或者密码错误，请重试！\033[0m")
+                        print("\033[0;35;0m用户名或者密码错误，请重试！\033[0m")
                 count += 1
             else:
                 exit()
@@ -32,33 +33,33 @@ def wrapper(argv):
 
 @wrapper
 def login():
-    print("欢迎登录！")
+    pass
 
 
 def registered():
     """注册"""
-    print("\033[0;32;0m\n>>>欢迎注册:")
+    print("\033[0;35;0m\n>>>欢迎注册:")
     while True:
-        username = input("\033[0;32;0m请输入用户名：").strip()
-        first_password = input("\033[0;32;0m请输入密码：").strip()
-        second_password = input("\033[0;32;0m请确认密码：").strip()
+        username = input("\033[0;35;0m请输入用户名：").strip()
+        first_password = input("\033[0;35;0m请输入密码：").strip()
+        second_password = input("\033[0;35;0m请确认密码：").strip()
 
         if not username or not first_password or not second_password:
-            print("\033[0;32;0m用户名或者密码不能为空！")
+            print("\033[0;35;0m用户名或者密码不能为空！")
             continue
 
         if first_password != second_password:
-            print("\033[0;32;0m两次密码输入不一致，请重新输入！")
+            print("\033[0;35;0m两次密码输入不一致，请重新输入！")
             continue
 
         with open("./file/user_list", mode="r") as f1, open("./file/user_list", mode="a") as f2:
             for i in f1:
                 if username in i:
-                    print("\033[0;32;0m用户名已经存在！请重新注册")
+                    print("\033[0;35;0m用户名已经存在！请重新注册")
                     break
             else:
                 f2.write("%s %s\n" % (username, second_password))
-                print("\033[0;32;0m注册成功！")
+                print("\033[0;35;0m注册成功！<%s> 已经自动登录！" % (username,))
                 user_status["user"] = username
                 user_status["status"] = True
                 return username
@@ -67,74 +68,67 @@ def registered():
 @wrapper
 def article_page():
     """文章页面"""
-    print("""\033[0;33;0m文章页面
-            咏鹅
-    
-            鹅鹅鹅，
-            曲项向天歌。
-            白毛浮绿水，
-            红掌拨清波。
-            """.center(50," "))
+    print("文章页面".center(60, "-"))
 
 
 @wrapper
 def logs_page():
     """日记页面"""
-    print("日志页面！")
+    print("日记页面".center(60, "-"))
 
 
 @wrapper
 def comment_page():
     """评论页面"""
-    print("评论页面")
+    print("评论页面".center(60, "-"))
 
 
 @wrapper
 def collection_page():
     """收藏页面"""
-    print("收藏页面")
+    print("收藏页面".center(60, "-"))
 
 
 def log_out():
     """注销"""
-    user_status["user"] = None
-    user_status["status"] = False
+    if user_status["user"] and user_status["status"]:
+        print("\033[0;31;0m%s 用户已经注销！\033[0m" % (user_status["user"]))
+        user_status["user"] = None
+        user_status["status"] = False
+    else:
+        print("\033[0;31;0m用户未登录!!!\033[0m")
 
 
 def blog_exit():
     """退出"""
-    return False
+    print("\033[0;31;0mBye Bye!!!\033[0m".center(40, "-"))
+    exit()
 
 
+# user_status 用于存储用户状态
 user_status = {"user": None, "status": False}
-
-menu = {1: '请登录',
-        2: '请注册',
-        3: '文章页面',
-        4: '日记页面',
-        5: '评论页面',
-        6: '收藏页面',
-        7: '注销',
-        8: '退出程序'}
-flag = True
+menu = {1: ['请登录', login],
+        2: ['请注册', registered],
+        3: ['文章页面', article_page],
+        4: ['日记页面', logs_page],
+        5: ['评论页面', comment_page],
+        6: ['收藏页面', collection_page],
+        7: ['注销', log_out],
+        8: ['退出程序', blog_exit]}
 print("\033[0;31;0m欢迎来到博客园首页\033[0m".center(60, " "))
-while flag:
+while True:
+    # 打印菜单
     for k, v in menu.items():
-        print("\033[0;34;0m%s %s\033[0m" % (k, v))
+        print("\033[0;34;0m%s %s\033[0m" % (k, v[0]))
     choice = input("\n\033[0;36;0m请选择菜单：\033[0m")
-    if choice == "1":
-        login()
-    elif choice == "2":
-        registered()
-    elif choice == "3":
-        article_page()
-    elif choice == "4":
-        logs_page()
-    elif choice == "5":
-        comment_page()
-    elif choice == "6":
-        collection_page()
-    elif choice == "7":
-        log_out()
-    elif choice == "8":
-        flag = blog_exit()
+    if choice.isdigit():
+        choice = int(choice)
+        # 获取字典里面菜单key，如果不存在则返回1
+        if menu.get(choice, 1) != 1:
+            #  menu[choice][1]  = 字典里面存的函数命
+            res = menu[choice][1]
+            res()
+        else:
+            print("你输入的菜单ID不存在！")
+    else:
+        print("请输入正确的数字ID！")
