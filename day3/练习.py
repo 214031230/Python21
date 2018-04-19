@@ -354,17 +354,17 @@ import  copy
 # print(li1)
 # print(li2)
 # print(li3)
-"""
-def fun():
-    print("测试")
-    
-def fun2():
-    fun()
-    print("123")
-def fun3():
-    fun()
-    print("123"
-"""
+# """
+# def fun():
+#     print("测试")
+#
+# def fun2():
+#     fun()
+#     print("123")
+# def fun3():
+#     fun()
+#     print("123"
+# """
 
 
 # def fun(argv):
@@ -439,3 +439,82 @@ def fun3():
 #         a = True
 
 #
+#
+#
+# def Before(request,kargs):
+#     print('before')
+#
+#
+# def After(request,kargs):
+#     print("after")
+#
+#
+# def Filter(before_func, after_func):
+#     def outer(main_func):
+#         def wrapper(request, kargs):
+#             before_result = before_func(request, kargs)
+#             if(before_result != None):
+#                 return before_result
+#             main_result = main_func(request, kargs)
+#             if(main_result != None):
+#                 return main_result
+#             after_result = after_func(request, kargs)
+#             if(after_result != None):
+#                 return after_result
+#         return wrapper
+#     return outer
+#
+#
+# @Filter(Before, After) # Index = Filter(Before,After)
+# def Index(request,kargs):
+#     print("index")
+#
+#
+# Index("123", "456")
+
+
+def wrapper(func1):
+    def inner(*args, **kwargs):
+        print("我是装饰器wrapper")
+        res = func1(*args, **kwargs)
+        if res != None:
+            return res
+    return inner
+
+
+# @wrapper
+# def fun1():
+#     print("我是普通函数fun1")
+#
+#
+# @wrapper
+# def fun2(argv):
+#     print("我是带参数的函数fun2,参数：%s" % (argv,))
+#
+#
+# @wrapper
+# def fun3(argv1, argv2):
+#     print("我是带参数和返回值的函数fun3,参数： %s %s" % (argv1, argv2))
+#     return argv1, argv2
+#
+#
+@wrapper
+def fun4(*args, **kwargs):
+    print("我是带动态参数的函数fun4 参数 %s %s" % (args, kwargs))
+    return (args, kwargs)
+#
+# print(fun1())
+# print("-"*50)
+# print(fun2(1))
+# print("-"*50)
+# print(fun3(1,2))
+print("-"*50)
+print(fun4(1,2,3,4,5,x="123",y="456",z="789"))
+
+
+# def fun5(**kwargs):
+#     print(kwargs.values())
+#     return kwargs.values()
+#
+# res = fun5(x="123",age=2,job=3)
+# print(res)

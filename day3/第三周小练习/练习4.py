@@ -120,27 +120,44 @@
 # struct_time = time.localtime()
 # print(time.strftime("%Y-%m-%d %H:%M:%S",struct_time))
 
-import time
+# import time
+#
+#
+# def wrapper_log(func):
+#     def inner():
+#         with open("./file/fun_run.log",mode="a",encoding="utf-8") as f1:
+#             timer = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+#             f1.write("%s运行了：%s\n" % (timer, func))
+#         func()
+#     return inner
+#
+#
+# @wrapper_log
+# def fun1():
+#     print("你好！")
+#
+#
+# fun1()
 
 
-def wrapper_log(func):
+def w1(func):
     def inner():
-        with open("./file/fun_run.log",mode="a",encoding="utf-8") as f1:
-            timer = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-            f1.write("%s运行了：%s\n" % (timer, func))
+        print("w1")
         func()
     return inner
 
+def w2(func):
+    def inner():
+        print("w2")
+        func()
+    return inner
 
-@wrapper_log
+@w1
+@w2
 def fun1():
-    print("你好！")
-
+    print("fun1")
 
 fun1()
-
-
-
 
 
 

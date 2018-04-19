@@ -3,55 +3,60 @@
 import time
 
 
-def wrapper(func):
+def b_login():
     """验证用户登录装饰器"""
-    def inner(*args, **kwargs):
-        if user_status["user"] and user_status["status"]:
-            result = func(*args, **kwargs)
-            if result != None:
-                return result
+    if user_status["user"] and user_status["status"]:
+            return user_status["user"]
+    else:
+        print("\n\033[0;35;0m>>>欢迎登录：\033[0m")
+        count = 0
+        while count < 3:
+            username = input("\033[0;35;0m请输入用户名：\033[0m").strip()
+            password = input("\033[0;35;0m请输入密码：\033[0m").strip()
+            if not username or not password:
+                print("\033[0;35;0m用户名或密码不能为空\033[0m")
+            with open("./file/user_list") as f1:
+                for i in f1:
+                    user, passwd = i.split()
+                    if username == user and password == passwd:
+                        print("\n\033[0;35;0m登录成功！欢迎:<%s>\n\033[0m" % (username,))
+                        user_status["user"] = username
+                        user_status["status"] = True
+                        return username
+                else:
+                    print("\033[0;35;0m用户名或者密码错误，请重试！\033[0m")
+            count += 1
         else:
-            print("\n\033[0;35;0m>>>欢迎登录：\033[0m")
-            count = 0
-            while count < 3:
-                username = input("\033[0;35;0m请输入用户名：\033[0m").strip()
-                password = input("\033[0;35;0m请输入密码：\033[0m").strip()
-                if not username or not password:
-                    print("\033[0;35;0m用户名或密码不能为空\033[0m")
-                with open("./file/user_list") as f1:
-                    for i in f1:
-                        user, passwd = i.split()
-                        if username == user and password == passwd:
-                            print("\n\033[0;35;0m登录成功！欢迎:<%s>\n\033[0m" % (username,))
-                            user_status["user"] = username
-                            user_status["status"] = True
-                            return username
-                    else:
-                        print("\033[0;35;0m用户名或者密码错误，请重试！\033[0m")
-                count += 1
-            else:
-                exit()
-    return inner
+            exit()
 
 
-def wrapper_log(func):
-    def inner(*args, **kwargs):
-        with open("./file/fun_run_log", mode="a", encoding="utf-8") as f1:
-            timer = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-            f1.write("%s运行了：%s 参数：%s %s\n" % (timer, func, args, kwargs))
-        result = func(*args, **kwargs)
-        if result != None:
-            return result
-    return inner
+def run_log():
+    with open("./file/fun_run_log", mode="a", encoding="utf-8") as f1:
+        timer = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        f1.write("%s运行了：%s\n" % (timer,))
 
 
-@wrapper_log
-@wrapper
+def filter(before_func, after_func):
+    def wrapper(main_func):
+        def inner(*args, **kwargs):
+            res_before = before_func(*args, **kwargs)
+            if res_before != None:
+                return res_before
+            res_main = main_func(*args, **kwargs)
+            if res_main != None:
+                return res_main
+            res_after = after_func(*args, **kwargs)
+            if res_after != None:
+                return res_after
+        return inner
+    return wrapper
+
+
+@filter(b_login, run_log)
 def login():
     pass
 
 
-@wrapper_log
 def registered():
     """注册"""
     print("\033[0;35;0m\n>>>欢迎注册:")
@@ -81,35 +86,26 @@ def registered():
                 return username
 
 
-@wrapper_log
-@wrapper
 def article_page():
     """文章页面"""
     print("文章页面".center(60, "-"))
 
 
-@wrapper_log
-@wrapper
 def logs_page():
     """日记页面"""
     print("日记页面".center(60, "-"))
 
 
-@wrapper_log
-@wrapper
 def comment_page():
     """评论页面"""
     print("评论页面".center(60, "-"))
 
 
-@wrapper_log
-@wrapper
 def collection_page():
     """收藏页面"""
     print("收藏页面".center(60, "-"))
 
 
-@wrapper_log
 def log_out():
     """注销"""
     if user_status["user"] and user_status["status"]:
@@ -120,7 +116,6 @@ def log_out():
         print("\033[0;31;0m用户未登录!!!\033[0m")
 
 
-@wrapper_log
 def blog_exit():
     """退出"""
     print("\033[0;31;0mBye Bye!!!\033[0m".center(40, "-"))
