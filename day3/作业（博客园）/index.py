@@ -112,7 +112,6 @@ def article_page():
     print("文章页面".center(60, "-"))
 
 
-
 @wrapper_log
 @wrapper
 def logs_page():
@@ -120,13 +119,11 @@ def logs_page():
     print("日记页面".center(60, "-"))
 
 
-
 @wrapper_log
 @wrapper
 def comment_page():
     """评论页面"""
     print("评论页面".center(60, "-"))
-
 
 
 @wrapper_log
