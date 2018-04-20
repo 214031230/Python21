@@ -520,5 +520,10 @@ import  copy
 # # print(res)
 
 
-li1 = ["123"]
-print(li1.pop())
+# li1 = ["123"]
+# print(li1.pop())\
+
+def fun1():
+    pass
+str_func = "%s " % (fun1,)
+print(str_func)
