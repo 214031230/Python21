@@ -473,48 +473,52 @@ import  copy
 # Index("123", "456")
 
 
-def wrapper(func1):
-    def inner(*args, **kwargs):
-        print("我是装饰器wrapper")
-        res = func1(*args, **kwargs)
-        if res != None:
-            return res
-    return inner
+# def wrapper(func1):
+#     def inner(*args, **kwargs):
+#         print("我是装饰器wrapper")
+#         res = func1(*args, **kwargs)
+#         if res != None:
+#             return res
+#     return inner
 
 
 # @wrapper
 # def fun1():
 #     print("我是普通函数fun1")
 #
-#
+# #
+# # @wrapper
+# # def fun2(argv):
+# #     print("我是带参数的函数fun2,参数：%s" % (argv,))
+# #
+# #
+# # @wrapper
+# # def fun3(argv1, argv2):
+# #     print("我是带参数和返回值的函数fun3,参数： %s %s" % (argv1, argv2))
+# #     return argv1, argv2
+# #
+# #
 # @wrapper
-# def fun2(argv):
-#     print("我是带参数的函数fun2,参数：%s" % (argv,))
-#
-#
-# @wrapper
-# def fun3(argv1, argv2):
-#     print("我是带参数和返回值的函数fun3,参数： %s %s" % (argv1, argv2))
-#     return argv1, argv2
-#
-#
-@wrapper
-def fun4(*args, **kwargs):
-    print("我是带动态参数的函数fun4 参数 %s %s" % (args, kwargs))
-    return (args, kwargs)
-#
-# print(fun1())
+# def fun4(*args, **kwargs):
+#     print("我是带动态参数的函数fun4 参数 %s %s" % (args, kwargs))
+#     return (args, kwargs)
+# #
+# # print(fun1())
+# # print("-"*50)
+# # print(fun2(1))
+# # print("-"*50)
+# # print(fun3(1,2))
 # print("-"*50)
-# print(fun2(1))
-# print("-"*50)
-# print(fun3(1,2))
-print("-"*50)
-print(fun4(1,2,3,4,5,x="123",y="456",z="789"))
+# print(fun4(1,2,3,4,5,x="123",y="456",z="789"))
+#
+#
+# # def fun5(**kwargs):
+# #     print(kwargs.values())
+# #     return kwargs.values()
+# #
+# # res = fun5(x="123",age=2,job=3)
+# # print(res)
 
 
-# def fun5(**kwargs):
-#     print(kwargs.values())
-#     return kwargs.values()
-#
-# res = fun5(x="123",age=2,job=3)
-# print(res)
+li1 = ["123"]
+print(li1.pop())

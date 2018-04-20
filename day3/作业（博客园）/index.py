@@ -1,5 +1,26 @@
 #!/usr/bin/env python3
 # day3博客地址：http://www.cnblogs.com/spf21/p/8850060.html
+"""作业需求
+1)，启动程序，首页面应该显示成如下格式：
+    欢迎来到博客园首页
+    1:请登录
+    2:请注册
+    3:文章页面
+    4:日记页面
+    5:评论页面
+    6:收藏页面
+    7:注销
+    8:退出程序
+2)，用户输入选项，3~6选项必须在用户登录成功之后，才能访问成功。
+3)，用户选择登录，用户名密码从register文件中读取验证，三次机会，没成功则结束整个程	序运行，成功之后，
+可以选择访问3~6项.
+4)，如果用户没有注册，则可以选择注册，注册成功之后，可以自动完成登录，然后进入首页选择。
+5)，注销用户是指注销用户的登录状态，使其在访问任何页面时，必须重新登录。
+6)，退出程序为结束整个程序运行。
+
+测试账号：wxx  密码：123
+测试账号：spf  密码：123
+"""
 import time
 
 
@@ -7,6 +28,7 @@ def wrapper(func):
     """验证用户登录装饰器"""
     def inner(*args, **kwargs):
         if user_status["user"] and user_status["status"]:
+            run_fun.append(func)
             result = func(*args, **kwargs)
             if result != None:
                 return result
@@ -38,7 +60,9 @@ def wrapper_log(func):
     def inner(*args, **kwargs):
         with open("./file/fun_run_log", mode="a", encoding="utf-8") as f1:
             timer = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-            f1.write("%s运行了：%s 参数：%s %s\n" % (timer, func, args, kwargs))
+            if len(run_fun) < 1:
+                run_fun.append(None)
+            f1.write("%s：用户：<%s>运行了：%s 参数：%s %s\n" % (timer, user_status["user"], run_fun.pop(), args, kwargs))
         result = func(*args, **kwargs)
         if result != None:
             return result
@@ -88,6 +112,7 @@ def article_page():
     print("文章页面".center(60, "-"))
 
 
+
 @wrapper_log
 @wrapper
 def logs_page():
@@ -95,11 +120,13 @@ def logs_page():
     print("日记页面".center(60, "-"))
 
 
+
 @wrapper_log
 @wrapper
 def comment_page():
     """评论页面"""
     print("评论页面".center(60, "-"))
+
 
 
 @wrapper_log
@@ -129,6 +156,8 @@ def blog_exit():
 
 # user_status 用于存储用户状态
 user_status = {"user": None, "status": False}
+# run_fun 用于存储运行的函数名
+run_fun = []
 menu = {1: ['请登录', login],
         2: ['请注册', registered],
         3: ['文章页面', article_page],

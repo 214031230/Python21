@@ -86,26 +86,31 @@ def registered():
                 return username
 
 
+@filter(b_login, run_log)
 def article_page():
     """文章页面"""
     print("文章页面".center(60, "-"))
 
 
+@filter(b_login, run_log)
 def logs_page():
     """日记页面"""
     print("日记页面".center(60, "-"))
 
 
+@filter(b_login, run_log)
 def comment_page():
     """评论页面"""
     print("评论页面".center(60, "-"))
 
 
+@filter(b_login, run_log)
 def collection_page():
     """收藏页面"""
     print("收藏页面".center(60, "-"))
 
 
+@filter(b_login, run_log)
 def log_out():
     """注销"""
     if user_status["user"] and user_status["status"]:
@@ -116,6 +121,7 @@ def log_out():
         print("\033[0;31;0m用户未登录!!!\033[0m")
 
 
+@filter(b_login, run_log)
 def blog_exit():
     """退出"""
     print("\033[0;31;0mBye Bye!!!\033[0m".center(40, "-"))
