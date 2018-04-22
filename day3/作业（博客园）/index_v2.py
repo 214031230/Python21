@@ -178,7 +178,7 @@ while True:
     for k, v in menu.items():
         print("\033[0;34;0m%s %s\033[0m" % (k, v[0]))
     print("-" * 64)
-    choice = input("\n\033[0;36;0m请选择菜单：\033[0m")
+    choice = input("\n\033[0;36;0m请选择菜单：\033[0m").strip()
     if choice.isdigit():
         choice = int(choice)
         # 获取字典里面菜单key，如果不存在则返回1

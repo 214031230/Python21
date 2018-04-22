@@ -523,7 +523,143 @@ import  copy
 # li1 = ["123"]
 # print(li1.pop())\
 
-def fun1():
-    pass
-str_func = "%s " % (fun1,)
-print(str_func)
+# def fun1():
+#     pass
+# str_func = "%s " % (fun1,)
+# # print(str_func)
+# data = {
+#     '北京': {
+#         '海淀': {
+#             '五道口': {
+#                 'soho': {},
+#                 '网易': {},
+#                 'Google': {}
+#             },
+#             '中关村': {
+#                 '爱奇艺': {},
+#                 '汽车之家': {},
+#                 'youku': {},
+#             },
+#             '上地': {
+#                 '百度': {},
+#             }
+#         },
+#         '昌平': {
+#             '沙河': {
+#                 '老男孩': {},
+#                 '北航': {}
+#             },
+#             '天通苑': {},
+#             '回龙观': {}
+#         },
+#         '朝阳': {},
+#         '东城': {}
+#     },
+#     '上海': {},
+#     '湖北': {},
+#     '广东': {}
+# }
+#
+# current_layer = data
+# last_layer = []
+# while True:
+#     for i in current_layer:
+#         print(i)
+#     choice = input(">>>:")
+#     if not choice:continue
+#     if choice in current_layer:
+#         last_layer.append(current_layer)
+#         current_layer = current_layer[choice]
+#     elif choice.lower() == "b":
+#         if len(last_layer) < 1:
+#             print("已经到最顶层")
+#         else:
+#             current_layer = last_layer.pop()
+#     else:
+#         print("节点不存在！")
+
+# s = "Abc"
+# s1 = s.lower()
+# print(s1)
+# s2 = s1.upper()
+# print(s2)
+# s = "  234  22224sd "
+# s3 = s1.strip()
+# print(s3)
+# s4 = s1.center(50, "-")
+# print(s4)
+# s5 = s.count("2")
+# print(s5)
+# s6 = s.split("4")
+# print(s6)
+# s7 = s.replace("2", "3")
+# print(s7)
+# s = "ABC"
+# s8 = s.index("C")
+# print(s8)
+# s9 = "{}{}".format(1, 2)
+# print(s9)
+# # s = "123"
+# l1 = ["1", "2", "3"]
+# # s1 = "_".join(s)
+# s2 = "_".join(l1)
+# print(s1)
+# print(s2)
+
+# s = "ABCEF"
+# s1 = s.ljust(6, "-")
+# s2 = s.rjust(6, "-")
+# print(s1)
+# print(s2)
+#
+# s3 = s.startswith("B")
+# print(s3)
+# s4 = s.endswith("B", 0, 2)
+# print(s4)
+#
+# s5 = s.find("M")
+# print(s5)
+
+
+# 5，数字，字符串，列表，元祖，字典对应的布尔值的False分别是什么？（5分）
+# 数字除了0都是True
+# 数字除了空字符串都是 True
+
+# 7，写代码，有如下列表，利用切片实现每一个功能（每题一分，共计4分）
+# li = [1,3,2,"a",4,"b",5,"c","s"]
+# # 通过对li列表的切片形成新的列表l3,l3 = [’1,2,4,5]
+# l3 = li[::2]
+# print(l3)
+# # 通过对li列表的切片形成新的列表l4,l4 = [3,’a’,’b’]
+# l4 = li[1:6:2]
+# print(l4)
+# # 通过对li列表的切片形成新的列表l5,l5 = [‘c’]
+# l5 = li[-2]
+# print(list(l5))
+# # 通过对li列表的切片形成新的列表l6,l6 = [‘b’,’a’,3]
+# l6 = li[1:6:2]
+# l6.reverse()
+# print(l6)
+# 8，组合嵌套题。
+# a,写代码，有如下列表，按照要求实现每一个功能（每题3分，写出一种方法得1分，写出两种方法的3分。此题共9分）
+# （每个都是一行代码实现）
+# lis = [[‘k’,[‘qwe’,20,{‘k1’:[‘tt’,3,’1’]},89],’ab’]]
+# 将列表lis中的’tt’变成大写（用两种方式）。
+# 将列表中的数字3变成字符串’100’（用两种方式）。
+# 将列表中的字符串’1’变成数字101（用两种方式）。
+#
+#
+# b，写代码，有如下字典，按照要求实现每一个功能(5分)
+# dic = {‘k1’:’v1’,’k2’:[‘alex’,’sb’],(1,2,3,4,5):{‘k3’:[‘2’,100,’wer’]}}
+# 将’k2’对应的值的最后面添加一个元素’23’。
+# 将’k2’对应的值的第一个位置插入一个元素’a’。
+# 将(1,2,3,4,5)对应的值添加一个键值对’k4’,’v4’。
+# 将(1,2,3,4,5)对应的值添加一个键值对(1,2,3),’ok’。
+# 将’k3’对应的值的’wer’更改为’qq’。
+
+
+
+
+
+
+

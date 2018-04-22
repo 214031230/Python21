@@ -35,3 +35,6 @@
 时间：2018-04-20 16:14:59 用户：wxx 运行函数：<function comment_page at 0x00000235FC625950>
 时间：2018-04-20 16:15:02 用户：wxx 运行函数：<function collection_page at 0x00000235FC625A60>
 时间：2018-04-20 16:15:05 用户：None 运行函数：<function log_out at 0x00000235FC625B70>
+时间：2018-04-20 22:54:01 用户：wxx 运行函数：<function logs_page at 0x101ea79d8>
+时间：2018-04-20 22:54:04 用户：wxx 运行函数：<function comment_page at 0x101ea7ae8>
+时间：2018-04-20 22:54:06 用户：None 运行函数：<function log_out at 0x101ea7d08>
