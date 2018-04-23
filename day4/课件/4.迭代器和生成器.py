@@ -2,9 +2,12 @@
 # 如何从列表、字典中取值的
     # index索引 ，key
     # for循环
+
 # 凡是可以使用for循环取值的都是可迭代的
 # 可迭代协议 ：内部含有__iter__方法的都是可迭代的
 # 迭代器协议 ：内部含有__iter__方法和__next__方法的都是迭代器
+
+
 # print(dir([1,2,3]))
 # lst_iter = [1,2,3].__iter__()
 # print(lst_iter.__next__())
@@ -100,16 +103,20 @@
 # def func():
 #     print(11111)
 #     ret1 = yield 1
-#     print(22222,'ret1 :')
+#     print(22222, 'ret1 :', ret1)
 #     ret2 = yield 2
-#     print(33333,'ret2 :',ret2)
+#     print(33333, 'ret2 :', ret2)
 #     yield 3
 #
 # g = func()
-# ret = next(g)
-# print(ret)
-# print(g.send('alex'))  # 在执行next的过程中 传递一个参数 给生成器函数的内部
-# print(g.send('金老板'))
+# print(next(g))  # 结果是 11111
+# print(g.send('alex'))  # 在执行next的过程中 传递一个参数给yield1
+# print(g.send('金老板'))  # 在执行next的过程中 传递一个参数给yield2
+#send 获取下一个值的效果和next基本一致
+#只是在获取下一个值的时候，给上一yield的位置传递一个数据
+#使用send的注意事项
+    # 第一次使用生成器的时候 是用next获取下一个值
+    # 最后一个yield不能接受外部的值
 # 想生成器中传递值 有一个激活的过程 第一次必须要用next触发这个生成器
 
 # 例子
@@ -158,9 +165,9 @@
 #
 
 # yield from
-def generator_func():
-    yield from range(5)
-    yield from 'hello'
+# def generator_func():
+#     yield from range(5)
+#     yield from 'hello'
     # for i in range(5):
     #     yield i
     # for j in 'hello':

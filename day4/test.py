@@ -63,21 +63,40 @@
 # print(g.send("我是第二个参数"))
 # print(g.__next__())
 
-def averager():
-    total = 0.0
-    count = 0
-    average = None
-    while True:
-        term = yield average
-        total += term
-        count += 1
-        average = total/count
-
-
-g_avg = averager()
-next(g_avg)
-print(g_avg.send(10))
-print(g_avg.send(30))
-print(g_avg.send(5))
+# def averager():
+#     total = 0.0
+#     count = 0
+#     average = None
+#     while True:
+#         term = yield average
+#         total += term
+#         count += 1
+#         average = total/count
+#
+#
+# g_avg = averager()
+# next(g_avg)
+# print(g_avg.send(10))
+# print(g_avg.send(30))
+# print(g_avg.send(5))
 
 # 计算移动平均值(1)
+
+# print('__next__' in dir(range(12)))
+# print('__iter__' in dir(range(12)))
+#
+# print(dir(range(10)))
+#
+# from collections import Iterator
+# print(isinstance(range(100000000),Iterator))
+#
+# print('__next__' in dir(range(12).__iter__()))
+
+# 循环写文件 针对MAC系统。windows文件直接操作文件保存即可。
+import time
+count = 0
+while True:
+    with open("tmp", mode="a") as f1:
+        f1.write("我是第%s行" % count)
+        time.sleep(1)
+    count += 1
