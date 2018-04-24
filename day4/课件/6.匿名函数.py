@@ -39,7 +39,7 @@
 # 3.以下代码的输出是什么？请给出答案并解释。
 def multipliers():
     return [lambda x:i*x for i in range(4)]
-print([m(2) for m in multipliers()])
+print([m(2) for m in multipliers()])  # ([m(2) [lambda x:i*x,lambda x:i*x,lambda x:i*x,lambda x:i*x]])
 
 # def multipliers():
 #     lst = []

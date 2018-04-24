@@ -50,6 +50,8 @@ print(min(lst, key=lambda x: abs(x - 5)))
 #               序列
 #                   列表和元组
 #                       list 列表
+list()
+tuple()
 #                       tuple 元组
 #                   相关内置函数
 #                       reversed  反转可迭代对象，返回一个迭代器
@@ -62,13 +64,26 @@ print(res.__next__())
 print(res.__next__())
 print(res.__next__())
 #                   字符串
-#                       str 字符串
-#                       bytes
+
+# str 字符串
+
+# bytes
 s = "abcd"
 s1 = s.encode(encoding="utf-8") # unicode转换成bytes(utf-8)的类型
 print(s1)  # b'abcd'
 s2 = s1.decode(encoding="utf-8") # 把 bytes（以utf-8存储）转换成unicode类型
 print(s2)  # abcd
+
+# repr
+print(1)
+print('1')
+print(repr(1))
+print(repr('1'))
+
+# ord 和  chr 对应ascii码表
+# print(ord('a'))    # 小写的a-z 97+26  A-Z 65+26
+# print(chr(97))
+
 #               数据集合
 #                   dict 字典
 #                   set 集合
@@ -143,6 +158,10 @@ import time
 # print(sum([1,2,3,4,5],10))
 #         hash
 print(hash("1231231"))
+
+# 对可hash的数据类型进行hash之后会得到一个数字
+# 在一次程序的执行过程中 对相同的可哈希变量 哈希之后的结果永远相同的
+# 在一次程序的执行过程中 对不相同的可哈希变量 哈希之后的结果几乎总是不相同的
 
 # def func():
 #     a = 1

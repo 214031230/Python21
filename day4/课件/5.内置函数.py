@@ -6,15 +6,15 @@
     # dir
 
 
-# def func():
-#     a = 1
-#     b = 2
-#     print(locals())
-#     print(globals())
+def func():
+    a = 1
+    b = 2
+    print(locals())
+    print(globals())
 # 全局命名空间中的名字
-# print(locals())   # 本地的命名空间
-# print(globals())  # 全局的命名空间
-# func()
+print(locals())   # 本地的命名空间
+print(globals())  # 全局的命名空间
+func()
 
 # inp = input('>>>')
 # 99乘法表
@@ -97,9 +97,9 @@ for i in range(1, 10):
 # print(list(ret1))
 # print(list(ret2))
 
-# print(format('test', '<20'))
-# print(format('test', '>20'))
-# print(format('test', '^20'))
+print(format('test', '<20'))
+print(format('test', '>20'))
+print(format('test', '^20'))
 
 # print(ord('a'))    # 小写的a-z 97+26  A-Z 65+26
 # print(chr(97))
@@ -109,60 +109,66 @@ for i in range(1, 10):
 # print(repr(1))
 # print(repr('1'))
 
-# l = ['苹果','香蕉']
-# # ret = enumerate(l,1)   # 枚举  接收两个参数：一个容器类型，一个序号起始值   返回值：可迭代的
-# # print(ret)
-# for num,item in enumerate(l,1):
-#     print(num,item)
+# numerate
+l = ['苹果', '香蕉']
+ret = enumerate(l, 1)   # 枚举  接收两个参数：一个容器类型，一个序号起始值   返回值：可迭代的
+print(ret)
+for num, item in enumerate(l, 1):
+    print(num, item)
 
-# print(all([1,2,3,4,5]))
-# print(all([0,1,2,3,4,5]))
-# print(all(['a',1,2,3,4,5]))
-# print(all(['',1,2,3,4,5]))
-# print(any([0,None,False]))
+# all 和 any
+print(all([1,2,3,4,5]))
+print(all([0,1,2,3,4,5]))
+print(all(['a',1,2,3,4,5]))
+print(all(['',1,2,3,4,5]))
+print(any([0,None,False]))
 
-# ret = zip([1,2,3,4,5],('a','b','c','d'),(4,5))   #拉链方法
-# print(ret)
-# for i in ret:
-#     print(i)
-
-#
-lst =  [1, 4, 6, 7, 9, 12, 17]
-# def func(num):
-#     if num % 2 == 0:return True
-# filter(func,lst)
-# for i in filter(func,lst):
-#     print(i)
-# g = (i for i in lst if i%2 == 0)
-
-# l = ['test', None, '', 'str', '  ', 'END']
-# def func(item):
-#     if item and item.strip():return True
-# for i in filter(func,l):
-#     print(i)
+# zip
+ret = zip([1,2,3,4,5],('a','b','c','d'),(4,5))   #拉链方法
+print(ret)
+for i in ret:
+    print(i)
 
 
-# [i**2 for i in range(10)]
-# def func(num):
-#     return num ** 2
-# for i in map(func,range(10)):print(i)
+# filter  对元素进行处理过滤，返回处理前的元素
+# 过滤所有偶数
+lst = [1, 4, 6, 7, 9, 12, 17]
+def func(num):
+    if num % 2 == 0:return True
+filter(func,lst)
+for i in filter(func, lst):
+    print(i)
 
-# 排序功能
-# l = [1,-4,-2,3,-5,6,5]
-# l.sort(key=abs)
-# print(l)
-# l = [1,-4,-2,3,-5,6,5]
-# new_l = sorted(l,key=abs,reverse=True)
-# print(new_l)
+# 过滤所有None或者空元素
+l = ['test', None, '', 'str', '  ', 'END']
+def func(item):
+    if item and item.strip():return True
+for i in filter(func,l):
+    print(i)
 
-# l = [[1,2],[3,4,5,6],(7,),'123']
-# # print(sorted(l,key=len))
+# map  把元素进行处理，并返回处理过的元素
+def func(num):
+    return num ** 2
+for i in map(func,range(10)):print(i)
 
-# eval()
-# eval('print(123)')
-# exec('print(123)')
-# print(eval('1+2-3*20/(2+3)'))
-# print(exec('1+2-3*20/(2+3)'))
+
+# sorted 和 sort一样 排序功能
+l = [1,-4,-2,3,-5,6,5]
+l.sort(key = abs)
+print(l)
+l = [1,-4,-2,3,-5,6,5]
+new_l = sorted(l,key=abs,reverse=True)
+print(new_l)
+
+l = [[1,2],[3,4,5,6],(7,),'123']
+print(sorted(l,key=len))
+
+# eval 和 exec
+eval()
+eval('print(123)')
+exec('print(123)')
+print(eval('1+2-3*20/(2+3)'))
+print(exec('1+2-3*20/(2+3)'))
 
 
 # 内置函数
