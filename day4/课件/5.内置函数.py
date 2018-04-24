@@ -18,10 +18,10 @@
 
 # inp = input('>>>')
 # 99乘法表
-# for i in range(1,10):
-#     for j in  range(1,i+1):
-#         print('%s * %s = %2s'%(i,j,i*j),end=' ')
-#     print()
+for i in range(1, 10):
+    for j in range(1, i+1):
+        print('%s * %s = %2s' % (j, i, i*j), end=' ')
+    print()
 
 # print(1,2,3,4,5,sep=';',end='  ')
 # print(1,2,3,4,5,sep=';',end='')
