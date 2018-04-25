@@ -13,10 +13,10 @@
 
 # 6!
 # print(6*5*4*3*2*1)
-def fn(n):
-    if n == 1:return 1
-    return n*fn(n-1)
-print(fn(6))
+# def fn(n):
+#     if n == 1:return 1
+#     return n*fn(n-1)
+# print(fn(6))
 
 # 递归 就是自己调用自己
 # 递归需要有一个停止的条件
@@ -39,3 +39,17 @@ print(fn(6))
 #
 # def fn(1):
 #     return 1
+
+# li = [1, [2, [3, [4, [5]]]]]
+#
+# def func(li):
+#     for i in li:
+#         if type(i) is list:
+#             func(i)
+#         else:
+#             print(i)
+# func(li)
+
+# li = []
+# if type(li) is list:
+#     print("ok")
