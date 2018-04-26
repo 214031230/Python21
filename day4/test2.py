@@ -107,8 +107,14 @@
 #     return n * fn(n-1)
 # print(fn(6))
 
-def func(x):
-    if x % 2 == 0:
-        return x
-res = filter(func,[i for i in range(10)])
-print(list(res))
+# def func(x):
+#     if x % 2 == 0:
+#         return x
+# res = filter(func,[i for i in range(10)])
+# print(list(res))
+li = [1, 2, 3, 4]
+# li.index(10)
+try:
+    li.index(10)
+except ValueError:
+    print("列不存在！")
