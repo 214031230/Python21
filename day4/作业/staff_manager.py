@@ -157,6 +157,7 @@ def syntax_select(where_data, query_section):
     fields_tmp = query_section.split("from")[0].split("select")[1].split(",")
     fields = [i.strip() for i in fields_tmp]
     res_li = []
+    lens = len(fields)
     res_li.append(fields)
     for i in where_data:
         li = []
@@ -164,9 +165,10 @@ def syntax_select(where_data, query_section):
             index = line_title.index(k)
             li.append(i[index])
         res_li.append(li)
-    count = 0
     for i in res_li:
-        print("{:<8} {:<8}".format(i[0], i[1]))
+        print(("{:<8}" * lens).format(*i))
+
+
 def syntax_insert(where_data, query_section):
     pass
 
