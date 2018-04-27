@@ -234,10 +234,15 @@ def where_parser(section):
     for choice_key, func in choice.items():
         if choice_key in section:
             fields, value = section.split(choice_key)
-            where_data = func(fields.strip(), value.strip())  # 执行where判断，返回判断结果
-            return where_data   # 返回给语法解析器
+            if fields.strip() in line_title:
+                where_data = func(fields.strip(), value.strip())  # 执行where判断，返回判断结果
+                return where_data   # 返回给语法解析器
+            else:
+                print_log("语法错误：%s字段不存在" % fields)
+                return None
     else:
-        print_log("语法错误：%s" % choice.keys(), "error")
+        print_log("语法错误：缺少条件%s" % choice.keys(), "error")
+        return None
 
 
 def syntax_select(where_data, query_section):
@@ -269,8 +274,10 @@ def syntax_select(where_data, query_section):
                 return None
             except TypeError:
                 print_log("语法错误：where没有跟条件", where_data)
+                return None
     else:
         print_log("语法错误：表不存在")
+        return None
 
 
 def syntax_insert(where_data, query_section):
@@ -285,6 +292,7 @@ def syntax_insert(where_data, query_section):
         res_w = ",".join(res)
         if len(res) != len(line_title):
             print_log("语法错误：需要%s个参数，你给了%s个" % (len(line_title), len(res)), "error")
+            return None
         else:
             if res[0] in Table_DATA["id"]:
                 print_log("ID重复", "error")
@@ -293,6 +301,7 @@ def syntax_insert(where_data, query_section):
                     f1.write(res_w + "\n")
     else:
         print_log("语法错误：缺少values")
+        return None
 
 
 def syntax_update(where_data, query_section):
@@ -303,7 +312,7 @@ def syntax_update(where_data, query_section):
     :return:
     """
     #  根据 where_data 的id获取Table_DATA["id"]的索引，在根据索引去Table_DATA[字段]修改值
-    if "set" in query_section:  # 判断语法是否有set
+    if "set" in query_section and "=" in query_section:  # 判断语法是否有set
         res_tmp = query_section.split("set")[1].split("=")  # 取出需要修改的字段和值
         res = [i.strip() for i in res_tmp]  # 去掉空格 ["age", "25"]
         for line in where_data:
@@ -313,7 +322,8 @@ def syntax_update(where_data, query_section):
         # print_log(Table_DATA)
         return Table_DATA
     else:
-        print_log("语法错误：缺少set", "error")
+        print_log("语法错误：缺少set或者 = ", "error")
+        return None
     # print(where_data)
 
 
@@ -333,6 +343,7 @@ def syntax_delete(where_data, query_section):
         return Table_DATA
     else:
         print_log("语法错误：from", "error")
+        return None
 
 
 def local_file(argv):
@@ -375,8 +386,8 @@ def syntax_parser(cmd):
         "delete": syntax_delete
     }
     cmd = cmd.strip()
-    action = ["select", "insert", "update", "delete"]
-    if cmd.split()[0] in action:  # 判断用户输入的语法是否正确（增删改查）
+    actions = ["select", "insert", "update", "delete"]
+    if cmd.split()[0] in actions:  # 判断用户输入的语法是否正确（增删改查）
         if "where" in cmd:
             query_section, where_section = cmd.split("where")  # 根据where关键件把用户输入的命令切割成两部分，前半部分是增删改查方法，后半部分是where条件
             where_data = where_parser(where_section)  # 把where条件交给where函数进行分配判断
@@ -390,10 +401,14 @@ def syntax_parser(cmd):
             where_section = "id > 0"  # 条件默认为id > 0
             where_data = where_parser(where_section)  # 把where条件交给where函数进行分配判断
             action = query_section.split()[0]  # action = select ...
+            if action == "update" or action == "delete":
+                print_log("语法错误：修改或删除缺少where条件")
+                return None
             if action in choice_action:
                 choice_action[action](where_data, query_section)  # 执行增删改成函数
     else:
-        print_log("语法错误: %s" % action, "error")
+        print_log("语法错误: %s" % actions, "error")
+        return None
 
 
 def mysql_help():
