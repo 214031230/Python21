@@ -112,9 +112,29 @@
 #         return x
 # res = filter(func,[i for i in range(10)])
 # print(list(res))
-li = [1, 2, 3, 4]
-# li.index(10)
-try:
-    li.index(10)
-except ValueError:
-    print("列不存在！")
+# li = [1, 2, 3, 4]
+# # li.index(10)
+# try:
+#     li.index(10)
+# except ValueError:
+#     print("列不存在！")
+
+
+
+def func1(cmd):
+    print("我是func1", cmd)
+    dic = {1:2,
+           2:3,
+           3:4}
+    return dic
+
+def func3(data):
+    for i in data:
+        print(i)
+
+def func2():
+    cmd = input(">>>:")
+    res = func1(cmd)
+    func3(res)
+
+func2()

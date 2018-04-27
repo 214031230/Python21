@@ -93,10 +93,13 @@
 # print('__next__' in dir(range(12).__iter__()))
 
 # 循环写文件 针对MAC系统。windows文件直接操作文件保存即可。
-import time
-count = 0
-while True:
-    with open("tmp", mode="a") as f1:
-        f1.write("我是第%s行" % count)
-        time.sleep(1)
-    count += 1
+# import time
+# count = 0
+# while True:
+#     with open("tmp", mode="a") as f1:
+#         f1.write("我是第%s行" % count)
+#         time.sleep(1)
+#     count += 1
+
+li = ["alex", "spf", "hnf"]
+print(li.index("sapf"))

@@ -1,3 +1,0 @@
-select name,age from user_info where age > 22
-select id,name,age from user_info where age > 22
-select id,name,age,job from user_info where age > 22
