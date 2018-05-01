@@ -72,33 +72,93 @@
 # print(set(list1) > set(list2))  # 超集
 
 # 11. 用至少2种不同的方式删除一个list里面的重复元素
-lst = [6,1,1,2,3,4,5,6,6,5]
-lst1 = set(lst)
-print(lst1)
-count = 0
+# lst = [6,1,1,2,3,4,5,6,6,5]
+# lst1 = set(lst)
+# print(lst1)
+# count = 0
 # 10. 通过函数化编程实现5的阶乘
+# 5*4*3*2*1
+# def func(argv):
+#     if argv == 1:return 1
+#     return func(argv-1) * argv
+# print(func(5))
 # 11. 编写代码实现9*9乘法口诀表
 # 	1 * 1 = 1
 # 	2 * 1 = 2   2 * 2 = 4
 # 	3 * 1 = 3   3 * 2 = 6   3 * 3 = 9
-# 12. 输入一个年份，判断是否是闰年？
-# 13. 任意输入三个数，判断大小？
-# 14. 写三层循环，用户在最里层退出，整个程序终止。
-# 15. a = 12，b = 13，不用中间变量交换a和b的值？
-# 16. def f(x, l = [] ):
-# 	    for i in range(x):
-# 	        l.append(i*i)
-# 	    print(l)
+# for i in range(1, 10):
+#     for x in range(1, i + 1):
+#         print("%s * %s = %s" % (x, i, i * x), end=" ")
+#     print()
+
+# for i in range(1, 10):
+#     for j in range(1, i+1):
+#         print('%s * %s = %2s' % (j, i, i*j), end=' ')
+#     print()
+# # 12. 输入一个年份，判断是否是闰年？
+# def func(argv):
+#     if argv % 4 == 0 and argv % 100 != 0:
+#         return "闰年"
+#     else:
+#         return "平年"
 #
-# 	f(2)
-# 	f(3,[3,2,1])
-# 	f(3)
+# print(func(1900))
+# # 13. 任意输入三个数，判断大小？
+# def func(x, y, z):
+#     return max(x, y, z)
+# print(func(5,7,9))
+# 14. 写三层循环，用户在最里层退出，整个程序终止。
+
+
+# 15. a = 12，b = 13，不用中间变量交换a和b的值？
+# a = 12
+# b = 13
+# a, b = b, a
+# print(a, b)
+# 16.
+# def f(x, l = [] ): # x = 2    # x =  3  l = [3,2,1]
+#     for i in range(x):  # x = 2  range = 0,1  #  x = 3  range = 0,1,2
+#         l.append(i*i)   # 0, 1    # [3,2,1,0,1,4]
+#     print(l)  # l = [0,1]  # [3,2,1,0,1,4] # [0,1,0,1,4]
+#
+# f(2)
+# f(3,[3,2,1])
+# f(3)
 # 	输出结果
 # 17. 请将 "1,2,3"，变成 ["1","2","3"]
-# 18. is和==的区别是？
+# s = "1,2,3"
+# lst = s.split(",")
+# print(lst)
+# 18. is和==的区别是？ is 是比较内存地址  == 是比较数值
 # 19. 输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。
+# s = "asdf 7LKS&65lfdhKB LGN;lg"
+# def func(x):
+#     print("数字:%s" % len([i for i in x if i.isdigit()]))
+#     print("字母:%s" % len([i for i in x if i.isalpha()]))
+#     print("空格:%s" % len([i for i in x if i.isspace()]))
+#     print("其他:%s" % len([i for i in x if not i.isspace() and not i.isdigit() and not i.isalpha()]))
+# func(s)
+
+# s = "123T"
+# for i in s:
+#     if i.isdigit():
+#         print(i)
+# res = filter(func,s)
+# print(list(res))
+
 # 20. 求1～100间所有偶数的和（亦可奇数和，使用while循环写）
+# count = 1
+# sum = 0
+# while count <= 100:
+#     if count % 2 == 0:
+#         sum += count
+#     count += 1
+# print(sum)
+
 # 21. 将列表['alex', 'steven', 'egon'] 中的每一个元素使用 ‘\_’ 连接为一个字符串
+# lst = ['alex', 'steven', 'egon']
+# s = "_".join(lst)
+# print(s)
 
 
 
