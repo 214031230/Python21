@@ -50,6 +50,11 @@ def table_list(path):
         return files
 
 
+def show_tables():
+    for i in T_LIST:
+        print_log(i)
+
+
 def run_log(func, user):
     """记录用户调用函数日志"""
     with open("./file/fun_run_log", mode="a", encoding="utf-8") as f1:
@@ -184,17 +189,17 @@ def syntax_select(where_data, query_section):
                             li.append(i[index])  # 添加字段对应的数据到列表 i = ['2', 'Egon', '23', '13304320533', 'Tearcher']
                         except ValueError:
                             print_log("语法错误：%s列不存在！" % k)
-                            return None
+                            return
                     res_li.append(li)
                 print(tabulate(res_li, headers=fields, tablefmt="grid"))
                 print_log("查到了%s行！" % len(where_data), "info")
-                return None
+                return
             except TypeError:
                 print_log("语法错误：where没有跟条件", where_data)
-                return None
+                return
     else:
         print_log("语法错误：表不存在")
-        return None
+        return
 
 
 def syntax_insert(where_data, query_section):
@@ -211,7 +216,7 @@ def syntax_insert(where_data, query_section):
         res_w = ",".join(res)
         if len(res) != len(line_title):
             print_log("语法错误：需要%s个参数，你给了%s个" % (len(line_title), len(res)), "error")
-            return None
+            return
         else:
             if res[0] in Table_DATA["id"]:
                 print_log("语法错误：ID重复", "error")
@@ -223,7 +228,7 @@ def syntax_insert(where_data, query_section):
                         f1.write(res_w + "\n")
     else:
         print_log("语法错误：缺少values")
-        return None
+        return
 
 
 def syntax_update(where_data, query_section):
@@ -237,6 +242,9 @@ def syntax_update(where_data, query_section):
     if "set" in query_section and "=" in query_section:  # 判断语法是否有set
         res_tmp = query_section.split("set")[1].split("=")  # 取出需要修改的字段和值
         res = [i.strip() for i in res_tmp]  # 去掉空格 ["age", "25"]
+        if where_data == None:
+            print_log("语法错误：where语法有错，示例：where  age > 23")
+            return
         for line in where_data:
             line_id = line[0]  # 获取匹配到内容的ID
             index = Table_DATA["id"].index(line_id)  # index = id  在 Table_DATA表id列的索引
@@ -246,7 +254,7 @@ def syntax_update(where_data, query_section):
         return Table_DATA
     else:
         print_log("语法错误：缺少set或者 = ", "error")
-        return None
+        return
     # print(where_data)
 
 
@@ -258,6 +266,9 @@ def syntax_delete(where_data, query_section):
     :return:
     """
     if "from" in query_section:  # 判断语法是否有from
+        if where_data == None:
+            print_log("语法错误：where语法错误，示例：where age > 23")
+            return
         for line in where_data:
             line_id = line[0]  # 获取匹配到内容的ID
             index = Table_DATA["id"].index(line_id)  # index = id  在 Table_DATA表id列的索引
@@ -267,7 +278,7 @@ def syntax_delete(where_data, query_section):
         return Table_DATA
     else:
         print_log("语法错误：from", "error")
-        return None
+        return
 
 
 def op_gt(argv_fields, argv_value):
@@ -280,11 +291,15 @@ def op_gt(argv_fields, argv_value):
     """
     data_res = []  # 空列表接受所有匹配到的参数
     for index, value in enumerate(Table_DATA[argv_fields]):  # 循环列表进行匹配，index记录匹配元素的索引
-        if float(value) > float(argv_value):  # 匹配参数
-            l1 = []  # 空列表接受匹配到的单行
-            for key in Table_DATA.keys():  # 循环用户表获取匹配到的完整行
-                l1.append(Table_DATA[key][index])  # 根据索引匹配 并把匹配到的行添加到小列表中
-            data_res.append(l1)  # 匹配到的行将以列表数据类型的存在data_res中
+        try:
+            if float(value) > float(argv_value):  # 匹配参数
+                l1 = []  # 空列表接受匹配到的单行
+                for key in Table_DATA.keys():  # 循环用户表获取匹配到的完整行
+                    l1.append(Table_DATA[key][index])  # 根据索引匹配 并把匹配到的行添加到小列表中
+                data_res.append(l1)  # 匹配到的行将以列表数据类型的存在data_res中
+        except ValueError:
+            print_log("语法错误：字符串类型错误")
+            return
     return data_res
 
 
@@ -362,10 +377,10 @@ def where_parser(section):
                 return where_data   # 返回给语法解析器
             else:
                 print_log("语法错误：%s字段不存在" % fields)
-                return None
+                return
     else:
         print_log("语法错误：缺少条件%s" % choice.keys(), "error")
-        return None
+        return
 
 
 def syntax_parser(cmd):
@@ -378,10 +393,11 @@ def syntax_parser(cmd):
         "select": syntax_select,
         "insert": syntax_insert,
         "update": syntax_update,
-        "delete": syntax_delete
+        "delete": syntax_delete,
+        "show": show_tables
     }
     cmd = cmd.strip()
-    actions = ["select", "insert", "update", "delete"]
+    actions = ["select", "insert", "update", "delete", "show"]
     if cmd.split()[0] in actions:  # 判断用户输入的语法是否正确（["select", "insert", "update", "delete"]）
         if "where" in cmd:
             query_section, where_section = cmd.split("where")  # 根据where关键件把用户输入的命令切割成两部分，前半部分是增删改查方法，后半部分是where条件
@@ -394,13 +410,18 @@ def syntax_parser(cmd):
             where_section = "id > 0"  # 条件默认为id > 0
             where_data = where_parser(where_section)  # 把where条件交给where函数进行分配判断
             action = query_section.split()[0]  # action = select ...
+            if action == "show":
+                show_tables()
+                return
             if action == "update" or action == "delete":
                 print_log("语法错误：修改或删除缺少where条件")
-                return None
-            choice_action[action](where_data, query_section)  # 执行增删改成函数
+                return
+            func_res = choice_action[action](where_data, query_section)  # 执行增删改成函数
+            if func_res != None:
+                local_file(func_res)   # func_res 等于修改后的TABLE_DATA
     else:
         print_log("语法错误: %s" % actions, "error")
-        return None
+        return
 
 
 T_LIST = table_list(TABLE_PATH)
