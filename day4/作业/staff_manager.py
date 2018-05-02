@@ -55,15 +55,7 @@ def show_tables():
         print_log(i)
 
 
-def run_log(func, user):
-    """记录用户调用函数日志"""
-    with open("./file/fun_run_log", mode="a", encoding="utf-8") as f1:
-        timer = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        f1.write("时间：%s 用户：%s 运行函数：%s\n" % (timer, user, func))
-
-
-def wrapper_outer(run_log_func):
-    def wrapper(main_func):
+def wrapper(main_func):
         def inner(*args, **kwargs):
             if user_status["user"] and user_status["status"]:
                 result = main_func(*args, **kwargs)
@@ -97,11 +89,7 @@ def wrapper_outer(run_log_func):
                     count += 1
                 else:
                     exit()
-            res_run_log = run_log_func(main_func, user_status["user"])
-            if res_run_log != None:
-                return run_log_func
         return inner
-    return wrapper
 
 
 def local_table(t_file):
@@ -429,7 +417,7 @@ T_LIST = table_list(TABLE_PATH)
 Table_DATA = local_table(TABLE)
 
 
-@wrapper_outer(run_log)
+@wrapper
 def main():
     """
     主运行程序
