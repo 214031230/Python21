@@ -1,5 +1,7 @@
                                      <<<帮助>>>
 支持语法：增删改查
+    # 查看表
+    show dbs;
     # 查询示例
     select * from user_info
     select name,age from user_info where age > 22

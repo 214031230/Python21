@@ -149,6 +149,7 @@ def local_file(argv):
                         'job': ['IT', 'Tearcher', 'IT']}
     :return:
     """
+    #  ['1', '2', '3'] ['Alex', 'Egon', 'nezha'] ['22', '23', '25'] # [1,alex,22] # 1,alex,22
     #  把字典转换成列表，在转成字符串写入到新的表文件，删除旧表文件，重命名新文件为旧文件
     with open("user_info.bak", mode="a", encoding="utf-8") as f1:
         title = ",".join(line_title)   # 获取title转换成字符串写入文件
@@ -234,22 +235,21 @@ def syntax_insert(where_data, query_section):
 def syntax_update(where_data, query_section):
     """
 
-    :param where_data: = [['2', 'Egon', '23', '13304320533', 'Tearcher']]
+    :param where_data: = [['2', 'Egon', '23', '13304320533', 'Tearcher'], ['3', 'Egon', '23', '13304320533', 'Tearcher']]
     :param query_section:  = update user_info set age = 25
     :return:
     """
     #  根据 where_data 的id获取Table_DATA["id"]的索引，在根据索引去Table_DATA[字段]修改值
     if "set" in query_section and "=" in query_section:  # 判断语法是否有set
         res_tmp = query_section.split("set")[1].split("=")  # 取出需要修改的字段和值
-        res = [i.strip() for i in res_tmp]  # 去掉空格 ["age", "25"]
+        res = [i.strip() for i in res_tmp]  # 去掉空格res =  ["age", "25"]
         if where_data == None:
             print_log("语法错误：where语法有错，示例：where  age > 23")
             return
-        for line in where_data:
-            line_id = line[0]  # 获取匹配到内容的ID
-            index = Table_DATA["id"].index(line_id)  # index = id  在 Table_DATA表id列的索引
-            Table_DATA[res[0]][index] = res[1]  #
-        # print_log(Table_DATA)
+        for line in where_data:  # ['2', 'Egon', '23', '13304320533', 'Tearcher']
+            line_id = line[0]  # 获取匹配到内容的ID  # line_id = 2
+            index = Table_DATA["id"].index(line_id)  # index = id  在 Table_DATA表id列的索引   index = 1
+            Table_DATA[res[0]][index] = res[1]  # Table_DATA[res["age"]]  =  [22,23,30]
         print_log("影响了%s行！" % len(where_data), "info")
         return Table_DATA
     else:

@@ -1,6 +1,6 @@
 id,name,age,phone,job
 1,Alex,22,13651054608,python
-2,Egon,30,13304320533,Tearcher
+2,Egon,26,13304320533,Tearcher
 3,nezha,25,1333235322,python
 4,nezha,25,1333235322,python
 5,nezha,25,1333235322,python
@@ -11,4 +11,3 @@ id,name,age,phone,job
 10,wxx,18,133326322,ui
 11,xiaom,45,1833235322,python
 12,wwww,18,1633235322,python
-13,xxxx,26,1643235322,yanfa
