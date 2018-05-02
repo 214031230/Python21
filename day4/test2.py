@@ -120,21 +120,104 @@
 #     print("列不存在！")
 
 
+#
+# def func1(cmd):
+#     print("我是func1", cmd)
+#     dic = {1:2,
+#            2:3,
+#            3:4}
+#     return dic
+#
+# def func3(data):
+#     for i in data:
+#         print(i)
+#
+# def func2():
+#     cmd = input(">>>:")
+#     res = func1(cmd)
+#     func3(res)
+#
+# func2()
+# def func():
+#     with open("test.py") as f1:
+#         for i in f1:
+#             yield i
+# res = func()
+# res1 = res.__next__()
+# res2 = res.__next__()
+#
+# print(res1)
+# print(res2)
 
-def func1(cmd):
-    print("我是func1", cmd)
-    dic = {1:2,
-           2:3,
-           3:4}
-    return dic
+# def wrapper(func):
+#     def inner(*args, **kwargs):
+#         print("我是wrapper")
+#         res = func(*args, **kwargs)
+#         if res != None:
+#             return res
+#     return inner
+#
+# @wrapper  # func = wrapper(func)
+# def func(argv):
+#     print(argv)
+#     return argv
+# res = func("func")
+# print(res)
 
-def func3(data):
-    for i in data:
-        print(i)
+# def wrapper1(func): # func = inner2
+#     def inner1(*args, **kwargs):
+#         print("我是第一个wrapper1")
+#         res = func(*args, **kwargs) # func = inner2
+#         print("我是第二个wrapper1")
+#         return res
+#     return inner1
+#
+#
+# def wrapper2(func): # func = f1
+#     def inner2(*args, **kwargs):
+#         print("我是第一个wrapper2")
+#         res = func(*args, **kwargs)  # func = f1
+#         print("我是第二个wrapper2")
+#         return res
+#     return inner2
+#
+# @wrapper1  # f1 = wrapper1(f1) = wrapper1(inner2) = inner1
+# @wrapper2  # f1 = wrapper2(f1) = inner2
+# def f1(argv):
+#     print("我是func!!!")
+# f1("参数")  # f1 = inner1
+# FLAG = True
+#
+# def outer(FLAG):
+#     def wrapper(func):
+#         def inner(*args, **kwargs):
+#             if FLAG == True:
+#                 print("我是装饰器")
+#                 res = func(*args, **kwargs)
+#                 return res
+#             elif False == False:
+#                 res = func(*args, **kwargs)
+#                 return res
+#         return inner
+#     return wrapper
+#
+# @outer(FLAG)
+# def func():
+#     print("我是func")
+#
+# func()
 
-def func2():
-    cmd = input(">>>:")
-    res = func1(cmd)
-    func3(res)
+# lst = [[1, 2, 3], ["alex", "spf", "wxx"], ["IT", "UI", "py"]]
+# res = zip(*lst)
+# for i in res:
+#     print(i)
 
-func2()
+dic = {'id': ['1', '2', '3'],
+        'name': ['Alex', 'Egon', 'nezha'],
+         'age': ['22', '23', '25'],
+         'phone': ['13651054608', '13304320533', '1333235322'],
+        'job': ['IT', 'Tearcher', 'IT']}
+
+res = zip(*dic.values())
+for i in res:
+    print(i)

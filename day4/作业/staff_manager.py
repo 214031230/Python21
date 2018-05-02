@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+# day4博客地址：http://www.cnblogs.com/spf21/p/8919716.html
+
 from tabulate import tabulate
 import os
-import time
 
 user_status = {"user": None, "status": False}
 
@@ -142,18 +143,19 @@ def local_file(argv):
     with open("user_info.bak", mode="a", encoding="utf-8") as f1:
         title = ",".join(line_title)   # 获取title转换成字符串写入文件
         f1.write(title + "\n")
-        li = []  #  [['1', 'Alex', '22', '13651054608', 'linux'], ['2', 'Egon', '23', '13304320533', 'Tearcher'], ['3', 'nezha', '25', '1333235322', 'linux']]
-        for i in range(len(argv["id"])):
-            li_tmp = []  # li1 = ['1', 'Alex', '22', '13651054608', 'IT']
-            for f in line_title:
-                li_tmp.append(argv[f][i])
-            li.append(li_tmp)
+        # li = []  #  [['1', 'Alex', '22', '13651054608', 'linux'], ['2', 'Egon', '23', '13304320533', 'Tearcher'], ['3', 'nezha', '25', '1333235322', 'linux']]
+        # for i in range(len(argv["id"])):
+        #     li_tmp = []  # li1 = ['1', 'Alex', '22', '13651054608', 'IT']
+        #     for f in line_title:
+        #         li_tmp.append(argv[f][i])
+        #     li.append(li_tmp)
+        li = zip(*argv.values())
         for i in li:
             info = ",".join(i)
             f1.write(info + "\n")
     os.remove(TABLE)
     os.rename("user_info.bak", TABLE)
-    
+
     
 def syntax_select(where_data, query_section):
     """
