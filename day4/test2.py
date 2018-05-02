@@ -211,13 +211,98 @@
 # res = zip(*lst)
 # for i in res:
 #     print(i)
+#
+# dic = {'id': ['1', '2', '3'],
+#         'name': ['Alex', 'Egon', 'nezha'],
+#          'age': ['22', '23', '25'],
+#          'phone': ['13651054608', '13304320533', '1333235322'],
+#         'job': ['IT', 'Tearcher', 'IT']}
+#
+# res = zip(*dic.values())
+# for i in res:
+#     print(i)
 
-dic = {'id': ['1', '2', '3'],
-        'name': ['Alex', 'Egon', 'nezha'],
-         'age': ['22', '23', '25'],
-         'phone': ['13651054608', '13304320533', '1333235322'],
-        'job': ['IT', 'Tearcher', 'IT']}
+# def fun1():
+#     for i in range(1, 2001):
+#         yield "第%s件衣服" % i
+# res = fun1()
+# for i in range(10):
+#     print(res.__next__())
 
-res = zip(*dic.values())
-for i in res:
-    print(i)
+# func = ("第%s件衣服" % i for i in range(1, 2001))
+# for i in range(10):
+#     print(func.__next__())
+# def fun1():
+#     yield from range(1, 100)
+# res = fun1()
+# for i in range(10):
+#     print(res.__next__())
+#
+# 移动平均值
+
+# def wrapper(f):
+#     def inner(*args, **kwargs):
+#         res = f(*args, **kwargs)
+#         res.__next__()
+#         return res
+#     return inner
+#
+#
+# @wrapper
+# def func():
+#     sums = 0
+#     avg = 0
+#     day = 1
+#     while True:
+#         money = yield avg
+#         sums += money
+#         avg = sums/day
+#         day += 1
+# res = func()
+# print(res.send(50))
+# print(res.send(150))
+
+# # 面试题1
+# def demo():
+#     for i in range(4):
+#         yield i
+#
+# g=demo() # g 是生成器
+#
+# g1 = (i for i in g)  # g1 是生成器
+# g2 = (i for i in g1)  # g2 也是生成器
+#
+# print(list(g1))  # 从g1生成器取值，g1又从g生成器中取值，用list会取出生成器内的所有值
+# print(list(g2))  # 从g2生成器取值，g2又从g1生成器中取值，g1又从g中取值。g生成器已经被取完，所以取不到值
+#
+# # 生成器-面试题1
+
+# for i in range(1, 10):
+#     for x in range(1, i+1):
+#         print("%s * %s = %s" % (x, i, x * i), end=" ")
+#     print()
+# def func(num):
+#     return num ** 2
+# for i in map(func,range(10)):print(i)
+
+# for i in map(lambda x: x ** 2, range(10)): print(i)
+# def func(num):
+#     return num % 2
+# print(min(-2,3,-4,key=func))
+#
+# print(min(-2,3,-4,key=lambda x: x % 2))
+# def multipliers():
+#     return [lambda x:i*x for i in range(4)] #
+#
+# print([m(2) for m in multipliers()])
+
+# multipliers()
+# i = 0
+# [lambda x:i*x]
+# i = 1
+# [lambda x:i*x]
+# i = 2
+# [lambda x:i*x]
+# i = 3
+# [lambda x:i*x]  m = lambda x:3*2]
+# []

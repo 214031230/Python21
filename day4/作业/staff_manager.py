@@ -19,6 +19,7 @@ readme = "%shelp_file" % FILE_PATH
 
 def mysql_help():
     """
+    帮助文档
     :return:
     """
     with open(readme, mode="r", encoding="utf-8") as f1:
@@ -52,45 +53,54 @@ def table_list(path):
 
 
 def show_tables():
+    """
+    查看所有的表
+    :return:
+    """
     for i in T_LIST:
         print_log(i)
 
 
 def wrapper(main_func):
-        def inner(*args, **kwargs):
-            if user_status["user"] and user_status["status"]:
-                result = main_func(*args, **kwargs)
-                if result != None:
-                    return result
+    """
+    登录装饰器
+    :param main_func:
+    :return:
+    """
+    def inner(*args, **kwargs):
+        if user_status["user"] and user_status["status"]:
+            result = main_func(*args, **kwargs)
+            if result != None:
+                return result
+        else:
+            str_func = "%s " % (main_func,)
+            if "blog_exit" in str_func:
+                print_log("Bye Bye!!!".center(40, "-"), "error")
+                exit()
+            if "log_out" in str_func:
+                print_log("用户未登录!!!", "error")
+                exit()
+            print(">>>欢迎登录MySQL:")
+            count = 0
+            while count < 3:
+                username = input("请输入用户名：").strip()
+                password = input("请输入密码：").strip()
+                if not username or not password:
+                    print_log("用户名或密码不能为空", "error")
+                with open(USER_FILE) as f1:
+                    for i in f1:
+                        user, passwd = i.split()
+                        if username == user and password == passwd:
+                            print_log("登录成功！欢迎:<%s>" % (username,))
+                            user_status["user"] = username
+                            user_status["status"] = True
+                            main_func()
+                    else:
+                        print_log("用户名或者密码错误，请重试！")
+                count += 1
             else:
-                str_func = "%s " % (main_func,)
-                if "blog_exit" in str_func:
-                    print_log("Bye Bye!!!".center(40, "-"), "error")
-                    exit()
-                if "log_out" in str_func:
-                    print_log("用户未登录!!!", "error")
-                    exit()
-                print(">>>欢迎登录MySQL:")
-                count = 0
-                while count < 3:
-                    username = input("请输入用户名：").strip()
-                    password = input("请输入密码：").strip()
-                    if not username or not password:
-                        print_log("用户名或密码不能为空", "error")
-                    with open(USER_FILE) as f1:
-                        for i in f1:
-                            user, passwd = i.split()
-                            if username == user and password == passwd:
-                                print_log("登录成功！欢迎:<%s>" % (username,))
-                                user_status["user"] = username
-                                user_status["status"] = True
-                                main_func()
-                        else:
-                            print_log("用户名或者密码错误，请重试！")
-                    count += 1
-                else:
-                    exit()
-        return inner
+                exit()
+    return inner
 
 
 def local_table(t_file):
@@ -109,7 +119,7 @@ def local_table(t_file):
     with open(t_file) as f1:
         for line in f1:
             line = line.strip()
-            global line_title
+            # global line_title # 生命一个全局变量
             if n == 1:
                 global line_title  # 生命一个全局变量
                 line_title = line.split(",")
@@ -119,9 +129,9 @@ def local_table(t_file):
                 line_info_tmp.append(line_info)
             n += 1
     count = 0
-    for i_title in line_title:
+    for i_title in line_title:  # line_title = [id,name,age,phone,job]
         table_dic[i_title] = []
-        for i_info in line_info_tmp:
+        for i_info in line_info_tmp:  # line_info_tmp = [[1,alex,22,185422342342,it], [2,spf,22,185422342342,it]]
             table_dic[i_title].append(i_info[count])
         count += 1
     # print(table_dic)
@@ -195,6 +205,7 @@ def syntax_select(where_data, query_section):
 
 def syntax_insert(where_data, query_section):
     """
+    插入
     :param where_data:
     :param query_section: insert into user_info values(3,nezha,25,1333235322,IT);
     :return:
@@ -224,7 +235,7 @@ def syntax_insert(where_data, query_section):
 
 def syntax_update(where_data, query_section):
     """
-
+    更新
     :param where_data: = [['2', 'Egon', '23', '13304320533', 'Tearcher'], ['3', 'Egon', '23', '13304320533', 'Tearcher']]
     :param query_section:  = update user_info set age = 25
     :return:
