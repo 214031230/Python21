@@ -90,3 +90,13 @@ print('过去了%d年%d月%d天%d小时%d分钟%d秒'%(struct_time.tm_year-1970,
 
 
 
+#  计算时间差
+last_time = "1991-05-06"
+last_time_struct = time.strptime(last_time, "%Y-%m-%d")
+current_time = time.localtime()  #  time.gmtime()
+print("距离今天%s年%s月%s日%s时%s分%s秒" % (current_time[0] - last_time_struct[0],current_time[1] - last_time_struct[1],current_time[2] - last_time_struct[2],current_time[3] - last_time_struct[3],current_time[4] - last_time_struct[4],current_time[5] - last_time_struct[5]))
+
+print(last_time_struct)
+print(current_time)
+
+
