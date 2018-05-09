@@ -139,7 +139,7 @@
 #
 # func2()
 # def func():
-#     with open("test.py") as f1:
+#     with open("示例作业.py") as f1:
 #         for i in f1:
 #             yield i
 # res = func()
