@@ -5,33 +5,6 @@ brackets = re.compile("\([^()]+\)")
 exp_list = re.compile(r"[\d\.]+|/|-|\+|\*")
 
 
-def operation(exp, x):
-    """
-    实际的运算函数
-    :param exp:
-    :param x: + - * /
-    :return:
-    """
-    ride_index = exp.index(x)
-    if x == "*":
-        ret = float(exp[ride_index - 1]) * float(exp[ride_index + 1])
-        del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
-        exp.insert(ride_index - 1, ret)
-    elif x == "/":
-        ret = float(exp[ride_index - 1]) / float(exp[ride_index + 1])
-        del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
-        exp.insert(ride_index - 1, ret)
-    elif x == "+":
-        ret = float(exp[ride_index - 1]) + float(exp[ride_index + 1])
-        del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
-        exp.insert(ride_index - 1, ret)
-    elif x == "-":
-        ret = float(exp[ride_index - 1]) - float(exp[ride_index + 1])
-        del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
-        exp.insert(ride_index - 1, ret)
-    return exp
-
-
 def add_sub(exp):
     """
     此函数只计算加减法
@@ -39,16 +12,28 @@ def add_sub(exp):
     :return:
     """
     if "-" in exp and "+" not in exp:
-        exp = operation(exp, "-")
+        ride_index = exp.index("-")
+        ret = float(exp[ride_index - 1]) - float(exp[ride_index + 1])
+        del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
+        exp.insert(ride_index - 1, ret)
     elif "+" in exp and "-" not in exp:
-        exp = operation(exp, "+")
+        ride_index = exp.index("+")
+        ret = float(exp[ride_index - 1]) + float(exp[ride_index + 1])
+        del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
+        exp.insert(ride_index - 1, ret)
     elif "-" in exp and "+" in exp:
         ride_index1 = exp.index("-")
         ride_index2 = exp.index("+")
         if ride_index1 < ride_index2:
-            exp = operation(exp, "-")
+            ride_index = exp.index("-")
+            ret = float(exp[ride_index - 1]) - float(exp[ride_index + 1])
+            del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
+            exp.insert(ride_index - 1, ret)
         else:
-            exp = operation(exp, "+")
+            ride_index = exp.index("+")
+            ret = float(exp[ride_index - 1]) + float(exp[ride_index + 1])
+            del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
+            exp.insert(ride_index - 1, ret)
     else:
         return exp[0]
     return add_sub(exp)
@@ -62,16 +47,28 @@ def multiply_divide(exp):
     :return:'
     """
     if "*" in exp and "/" not in exp:
-        exp = operation(exp, "*")
+        ride_index = exp.index("*")
+        ret = float(exp[ride_index - 1]) * float(exp[ride_index + 1])
+        del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
+        exp.insert(ride_index - 1, ret)
     elif "/" in exp and "*" not in exp:
-        exp = operation(exp, "/")
+        ride_index = exp.index("/")
+        ret = float(exp[ride_index - 1]) / float(exp[ride_index + 1])
+        del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
+        exp.insert(ride_index - 1, ret)
     elif "/" in exp and "*" in exp:
         ride_index1 = exp.index("*")
         ride_index2 = exp.index("/")
         if ride_index1 < ride_index2:
-            exp = operation(exp, "*")
+            ride_index = exp.index("*")
+            ret = float(exp[ride_index - 1]) * float(exp[ride_index + 1])
+            del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
+            exp.insert(ride_index - 1, ret)
         else:
-            exp = operation(exp, "/")
+            ride_index = exp.index("/")
+            ret = float(exp[ride_index - 1]) / float(exp[ride_index + 1])
+            del exp[ride_index - 1], exp[ride_index - 1], exp[ride_index - 1]
+            exp.insert(ride_index - 1, ret)
     else:
         return exp
     return multiply_divide(exp)
@@ -106,8 +103,13 @@ def calculator(expression):
         return ret
 
 
+
+
+
 # s = "1 - 2 * ( (60-30 +(-40/5) * (9-2*5/3 + 7 /3*99/4*2998 +10 * 568/14 )) - (-4*3)/ (16-3*2) ) + ( 4 * 5 )"
 s = "1 - 2 * ( (60-30 +(40/5) * (9-2*5/3 + 7 /3*99/4*2998 +10 * 568/14 )) - (4*3)/ (16-3*2) ) + ( 4 * 5 )"
+# s = "1- 2 + (1-1 * 3 )"
+# s = "7/3*99"
 if __name__ == "__main__":
     print(eval(s))
     print(calculator(s))
