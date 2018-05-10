@@ -99,20 +99,124 @@
 
 
 
+import os
+# lst = [1, [2, [3, [4]]]]
+# def func(lst):
+#     for i in lst:
+#         if type(i) == list:
+#             return func(i)
+#         else:
+#             print(i)
+# func(lst)
+
+# 练习题1： 计算目录大小
+import os
+sum_size = 0
+def func(dirs):
+    global sum_size
+    if not os.path.exists(dirs):return "ERROR：路径不存在"
+    dirs_list = os.listdir(dirs)
+    for i in dirs_list:
+        if os.path.isdir(os.path.join(dirs, i)):
+            return func(os.path.join(dirs, i))
+        else:
+            sum_size += os.path.getsize(os.path.join(dirs, i))
+    return "目录大小：%sbyte" % sum_size
+print(func(r"..\day5\test"))
 
 
+# 练习题2：计算时间差
+import time
+def func1(last_year):
+    last_stamp = time.strptime(last_year, "%Y-%m-%d")
+    curr_stamp = time.gmtime()
+    stamp_time = time.mktime(curr_stamp) - time.mktime(last_stamp)
+    curr_struct = time.gmtime(stamp_time)
+    print("距离今天%s年%s月%s天" % (curr_struct.tm_year-1970, curr_struct.tm_mon-1, curr_struct.tm_mday - 1))
+func1("1992-08-17")
 
+# 练习题3：三级菜单
+menu = {
+    '北京': {
+        '海淀': {
+            '五道口': {
+                'soho': {},
+                '网易': {},
+                'google': {}
+            },
+            '中关村': {
+                '爱奇艺': {},
+                '汽车之家': {},
+                'youku': {},
+            },
+            '上地': {
+                '百度': {},
+            },
+        },
+        '昌平': {
+            '沙河': {
+                '老男孩': {},
+                '北航': {},
+            },
+            '天通苑': {},
+            '回龙观': {},
+        },
+        '朝阳': {},
+        '东城': {},
+    },
+    '上海': {
+        '闵行': {
+            "人民广场": {
+                '炸鸡店': {}
+            }
+        },
+        '闸北': {
+            '火车战': {
+                '携程': {}
+            }
+        },
+        '浦东': {},
+    },
+    '山东': {},
+}
 
+# 堆栈版
+def func2():
+    current_layer = []
+    last_layer = menu
+    while True:
+        for k in last_layer:
+            print(k)
+        choice = input(">>>:").strip()
+        if not choice:continue
+        if choice in last_layer:
+            current_layer.append(last_layer)
+            last_layer = last_layer[choice]
+        elif choice == "b":
+            if len(current_layer) == 0:
+                continue
+            last_layer = current_layer.pop()
+        elif choice == "q":
+            break
+        else:
+            print("节点不存在！")
+# func2()
+# 递归版
+def func3(dic):
+    while True:
+        for i in dic:
+            print(i)
+        choice = input(">>>:")
+        if not choice:continue
+        if choice == "b":return
+        if choice == "q":return "q"
+        if choice in dic:
+             ret = func3(dic[choice])
+             if ret == "q":return "q"
+        else:
+            print("节点不存在！")
 
-
-
-
-
-
-
-
-
-
+func3(menu)
 
 
 
