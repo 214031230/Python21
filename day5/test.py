@@ -135,6 +135,7 @@ def func1(last_year):
     print("距离今天%s年%s月%s天" % (curr_struct.tm_year-1970, curr_struct.tm_mon-1, curr_struct.tm_mday - 1))
 func1("1992-08-17")
 
+
 # 练习题3：三级菜单
 menu = {
     '北京': {
@@ -179,7 +180,6 @@ menu = {
     },
     '山东': {},
 }
-
 # 堆栈版
 def func2():
     current_layer = []
@@ -215,7 +215,6 @@ def func3(dic):
              if ret == "q":return "q"
         else:
             print("节点不存在！")
-
 func3(menu)
 
 
