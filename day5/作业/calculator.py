@@ -56,7 +56,7 @@ def add_sub(exp):
     elif "-" in exp and "+" in exp:
         ride_index1 = exp.index("-")
         ride_index2 = exp.index("+")
-        if ride_index1 < ride_index2:
+        if ride_index1 < ride_index2:  # 从左到右依次计算
             exp = operation(exp, "-")
         else:
             exp = operation(exp, "+")
@@ -78,7 +78,7 @@ def multiply_divide(exp):
     elif "/" in exp and "*" in exp:
         ride_index1 = exp.index("*")
         ride_index2 = exp.index("/")
-        if ride_index1 < ride_index2:
+        if ride_index1 < ride_index2:  # 从左到右依次计算
             exp = operation(exp, "*")
         else:
             exp = operation(exp, "/")
