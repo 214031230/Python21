@@ -99,16 +99,6 @@
 
 
 
-import os
-# lst = [1, [2, [3, [4]]]]
-# def func(lst):
-#     for i in lst:
-#         if type(i) == list:
-#             return func(i)
-#         else:
-#             print(i)
-# func(lst)
-
 # 练习题1： 计算目录大小
 import os
 sum_size = 0
@@ -215,10 +205,17 @@ def func3(dic):
              if ret == "q":return "q"
         else:
             print("节点不存在！")
-func3(menu)
+# func3(menu)
 
-
-
+# 练习题4：验证码
+import random
+def func4(num):
+    s = ""
+    for i in range(num):
+        char = random.choice([random.randint(0, 9), chr(random.randint(65, 90)), chr(random.randint(97, 122))])
+        s += str(char)
+    return s
+print(func4(5))
 
 
 
