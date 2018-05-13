@@ -215,7 +215,9 @@ def func4(num):
         char = random.choice([random.randint(0, 9), chr(random.randint(65, 90)), chr(random.randint(97, 122))])
         s += str(char)
     return s
-print(func4(5))
+# print(func4(5))
+
+
 
 
 
