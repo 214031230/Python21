@@ -182,19 +182,7 @@ class Classroom:
         创建班级
         :return:
         """
-        calss_info =  {"school_name": [], "school_name1": []}
-        try:
-            tab_load("school_info")
-        except json.decoder.JSONDecodeError:
-            school_info = {"name": [], "city": []}
-            tab_dump(school_info, "school_info")
-        school_info = tab_load("school_info")
-        if self.school_name in school_info["name"]:
-            print_log("ERROR:学校名经存在", "error")
-            return
-        school_info["name"].append(self.school_name)
-        school_info["city"].append(self.school_city)
-        tab_dump(school_info, "school_info")
+
 
 
 def user_view(user):
@@ -225,6 +213,7 @@ def user_view(user):
                 ret = tab_load("school_info")
                 print_log(ret)
             elif choice == "2":
+                pass
 
 
 

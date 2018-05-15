@@ -1,1 +1,1 @@
-{"user": ["spf", "admin"], "username": ["spf", "admin"], "password": ["123", "admin"], "usertype": ["student", "admin"]}
+{"username": ["spf", "admin"], "password": ["123", "123"], "usertype": ["student", "Manager"]}
