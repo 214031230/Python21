@@ -46,6 +46,9 @@ def main():
             for i in obj.menus:
                 print("\033[1;36;0m    %s\033[0m" % i[0])
             choice = input("\033[0;35;0m>>>请选择功能：\033[0m").strip()
-            func = obj.menus[int(choice) - 1][1]
-            getattr(obj, func)()
+            try:
+                func = obj.menus[int(choice) - 1][1]
+                getattr(obj, func)()
+            except ValueError:
+                print("ERROR：请输入正确的ID")
 
