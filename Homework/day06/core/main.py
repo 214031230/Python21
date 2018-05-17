@@ -46,7 +46,7 @@ def main():
     通过对象角色去调用对应的方法，根据用户选择跳转到对应的方法中
     :return:
     """
-    ret = login()
+    ret = login()  # (admin, Mnaager0
     while True:
         if ret:
             role_class = getattr(modules[__name__], ret[1])

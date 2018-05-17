@@ -26,14 +26,6 @@ class Animal:
 
 class Person(Animal):
     def __init__(self, name, sex, hp, dps, bag=[]):
-        """
-        人的特性
-        :param name:  昵称
-        :param sex: 年龄
-        :param hp: 血量
-        :param dps: 攻击力
-        :param bag: 背包
-        """
         # Animal.__init__(name, hp, dps)
         super().__init__(name, hp, dps)
         self.sex = sex
@@ -42,13 +34,6 @@ class Person(Animal):
 
 class Dog(Animal):
     def __init__(self, name, kind, hp, dps):
-        """
-        人的特性
-        :param name:  昵称
-        :param kind: 品种
-        :param hp: 血量
-        :param dps: 攻击力
-        """
         super().__init__(name, hp, dps)
         self.kind = kind
 

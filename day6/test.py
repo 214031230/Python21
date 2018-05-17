@@ -118,6 +118,206 @@
 #         print(i)
 #         shutil.move("课件/%s" % i, "课件/图/")
 
+# class Person:
+#     def __init__(self, name, hp, dps):
+#         self.name = name
+#         self.hp = hp
+#         self.dps = dps
+#
+#     def hit(self, dog):
+#         dog.hp -= self.dps
+#         print("%s打了%s.%s掉了%s血,还剩余%s的血" % (self.name,dog.name,dog.name,self.dps,dog.hp ))
+#
+#
+# class Dog:
+#     def __init__(self, name, hp, dps):
+#         self.name = name
+#         self.hp = hp
+#         self.dps = dps
+#
+#     def yao(self,person):
+#         person.hp -= self.dps
+#         print("%s打了%s.%s掉了%s血,还剩余%s的血" % (self.name,person.name,person.name,self.dps,person.hp))
+#
+# h2 = Dog("哈士奇",5000,500)
+# p1 = Person("alex", 1000, 200)
+# h2.yao(p1)
+# p1.hit(h2)
+# class Animal:
+#     def __init__(self, name, hp, dps):
+#         self.name = name
+#         self.hp = hp
+#         self.dps = dps
+#
+#     def hit(self, ani):
+#         ani.hp -= self.dps
+#         print("%s打了%s.%s掉了%s血,还剩余%s的血" % (self.name,ani.name,ani.name,self.dps,ani.hp ))
+#
+#
+# class Person(Animal):
+#     def kill(self, dog):
+#         dog.hp -= 2000
+#         print("%s打了%s.%s掉了%s血,还剩余%s的血" % (self.name, dog.name, dog.name, self.dps, dog.hp))
+#
+#
+# class Dog(Animal):
+#     def __init__(self, name, hp, dps, kind):
+#         super().__init__(name, hp, dps)
+#         self.kind = kind
+#
+#
+# h2 = Dog("哈士奇",5000,500,"藏獒")
+# p1 = Person("alex", 1000, 200)
+# h2.hit(p1)
+# p1.hit(h2)
+# p1.kill(h2)
+# print(h2.kind)
+# from cmath import pi
+# class Yuan:
+#     def __init__(self,r):
+#         self.r = r
+#     def mj(self):
+#         return pi * self.r ** 2
+#
+# class Yuanhuan:
+#     def __init__(self, outer_r, inner_r):
+#         self.outer = Yuan(outer_r)
+#         self.inner = Yuan(inner_r)
+#
+#     def mj(self):
+#         return self.outer.mj() - self.inner.mj()
+#
+# y1 = Yuanhuan(5,3)
+# print(y1.mj())
+# class Animal:
+#     def __init__(self, name, hp, dps):
+#         self.name = name
+#         self.hp = hp
+#         self.dps = dps
+#
+#     def hit(self, ani):
+#         ani.hp -= self.dps
+#         print("%s打了%s.%s掉了%s血,还剩余%s的血" % (self.name,ani.name,ani.name,self.dps,ani.hp ))
+#
+# class Person(Animal):
+#     def kill(self, dog):
+#         dog.hp -= 2000
+#         print("%s打了%s.%s掉了%s血,还剩余%s的血" % (self.name, dog.name, dog.name, self.dps, dog.hp))
+#
+#
+# class Dog(Animal):
+#     def __init__(self, name, hp, dps, kind):
+#         super().__init__(name, hp, dps)
+#         self.kind = kind
+#
+# class Wuqi:
+#     def __init__(self, name, dps):
+#         self.name = name
+#         self.dps = dps
+#     def dao(self,dog):
+#         dog.hp -= 2000
+#         print("%s打了%s.%s掉了%s血,还剩余%s的血" % (self.name, dog.name, dog.name, self.dps, dog.hp))
+#
+#
+#
+#
+# h2 = Dog("哈士奇",5000,500,"藏獒")
+# w1 = Wuqi("肉包子", 2000)
+# p1 = Person("alex", 1000, 200)
+# p1.wuqi = w1
+# p1.wuqi.dao(h2)
+
+
+# class A:
+#     def func(self):
+#         print("in A")
+#
+#
+# class B(A):
+#     def func(self):
+#         print("in B")
+#
+#
+# class C(A):
+#     def func(self):
+#         print("in C")
+#
+#
+# class D(B):
+#     def func(self):
+#         print("in D")
+#
+#
+# class E(C,D):
+#     def func(self):
+#         print("in E")
+#
+#
+# DBCA
+# print(E.mro())
+
+# import shelve
+# f = shelve.open("test.she")
+# f["name"] = ["孙鹏飞"]
+#
+# print(f["name"])
+# f.close()
+# import re
+# s = "1 - 2 * ( (60-30 +(-40/5) * (9-2*5/3 + 7 /3*99/4*2998 +10 * 568/14 )) - (-4*3)/ (16-3*2) )"
+# print(s.replace(" ", ""))
+# print(re.findall("\([^()]+\)", s))
+# print(re.findall("", s))
+
+# re1 = re.compile("\([^()]+\)")
+# print(re1.search(s))
+
+# class Animal:
+#     name = "动物"
+#
+#     def __init__(self, name):
+#         pass
+#         # self.name = name
+#
+#     def talk(self):
+#         print("%s说：我是动物！" % self.name)
+#
+#
+# class Person(Animal):
+#     def __init__(self, name):
+#         super().__init__(name)
+#         # self.name = name
+#
+#     def talk(self):
+#         # print("%s说：我是人！" % self.name)
+#         super().talk()
+#
+# spf = Person("孙鹏飞")
+# spf.talk()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
