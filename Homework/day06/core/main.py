@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-from conf import config
+from conf.config import userinfo
 from sys import modules
 from core.manager import Manager
 from core.student import StudentManager
 from core.teacher import TeacherManager
-from core import my_json
+from core.my_json import load
 
 
 def helper():
@@ -28,7 +28,7 @@ def login():
         password = input("\033[0;35;0m>>>请输入密码：\033[0m").strip()
         if not username or not password:
             print("ERROR:用户名或密码不能为空")
-        user_info = my_json.load(config.userinfo)
+        user_info = load(userinfo)
         if username in user_info["username"]:
             pwd_index = user_info["username"].index(username)
             if password == user_info["password"][pwd_index]:
