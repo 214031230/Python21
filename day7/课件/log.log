@@ -1,0 +1,14 @@
+debug message
+warning message
+2018-05-20 16:31:09,423 - root - WARNING - warning message
+2018-05-20 16:32:14,005 - root - WARNING - logger warning message
+2018-05-20 16:32:14,005 - root - ERROR - logger error message
+2018-05-20 16:32:14,005 - root - CRITICAL - logger critical message
+2018-05-20 16:32:54,253 - root - ERROR - logger error message
+2018-05-20 16:32:54,253 - root - CRITICAL - logger critical message
+2018-05-20 16:33:17,046 - root - ERROR - logger error message
+2018-05-20 16:33:17,046 - root - CRITICAL - logger critical message
+2018-05-20 16:34:12,940 - root - ERROR - logger error message
+2018-05-20 16:34:12,940 - root - CRITICAL - logger critical message
+2018-05-20 16:36:18,578 - root - ERROR - 程序出错了
+2018-05-20 16:36:18,578 - root - CRITICAL - logger critical message
