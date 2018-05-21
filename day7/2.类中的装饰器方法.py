@@ -54,9 +54,9 @@ class Circle:
 
 
 
-# c = Circle(3)
-# print(c.area)
-# print(c.perimeter)
+c = Circle(3)
+print(c.area)
+print(c.perimeter)
 
 # 示例2：property 在__私有属性中的应用
 
@@ -98,9 +98,9 @@ print(apple.price)
 apple.price = 10    # 修改苹果的价格，私有属性无法修改。所以用到了property
 print(apple.price)
 print(apple.__dict__)
-# del apple.price
-# print(apple.__dict__)
-# print(apple.price)
+del apple.price
+print(apple.__dict__)
+print(apple.price)
 
 import abc
 

@@ -1,0 +1,10 @@
+Mon, 21 May 2018 21:49:40 6.logging.py[line:22] DEBUG debug message
+Mon, 21 May 2018 21:49:40 6.logging.py[line:23] INFO info message
+Mon, 21 May 2018 21:49:40 6.logging.py[line:24] WARNING warning message
+Mon, 21 May 2018 21:49:40 6.logging.py[line:25] ERROR error message
+Mon, 21 May 2018 21:49:40 6.logging.py[line:26] CRITICAL critical message
+Mon, 21 May 2018 21:49:40 6.logging.py[line:74] DEBUG logger debug message
+Mon, 21 May 2018 21:49:40 6.logging.py[line:75] INFO logger info message
+Mon, 21 May 2018 21:49:40 6.logging.py[line:76] WARNING logger warning message
+Mon, 21 May 2018 21:49:40 6.logging.py[line:77] ERROR logger error message
+Mon, 21 May 2018 21:49:40 6.logging.py[line:78] CRITICAL logger critical message

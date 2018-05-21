@@ -1,0 +1,78 @@
+2018-05-21 21:56:30,797 - root - WARNING - logger warning message
+2018-05-21 21:56:30,797 - root - ERROR - logger error message
+2018-05-21 21:56:30,797 - root - CRITICAL - logger critical message
+2018-05-21 22:00:35,720 - root - DEBUG - logger debug message
+2018-05-21 22:00:35,721 - root - INFO - logger info message
+2018-05-21 22:00:35,721 - root - WARNING - logger warning message
+2018-05-21 22:00:35,721 - root - ERROR - logger error message
+2018-05-21 22:00:35,721 - root - CRITICAL - logger critical message
+2018-05-21 22:05:08,815 - root - DEBUG - logger debug message
+2018-05-21 22:05:08,815 - root - INFO - logger info message
+2018-05-21 22:05:08,815 - root - WARNING - logger warning message
+2018-05-21 22:05:08,815 - root - ERROR - logger error message
+2018-05-21 22:05:08,816 - root - CRITICAL - logger critical message
+2018-05-21 22:05:25,918 - root - DEBUG - logger debug message
+2018-05-21 22:05:25,918 - root - INFO - logger info message
+2018-05-21 22:05:25,918 - root - WARNING - logger warning message
+2018-05-21 22:05:25,918 - root - ERROR - logger error message
+2018-05-21 22:05:25,919 - root - CRITICAL - logger critical message
+2018-05-21 22:09:52,694 - root - DEBUG - logger debug message
+2018-05-21 22:09:52,694 - root - INFO - logger info message
+2018-05-21 22:09:52,694 - root - WARNING - logger warning message
+2018-05-21 22:09:52,695 - root - ERROR - logger error message
+2018-05-21 22:09:52,695 - root - CRITICAL - logger critical message
+2018-05-21 22:10:09,253 run_user: root - DEBUG - logger debug message
+2018-05-21 22:10:09,253 run_user: root - INFO - logger info message
+2018-05-21 22:10:09,253 run_user: root - WARNING - logger warning message
+2018-05-21 22:10:09,253 run_user: root - ERROR - logger error message
+2018-05-21 22:10:09,253 run_user: root - CRITICAL - logger critical message
+2018-05-21 22:10:38,511 run_user: root run_level: DEBUG - logger debug message
+2018-05-21 22:10:38,511 run_user: root run_level: INFO - logger info message
+2018-05-21 22:10:38,511 run_user: root run_level: WARNING - logger warning message
+2018-05-21 22:10:38,511 run_user: root run_level: ERROR - logger error message
+2018-05-21 22:10:38,511 run_user: root run_level: CRITICAL - logger critical message
+2018-05-21 22:10:55,894 run_user: root  DEBUG - logger debug message
+2018-05-21 22:10:55,894 run_user: root  INFO - logger info message
+2018-05-21 22:10:55,894 run_user: root  WARNING - logger warning message
+2018-05-21 22:10:55,894 run_user: root  ERROR - logger error message
+2018-05-21 22:10:55,894 run_user: root  CRITICAL - logger critical message
+2018-05-21 22:12:06,869  root  6.logging.py  107  DEBUG   logger debug message
+2018-05-21 22:12:06,869  root  6.logging.py  108  INFO   logger info message
+2018-05-21 22:12:06,871  root  6.logging.py  109  WARNING   logger warning message
+2018-05-21 22:12:06,871  root  6.logging.py  110  ERROR   logger error message
+2018-05-21 22:12:06,871  root  6.logging.py  111  CRITICAL   logger critical message
+2018-05-21 22:12:58,819  root  [6.logging.py  107 行]  DEBUG   logger debug message
+2018-05-21 22:12:58,819  root  [6.logging.py  108 行]  INFO   logger info message
+2018-05-21 22:12:58,819  root  [6.logging.py  109 行]  WARNING   logger warning message
+2018-05-21 22:12:58,819  root  [6.logging.py  110 行]  ERROR   logger error message
+2018-05-21 22:12:58,819  root  [6.logging.py  111 行]  CRITICAL   logger critical message
+2018-05-21 22:13:59,034  root  File 6.logging.py line 107   DEBUG   logger debug message
+2018-05-21 22:13:59,034  root  File 6.logging.py line 108   INFO   logger info message
+2018-05-21 22:13:59,035  root  File 6.logging.py line 109   WARNING   logger warning message
+2018-05-21 22:13:59,035  root  File 6.logging.py line 110   ERROR   logger error message
+2018-05-21 22:13:59,035  root  File 6.logging.py line 111   CRITICAL   logger critical message
+2018-05-21 22:14:09,366  root  File:6.logging.py line 107   DEBUG   logger debug message
+2018-05-21 22:14:09,366  root  File:6.logging.py line 108   INFO   logger info message
+2018-05-21 22:14:09,366  root  File:6.logging.py line 109   WARNING   logger warning message
+2018-05-21 22:14:09,366  root  File:6.logging.py line 110   ERROR   logger error message
+2018-05-21 22:14:09,366  root  File:6.logging.py line 111   CRITICAL   logger critical message
+2018-05-21 22:14:22,901  root  File:<6.logging.py line 107>   DEBUG   logger debug message
+2018-05-21 22:14:22,902  root  File:<6.logging.py line 108>   INFO   logger info message
+2018-05-21 22:14:22,902  root  File:<6.logging.py line 109>   WARNING   logger warning message
+2018-05-21 22:14:22,902  root  File:<6.logging.py line 110>   ERROR   logger error message
+2018-05-21 22:14:22,902  root  File:<6.logging.py line 111>   CRITICAL   logger critical message
+2018-05-21 22:14:55,786  DEBUG  root  File:<6.logging.py line 107> logger debug message
+2018-05-21 22:14:55,787  INFO  root  File:<6.logging.py line 108> logger info message
+2018-05-21 22:14:55,787  WARNING  root  File:<6.logging.py line 109> logger warning message
+2018-05-21 22:14:55,787  ERROR  root  File:<6.logging.py line 110> logger error message
+2018-05-21 22:14:55,787  CRITICAL  root  File:<6.logging.py line 111> logger critical message
+2018-05-21 22:15:24,902  DEBUG  root  logger debug message File:<6.logging.py line 107>
+2018-05-21 22:15:24,902  INFO  root  logger info message File:<6.logging.py line 108>
+2018-05-21 22:15:24,902  WARNING  root  logger warning message File:<6.logging.py line 109>
+2018-05-21 22:15:24,903  ERROR  root  logger error message File:<6.logging.py line 110>
+2018-05-21 22:15:24,903  CRITICAL  root  logger critical message File:<6.logging.py line 111>
+2018-05-21 22:15:40,596  root   DEBUG  logger debug message File:<6.logging.py line 107>
+2018-05-21 22:15:40,596  root   INFO  logger info message File:<6.logging.py line 108>
+2018-05-21 22:15:40,597  root   WARNING  logger warning message File:<6.logging.py line 109>
+2018-05-21 22:15:40,597  root   ERROR  logger error message File:<6.logging.py line 110>
+2018-05-21 22:15:40,597  root   CRITICAL  logger critical message File:<6.logging.py line 111>
