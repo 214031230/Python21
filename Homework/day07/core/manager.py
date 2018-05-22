@@ -50,53 +50,42 @@ class Manager:
             try:
                 ret = MyPickle.load(settings.schoolinfo)
                 obj = Classes(name)
-                obj.create(ret[school_num])
+                obj.create(ret[int(school_num)])
                 break
             except KeyError:
-                print_log("请输入正确的学校名称", "error")
+                Public.print("请输入正确的学校名称", "error")
 
     def show_classes(self):
         """查看班级"""
-        ret = check_show(settings.classinfo, "班级")
-        if ret:
-            for i in ret.values():
-                print_log("""
-                         学校名称：%s""" % i.name, None)
-                for k in i.classes.values():
-                    print_log("""
-                                班级名称：%s""" % k.name, None)
+        ret = Public.check_show(settings.schoolinfo, "班级")
+        for i in ret.values():
+            Public.print("学校名称：%s" % i .name, "none")
+            Public.print("班级列表：", "none")
+            for x in i.classes.values():
+                Public.print("%s.%s" % (x.num, x.name), "none")
 
     def create_course(self):
         """创建课程"""
-        name = input(">>>请输课程名称：")
-        month = input(">>>请输入课程周期：")
-        price = input(">>>请输入课程价格：")
+        name = input(">>>请输入课程名称：")
         self.show_school()
         while True:
-            school_name = input(">>>请选择学校名称：")
+            school_num = input(">>>请选择学校(输入学校ID)：")
             try:
-                ret = mypickle.load(settings.schoolinfo)
-                obj = Course(name, month, price)
-                obj.create(ret[school_name])
+                ret = MyPickle.load(settings.schoolinfo)
+                obj = Course(name)
+                obj.create(ret[int(school_num)])
                 break
             except KeyError:
-                print_log("请输入正确的学校名称", "error")
+                Public.print("请输入正确的学校名称", "error")
 
-    def show_course(self, name=None):
+    def show_course(self):
         """查看课程"""
-        if name:
-            for i in name:
-                print_log("""
-                        课程名称：%s""" % i, None)
-                return
-        ret = check_show(settings.courseinfo, "课程")
-        if ret:
-            for i in ret.values():
-                print_log("""
-                         学校名称：%s""" % i.name, None)
-                for k in i.course.values():
-                    print_log("""
-                                课程名称：%s  课程价格：%s  课程周期：%s """ % (k.name, k.price, k.moth), None)
+        ret = Public.check_show(settings.schoolinfo, "课程")
+        for i in ret.values():
+            Public.print("学校名称：%s" % i .name, "none")
+            Public.print("课程列表：", "none")
+            for x in i.course.values():
+                Public.print("%s.%s" % (x.num, x.name), "none")
             
     def create_teacher(self):
         """创建老师"""

@@ -27,11 +27,12 @@ class School:
         :return: 
         """
         ret = MyPickle.load(settings.schoolinfo)
-        if self.name in ret.keys():
-            Public.print("学校名已经存在！", "error")
-            return
+        for i in ret.values():
+            if self.name == i.name:
+                Public.print("学校名已经存在！", "error")
+                return
         self.num = len(ret) + 1
-        ret[self.name] = self
+        ret[self.num] = self
         MyPickle.dump(ret, settings.schoolinfo)
         Public.print("""
                     创建学校<%s>成功!
@@ -56,42 +57,52 @@ class Classes:
         :return: 
         """
         ret = MyPickle.load(settings.classinfo)
-        if self.name in ret.keys():
-            Public.print("班级名已经存在！", "error")
-            return
+        for i in ret.values():
+            if self.name == i.name:
+                Public.print("班级名已经存在！", "error")
+                return
         self.num = len(ret) + 1
         ret[self.name] = self
         MyPickle.dump(ret, settings.classinfo)
         Public.print("""
                     创建班级<%s>成功!
-                    学校名称：%s
+                    班级名称：%s
                 """ % (self.name, self.name))
+
+        ret = MyPickle.load(settings.schoolinfo)
+        ret[school.num].classes[self.name] = self
+        MyPickle.dump(ret, settings.schoolinfo)
 
 
 class Course:
-    def __init__(self, name, moth, price):
+    def __init__(self, name, num=0):
         """
         :param name: 课程名称
-        :param moth: 课程周期
-        :param price: 课程价格
         """
         self.name = name
-        self.moth = moth
-        self.price = price
+        self.num = num
 
     def create(self, school):
         """
         创建课程
         :return: 
         """
-        create_info(settings.courseinfo, school, self, "course")
-        print_log("""
+        ret = MyPickle.load(settings.courseinfo)
+        for i in ret.values():
+            if self.name == i.name:
+                Public.print("课程名已经存在！", "error")
+                return
+        self.num = len(ret) + 1
+        ret[self.name] = self
+        MyPickle.dump(ret, settings.courseinfo)
+        Public.print("""
                     创建课程<%s>成功!
                     课程名称：%s
-                    课程周期：%s
-                    课程价格：%s
-                    开设学校：%s
-                    """ % (self.name, self.name, self.moth, self.price, school.name), None)
+                """ % (self.name, self.name))
+
+        ret = MyPickle.load(settings.schoolinfo)
+        ret[school.num].course[self.name] = self
+        MyPickle.dump(ret, settings.schoolinfo)
 
 
 class Person:

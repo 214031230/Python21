@@ -3,7 +3,7 @@ userinfo = {"name": ["admin"], "password": ["0192023a7bbd73250516f069df18b500"],
 
 admin:
     -->创建学校
-        {学校名称：学校的对象{num,name,
+        {学校num：学校的对象{num,name,
                             course = {课程名称1：课程对象1},
                             class={班级名称1：班级对象1},
                             teacher = {老师名称1：老师对象1}，
