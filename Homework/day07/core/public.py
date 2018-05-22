@@ -1,11 +1,50 @@
 #!/usr/bin/env python3
-from core import my_pickle
-from conf.config import userinfo
+from conf.settings import userinfo
+from conf.settings import logpath
+import hashlib
+import pickle
+
+
+class MyPickle:
+    @staticmethod
+    def load_iter(filename):
+        """
+        反序列化
+        :param filename: 反序列化的文件路径
+        :return: 一个存放反序列化数据的生成器
+        """
+        with open(filename, "rb") as f:
+            while True:
+                try:
+                    yield pickle.load(f)
+                except EOFError:
+                    break
+
+    @staticmethod
+    def load(filename):
+        """
+        反序列化
+        :param filename: 反序列化的文件路径
+        :return: 一个列表，列表存储一个或者多个反序列化后的数据
+        """
+        with open(filename, "rb") as f:
+            return pickle.load(f)
+
+    @staticmethod
+    def dump(obj, filename):
+        """
+        序列化
+        :param obj: 需要进行序列化的对象
+        :param filename: 序列化后文件存储路径
+        :return:
+        """
+        with open(filename, "wb") as f:
+            pickle.dump(obj, f)
 
 
 class Public:
     @staticmethod
-    def print_log(meg, meg_type="info"):
+    def print(meg, meg_type="info"):
         """
         打印带颜色的日志
         :param meg: 日志信息
@@ -14,27 +53,30 @@ class Public:
         """
         if meg_type == "info":
             print("\033[0;36;0mINFO：%s\033[0m" % meg)
-        elif meg_type is None:
+        elif meg_type == "none":
             print("\033[0;36;0m%s\033[0m" % meg)
         elif meg_type is "menus":
-            print("\033[0;35;0m%s\033[0m" % meg)
+            print("\033[0;35;0m%s\033[0m" % meg, end="")
         elif meg_type == "error":
             print("\033[0;31;0mERROR：%s\033[0m" % meg)
         else:
             return "Error：参数不正确"
-
+        
     @staticmethod
-    def create_user(name, user_type):
+    def log():
         """
-        创建用户登录权限
-        :param name:  用户名
-        :param user_type: 用户类型
-        :return:
+        定义日志输出合格
+        :return: 返回一个可以直接使用的logger对象
         """
-        ret1 = my_pickle.load(userinfo)
-        ret1["name"].append(name)
-        ret1["password"].append("123456")
-        ret1["type"].append(user_type)
+        import logging
+        logger = logging.getLogger()
+        fh = logging.FileHandler(logpath, encoding='utf-8')
+        formatter = logging.Formatter(
+            '%(asctime)s  %(name)s   %(levelname)s  %(message)s File:<%(filename)s line %(lineno)d>')  # 定义文件日志格式
+        logger.setLevel(logging.DEBUG)
+        fh.setFormatter(formatter)
+        logger.addHandler(fh)
+        return logger
 
     @staticmethod
     def check_show(file, name):
@@ -44,62 +86,64 @@ class Public:
         :param name:
         :return:
         """
-        ret = my_pickle.load(file)
+        ret = MyPickle.load(file)
         if not ret:
-            Public.print_log("还未创建%s" % name, "error")
+            Public.print("还未创建%s" % name, "error")
         return ret
 
-    @staticmethod
-    def create_info(file, school_obj, obj, argv):
-        """
-        创建班级和课程
-        :param file: 表文件
-        :param school_obj: 学校对象
-        :param obj: 班级或者课程对象
-        :param argv: 字段属性
-        :return:
-        """
-        ret = my_pickle.load(file)
-        if not ret.get(school_obj.name):
-            ret[school_obj.name] = school_obj
-        info = getattr(ret[school_obj.name], argv)
-        if obj.name in info:
-            Public.print_log("%s已经存在！" % obj.name, "error")
-            return
-        info2 = getattr(ret[school_obj.name], argv)
-        info2[obj.name] = obj
-        my_pickle.dump(ret, file)
 
+class MyLogin:
+    """
+    用户登录类
+    包含登录和注册两个方法，密码进行md5加密
+    """
     @staticmethod
-    def create_info_user(file, school_obj, course_obj, obj):
-        ret = my_pickle.load(file)
-        school_obj.course = course_obj
-        ret[obj.name] = school_obj
-        my_pickle.dump(ret, file)
-        Public.create_user(obj.name, "TeacherManager")
+    def __encryption_md5_salt1(username, password):  # 加密方式私有化
+        """
+        md5动态加盐
+        :return: 加密后的字符串
+        """
+        md5obj = hashlib.md5(username.encode("utf-8"))   # 实例化一个md5摘要算法的对象
+        md5obj.update(password.encode('utf-8'))  # 使用md5算法的对象来操作字符串
+        return md5obj.hexdigest()
 
     @staticmethod
     def login():
-        print("\033[0;31;0m")
-        print("欢迎访问校园管理系统".center(50, "-"))
-        print(">>>请登录：\033[0m")
+        """
+        用户登录
+        :return: （用户名，用户权限）
+        """
+        Public.print("欢迎访问校园管理系统".center(50, "-"), "none")
+        Public.print(">>>请登录:", "none")
         count = 0
         while count < 3:
-            username = input("\033[0;35;0m>>>请输入用户名：\033[0m").strip()
-            password = input("\033[0;35;0m>>>请输入密码：\033[0m").strip()
+            username = input(">>>请输入用户名：").strip()
+            password = input(">>>请输入密码：").strip()
             if not username or not password:
-                print("ERROR:用户名或密码不能为空")
-            ret = my_pickle(userinfo)
-            user_info = ret.load()
-            print(user_info)
+                Public.print("用户名或密码不能为空", "error")
+            password = MyLogin.__encryption_md5_salt1(username, password)
+            user_info = MyPickle.load(userinfo)
             if username in user_info["name"]:
                 pwd_index = user_info["name"].index(username)
                 if password == user_info["password"][pwd_index]:
+                    log = Public.log()
+                    log.info("%s登录了系统" % username)
                     return username, user_info["type"][pwd_index]
                 else:
-                    print("ERROR：密码错误")
+                    Public.print("密码错误", "error")
             else:
-                print("ERROR：用户名不存在")
+                Public.print("用户名不存在", "error")
             count += 1
 
-
+    @staticmethod
+    def register(name, user_type):
+        """
+        创建用户登录权限
+        :param name:  用户名
+        :param user_type: 用户类型
+        :return:
+        """
+        ret = MyPickle.load(userinfo)
+        ret["name"].append(name)
+        ret["password"].append("123456")
+        ret["type"].append(user_type)
