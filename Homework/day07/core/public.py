@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 from conf.settings import userinfo
+from conf import settings
+from sys import modules
 from conf.settings import logpath
 import hashlib
 import pickle
@@ -61,7 +63,7 @@ class Public:
             print("\033[0;31;0mERROR：%s\033[0m" % meg)
         else:
             return "Error：参数不正确"
-        
+
     @staticmethod
     def log():
         """
@@ -90,6 +92,86 @@ class Public:
         if not ret:
             Public.print("还未创建%s" % name, "error")
         return ret
+
+    @staticmethod
+    def m_create_course_class(name, str_class, file, types):
+        """
+        创建班级和课程
+        :param name: 班级名称
+        :param str_class: 班级类
+        :param file: 班级表或者课程表
+        :return:
+        """
+        while 1:
+            school_num = int(input(">>>请选择学校(输入学校ID)：").strip())
+            ret = MyPickle.load(settings.schoolinfo)
+            obj = str_class(name)
+            ret = obj.create(ret[school_num], file, types)
+            print(ret)
+            if ret == 1:
+                return 1
+
+    @staticmethod
+    def m_create_student_teacher(name, name_types, str_class, school_num, classes_num, course_num, file, types):
+        """
+        创建老师和学生
+        :param name: 账号名称
+        :param name_types: 账号类型
+        :param str_class: 老师或者学生类
+        :param school_num: 学校ID
+        :param classes_num: 班级ID
+        :param course_num: 课程ID
+        :param file:老师表或者学生表
+        :return:
+        """
+        school_ret = MyPickle.load(settings.schoolinfo)
+        classes_ret = MyPickle.load(settings.classinfo)
+        course_ret = MyPickle.load(settings.courseinfo)
+        obj = str_class(name)
+        obj.create(school_ret[school_num], classes_ret[classes_num], course_ret[course_num], file, types)
+        MyLogin.register(name, name_types)
+
+    @staticmethod
+    def m_show_course_class(school_num, types, s_types):
+        """
+        查看班级和课程
+        :param school_num: 学校ID
+        :param types: 属性名称：classes 或者 course
+        :param s_types: 班级或者课程
+        :return:
+        """
+        ret = Public.check_show(settings.schoolinfo, s_types)
+        if not school_num:
+            for i in ret.values():
+                Public.print("学校名称：%s" % i .name, "none")
+                Public.print("%s列表：" % s_types, "none")
+                for x in getattr(i, types).values():
+                    Public.print("%s.%s" % (x.num, x.name), "none")
+        else:
+            Public.print("学校名称：%s" % ret[school_num].name, "none")
+            Public.print("%s列表：" % s_types, "none")
+            for i in getattr(ret[school_num], types).values():
+                Public.print("%s.%s" % (i.num, i.name), "none")
+
+    @staticmethod
+    def m_show_teacher_student(user_name, types, s_types, user_file):
+        """
+        查看老师或者学生
+        :param user_name: 账号名称
+        :param types: 属性 classes course
+        :param s_types: 老师或者学生
+        :param user_file: studentinfo 或者teacherinfo
+        :return:
+        """
+        ret = Public.check_show(user_file, s_types)
+        for i in ret.values():
+            if not user_name:
+                Public.print("%s.name：<%s> school：<%s> course：<%s> classes:<%s>"
+                            % (i.num, i.name, i.school.name, [i.course[x].name for x in i.course], [i.classes[x].name for x in i.classes]))
+            else:
+                if user_name == i.name:
+                    Public.print("%s: <%s>"
+                                 % (types, [getattr(i, types)[x].name for x in getattr(i, types)]))
 
 
 class MyLogin:
@@ -143,7 +225,9 @@ class MyLogin:
         :param user_type: 用户类型
         :return:
         """
+        password = MyLogin.__encryption_md5_salt1(name, "123")
         ret = MyPickle.load(userinfo)
         ret["name"].append(name)
-        ret["password"].append("123456")
+        ret["password"].append(password)
         ret["type"].append(user_type)
+        MyPickle.dump(ret, userinfo)

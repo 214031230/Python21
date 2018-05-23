@@ -4,24 +4,24 @@ userinfo = {"name": ["admin"], "password": ["0192023a7bbd73250516f069df18b500"],
 admin:
     -->创建学校
         {学校num：学校的对象{num,name,
-                            course = {课程名称1：课程对象1},
-                            class={班级名称1：班级对象1},
-                            teacher = {老师名称1：老师对象1}，
-                            student = {学生名称1：学生对象1}
+                            course = {课程num：课程对象1},
+                            classes={班级num：班级对象1},
+                            teacher = {老师num：老师对象1}，
+                            student = {学生num：学生对象1}
                             }}
     -->创建班级
         -->先选择学校
-            {班级名称：班级对象{num,name,
-                                class:{学生名称:学生对象}}
+            {班级num：班级对象{num,name,
+                                classes:{学生名称:学生对象}}
     -->创建课程
         -->先选择学校
-            {课程名称：课程对象{num,name}}
+            {课程num：课程对象{num,name}}
     -->创建老师
         -->选择学校-->选择课程-->选择班级
-            {老师名称：老师对象{num,name,course=课程对象,class={班级名称：班级对象}}}
+            {老师num：老师对象{num,name,school=学校对象,course={课程num：课程对象},classes={班级num：班级对象}}}
     -->创建学生
         -->选择学校-->选择课程-->选择班级
-            {学生名称：学生对象{num,name,course=课程对象,class=班级对象}}
+            {学生num：学生对象{num,name,school=学校对象,course={课程num：课程对象},classes={班级num：班级对象}}}
     -->查看学校
         -->查看所有学校
     -->查看班级

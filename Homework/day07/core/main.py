@@ -25,11 +25,14 @@ def main():
             print("-"*136)
             choice = input(">>>请选择菜单功能(输入数字ID)：").strip()
             if choice.upper() == "Q":choice = "12"
-            func = obj.menus[int(choice) - 1][1]
-            if hasattr(obj, func):
+            try:
+                func = obj.menus[int(choice) - 1][1]
                 getattr(obj, func)()
-            else:
+            except IndexError:
                 Public.print("请输入正确的ID！！！", "error")
+            except ValueError:
+                Public.print("请输入正确的ID！！！", "error")
+
 
 
 
