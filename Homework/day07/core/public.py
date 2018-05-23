@@ -81,6 +81,12 @@ class Public:
         return logger
 
     @staticmethod
+    def helper():
+        with open(settings.help_file, encoding="utf-8") as f:
+            for i in f:
+                print(i.rstrip())
+
+    @staticmethod
     def check_show(file, name):
         """
         检测是否创建
@@ -90,7 +96,7 @@ class Public:
         """
         ret = MyPickle.load(file)
         if not ret:
-            Public.print("还未创建%s" % name, "error")
+            Public.print("请先创建%s" % name, "error")
         return ret
 
     @staticmethod
@@ -100,16 +106,26 @@ class Public:
         :param name: 班级名称
         :param str_class: 班级类
         :param file: 班级表或者课程表
-        :return:
+        :param types: 属性classes 或者 course
+        :return: 0=返回
+                  1=成功
+                  2=班级已经存在，返回上一层
         """
         while 1:
-            school_num = int(input(">>>请选择学校(输入学校ID)：").strip())
-            ret = MyPickle.load(settings.schoolinfo)
-            obj = str_class(name)
-            ret = obj.create(ret[school_num], file, types)
-            print(ret)
-            if ret == 1:
-                return 1
+            school_num = input(">>>请选择学校(输入学校ID)(B/b返回)：").strip()
+            if not school_num:continue
+            if school_num.upper() == "B": return 0
+            try:
+                school_num = int(school_num)
+                ret = MyPickle.load(settings.schoolinfo)
+                obj = str_class(name)
+                ret = obj.create(ret[school_num], file, types)
+                if ret == 0:return 2
+                if ret == 1:return 1
+            except ValueError:
+                Public.print("ID不存在，请重试！", "error")
+            except KeyError:
+                Public.print("ID不存在，请重试！", "error")
 
     @staticmethod
     def m_create_student_teacher(name, name_types, str_class, school_num, classes_num, course_num, file, types):
@@ -122,13 +138,17 @@ class Public:
         :param classes_num: 班级ID
         :param course_num: 课程ID
         :param file:老师表或者学生表
-        :return:
+        :param types 属性 student 或者 teacher
+        :return: 0 = 已经存在
+                  1 = 成功
         """
         school_ret = MyPickle.load(settings.schoolinfo)
         classes_ret = MyPickle.load(settings.classinfo)
         course_ret = MyPickle.load(settings.courseinfo)
         obj = str_class(name)
-        obj.create(school_ret[school_num], classes_ret[classes_num], course_ret[course_num], file, types)
+        ret = obj.create(school_ret[school_num], classes_ret[classes_num], course_ret[course_num], file, types)
+        if ret == 0:return 0
+        if ret == 1:return 1
         MyLogin.register(name, name_types)
 
     @staticmethod
@@ -146,12 +166,12 @@ class Public:
                 Public.print("学校名称：%s" % i .name, "none")
                 Public.print("%s列表：" % s_types, "none")
                 for x in getattr(i, types).values():
-                    Public.print("%s.%s" % (x.num, x.name), "none")
+                    Public.print("          %s.%s" % (x.num, x.name), "none")
         else:
             Public.print("学校名称：%s" % ret[school_num].name, "none")
             Public.print("%s列表：" % s_types, "none")
             for i in getattr(ret[school_num], types).values():
-                Public.print("%s.%s" % (i.num, i.name), "none")
+                Public.print("          %s.%s" % (i.num, i.name), "none")
 
     @staticmethod
     def m_show_teacher_student(user_name, types, s_types, user_file):

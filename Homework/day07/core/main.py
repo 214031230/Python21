@@ -13,6 +13,7 @@ def main():
     通过对象角色去调用对应的方法，根据用户选择跳转到对应的方法中
     :return:
     """
+    Public.helper()
     ret = MyLogin.login()
     while True:
         if ret:

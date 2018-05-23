@@ -39,69 +39,79 @@ class Manager:
 
     def create_classes(self):
         """创建班级"""
-        name = input(">>>请输入班级名称：")
-        self.show_school()
-        ret = Public.m_create_course_class(name, Classes, settings.classinfo, "classes")
-        if ret == 1:self.log.info("%s创建了班级:%s" % (self.name, name))
-        # while True:
-        #     school_num = int(input(">>>请选择学校(输入学校ID)：").strip())
-        #     try:
-        #         ret = MyPickle.load(settings.schoolinfo)
-        #         obj = Classes(name)
-        #         obj.create(ret[school_num])
-        #         break
-        #     except KeyError:
-        #         Public.print("请输入正确的学校ID", "error")
+        while 1:
+            name = input(">>>请输入班级名称(B/b返回)：").strip()
+            if not name:continue
+            if name.upper() == "B":break
+            if self.show_school():
+                ret = Public.m_create_course_class(name, Classes, settings.classinfo, "classes")
+                if ret == 0:break
+                if ret == 2:continue
+                if ret == 1:self.log.info("%s创建了班级:%s" % (self.name, name))
 
     def create_course(self):
         """创建课程"""
-        name = input(">>>请输入课程名称：")
-        self.show_school()
-        ret = Public.m_create_course_class(name, Course, settings.courseinfo, "course")
-        if ret == 1: self.log.info("%s创建了课程:%s" % (self.name, name))
-        # while True:
-        #     school_num = int(input(">>>请选择学校(输入学校ID)："))
-        #     try:
-        #         ret = MyPickle.load(settings.schoolinfo)
-        #         obj = Course(name)
-        #         obj.create(ret[school_num])
-        #         break
-        #     except KeyError:
-        #         Public.print("请输入正确的学校ID", "error")
+        while 1:
+            name = input(">>>请输入课程名称(B/b返回)：").strip()
+            if not name: continue
+            if name.upper() == "B": break
+            if self.show_school():
+                ret = Public.m_create_course_class(name, Course, settings.courseinfo, "course")
+                if ret == 0: break
+                if ret == 2: continue
+                if ret == 1: self.log.info("%s创建了课程:%s" % (self.name, name))
 
     def create_teacher(self):
         """创建老师"""
-        name = input(">>>请输入老师名称：")
-        self.show_school()
-        school_num = int(input(">>>请选择学校(输入学校ID)：").strip())
-        self.show_classes(school_num)
-        classes_num = int(input(">>>请选择班级(输入班级ID)：").strip())
-        self.show_course(school_num)
-        course_num = int(input(">>>请选择课程(输入课程ID)：").strip())
-        Public.m_create_student_teacher(name, "TeacherManager", Teacher, school_num, classes_num, course_num, settings.teacherinfo, "teacher")
-        # school_ret = MyPickle.load(settings.schoolinfo)
-        # classes_ret = MyPickle.load(settings.classinfo)
-        # course_ret = MyPickle.load(settings.courseinfo)
-        # obj = Teacher(name)
-        # obj.create(school_ret[school_num], classes_ret[classes_num], course_ret[course_num])
-        # MyLogin.register(name, "TeacherManager")
+        while True:
+            try:
+                name = input(">>>请输入老师名称(B/b返回)：").strip()
+                if name.upper() == "B":break
+                self.show_school()
+                school_num = input(">>>请选择学校(输入学校ID)(B/b返回)：").strip()
+                if school_num.upper() == "B":break
+                school_num = int(school_num)
+                self.show_classes(school_num)
+                classes_num = input(">>>请选择班级(输入班级ID)(B/b返回)：").strip()
+                if classes_num.upper() == "B":break
+                classes_num = int(classes_num)
+                self.show_course(school_num)
+                course_num = input(">>>请选择课程(输入课程ID)(B/b返回)：").strip()
+                if course_num.upper() == "B":break
+                course_num = int(course_num)
+                ret = Public.m_create_student_teacher(name, "TeacherManager", Teacher, school_num, classes_num, course_num, settings.teacherinfo, "teacher")
+                if ret == 0:continue
+                if ret == 1:self.log.info("%s创建了老师:%s" % (self.name, name))
+            except ValueError:
+                Public.print("请输入正确的ID！！！", "error")
+            except KeyError:
+                Public.print("请输入正确的ID！！！", "error")
 
     def create_student(self):
         """创建学生"""
-        name = input(">>>请输入学生名称：")
-        self.show_school()
-        school_num = int(input(">>>请选择学校(输入学校ID)：").strip())
-        self.show_classes(school_num)
-        classes_num = int(input(">>>请选择班级(输入班级ID)：").strip())
-        self.show_course(school_num)
-        course_num = int(input(">>>请选择课程(输入课程ID)：").strip())
-        Public.m_create_student_teacher(name, "StudentManager", Student, school_num, classes_num, course_num, settings.studentinfo, "student")
-        # school_ret = MyPickle.load(settings.schoolinfo)
-        # classes_ret = MyPickle.load(settings.classinfo)
-        # course_ret = MyPickle.load(settings.courseinfo)
-        # obj = Student(name)
-        # obj.create(school_ret[school_num], classes_ret[classes_num], course_ret[course_num])
-        # MyLogin.register(name, "StudentManager")
+        while True:
+            try:
+                name = input(">>>请输入学生名称(B/b返回)：").strip()
+                if name.upper() == "B":break
+                self.show_school()
+                school_num = input(">>>请选择学校(输入学校ID)(B/b返回)：").strip()
+                if school_num.upper() == "B":break
+                school_num = int(school_num)
+                self.show_classes(school_num)
+                classes_num = input(">>>请选择班级(输入班级ID)(B/b返回)：").strip()
+                if classes_num.upper() == "B":break
+                classes_num = int(classes_num)
+                self.show_course(school_num)
+                course_num = input(">>>请选择课程(输入课程ID)(B/b返回)：").strip()
+                if course_num.upper() == "B":break
+                course_num = int(course_num)
+                ret = Public.m_create_student_teacher(name, "StudentManager", Student, school_num, classes_num, course_num, settings.studentinfo, "student")
+                if ret == 0:continue
+                if ret == 1:self.log.info("%s创建了学生:%s" % (self.name, name))
+            except ValueError:
+                Public.print("请输入正确的ID！！！", "error")
+            except KeyError:
+                Public.print("请输入正确的ID！！！", "error")
 
     def show_school(self):
         """查看学校"""
@@ -110,65 +120,28 @@ class Manager:
             Public.print("学校列表：", "none")
             for i in ret.values():
                 Public.print("        %s.%s" % (i.num, i.name), "none")
+            return 1
         self.log.info("%s查看了学校" % self.name)
 
     def show_classes(self, school_num=0):
         """查看班级"""
         Public.m_show_course_class(school_num, "classes", "班级")
-        # ret = Public.check_show(settings.schoolinfo, "班级")
-        # if not school_num:
-        #     for i in ret.values():
-        #         Public.print("学校名称：%s" % i .name, "none")
-        #         Public.print("班级列表：", "none")
-        #         for x in i.classes.values():
-        #             Public.print("%s.%s" % (x.num, x.name), "none")
-        # else:
-        #     Public.print("学校名称：%s" % ret[school_num].name, "none")
-        #     Public.print("班级列表：", "none")
-        #     for i in ret[school_num].classes.values():
-        #         Public.print("%s.%s" % (i.num, i.name), "none")
+        self.log.info("%s查看了学生:%s" % self.name)
 
     def show_course(self, school_num=0):
         """查看课程"""
         Public.m_show_course_class(school_num, "course", "课程")
-        # ret = Public.check_show(settings.schoolinfo, "课程")
-        # if not school_num:
-        #     for i in ret.values():
-        #         Public.print("学校名称：%s" % i .name, "none")
-        #         Public.print("课程列表：", "none")
-        #         for x in i.course.values():
-        #             Public.print("%s.%s" % (x.num, x.name), "none")
-        # else:
-        #     Public.print("学校名称：%s" % ret[school_num].name, "none")
-        #     Public.print("课程列表：", "none")
-        #     for i in ret[school_num].course.values():
-        #         Public.print("%s.%s" % (i.num, i.name), "none")
+        self.log.info("%s查看了课程:%s" % self.name)
 
     def show_teacher(self, teacher_name="", types=""):
         """查看老师"""
         Public.m_show_teacher_student(teacher_name, types, "老师", settings.teacherinfo)
-        # ret = Public.check_show(settings.teacherinfo, "老师")
-        # for i in ret.values():
-        #     if not teacher_name:
-        #         Public.print("%s.老师名称：<%s> 所属学校：<%s> 所交课程：<%s> 所教班级:<%s>"
-        #                     % (i.num, i.name, i.school.name, [i.course[x].name for x in i.course], [i.classes[x].name for x in i.classes]))
-        #     else:
-        #         if teacher_name == i.name:
-        #             Public.print("%s: <%s>"
-        #                          % (types, [getattr(i, types)[x].name for x in getattr(i, types)]))
+        self.log.info("%s查看了老师:%s" % self.name)
 
     def show_student(self, student_name="", types=""):
         """查看学生"""
         Public.m_show_teacher_student(student_name, types, "学生", settings.studentinfo)
-        # ret = Public.check_show(settings.studentinfo, "学生")
-        # for i in ret.values():
-        #     if not student_name:
-        #         Public.print("%s.学生名称：<%s> 所属学校：<%s> 所学课程：<%s> 所所班级:<%s>"
-        #                         % (i.num, i.name, i.school.name, [i.course[x].name for x in i.course], [i.classes[x].name for x in i.classes]))
-        #     else:
-        #         if student_name == i.name:
-        #             Public.print("%s: <%s>"
-        #                          % (types, [getattr(i, types)[x].name for x in getattr(i, types)]))
+        self.log.info("%s查看了学生:%s" % self.name)
 
     def sys_exit(self):
         """程序退出"""

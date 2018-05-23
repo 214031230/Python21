@@ -10,3 +10,5 @@ courseinfo = r"../db/courseinfo"
 # 日志路径配置
 logpath = r"../logs/access.log"
 
+# 帮助文档路径
+help_file = r"../file/help"

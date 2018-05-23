@@ -55,13 +55,14 @@ class Classes:
         :param school: 学校对象
         :param file: 班级或者课程表
         :param types: 属性classes或者course
-        :return:
+        :return: 0 = 名称已经存在
+                  1 = 创建成功
         """
         ret = MyPickle.load(file)
         for i in ret.values():
             if self.name == i.name:
                 Public.print("%s已经存在！" % self.name, "error")
-                return
+                return 0
         self.num = len(ret) + 1
         ret[self.num] = self
         MyPickle.dump(ret, file)
@@ -78,34 +79,6 @@ class Classes:
 
 class Course(Classes):
     pass
-    # def __init__(self, name, num=0):
-    #     """
-    #     :param name: 课程名称
-    #     """
-    #     self.name = name
-    #     self.num = num
-
-    # def create(self, school):
-    #     """
-    #     创建课程
-    #     :return:
-    #     """
-    #     ret = MyPickle.load(settings.courseinfo)
-    #     for i in ret.values():
-    #         if self.name == i.name:
-    #             Public.print("课程名已经存在！", "error")
-    #             return
-    #     self.num = len(ret) + 1
-    #     ret[self.num] = self
-    #     MyPickle.dump(ret, settings.courseinfo)
-    #     Public.print("""
-    #                 创建课程<%s>成功!
-    #                 课程名称：%s
-    #             """ % (self.name, self.name))
-    #
-    #     ret = MyPickle.load(settings.schoolinfo)
-    #     ret[school.num].course[self.num] = self
-    #     MyPickle.dump(ret, settings.schoolinfo)
 
 
 class Teacher:
@@ -131,13 +104,14 @@ class Teacher:
         :param course_obj: 课程对象
         :param file : 文件
         :param types：属性 student或者teacher
-        :return:
+        :return: 1 = 成功
+                  0 = 已经存在
         """
         ret = MyPickle.load(file)
         for i in ret.values():
             if self.name == i.name:
                 Public.print("%s已经存在！" % self.name, "error")
-                return
+                return 0
         self.num = len(ret) + 1
         self.school = school_obj
         self.classes.clear()
@@ -157,48 +131,9 @@ class Teacher:
         ret = MyPickle.load(settings.schoolinfo)
         getattr(ret[school_obj.num], types)[self.num] = self
         MyPickle.dump(ret, settings.schoolinfo)
+        return 1
 
 
 class Student(Teacher):
     pass
-    # def __init__(self, name, num=0, school="", course={}, classes={}):
-    #     """
-    #     :param name:
-    #     :param num:
-    #     :param school:
-    #     :param course:
-    #     :param classes:
-    #     """
-    #     self.name = name
-    #     self.num = num
-    #     self.school = school
-    #     self.course = course
-    #     self.classes = classes
-    #
-    # def create(self, school_obj, classes_obj, course_obj):
-    #     ret = MyPickle.load(settings.studentinfo)
-    #     print([ret[i].course for i in ret])
-    #     for i in ret.values():
-    #         if self.name == i.name:
-    #             Public.print("学生已经存在！", "error")
-    #             return
-    #     self.num = len(ret) + 1
-    #     self.school = school_obj
-    #     self.classes.clear()
-    #     self.classes[classes_obj.num] = classes_obj
-    #     self.course.clear()
-    #     self.course[course_obj.num] = course_obj
-    #     ret[self.num] = self
-    #     MyPickle.dump(ret, settings.studentinfo)
-    #     Public.print("""
-    #                 创建学生<%s>成功!
-    #                 学生名称：%s
-    #                 所属学校：%s
-    #                 所属班级：%s
-    #                 所学课程：%s
-    #             """ % (self.name, self.name, school_obj.name, classes_obj.name, course_obj.name))
-    #
-    #     ret = MyPickle.load(settings.schoolinfo)
-    #     ret[school_obj.num].student[self.num] = self
-    #     MyPickle.dump(ret, settings.schoolinfo)
 
