@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from core.school import *
-from conf import settings
 from core.public import *
 
 
@@ -56,20 +55,22 @@ class Manager:
         Public.m_create_info(self, Student, settings.studentinfo, "student", "StudentManager")
 
     def show_school(self):
-        """查看学校"""
+        """
+        查看学校
+        :return: 1 = 找到学校返回1
+        """
         ret = Public.check_show(settings.schoolinfo, "学校")
         if ret:
             Public.print("学校列表：", "none")
             for i in ret.values():
                 Public.print("        %s.%s" % (i.num, i.name), "none")
+            self.log.info("%s查看了学校信息" % self.name)
             return 1
-        self.log.info("%s查看了学校" % self.name)
 
     def show_classes(self, school_num=0):
         """查看班级"""
-        ret = Public.m_show_course_class(school_num, "classes", "班级")
+        Public.m_show_course_class(school_num, "classes", "班级")
         self.log.info("%s查看了学生" % self.name)
-        return ret
 
     def show_course(self, school_num=0):
         """查看课程"""

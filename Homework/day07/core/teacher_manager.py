@@ -1,36 +1,44 @@
 #!/usr/bin/env python3
 from core.manager import Manager
 from core.public import *
-from conf import settings
 
 
 class TeacherManager:
     menus = [["1.查看负责的班级 ", "show_classes"],
-             ["2.查看负责课程 ", "show_course"],
+             ["2.查看教的课程 ", "show_course"],
              ["3.老师选择课程 ", "binding_course"],
              ["4.老师选择班级 ", "binding_classes"],
              ["Q/q.退出 ", "sys_exit"]]
 
     def __init__(self, name):
+        """
+        :param name: 老师账号
+        """
         self.name = name
         self.log = Public.log()
 
     def show_classes(self):
+        """查看班级"""
         obj = Manager(self.name)
         obj.show_teacher(self.name, "classes")
 
     def show_course(self):
+        """查看课程"""
         obj = Manager(self.name)
         obj.show_teacher(self.name, "course")
 
     def binding_course(self):
-        ret = Public.choice_classes_course(self.name, Manager, settings.teacherinfo, settings.courseinfo, "course","show_course")
+        """关联课程"""
+        ret = Public.choice_classes_course(self.name, Manager, settings.teacherinfo,
+                                           settings.courseinfo, "course", "show_course")
         if ret == 1:Public.print("""
                         成功关联课程！！！
                         """)
 
     def binding_classes(self):
-        ret = Public.choice_classes_course(self.name, Manager, settings.teacherinfo, settings.classinfo, "classes", "show_classes")
+        """关联班级"""
+        ret = Public.choice_classes_course(self.name, Manager, settings.teacherinfo,
+                                           settings.classinfo, "classes", "show_classes")
         if ret == 1:Public.print("""
                         成功关联班级！！！
                         """)

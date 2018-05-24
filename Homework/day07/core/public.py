@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-from conf.settings import userinfo
 from conf import settings
-from sys import modules
-from conf.settings import logpath
 import hashlib
 import pickle
 
@@ -27,7 +24,7 @@ class MyPickle:
         """
         反序列化
         :param filename: 反序列化的文件路径
-        :return: 一个列表，列表存储一个或者多个反序列化后的数据
+        :return: 返回文件内容
         """
         with open(filename, "rb") as f:
             return pickle.load(f)
@@ -72,9 +69,9 @@ class Public:
         """
         import logging
         logger = logging.getLogger()
-        fh = logging.FileHandler(logpath, encoding='utf-8')
+        fh = logging.FileHandler(settings.logpath, encoding='utf-8')
         formatter = logging.Formatter(
-            '%(asctime)s  %(name)s   %(levelname)s  %(message)s File:<%(filename)s line %(lineno)d>')  # 定义文件日志格式
+            '%(asctime)s  %(name)s   %(levelname)s  %(message)s File:<%(filename)s line %(lineno)d>')
         logger.setLevel(logging.DEBUG)
         fh.setFormatter(formatter)
         logger.addHandler(fh)
@@ -82,6 +79,10 @@ class Public:
 
     @staticmethod
     def helper():
+        """
+        帮助文档
+        :return:
+        """
         with open(settings.help_file, encoding="utf-8") as f:
             for i in f:
                 print(i.rstrip())
@@ -90,13 +91,14 @@ class Public:
     def check_show(file, name):
         """
         检测是否创建
-        :param file:
-        :param name:
-        :return:
+        :param file: 表文件
+        :param name: 学校、课程、班级、老师、学生
+        :return: 返回反序列化后的表内容
         """
         ret = MyPickle.load(file)
         if not ret:
             Public.print("请先创建%s" % name, "error")
+            return None
         return ret
 
     @staticmethod
@@ -108,7 +110,9 @@ class Public:
         :param file: 班级、课程、老师、学生表
         :param types: 班级、课程、老师、学生属性
         :param u_types: 老师、学生类型
-        :return:
+        :return:  0 = 返回
+                   1 = 创建成功
+                   2 = 老师或者学生已经存在
         """
         while 1:
             name = input(">>>请输入%s名称(B/b返回)：" % types).strip()
@@ -166,39 +170,39 @@ class Public:
         """
         ret = Public.check_show(settings.schoolinfo, s_types)
         if not school_num:
-            for i in ret.values():
-                Public.print("学校名称：%s" % i .name, "none")
-                Public.print("%s列表：" % s_types, "none")
-                for x in getattr(i, types).values():
-                    Public.print("          %s.%s" % (x.num, x.name), "none")
+            if ret:
+                for i in ret.values():
+                    Public.print("学校名称：%s" % i .name, "none")
+                    Public.print("%s列表：" % s_types, "none")
+                    for x in getattr(i, types).values():
+                        Public.print("          %s.%s" % (x.num, x.name), "none")
         else:
-            if len(getattr(ret[school_num], types)) == 0:
-                Public.print("无可用%s" % s_types, "error")
-                return 0
-            Public.print("学校名称：%s" % ret[school_num].name, "none")
-            Public.print("%s列表：" % s_types, "none")
-            for i in getattr(ret[school_num], types).values():
-                Public.print("          %s.%s" % (i.num, i.name), "none")
+            if ret:
+                Public.print("学校名称：%s" % ret[school_num].name, "none")
+                Public.print("%s列表：" % s_types, "none")
+                for i in getattr(ret[school_num], types).values():
+                    Public.print("          %s.%s" % (i.num, i.name), "none")
 
     @staticmethod
     def m_show_teacher_student(user_name, types, s_types, user_file):
         """
         查看老师或者学生
-        :param user_name: 账号名称
+        :param user_name: 老师、学生账号名称
         :param types: 属性 classes course
         :param s_types: 老师或者学生
         :param user_file: studentinfo 或者teacherinfo
         :return:
         """
         ret = Public.check_show(user_file, s_types)
-        for i in ret.values():
-            if not user_name:
-                Public.print("%s.name：<%s> school：<%s> course：<%s> classes:<%s>"
-                            % (i.num, i.name, i.school.name, [i.course[x].name for x in i.course], [i.classes[x].name for x in i.classes]))
-            else:
-                if user_name == i.name:
-                    Public.print("%s: <%s>"
-                                 % (types, [getattr(i, types)[x].name for x in getattr(i, types)]))
+        if ret:
+            for i in ret.values():
+                if not user_name:
+                    Public.print("%s.name：<%s> school：<%s> course：<%s> classes:<%s>"
+                                % (i.num, i.name, i.school.name, [i.course[x].name for x in i.course], [i.classes[x].name for x in i.classes]))
+                else:
+                    if user_name == i.name:
+                        Public.print("%s: <%s>"
+                                     % (types, [getattr(i, types)[x].name for x in getattr(i, types)]))
 
     @staticmethod
     def choice_classes_course(name, s_class, st_file, c_file, types, show):
@@ -208,6 +212,7 @@ class Public:
         :param st_file: 老师或者学生表
         :param c_file: 课程或者班级表
         :param types: 课程或者班级属性
+        :param show :
         :return:
         """
         ret1 = MyPickle.load(st_file)
@@ -273,7 +278,7 @@ class MyLogin:
             username = input(">>>请输入用户名：").strip()
             password = input(">>>请输入密码：").strip()
             password = MyLogin.__encryption_md5_salt1(username, password)
-            user_info = MyPickle.load(userinfo)
+            user_info = MyPickle.load(settings.userinfo)
             if username in user_info["name"]:
                 pwd_index = user_info["name"].index(username)
                 if password == user_info["password"][pwd_index]:
@@ -295,8 +300,8 @@ class MyLogin:
         :return:
         """
         password = MyLogin.__encryption_md5_salt1(name, "123")
-        ret = MyPickle.load(userinfo)
+        ret = MyPickle.load(settings.userinfo)
         ret["name"].append(name)
         ret["password"].append(password)
         ret["type"].append(user_type)
-        MyPickle.dump(ret, userinfo)
+        MyPickle.dump(ret, settings.userinfo)

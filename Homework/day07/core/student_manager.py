@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from core.manager import Manager
 from core.public import *
-from conf import settings
 
 
 class StudentManager:
@@ -12,27 +11,36 @@ class StudentManager:
              ["Q/q.退出 ", "sys_exit"]]
 
     def __init__(self, name):
+        """
+        :param name: 学生账号
+        """
         self.name = name
         self.log = Public.log()
 
     def show_classes(self):
+        """查看班级"""
         obj = Manager(self.name)
         obj.show_student(self.name, "classes")
 
     def show_course(self):
+        """查看课程"""
         obj = Manager(self.name)
         obj.show_student(self.name, "course")
 
     def binding_course(self):
-        ret = Public.choice_classes_course(self.name, Manager, settings.studentinfo, settings.courseinfo, "course", "show_course")
+        """关联课程"""
+        ret = Public.choice_classes_course(self.name, Manager, settings.studentinfo,
+                                           settings.courseinfo, "course", "show_course")
         if ret == 1:Public.print("""
-                        成功关联%课程！！！
+                        成功关联课程！！！
                         """)
 
     def binding_classes(self):
-        ret = Public.choice_classes_course(self.name, Manager, settings.studentinfo, settings.classinfo, "classes", "show_classes")
+        """关联班级"""
+        ret = Public.choice_classes_course(self.name, Manager, settings.studentinfo,
+                                           settings.classinfo, "classes", "show_classes")
         if ret == 1:Public.print("""
-                        成功关联%班级！！！
+                        成功关联班级！！！
                         """)
 
     def sys_exit(self):
