@@ -100,56 +100,60 @@ class Public:
         return ret
 
     @staticmethod
-    def m_create_course_class(name, str_class, file, types):
+    def m_create_info(self, s_class, file, types="", u_types=""):
         """
-        创建班级和课程
-        :param name: 班级名称
-        :param str_class: 班级类
-        :param file: 班级表或者课程表
-        :param types: 属性classes 或者 course
+        创建班级、课程、老师、学生
+        :param self: 班级、课程、老师、学生对象
+        :param s_class: 班级、课程、老师、学生类
+        :param file: 班级、课程、老师、学生表
+        :param types: 班级、课程、老师、学生属性
+        :param u_types: 老师、学生类型
+        :return:
+        """
+        while 1:
+            name = input(">>>请输入%s名称(B/b返回)：" % types).strip()
+            if not name:continue
+            if name.upper() == "B":break
+            if self.show_school():
+                if types:
+                    ret = Public.m_create(name, s_class, file, types, u_types)
+                else:
+                    ret = Public.m_create(name, s_class, file, types)
+                if ret == 0:break
+                if ret == 2:continue
+                if ret == 1:
+                    self.log.info("%s创建了%s:%s" % (self.name, types, name))
+                    return 1
+
+    @staticmethod
+    def m_create(name, str_class, file, types, name_types=""):
+        """
+        创建班级、课程、老师、学生
+        :param name: 创建班级、课程、老师、学生名称
+        :param str_class: 创建班级、课程、老师、学生类
+        :param file: 创建班级、课程、老师、学生表
+        :param types: 创建班级、课程、老师、学生属性
+        :param name_types：用户权限
         :return: 0=返回
                   1=成功
                   2=班级已经存在，返回上一层
         """
+
         while 1:
             school_num = input(">>>请选择学校(输入学校ID)(B/b返回)：").strip()
-            if not school_num:continue
+            if not school_num: continue
             if school_num.upper() == "B": return 0
             try:
                 school_num = int(school_num)
-                ret = MyPickle.load(settings.schoolinfo)
+                school_ret = MyPickle.load(settings.schoolinfo)
                 obj = str_class(name)
-                ret = obj.create(ret[school_num], file, types)
-                if ret == 0:return 2
-                if ret == 1:return 1
-            except ValueError:
+                ret = obj.create(school_ret[school_num], file, types)
+                if name_types:
+                    MyLogin.register(name, name_types)
+                if ret == 0: return 2
+                if ret == 1: return 1
+            except Exception:
                 Public.print("ID不存在，请重试！", "error")
-            except KeyError:
-                Public.print("ID不存在，请重试！", "error")
-
-    @staticmethod
-    def m_create_student_teacher(name, name_types, str_class, school_num, classes_num, course_num, file, types):
-        """
-        创建老师和学生
-        :param name: 账号名称
-        :param name_types: 账号类型
-        :param str_class: 老师或者学生类
-        :param school_num: 学校ID
-        :param classes_num: 班级ID
-        :param course_num: 课程ID
-        :param file:老师表或者学生表
-        :param types 属性 student 或者 teacher
-        :return: 0 = 已经存在
-                  1 = 成功
-        """
-        school_ret = MyPickle.load(settings.schoolinfo)
-        classes_ret = MyPickle.load(settings.classinfo)
-        course_ret = MyPickle.load(settings.courseinfo)
-        obj = str_class(name)
-        ret = obj.create(school_ret[school_num], classes_ret[classes_num], course_ret[course_num], file, types)
-        if ret == 0:return 0
-        if ret == 1:return 1
-        MyLogin.register(name, name_types)
 
     @staticmethod
     def m_show_course_class(school_num, types, s_types):
@@ -168,6 +172,9 @@ class Public:
                 for x in getattr(i, types).values():
                     Public.print("          %s.%s" % (x.num, x.name), "none")
         else:
+            if len(getattr(ret[school_num], types)) == 0:
+                Public.print("无可用%s" % s_types, "error")
+                return 0
             Public.print("学校名称：%s" % ret[school_num].name, "none")
             Public.print("%s列表：" % s_types, "none")
             for i in getattr(ret[school_num], types).values():
@@ -192,6 +199,50 @@ class Public:
                 if user_name == i.name:
                     Public.print("%s: <%s>"
                                  % (types, [getattr(i, types)[x].name for x in getattr(i, types)]))
+
+    @staticmethod
+    def choice_classes_course(name, s_class, st_file, c_file, types, show):
+        """
+        :param name: 老师或者学生账号
+        :param s_class: Manager类
+        :param st_file: 老师或者学生表
+        :param c_file: 课程或者班级表
+        :param types: 课程或者班级属性
+        :return:
+        """
+        ret1 = MyPickle.load(st_file)
+        for i in ret1:
+            if name == ret1[i].name:
+                MyPickle.load(settings.schoolinfo)
+                obj = s_class(name)
+                getattr(obj, show)(ret1[i].school.num)
+                choice = input(">>>请选择(输入数字ID):")
+                ret2 = MyPickle.load(c_file)
+                obj1 = ret2[int(choice)]
+                getattr(ret1[i], types)[obj1.num] = obj1
+                MyPickle.dump(ret1, st_file)
+                return 1
+
+    @staticmethod
+    def choice_info(obj, s_types):
+        """
+        创建老师和学生的时候选择相关信息
+        :param obj: 老师或者学生对象
+        :param s_types: 老师或者学生
+        :return:
+        """
+        while True:
+            try:
+                name = input(">>>请输入%s名称(B/b返回)：" % s_types).strip()
+                if not name: continue
+                if name.upper() == "B": return 0
+                obj.show_school()
+                school_num = input(">>>请选择学校(输入学校ID)(B/b返回)：").strip()
+                if school_num.upper() == "B": return 0
+                school_num = int(school_num)
+                return name, school_num
+            except Exception:
+                Public.print("请输入正确的ID！！！", "error")
 
 
 class MyLogin:
@@ -221,8 +272,6 @@ class MyLogin:
         while count < 3:
             username = input(">>>请输入用户名：").strip()
             password = input(">>>请输入密码：").strip()
-            if not username or not password:
-                Public.print("用户名或密码不能为空", "error")
             password = MyLogin.__encryption_md5_salt1(username, password)
             user_info = MyPickle.load(userinfo)
             if username in user_info["name"]:

@@ -41,13 +41,17 @@ class School:
 
 
 class Classes:
-    def __init__(self, name, num=0):
+    def __init__(self, name, num=0, teacher={}, student={}):
         """
         :param name: 班级名称
         :param num: 班级id
+        :param teacher:班级有那老师
+        :param student:班级有哪些学生
         """
         self.name = name
         self.num = num
+        self.teacher = teacher
+        self.student = student
 
     def create(self, school, file, types):
         """
@@ -59,10 +63,10 @@ class Classes:
                   1 = 创建成功
         """
         ret = MyPickle.load(file)
-        for i in ret.values():
-            if self.name == i.name:
-                Public.print("%s已经存在！" % self.name, "error")
-                return 0
+        # for i in ret.values():
+        #     if self.name == i.name:
+        #         Public.print("%s已经存在！" % self.name, "error")
+        #         return 0
         self.num = len(ret) + 1
         ret[self.num] = self
         MyPickle.dump(ret, file)
@@ -96,12 +100,10 @@ class Teacher:
         self.course = course
         self.classes = classes
 
-    def create(self, school_obj, classes_obj, course_obj, file, types):
+    def create(self, school_obj, file, types):
         """
         创建老师
         :param school_obj: 学校对象
-        :param classes_obj: 班级对象
-        :param course_obj: 课程对象
         :param file : 文件
         :param types：属性 student或者teacher
         :return: 1 = 成功
@@ -114,19 +116,13 @@ class Teacher:
                 return 0
         self.num = len(ret) + 1
         self.school = school_obj
-        self.classes.clear()
-        self.classes[classes_obj.num] = classes_obj
-        self.course.clear()
-        self.course[course_obj.num] = course_obj
         ret[self.num] = self
         MyPickle.dump(ret, file)
         Public.print("""
                     Create<%s>Success!
                     Name：%s
                     School：%s
-                    Classes：%s
-                    Course：%s
-                """ % (self.name, self.name, school_obj.name, classes_obj.name, course_obj.name))
+                """ % (self.name, self.name, school_obj.name))
 
         ret = MyPickle.load(settings.schoolinfo)
         getattr(ret[school_obj.num], types)[self.num] = self
