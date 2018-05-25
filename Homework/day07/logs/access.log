@@ -3473,3 +3473,61 @@
 2018-05-24 22:25:36,111  root   INFO  s1查看了学生 File:<manager.py line 88>
 2018-05-24 22:25:36,111  root   INFO  s1查看了学生 File:<manager.py line 88>
 2018-05-24 22:25:36,111  root   INFO  s1查看了学生 File:<manager.py line 88>
+2018-05-25 10:45:48,105  root   INFO  admin登录了系统 File:<public.py line 286>
+2018-05-25 10:45:49,051  root   INFO  admin查看了学校信息 File:<manager.py line 67>
+2018-05-25 10:45:49,051  root   INFO  admin查看了学校信息 File:<manager.py line 67>
+2018-05-25 10:45:51,314  root   INFO  admin查看了学生 File:<manager.py line 73>
+2018-05-25 10:45:51,314  root   INFO  admin查看了学生 File:<manager.py line 73>
+2018-05-25 10:45:51,314  root   INFO  admin查看了学生 File:<manager.py line 73>
+2018-05-25 10:45:54,796  root   INFO  admin查看了课程 File:<manager.py line 78>
+2018-05-25 10:45:54,796  root   INFO  admin查看了课程 File:<manager.py line 78>
+2018-05-25 10:45:54,796  root   INFO  admin查看了课程 File:<manager.py line 78>
+2018-05-25 10:45:54,796  root   INFO  admin查看了课程 File:<manager.py line 78>
+2018-05-25 10:45:59,186  root   INFO  admin查看了老师 File:<manager.py line 83>
+2018-05-25 10:45:59,186  root   INFO  admin查看了老师 File:<manager.py line 83>
+2018-05-25 10:45:59,186  root   INFO  admin查看了老师 File:<manager.py line 83>
+2018-05-25 10:45:59,186  root   INFO  admin查看了老师 File:<manager.py line 83>
+2018-05-25 10:45:59,186  root   INFO  admin查看了老师 File:<manager.py line 83>
+2018-05-25 10:46:01,676  root   INFO  admin查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:01,676  root   INFO  admin查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:01,676  root   INFO  admin查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:01,676  root   INFO  admin查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:01,676  root   INFO  admin查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:01,676  root   INFO  admin查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:03,438  root   INFO  admin 退出了程序 File:<manager.py line 92>
+2018-05-25 10:46:03,438  root   INFO  admin 退出了程序 File:<manager.py line 92>
+2018-05-25 10:46:03,438  root   INFO  admin 退出了程序 File:<manager.py line 92>
+2018-05-25 10:46:03,438  root   INFO  admin 退出了程序 File:<manager.py line 92>
+2018-05-25 10:46:03,438  root   INFO  admin 退出了程序 File:<manager.py line 92>
+2018-05-25 10:46:03,438  root   INFO  admin 退出了程序 File:<manager.py line 92>
+2018-05-25 10:46:03,438  root   INFO  admin 退出了程序 File:<manager.py line 92>
+2018-05-25 10:46:07,641  root   INFO  t1登录了系统 File:<public.py line 286>
+2018-05-25 10:46:08,530  root   INFO  t1查看了老师 File:<manager.py line 83>
+2018-05-25 10:46:08,530  root   INFO  t1查看了老师 File:<manager.py line 83>
+2018-05-25 10:46:08,530  root   INFO  t1查看了老师 File:<manager.py line 83>
+2018-05-25 10:46:08,902  root   INFO  t1查看了老师 File:<manager.py line 83>
+2018-05-25 10:46:08,902  root   INFO  t1查看了老师 File:<manager.py line 83>
+2018-05-25 10:46:08,902  root   INFO  t1查看了老师 File:<manager.py line 83>
+2018-05-25 10:46:08,902  root   INFO  t1查看了老师 File:<manager.py line 83>
+2018-05-25 10:46:08,902  root   INFO  t1查看了老师 File:<manager.py line 83>
+2018-05-25 10:46:11,457  root   INFO  t1 退出了程序 File:<teacher_manager.py line 48>
+2018-05-25 10:46:11,457  root   INFO  t1 退出了程序 File:<teacher_manager.py line 48>
+2018-05-25 10:46:11,457  root   INFO  t1 退出了程序 File:<teacher_manager.py line 48>
+2018-05-25 10:46:11,457  root   INFO  t1 退出了程序 File:<teacher_manager.py line 48>
+2018-05-25 10:46:11,457  root   INFO  t1 退出了程序 File:<teacher_manager.py line 48>
+2018-05-25 10:46:11,457  root   INFO  t1 退出了程序 File:<teacher_manager.py line 48>
+2018-05-25 10:46:17,363  root   INFO  s1登录了系统 File:<public.py line 286>
+2018-05-25 10:46:18,116  root   INFO  s1查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:18,116  root   INFO  s1查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:18,116  root   INFO  s1查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:18,483  root   INFO  s1查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:18,483  root   INFO  s1查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:18,483  root   INFO  s1查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:18,483  root   INFO  s1查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:18,483  root   INFO  s1查看了学生 File:<manager.py line 88>
+2018-05-25 10:46:20,497  root   INFO  s1 退出了程序 File:<student_manager.py line 48>
+2018-05-25 10:46:20,497  root   INFO  s1 退出了程序 File:<student_manager.py line 48>
+2018-05-25 10:46:20,497  root   INFO  s1 退出了程序 File:<student_manager.py line 48>
+2018-05-25 10:46:20,497  root   INFO  s1 退出了程序 File:<student_manager.py line 48>
+2018-05-25 10:46:20,497  root   INFO  s1 退出了程序 File:<student_manager.py line 48>
+2018-05-25 10:46:20,497  root   INFO  s1 退出了程序 File:<student_manager.py line 48>
