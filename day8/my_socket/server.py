@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import socket
 # sk = socket.socket()
 # sk.bind(("127.0.0.1", 9000))
 # sk.listen()
@@ -24,12 +23,25 @@ import socket
 # sk.close()
 
 
+# sk = socket.socket(type=socket.SOCK_DGRAM)
+# sk.bind(("127.0.0.1", 9000))
+# while True:
+#     msg, address = sk.recvfrom(1024)
+#     print("%s:%s" % (address[0], msg))
+#     if msg == "q":break
+#     s_msg = input(">>>:")
+#     sk.sendto(s_msg.encode("utf-8"), address)
+# sk.close()
+import socket
+import json
 sk = socket.socket(type=socket.SOCK_DGRAM)
 sk.bind(("127.0.0.1", 9000))
 while True:
     msg, address = sk.recvfrom(1024)
-    print("%s:%s" % (address[0], msg))
-    if msg == "q":break
-    s_msg = input(">>>:")
-    sk.sendto(s_msg.encode("utf-8"), address)
+    msg = json.loads(msg)
+    print(msg, address)
+    if msg[0] == "spf" and msg[1] == "123":
+        sk.sendto("欢迎登录!!!".encode("utf-8"), address)
+    else:
+        sk.sendto("密码错误!!!".encode("utf-8"), address)
 sk.close()
