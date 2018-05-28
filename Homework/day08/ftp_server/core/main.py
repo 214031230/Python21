@@ -22,5 +22,4 @@ def socket_server():
             else:
                 conn.send("Fail".encode("utf-8"))
         conn.close()
-    # sk.close()
 
