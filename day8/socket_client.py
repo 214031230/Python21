@@ -83,19 +83,15 @@
 import socket
 import struct
 import os
-import hashlib
 import json
 
 s = socket.socket()
 s.connect(('127.0.0.1', 8080))
 
-header = {"size": os.path.getsize(r"D:\老男孩python自动化21期\Python21\day8\2.模块和包.py")}
+header = {"size": os.path.getsize(r"C:\Users\lanpa\Desktop\Python自动化21期\Python21\day8\test.py")}
 header_bytes = json.dumps(header).encode("utf-8")
 header_len_bytes = struct.pack("i", len(header_bytes))
 s.send(header_len_bytes)
 s.send(header_bytes)
-with open(r"D:\老男孩python自动化21期\Python21\day8\2.模块和包.py", encoding="utf-8") as f:
-    for i in f:
-        s.send(i.encode("utf-8"))
 s.close()
 
