@@ -29,9 +29,3 @@
 #     msg, address = sk.recvfrom(1024)
 #     print("%s.%s:%s" % (address[0], address[1], msg.decode("utf-8")))
 # sk.close()
-
-# t1 = (1,2,3)
-# import json
-# ret = json.dumps(t1).encode("utf-8")
-#
-# print(json.loads(ret))

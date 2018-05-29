@@ -129,7 +129,8 @@ tcp_socket_server.listen()
 conn, address = tcp_socket_server.accept()
 num = conn.recv(4)
 header = conn.recv(struct.unpack("i", num)[0])
-print(conn.recv(json.loads(header)["size"]))
+print(header)
+# print(conn.recv(json.loads(header)["size"]))
 conn.close()
 
 
