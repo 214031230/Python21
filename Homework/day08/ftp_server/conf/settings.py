@@ -5,3 +5,6 @@ bind_port = 9000
 
 # 用户表路径
 user_info = r"../db/user_info"
+
+# 用户家目录
+home_dir = r"../home"

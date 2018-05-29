@@ -5,4 +5,4 @@ sys_path.insert(0, path.dirname(path.dirname(path.abspath(__file__))))
 from core import main
 
 if __name__ == "__main__":
-    main.socket_server()
+    main.run()
