@@ -8,3 +8,6 @@ help_file = r"../file/help"
 
 # 下载路径
 download = r"../download_dir"
+
+# 日志路径
+log_dir = r"../logs/access.log"

@@ -1,0 +1,24 @@
+2018-05-30 23:38:00,242  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:38:55,594  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:39:02,659  root   INFO  spf下载../download_dir\test.txt文件成功 File:<FtpClient.py line 85>
+2018-05-30 23:39:50,866  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:39:55,803  root   INFO  spf下载../download_dir\test.txt文件成功 File:<FtpClient.py line 85>
+2018-05-30 23:40:41,122  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:40:47,180  root   INFO  spf下载../download_dir\计算器优秀的作业.zip文件成功 File:<FtpClient.py line 85>
+2018-05-30 23:43:27,521  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:45:05,345  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:45:22,498  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:46:53,009  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:46:54,930  root   INFO  spf上传D:\老男孩python自动化21期\Python21\Homework\day08\ftp-client\test.py文件成功 File:<FtpClient.py line 114>
+2018-05-30 23:49:19,105  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:49:20,268  root   INFO  spf上传C:\Users\xuxu\Documents\Tencent Files\214031230\FileRecv\计算器优秀的作业.zip文件成功 File:<FtpClient.py line 113>
+2018-05-30 23:49:44,991  root   INFO  spf上传C:\Users\xuxu\Downloads\课件.zip文件成功 File:<FtpClient.py line 113>
+2018-05-30 23:51:04,602  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:52:03,409  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:52:19,705  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:52:34,602  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:53:01,609  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:53:03,658  root   INFO  spf上传D:\老男孩python自动化21期\Python21\Homework\day08\ftp-client\test.py文件成功 File:<FtpClient.py line 115>
+2018-05-30 23:53:18,521  root   INFO  spf上传C:\Users\xuxu\Downloads\课件.zip文件成功 File:<FtpClient.py line 115>
+2018-05-30 23:53:36,994  root   INFO  spf登录成功 File:<FtpClient.py line 23>
+2018-05-30 23:53:42,945  root   INFO  spf上传C:\Users\xuxu\Downloads\课件.zip文件成功 File:<FtpClient.py line 115>

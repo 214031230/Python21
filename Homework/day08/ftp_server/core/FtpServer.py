@@ -37,14 +37,12 @@ class FtpServer:
                             self.log.info("%s登录失败" % self.username)
                             continue
                 while self.status:
-                    data = self.conn.recv(1024).decode("utf-8").split()
+                    data = self.conn.recv(1024).decode("utf-8").split(" ", 1)
                     cmd = data[0]
                     if hasattr(self, cmd):
                         getattr(self, cmd)(data)
                     else:
                         print("命令不存在")
-                self.status = False
-                self.conn.close()
             except ConnectionResetError:
                 pass
             except Exception as e:
@@ -54,7 +52,7 @@ class FtpServer:
                 self.conn.close()
 
     def login(self):
-        """用户登录，登录成功返回True,失败返回False"""
+        """用户登录，登录成功返回True,失败返回False，修改self.status为True或者False"""
         data = self.conn.recv(1024)
         self.username, password = json.loads(data.decode("utf-8"))
         user_obj = User(self.username, password)
@@ -82,15 +80,10 @@ class FtpServer:
         :param data:
         :return:
         """
-        if len(data) != 2:
-            self.conn.send("False".encode("utf-8"))
-            return
-        else:
-            self.conn.send("True".encode("utf-8"))
-        file_path = os.path.join(os.path.join(self.home_dir, self.username), data[1])
+        file_path = os.path.join(os.path.join(self.home_dir, self.username), data[1].strip())
         if os.path.exists(file_path):
             self.conn.send("True".encode("utf-8"))
-            header_file = {"name": data[1],
+            header_file = {"name": data[1].strip(),
                            "size": os.path.getsize(file_path),
                            "md5": Public.get_md5(file_path)}
 
@@ -103,7 +96,7 @@ class FtpServer:
             with open(file_path, "rb") as f:
                 for line in f:
                     self.conn.send(line)
-            self.log.info("%s下载了%s文件" % (self.username, data[1]))
+            self.log.info("%s下载了%s文件" % (self.username, data[1].strip()))
         else:
             self.conn.send("False".encode("utf-8"))
 
@@ -113,12 +106,6 @@ class FtpServer:
         :param data:
         :return:
         """
-        print(data)
-        if len(data) != 2:
-            self.conn.send("False".encode("utf-8"))
-            return
-        else:
-            self.conn.send("True".encode("utf-8"))
         header_len_bytes = self.conn.recv(4)
         header_len = struct.unpack("i", header_len_bytes)[0]
         header = self.conn.recv(header_len).decode("utf-8")
