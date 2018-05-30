@@ -7,4 +7,7 @@ bind_port = 9000
 user_info = r"../db/user_info"
 
 # 用户家目录
-home_dir = r"../home"
+home_dir = r"../home_dir"
+
+# 日志路径
+log_dir = r"../logs/access.log"

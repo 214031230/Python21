@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 import socket
 import json
+import os
+import struct
 from core.UserManager import User
+from conf import settings
+from core.Pubulic import Public
 
 
 class FtpServer:
@@ -11,41 +15,116 @@ class FtpServer:
         self.server = socket.socket()
         self.server.bind((host, port))
         self.server.listen()
+        self.home_dir = settings.home_dir
+        self.status = False
+        self.log = Public.log()
 
     def run(self):
-        print("Server start")
+        """启动server等待用户输入指令"""
+        print("<---Server start---->")
         while True:
-            self.conn, self.address = self.server.accept()
-            print(self.address)
-            while True:
-                if self.login():
-                    self.conn.send("True".encode("utf-8"))
+            try:
+                self.conn, self.address = self.server.accept()
+                print(self.address)
+                if not self.status:
+                    while True:
+                        if self.login():
+                            self.conn.send("True".encode("utf-8"))
+                            self.log.info("%s登录成功" % self.username)
+                            break
+                        else:
+                            self.conn.send("False".encode("utf-8"))
+                            self.log.info("%s登录失败" % self.username)
+                            continue
+                while self.status:
                     data = self.conn.recv(1024).decode("utf-8").split()
                     cmd = data[0]
                     if hasattr(self, cmd):
-                        func = getattr(self, cmd)
-                        func(data)
+                        getattr(self, cmd)(data)
                     else:
                         print("命令不存在")
-                else:
-                    self.conn.send("False".encode("utf-8"))
-            self.conn.close()
+                self.status = False
+                self.conn.close()
+            except ConnectionResetError:
+                pass
+            except Exception as e:
+                print(e)
+            finally:
+                self.status = False
+                self.conn.close()
 
     def login(self):
+        """用户登录，登录成功返回True,失败返回False"""
         data = self.conn.recv(1024)
-        username, password = json.loads(data.decode("utf-8"))
-        user_obj = User(username, password)
-        return user_obj.login()
+        self.username, password = json.loads(data.decode("utf-8"))
+        user_obj = User(self.username, password)
+        self.status = user_obj.login()
+        return self.status
 
     def ls(self, data):
-        print("in ls")
-        pass
+        """查看用户家目录下的文件列表，不同操作系统执行不同的系统命令"""
+        if len(data) != 1:
+            self.conn.send("False".encode("utf-8"))
+            return
+        else:
+            self.conn.send("True".encode("utf-8"))
+        if os.name == "nt":
+            ret = os.popen("dir %s" % os.path.abspath(os.path.join(self.home_dir, self.username))).read()
+        else:
+            ret = os.popen("ls -l %s" % os.path.abspath(os.path.join(self.home_dir, self.username))).read()
+        self.conn.send(ret.encode("utf-8"))
+        print(ret)
 
     def get(self, data):
-        print("in get")
-        pass
+        """
+         client下载文件操作
+        :param data:
+        :return:
+        """
+        if len(data) != 2:
+            self.conn.send("False".encode("utf-8"))
+            return
+        else:
+            self.conn.send("True".encode("utf-8"))
+        file_path = os.path.join(os.path.join(self.home_dir, self.username), data[1])
+        if os.path.exists(file_path):
+            self.conn.send("True".encode("utf-8"))
+            header_file = {"name": data[1],
+                           "size": os.path.getsize(file_path),
+                           "md5": Public.get_md5(file_path)}
+            # 发送字典长度
+            header_file_json = json.dumps(header_file)
+            header_file_len = struct.pack("i", len(header_file_json))
+            self.conn.send(header_file_len)
+            # 发送字典
+            self.conn.send(header_file_json.encode("utf-8"))
+            # 发送文件
+            with open(file_path, "rb") as f:
+                for line in f:
+                    self.conn.send(line)
+        else:
+            self.conn.send("False".encode("utf-8"))
 
     def put(self, data):
-        print("in put")
-        pass
+        """
+        client上传文件操作
+        :param data:
+        :return:
+        """
+        if len(data) != 2:
+            self.conn.send("False".encode("utf-8"))
+            return
+        else:
+            self.conn.send("True".encode("utf-8"))
+        header_len_bytes = self.conn.recv(4)
+        header_len = struct.unpack("i", header_len_bytes)[0]
+        header = self.conn.recv(header_len).decode("utf-8")
+        header = json.loads(header)
+        file_path = os.path.join(os.path.join(settings.home_dir, self.username), header["name"])
+        recv_size = 0
+        with open(file_path, "wb") as f:
+            while recv_size < header["size"]:
+                line = self.conn.recv(1024)
+                f.write(line)
+                recv_size += len(line)
 

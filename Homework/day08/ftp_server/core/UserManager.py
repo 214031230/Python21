@@ -23,8 +23,8 @@ class User:
         if self.user_dic.get(self.username):
             return False
         else:
-            self.__password = self.__encrypt()
-            self.user_dic[self.username] = self.__password
+            password = self.__encrypt()
+            self.user_dic[self.username] = password
             MyJson.dump(self.user_dic, self.user_info)
             os.mkdir(r"%s/%s" % (settings.home_dir, self.username))
             print("%s创建成功" % self.username)
@@ -33,9 +33,13 @@ class User:
     def login(self):
         """用户登录，登录成功返回True 失败返回False"""
         for i in self.user_dic:
-            self.__password = self.__encrypt()
-            if self.username == i and self.__password == self.user_dic[i]:
+            password = self.__encrypt()
+            if self.username == i and password == self.user_dic[i]:
                 print("%s登录成功" % self.username)
                 return True
         else:
             return False
+# user = input(">>")
+# pwd = input(">>")
+# user_obj = User(user,pwd)
+# user_obj.add()
