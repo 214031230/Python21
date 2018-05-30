@@ -18,6 +18,7 @@ class FtpClient:
         """启动client，用户输入指令"""
         Public.helper()
         if self.login():
+            print("INFO：登录成功，请输入指令")
             while True:
                 data = input(">>>:").strip()
                 if not data:continue
@@ -73,6 +74,11 @@ class FtpClient:
                         line = self.client.recv(1024)
                         f.write(line)
                         recv_size += len(line)
+                if Public.get_md5(file_path) == header["md5"]:
+                    print("INFO：下载成功")
+                else:
+                    print("ERROR：下载失败")
+
             else:
                 print("Error：文件不存在")
         else:
@@ -89,16 +95,21 @@ class FtpClient:
                 header_file = {"name": file_name,
                                "size": os.path.getsize(file_path),
                                "md5": Public.get_md5(file_path)}
-                # 发送字典长度
+
                 header_file_json = json.dumps(header_file)
                 header_file_len = struct.pack("i", len(header_file_json))
                 self.client.send(header_file_len)
-                # 发送字典
+
                 self.client.send(header_file_json.encode("utf-8"))
-                # 发送文件
+
                 with open(file_path, "rb") as f:
                     for line in f:
                         self.client.send(line)
+                if self.client.recv(1024).decode("utf-8") == "True":
+                    print("INFO：上传成功")
+                else:
+                    print("ERROR：上传失败")
+
             else:
                 print("Error：文件不存在")
         else:

@@ -70,6 +70,7 @@ class FtpServer:
             self.conn.send("True".encode("utf-8"))
         if os.name == "nt":
             ret = os.popen("dir %s" % os.path.abspath(os.path.join(self.home_dir, self.username))).read()
+            self.log.info("%s查看了家目录" % self.username)
         else:
             ret = os.popen("ls -l %s" % os.path.abspath(os.path.join(self.home_dir, self.username))).read()
         self.conn.send(ret.encode("utf-8"))
@@ -92,16 +93,17 @@ class FtpServer:
             header_file = {"name": data[1],
                            "size": os.path.getsize(file_path),
                            "md5": Public.get_md5(file_path)}
-            # 发送字典长度
+
             header_file_json = json.dumps(header_file)
             header_file_len = struct.pack("i", len(header_file_json))
             self.conn.send(header_file_len)
-            # 发送字典
+
             self.conn.send(header_file_json.encode("utf-8"))
-            # 发送文件
+
             with open(file_path, "rb") as f:
                 for line in f:
                     self.conn.send(line)
+            self.log.info("%s下载了%s文件" % (self.username, data[1]))
         else:
             self.conn.send("False".encode("utf-8"))
 
@@ -111,6 +113,7 @@ class FtpServer:
         :param data:
         :return:
         """
+        print(data)
         if len(data) != 2:
             self.conn.send("False".encode("utf-8"))
             return
@@ -127,4 +130,9 @@ class FtpServer:
                 line = self.conn.recv(1024)
                 f.write(line)
                 recv_size += len(line)
+        if Public.get_md5(file_path) == header["md5"]:
+            self.conn.send("True".encode("utf-8"))
+            self.log.info("%s上传了%s文件" % (self.username,  header["name"]))
+        else:
+            self.conn.send("False".encode("utf-8"))
 

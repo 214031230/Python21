@@ -7,4 +7,4 @@ server_port = 9000
 help_file = r"../file/help"
 
 # 下载路径
-download = r"../download"
+download = r"../download_dir"

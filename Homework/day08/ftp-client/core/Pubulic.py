@@ -2,6 +2,7 @@
 import hashlib
 from conf import settings
 
+
 class Public:
     @staticmethod
     def get_md5(file_path):
@@ -18,6 +19,7 @@ class Public:
 
     @staticmethod
     def helper():
+        """帮助文档"""
         with open(settings.help_file, encoding="utf-8") as f:
             for i in f:
                 i = i.rstrip()
