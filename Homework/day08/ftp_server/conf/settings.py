@@ -11,3 +11,6 @@ home_dir = r"../home_dir"
 
 # 日志路径
 log_dir = r"../logs/access.log"
+
+# 家目录大小单位是M
+home_size = 500

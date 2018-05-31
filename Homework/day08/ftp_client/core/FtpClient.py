@@ -18,20 +18,27 @@ class FtpClient:
     def run(self):
         """启动client，用户输入指令"""
         Public.helper()
-        if self.login():
-            print("INFO：登录成功，请输入指令")
-            self.log.info("%s登录成功" % self.username)
-            while True:
-                data = input(">>>:").strip()
-                if not data:continue
-                if data.upper() == "EXIT":break
-                cmd = data.split()[0]
-                if hasattr(self, cmd):
-                    self.client.send(data.encode("utf-8"))
-                    getattr(self, cmd)(data)
-                else:
-                    print("Error：命令不存在")
-            self.client.close()
+        try:
+            if self.login():
+                print("INFO：登录成功，请输入指令")
+                self.log.info("%s登录成功" % self.username)
+                while True:
+                    data = input(">>>:").strip()
+                    if not data:continue
+                    if data.upper() == "EXIT":break
+                    cmd = data.split()[0]
+                    if hasattr(self, cmd):
+                        self.client.send(data.encode("utf-8"))
+                        getattr(self, cmd)(data)
+                    else:
+                        print("Error：命令不存在")
+                self.client.close()
+        except ConnectionResetError as e:
+            self.log.error(e)
+            print("Error：Ftp server异常，请重新连接")
+        except Exception as e:
+            self.log.error(e)
+            print(e)
 
     def login(self):
         """客户端登录,登录成功返回True 超过3次失败返回False"""
@@ -78,7 +85,7 @@ class FtpClient:
                     line = self.client.recv(1024)
                     f.write(line)
                     recv_size += len(line)
-                    print("%%%s" % (recv_size/header["size"]*100))
+                    Public.Progress_Bar(recv_size, header["size"])
             if Public.get_md5(file_path) == header["md5"]:
                 print("INFO：下载成功")
                 self.log.info("%s下载%s文件成功" % (self.username, file_path))
@@ -93,7 +100,7 @@ class FtpClient:
         data = data.split(" ", 1)
         file_path = data[1].strip()
         file_name = os.path.basename(file_path)
-        if os.path.exists(file_path):
+        if os.path.isfile(file_path):
             header_file = {"name": file_name,
                            "size": os.path.getsize(file_path),
                            "md5": Public.get_md5(file_path)}
@@ -102,17 +109,29 @@ class FtpClient:
             header_file_len = struct.pack("i", len(header_file_json))
             self.client.send(header_file_len)
             self.client.send(header_file_json.encode("utf-8"))
-            send_size = 0
-            with open(file_path, "rb") as f:
-                for line in f:
-                    self.client.send(line)
-                    send_size += len(line)
-                    print("%%%s" % (send_size / header_file["size"] * 100))
             if self.client.recv(1024).decode("utf-8") == "True":
-                print("INFO：上传成功")
-                self.log.info("%s上传%s文件成功" % (self.username, file_path))
+                send_size = 0
+                with open(file_path, "rb") as f:
+                    for line in f:
+                        self.client.send(line)
+                        send_size += len(line)
+                        Public.Progress_Bar(send_size, header_file["size"])
+                if self.client.recv(1024).decode("utf-8") == "True":
+                    print("INFO：上传成功")
+                    self.log.info("%s上传%s文件成功" % (self.username, file_path))
+                else:
+                    print("ERROR：上传失败")
+                    self.log.error("%s上传%s文件失败" % (self.username, file_path))
             else:
-                print("ERROR：上传失败")
-                self.log.error("%s上传%s文件失败" % (self.username, file_path))
+                print("Error:磁盘空间不足")
         else:
             print("Error：文件不存在")
+
+    def du(self, data):
+        """获取用户存储使用情况"""
+        ret = self.client.recv(1024).decode("utf-8")
+        if ret != "False":
+            ret = self.client.recv(1024).decode("utf-8")
+            print(json.loads(ret))
+        else:
+            print("Error：du不需要带参数")

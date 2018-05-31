@@ -39,7 +39,3 @@ class User:
                 return True
         else:
             return False
-# user = input(">>")
-# pwd = input(">>")
-# user_obj = User(user,pwd)
-# user_obj.add()

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import hashlib
 import logging
+import os
 from conf import settings
 
 
@@ -33,3 +34,15 @@ class Public:
         fh.setFormatter(formatter)
         logger.addHandler(fh)
         return logger
+
+    @staticmethod
+    def dir_size(dirs):
+        """获取目录大小"""
+        sum_size = 0
+        dirs_list = os.listdir(dirs)
+        for i in dirs_list:
+            if os.path.isdir(os.path.join(dirs, i)):
+                return Public.dir_size(os.path.join(dirs, i))
+            else:
+                sum_size += os.path.getsize(os.path.join(dirs, i))
+        return sum_size
