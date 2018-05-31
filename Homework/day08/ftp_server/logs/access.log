@@ -259,3 +259,24 @@
 2018-05-31 14:29:47,345  root   INFO  spf查看了家目录 File:<FtpServer.py line 70>
 2018-05-31 14:33:15,008  root   INFO  spf上传了help文件 File:<FtpServer.py line 124>
 2018-05-31 14:33:43,082  root   INFO  spf下载了VM-12.1.1.rar文件 File:<FtpServer.py line 96>
+2018-05-31 21:19:10,845  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 48>
+2018-05-31 21:19:47,353  root   INFO  spf登录成功 File:<FtpServer.py line 33>
+2018-05-31 21:19:51,357  root   INFO  spf查看了家目录 File:<FtpServer.py line 70>
+2018-05-31 21:20:50,747  root   ERROR  Expecting value: line 1 column 1 (char 0) File:<FtpServer.py line 48>
+2018-05-31 21:21:33,297  root   INFO  spf登录成功 File:<FtpServer.py line 33>
+2018-05-31 21:21:36,272  root   INFO  spf上传了计算器优秀的作业.zip文件 File:<FtpServer.py line 124>
+2018-05-31 21:22:33,801  root   INFO  spf上传了IMG_6886.MP4文件 File:<FtpServer.py line 124>
+2018-05-31 21:22:43,183  root   INFO  spf查看了家目录 File:<FtpServer.py line 70>
+2018-05-31 21:23:02,615  root   INFO  spf下载了IMG_6886.MP4文件 File:<FtpServer.py line 96>
+2018-05-31 21:25:22,312  root   INFO  spf登录成功 File:<FtpServer.py line 33>
+2018-05-31 21:32:26,120  root   INFO  spf登录成功 File:<FtpServer.py line 33>
+2018-05-31 21:32:26,959  root   ERROR  [WinError 10038] 在一个非套接字上尝试了一个操作。 File:<FtpServer.py line 48>
+2018-05-31 21:33:10,423  root   INFO  spf登录成功 File:<FtpServer.py line 33>
+2018-05-31 21:33:11,335  root   ERROR  [WinError 10038] 在一个非套接字上尝试了一个操作。 File:<FtpServer.py line 48>
+2018-05-31 21:33:18,128  root   INFO  spf登录成功 File:<FtpServer.py line 33>
+2018-05-31 21:33:18,925  root   INFO  spf查看了家目录 File:<FtpServer.py line 70>
+2018-05-31 21:33:40,216  root   INFO  spf登录成功 File:<FtpServer.py line 33>
+2018-05-31 21:33:41,982  root   INFO  spf查看了家目录 File:<FtpServer.py line 70>
+2018-05-31 21:34:02,853  root   INFO  spf下载了IMG_6886.MP4文件 File:<FtpServer.py line 96>
+2018-05-31 21:34:21,574  root   INFO  spf上传了logos.mp4文件 File:<FtpServer.py line 124>
+2018-05-31 21:34:25,816  root   ERROR  [WinError 10038] 在一个非套接字上尝试了一个操作。 File:<FtpServer.py line 48>

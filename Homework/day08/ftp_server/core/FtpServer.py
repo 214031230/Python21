@@ -158,6 +158,12 @@ class FtpServer:
         status_json_bytes = json.dumps(status).encode("utf-8")
         self.conn.send(status_json_bytes)
 
-
+    def exit(self, data):
+        if len(data) != 1:
+            self.conn.send("False".encode("utf-8"))
+            return
+        else:
+            self.conn.send("True".encode("utf-8"))
+        self.conn.close()
 
 

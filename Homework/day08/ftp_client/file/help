@@ -2,7 +2,7 @@
 day8博客地址：https://www.cnblogs.com/spf21/p/9117803.html
 账号:spf  密码:123
 账号:wxx  密码:123
-注：每个用户都有自己的家目录
+注：每个用户都有自己的家目录，家目录磁盘配额为500M
 支持命令：ls     ->查看家目录       示例：ls
           du     ->查看存储使用情况 示例：du
           get    ->下载文件         示例：get filename
