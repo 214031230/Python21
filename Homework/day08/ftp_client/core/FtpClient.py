@@ -134,14 +134,21 @@ class FtpClient:
         else:
             print("Error：du不需要带参数")
 
-    def mkdir(self, data):
-        """获取用户存储使用情况"""
+    def cd(self, data):
+        """获取切换目录状态"""
         ret = self.client.recv(1024).decode("utf-8")
-        if ret != "False":
-            ret = self.client.recv(1024).decode("utf-8")
-            print(json.loads(ret))
+        if ret == "True":
+            print("Info：切换目录成功")
         else:
-            print("Error：du不需要带参数")
+            print("Error：目录不存在")
+
+    def mkdir(self, data):
+        """获取目录创建状态"""
+        ret = self.client.recv(1024).decode("utf-8")
+        if ret == "True":
+            print("Info：创建目录成功")
+        else:
+            print("Error：目录已经存在")
 
     def exit(self, data):
         """退出"""

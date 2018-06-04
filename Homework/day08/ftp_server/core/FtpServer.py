@@ -14,7 +14,7 @@ class FtpServer:
         self.host = host
         self.port = port
         self.server = socket.socket()
-        self.server.bind((host, port))
+        self.server.bind((self.host, self.port))
         self.server.listen()
         self.home_dir = settings.home_dir
         self.status = False
@@ -27,6 +27,7 @@ class FtpServer:
         print("<---Server start---->")
         while True:
             self.conn, self.address = self.server.accept()
+            self.log.info("Run %s%s" % (self.host, self.port))
             print(self.address)
             if not self.status:
                 try:
@@ -156,14 +157,25 @@ class FtpServer:
         use = Public.dir_size(os.path.join(os.path.join(settings.home_dir, self.username)))
         residual = total - use
         status = {"User": self.username,
-                  "Total_size": total,
-                  "Use_size": use,
-                  "Residual_size": residual}
+                  "Total_size": "%s M" % (total/1024/1024),
+                  "Use_size": "%s M" % (use/1024/1024),
+                  "Residual_size": "%s M" % (residual/1024/1024)}
         status_json_bytes = json.dumps(status).encode("utf-8")
         self.conn.send(status_json_bytes)
 
-    def mkdir(self, data):
+    def cd(self, data):
         pass
+
+    def mkdir(self, data):
+        """创建目录"""
+        home_path = os.path.join(os.path.abspath(os.path.join(self.home_dir, self.username)))
+        mk_path = os.path.join(home_path, data[1])
+        if not os.path.exists(mk_path):
+            os.makedirs(mk_path)
+            self.conn.send("True".encode("utf-8"))
+            self.log.info("%s创建了%s目录" % (self.username, data[1]))
+        else:
+            self.conn.send("False".encode("utf-8"))
 
     def exit(self, data):
         if len(data) != 1:

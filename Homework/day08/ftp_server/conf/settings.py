@@ -10,7 +10,7 @@ user_info = r"../db/user_info"
 user_size = r"../db/user_size"
 
 # 用户家目录
-home_dir = r"../home_dir"
+home_dir = r"../home"
 
 # 日志路径
 log_dir = r"../logs/access.log"
