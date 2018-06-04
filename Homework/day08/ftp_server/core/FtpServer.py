@@ -6,6 +6,7 @@ import struct
 from core.UserManager import User
 from conf import settings
 from core.Pubulic import Public
+from core.MyJson import MyJson
 
 
 class FtpServer:
@@ -18,6 +19,8 @@ class FtpServer:
         self.home_dir = settings.home_dir
         self.status = False
         self.log = Public.log()
+        self.user_size = settings.user_size
+        self.user_size_dic = MyJson.load(self.user_size)
 
     def run(self):
         """启动server等待用户输入指令"""
@@ -132,7 +135,7 @@ class FtpServer:
         :param recv_size: 上传文件大小
         :return:
         """
-        home_size = settings.home_size * 1024 * 1024
+        home_size = self.user_size_dic[self.username] * 1024 * 1024
         user_size = Public.dir_size(home_path)
         surplus_size = home_size - user_size
         if surplus_size < recv_size:
@@ -148,7 +151,8 @@ class FtpServer:
             return
         else:
             self.conn.send("True".encode("utf-8"))
-        total = settings.home_size*1024*1024
+        total = self.user_size_dic[self.username] * 1024 * 1024
+        print(total, self.username)
         use = Public.dir_size(os.path.join(os.path.join(settings.home_dir, self.username)))
         residual = total - use
         status = {"User": self.username,
@@ -157,6 +161,9 @@ class FtpServer:
                   "Residual_size": residual}
         status_json_bytes = json.dumps(status).encode("utf-8")
         self.conn.send(status_json_bytes)
+
+    def mkdir(self, data):
+        pass
 
     def exit(self, data):
         if len(data) != 1:

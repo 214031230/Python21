@@ -280,3 +280,42 @@
 2018-05-31 21:34:02,853  root   INFO  spf下载了IMG_6886.MP4文件 File:<FtpServer.py line 96>
 2018-05-31 21:34:21,574  root   INFO  spf上传了logos.mp4文件 File:<FtpServer.py line 124>
 2018-05-31 21:34:25,816  root   ERROR  [WinError 10038] 在一个非套接字上尝试了一个操作。 File:<FtpServer.py line 48>
+2018-06-01 13:54:07,697  root   INFO  spf登录成功 File:<FtpServer.py line 33>
+2018-06-01 13:54:08,701  root   INFO  spf查看了家目录 File:<FtpServer.py line 70>
+2018-06-01 13:54:12,872  root   INFO  spf下载了help文件 File:<FtpServer.py line 96>
+2018-06-01 13:54:25,272  root   INFO  spf上传了start.py文件 File:<FtpServer.py line 124>
+2018-06-01 13:54:31,465  root   ERROR  [WinError 10038] 在一个非套接字上尝试了一个操作。 File:<FtpServer.py line 48>
+2018-06-01 13:54:38,894  root   INFO  wxx登录成功 File:<FtpServer.py line 33>
+2018-06-01 13:54:39,824  root   INFO  wxx查看了家目录 File:<FtpServer.py line 70>
+2018-06-01 13:54:48,296  root   INFO  wxx下载了test.txt文件 File:<FtpServer.py line 96>
+2018-06-01 13:54:51,739  root   INFO  wxx上传了start.py文件 File:<FtpServer.py line 124>
+2018-06-01 13:54:58,126  root   ERROR  [WinError 10038] 在一个非套接字上尝试了一个操作。 File:<FtpServer.py line 48>
+2018-06-04 14:53:42,919  root   INFO  创建aaa用户成功 File:<UserManager.py line 37>
+2018-06-04 14:53:42,924  root   INFO  aaa用户的磁盘配额为500 File:<UserManager.py line 48>
+2018-06-04 14:55:16,143  root   INFO  创建spf用户成功 File:<UserManager.py line 37>
+2018-06-04 14:55:16,144  root   INFO  spf用户的磁盘配额为500 File:<UserManager.py line 46>
+2018-06-04 14:59:28,184  root   INFO  创建wxx用户成功 File:<UserManager.py line 37>
+2018-06-04 14:59:28,186  root   INFO  wxx用户的磁盘配额为500 File:<UserManager.py line 46>
+2018-06-04 15:09:36,361  root   INFO  spf登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:09:36,361  root   INFO  spf登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:09:43,385  root   ERROR  [WinError 10038] 在一个非套接字上尝试了一个操作。 File:<FtpServer.py line 50>
+2018-06-04 15:09:43,385  root   ERROR  [WinError 10038] 在一个非套接字上尝试了一个操作。 File:<FtpServer.py line 50>
+2018-06-04 15:09:47,047  root   INFO  wxx登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:09:47,047  root   INFO  wxx登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:09:47,047  root   INFO  wxx登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:09:57,138  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 50>
+2018-06-04 15:09:57,138  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 50>
+2018-06-04 15:09:57,138  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 50>
+2018-06-04 15:10:00,640  root   INFO  spf登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:10:00,640  root   INFO  spf登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:10:00,640  root   INFO  spf登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:10:00,640  root   INFO  spf登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:10:58,440  root   INFO  spf登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:10:58,440  root   INFO  spf登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:12:27,455  root   INFO  spf登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:12:27,455  root   INFO  spf登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:12:30,649  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 50>
+2018-06-04 15:12:30,649  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 50>
+2018-06-04 15:12:32,360  root   INFO  wxx登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:12:32,360  root   INFO  wxx登录成功 File:<FtpServer.py line 35>
+2018-06-04 15:12:32,360  root   INFO  wxx登录成功 File:<FtpServer.py line 35>

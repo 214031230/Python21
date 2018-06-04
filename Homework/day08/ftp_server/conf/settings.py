@@ -3,8 +3,11 @@
 bind_ip = "127.0.0.1"
 bind_port = 9000
 
-# 用户表路径
+# 用户表
 user_info = r"../db/user_info"
+
+# 用户家目录大小表
+user_size = r"../db/user_size"
 
 # 用户家目录
 home_dir = r"../home_dir"

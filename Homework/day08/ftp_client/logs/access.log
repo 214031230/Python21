@@ -133,3 +133,9 @@
 2018-06-01 13:54:38,894  root   INFO  wxx登录成功 File:<FtpClient.py line 24>
 2018-06-01 13:54:48,304  root   INFO  wxx下载../download_dir\test.txt文件成功 File:<FtpClient.py line 92>
 2018-06-01 13:54:51,739  root   INFO  wxx上传C:\Users\lanpa\Desktop\Python自动化21期\Python21\Homework\day08\ftp_client\bin\start.py文件成功 File:<FtpClient.py line 122>
+2018-06-04 15:09:36,361  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-04 15:09:47,047  root   INFO  wxx登录成功 File:<FtpClient.py line 24>
+2018-06-04 15:10:00,640  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-04 15:10:58,440  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-04 15:12:27,455  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-04 15:12:32,360  root   INFO  wxx登录成功 File:<FtpClient.py line 24>

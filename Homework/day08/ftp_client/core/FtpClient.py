@@ -25,15 +25,12 @@ class FtpClient:
                 while True:
                     data = input(">>>:").strip()
                     if not data:continue
-                    # if data.upper() == "EXIT":
-                    #     break
                     cmd = data.split()[0]
                     if hasattr(self, cmd):
                         self.client.send(data.encode("utf-8"))
                         getattr(self, cmd)(data)
                     else:
                         print("Error：命令不存在")
-                # self.client.close()
         except ConnectionResetError as e:
             self.log.error(e)
             print("Error：Ftp server异常，请重新连接")
@@ -129,6 +126,15 @@ class FtpClient:
             print("Error：文件不存在")
 
     def du(self, data):
+        """获取用户存储使用情况"""
+        ret = self.client.recv(1024).decode("utf-8")
+        if ret != "False":
+            ret = self.client.recv(1024).decode("utf-8")
+            print(json.loads(ret))
+        else:
+            print("Error：du不需要带参数")
+
+    def mkdir(self, data):
         """获取用户存储使用情况"""
         ret = self.client.recv(1024).decode("utf-8")
         if ret != "False":

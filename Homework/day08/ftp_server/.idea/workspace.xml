@@ -10,26 +10,68 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ftp_server$start.coverage" NAME="start Coverage Results" MODIFIED="1527773614197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
     <SUITE FILE_PATH="coverage/ftp_server$UserManager.coverage" NAME="UserManager Coverage Results" MODIFIED="1527674847347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/ftp_server$start.coverage" NAME="start Coverage Results" MODIFIED="1528096342596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
+    <SUITE FILE_PATH="coverage/ftp_server$add_user.coverage" NAME="add_user Coverage Results" MODIFIED="1528095571756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file leaf-file-name="start.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/start.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+            <state relative-caret-position="198">
+              <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="作业需求" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FtpServer.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/FtpServer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="526">
+              <caret line="165" column="12" lean-forward="false" selection-start-line="165" selection-start-column="12" selection-end-line="165" selection-end-column="12" />
+              <folding>
+                <element signature="e#259#609#0" expanded="false" />
+                <element signature="e#638#1873#0" expanded="false" />
+                <element signature="e#732#1873#0" expanded="false" />
+                <element signature="e#859#1873#0" expanded="false" />
+                <element signature="e#884#1664#0" expanded="false" />
+                <element signature="e#920#1308#0" expanded="false" />
+                <element signature="e#965#1105#0" expanded="false" />
+                <element signature="e#1164#1308#0" expanded="false" />
+                <element signature="e#1376#1664#0" expanded="false" />
+                <element signature="e#1724#1770#0" expanded="false" />
+                <element signature="e#1816#1873#0" expanded="false" />
+                <element signature="e#1904#2179#0" expanded="false" />
+                <element signature="e#2873#3794#0" expanded="false" />
+                <element signature="e#2873#2948#1" expanded="false" />
+                <element signature="e#3093#3728#0" expanded="false" />
+                <element signature="e#3158#3307#0" expanded="false" />
+                <element signature="e#3599#3654#0" expanded="false" />
+                <element signature="e#3829#4960#0" expanded="false" />
+                <element signature="e#3829#3903#1" expanded="false" />
+                <element signature="e#4364#4648#0" expanded="false" />
+                <element signature="e#4490#4648#0" expanded="false" />
+                <element signature="e#4544#4648#0" expanded="false" />
+                <element signature="e#4782#4894#0" expanded="false" />
+                <element signature="e#5023#5452#0" expanded="false" />
+                <element signature="e#5023#5137#1" expanded="false" />
+                <element signature="e#5347#5414#0" expanded="false" />
+                <element signature="e#5486#6153#0" expanded="false" />
+                <element signature="e#5542#5600#0" expanded="false" />
+                <element signature="e#6230#6410#0" expanded="false" />
+                <element signature="e#6261#6319#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="作业需求" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file/作业需求">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+            <state relative-caret-position="396">
+              <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -54,14 +96,15 @@
         <option value="$PROJECT_DIR$/core/MyJson.py" />
         <option value="$PROJECT_DIR$/home_dir/spf/test.txt" />
         <option value="$PROJECT_DIR$/home_dir/spf/test1.txt" />
-        <option value="$PROJECT_DIR$/db/user_info" />
-        <option value="$PROJECT_DIR$/bin/start.py" />
         <option value="$PROJECT_DIR$/file/作业需求" />
-        <option value="$PROJECT_DIR$/conf/settings.py" />
         <option value="$PROJECT_DIR$/core/Pubulic.py" />
-        <option value="$PROJECT_DIR$/core/UserManager.py" />
-        <option value="$PROJECT_DIR$/core/add_user.py" />
         <option value="$PROJECT_DIR$/readme" />
+        <option value="$PROJECT_DIR$/conf/settings.py" />
+        <option value="$PROJECT_DIR$/core/UserManager.py" />
+        <option value="$PROJECT_DIR$/db/user_info" />
+        <option value="$PROJECT_DIR$/core/add_user.py" />
+        <option value="$PROJECT_DIR$/bin/start.py" />
+        <option value="$PROJECT_DIR$/db/user_size" />
         <option value="$PROJECT_DIR$/core/FtpServer.py" />
       </list>
     </option>
@@ -92,6 +135,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -99,12 +144,15 @@
               <item name="ftp_server" type="b2602c69:ProjectViewProjectNode" />
               <item name="ftp_server" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ftp_server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ftp_server" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -150,6 +198,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="add_user" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ftp_server" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/add_user.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="start" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -169,14 +236,16 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.start" />
       <item index="1" class="java.lang.String" itemvalue="Python.UserManager" />
+      <item index="2" class="java.lang.String" itemvalue="Python.add_user" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.start" />
-        <item index="1" class="java.lang.String" itemvalue="Python.UserManager" />
+        <item index="1" class="java.lang.String" itemvalue="Python.add_user" />
+        <item index="2" class="java.lang.String" itemvalue="Python.UserManager" />
       </list>
     </recent_temporary>
   </component>
@@ -206,15 +275,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61943793" sideWeight="0.50215983" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8565217" sideWeight="0.49784017" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41217798" sideWeight="0.49784017" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119936034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18898489" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -249,6 +318,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/file/作业需求">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/FtpServer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1716">
@@ -265,13 +350,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/readme" />
     <entry file="file://$PROJECT_DIR$/conf/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -452,82 +531,118 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home_dir/spf/流程图.png" />
+    <entry file="file://$PROJECT_DIR$/core/main.py" />
+    <entry file="file://$PROJECT_DIR$/readme" />
+    <entry file="file://$PROJECT_DIR$/conf/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/access.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9054">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/user_info">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/main.py" />
-    <entry file="file://$PROJECT_DIR$/logs/access.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6099">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Pubulic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="46" column="66" lean-forward="false" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
-          <folding>
-            <element signature="e#23#37#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="24">
+          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/add_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        <state relative-caret-position="231">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/UserManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-594">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="17" selection-end-column="31" />
+          <folding>
+            <element signature="e#23#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme">
+    <entry file="file://$PROJECT_DIR$/db/user_size">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/FtpServer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2123">
-          <caret line="166" column="17" lean-forward="false" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/start.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        <state relative-caret-position="198">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/file/作业需求">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        <state relative-caret-position="396">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/FtpServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="165" column="12" lean-forward="false" selection-start-line="165" selection-start-column="12" selection-end-line="165" selection-end-column="12" />
+          <folding>
+            <element signature="e#259#609#0" expanded="false" />
+            <element signature="e#638#1873#0" expanded="false" />
+            <element signature="e#732#1873#0" expanded="false" />
+            <element signature="e#859#1873#0" expanded="false" />
+            <element signature="e#884#1664#0" expanded="false" />
+            <element signature="e#920#1308#0" expanded="false" />
+            <element signature="e#965#1105#0" expanded="false" />
+            <element signature="e#1164#1308#0" expanded="false" />
+            <element signature="e#1376#1664#0" expanded="false" />
+            <element signature="e#1724#1770#0" expanded="false" />
+            <element signature="e#1816#1873#0" expanded="false" />
+            <element signature="e#1904#2179#0" expanded="false" />
+            <element signature="e#2873#3794#0" expanded="false" />
+            <element signature="e#2873#2948#1" expanded="false" />
+            <element signature="e#3093#3728#0" expanded="false" />
+            <element signature="e#3158#3307#0" expanded="false" />
+            <element signature="e#3599#3654#0" expanded="false" />
+            <element signature="e#3829#4960#0" expanded="false" />
+            <element signature="e#3829#3903#1" expanded="false" />
+            <element signature="e#4364#4648#0" expanded="false" />
+            <element signature="e#4490#4648#0" expanded="false" />
+            <element signature="e#4544#4648#0" expanded="false" />
+            <element signature="e#4782#4894#0" expanded="false" />
+            <element signature="e#5023#5452#0" expanded="false" />
+            <element signature="e#5023#5137#1" expanded="false" />
+            <element signature="e#5347#5414#0" expanded="false" />
+            <element signature="e#5486#6153#0" expanded="false" />
+            <element signature="e#5542#5600#0" expanded="false" />
+            <element signature="e#6230#6410#0" expanded="false" />
+            <element signature="e#6261#6319#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
