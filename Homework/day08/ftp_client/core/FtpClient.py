@@ -136,6 +136,7 @@ class FtpClient:
 
     def cd(self, data):
         """获取切换目录状态"""
+        pass
         ret = self.client.recv(1024).decode("utf-8")
         if ret == "True":
             print("Info：切换目录成功")
@@ -149,6 +150,13 @@ class FtpClient:
             print("Info：创建目录成功")
         else:
             print("Error：目录已经存在")
+
+    def rm(self, data):
+        ret = self.client.recv(1024).decode("utf-8")
+        if ret == "True":
+            print("Info：删除目录成功")
+        else:
+            print("Error：不是空目录无法删除")
 
     def exit(self, data):
         """退出"""

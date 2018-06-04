@@ -35,6 +35,7 @@ class FtpServer:
                         if self.login():
                             self.conn.send("True".encode("utf-8"))
                             self.log.info("%s登录成功" % self.username)
+                            self.home_path = os.path.abspath(os.path.join(self.home_dir, self.username))
                             break
                         else:
                             self.conn.send("False".encode("utf-8"))
@@ -70,7 +71,8 @@ class FtpServer:
         else:
             self.conn.send("True".encode("utf-8"))
         if os.name == "nt":
-            ret = os.popen("dir %s" % os.path.abspath(os.path.join(self.home_dir, self.username))).read()
+            # ret = os.popen("dir %s" % os.path.abspath(os.path.join(self.home_dir, self.username))).read()
+            ret = os.popen("dir %s" % os.path.abspath(self.home_path)).read()
             self.log.info("%s查看了家目录" % self.username)
         else:
             ret = os.popen("ls -l %s" % os.path.abspath(os.path.join(self.home_dir, self.username))).read()
@@ -84,7 +86,8 @@ class FtpServer:
         :param data:
         :return:
         """
-        file_path = os.path.join(os.path.join(self.home_dir, self.username), data[1].strip())
+        # file_path = os.path.join(os.path.join(self.home_dir, self.username), data[1].strip())
+        file_path = os.path.join(self.home_path, data[1].strip())
         if os.path.isfile(file_path):
             self.conn.send("True".encode("utf-8"))
             header_file = {"name": data[1].strip(),
@@ -111,7 +114,8 @@ class FtpServer:
         header_len = struct.unpack("i", header_len_bytes)[0]
         header = self.conn.recv(header_len).decode("utf-8")
         header = json.loads(header)
-        file_path = os.path.join(os.path.join(settings.home_dir, self.username), header["name"])
+        # file_path = os.path.join(os.path.join(settings.home_dir, self.username), header["name"])
+        file_path = os.path.join(self.home_path, header["name"])
         user_home_dir = os.path.join(os.path.join(settings.home_dir, self.username))
         if self.check_home_size(user_home_dir, header["size"]):
             self.conn.send("True".encode("utf-8"))
@@ -164,11 +168,25 @@ class FtpServer:
         self.conn.send(status_json_bytes)
 
     def cd(self, data):
-        pass
+        if data[1] == "..":
+            if os.path.basename(self.home_path) == self.username:
+                print("已经到最顶层")
+                self.conn.send("False".encode("utf-8"))
+            else:
+                self.home_path = os.path.dirname(self.home_path)
+                print(self.home_path)
+                self.conn.send("True".encode("utf-8"))
+        else:
+            if os.path.exists(os.path.join(self.home_path, data[1])):
+                self.home_path = os.path.join(self.home_path, data[1])
+                self.conn.send("True".encode("utf-8"))
+            else:
+                self.conn.send("False".encode("utf-8"))
 
     def mkdir(self, data):
         """创建目录"""
-        home_path = os.path.join(os.path.abspath(os.path.join(self.home_dir, self.username)))
+        # home_path = os.path.join(os.path.abspath(os.path.join(self.home_dir, self.username)))
+        home_path = os.path.join(os.path.abspath(self.home_path))
         mk_path = os.path.join(home_path, data[1])
         if not os.path.exists(mk_path):
             os.makedirs(mk_path)
@@ -176,6 +194,19 @@ class FtpServer:
             self.log.info("%s创建了%s目录" % (self.username, data[1]))
         else:
             self.conn.send("False".encode("utf-8"))
+
+    def rm(self, data):
+        desdir = os.path.join(self.home_path, data[1])
+        if os.path.exists(desdir):
+            try:
+                print(desdir)
+                os.rmdir(desdir)
+            except Exception as e:
+                self.log.error("%s" % e)
+                print(e)
+                self.conn.send("False".encode("utf-8"))
+            else:
+                self.conn.send("True".encode("utf-8"))
 
     def exit(self, data):
         if len(data) != 1:
