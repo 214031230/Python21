@@ -26,7 +26,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FtpServer.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FtpServer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/FtpServer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="654">
@@ -38,11 +38,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="1" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/home/wxx/test/1">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="作业需求" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file/作业需求">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -586,7 +596,7 @@
     <entry file="file://$PROJECT_DIR$/file/作业需求">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -598,6 +608,14 @@
           <folding>
             <element signature="e#23#36#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/wxx/test/1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
