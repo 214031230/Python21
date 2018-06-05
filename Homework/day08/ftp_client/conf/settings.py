@@ -7,7 +7,7 @@ server_port = 9000
 help_file = r"../help"
 
 # 下载路径
-download = r"../download"
+download = r"../server"
 
 # 日志路径
 log_dir = r"../logs/access.log"

@@ -364,3 +364,42 @@
 2018-06-05 21:42:32,171  root   INFO  spf查看了家目录 File:<FtpServer.py line 82>
 2018-06-05 21:42:32,171  root   INFO  spf查看了家目录 File:<FtpServer.py line 82>
 2018-06-05 21:42:32,171  root   INFO  spf查看了家目录 File:<FtpServer.py line 82>
+2018-06-05 21:49:24,209  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-05 21:49:30,568  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-05 21:49:30,568  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-05 21:49:32,238  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-05 21:49:32,238  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-05 21:50:38,375  root   INFO  spf下载了access.log文件 File:<FtpServer.py line 105>
+2018-06-05 21:50:38,375  root   INFO  spf下载了access.log文件 File:<FtpServer.py line 105>
+2018-06-05 21:51:26,153  root   INFO  spf上传了test.py文件 File:<FtpServer.py line 134>
+2018-06-05 21:51:26,153  root   INFO  spf上传了test.py文件 File:<FtpServer.py line 134>
+2018-06-05 21:51:44,824  root   INFO  spf创建了test100目录 File:<FtpServer.py line 198>
+2018-06-05 21:51:44,824  root   INFO  spf创建了test100目录 File:<FtpServer.py line 198>
+2018-06-05 21:51:58,689  root   INFO  spf创建了test101目录 File:<FtpServer.py line 198>
+2018-06-05 21:51:58,689  root   INFO  spf创建了test101目录 File:<FtpServer.py line 198>
+2018-06-05 21:52:10,627  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-05 21:52:10,627  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-05 21:52:17,955  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-05 21:52:17,955  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-05 21:52:39,538  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-05 21:52:39,538  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-05 21:52:39,700  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-05 21:52:39,700  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-05 21:52:53,816  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-05 21:52:53,816  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-05 21:52:53,816  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-05 21:52:54,515  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-05 21:52:54,515  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-05 21:52:54,515  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-05 21:53:11,881  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-05 21:53:11,881  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-05 21:53:11,881  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-05 21:53:12,039  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-05 21:53:12,039  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-05 21:53:12,039  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-05 21:53:35,189  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-05 21:53:35,189  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-05 21:53:35,189  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-05 21:53:35,356  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-05 21:53:35,356  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-05 21:53:35,356  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
