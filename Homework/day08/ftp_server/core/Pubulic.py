@@ -6,6 +6,8 @@ from conf import settings
 
 
 class Public:
+    sum_size = 0
+
     @staticmethod
     def get_md5(file_path):
         """
@@ -35,14 +37,14 @@ class Public:
         logger.addHandler(fh)
         return logger
 
-    @staticmethod
-    def dir_size(dirs):
+    @classmethod
+    def dir_size(cls, dirs):
         """获取目录大小"""
-        sum_size = 0
         dirs_list = os.listdir(dirs)
         for i in dirs_list:
             if os.path.isdir(os.path.join(dirs, i)):
                 return Public.dir_size(os.path.join(dirs, i))
             else:
-                sum_size += os.path.getsize(os.path.join(dirs, i))
-        return sum_size
+                cls.sum_size += os.path.getsize(os.path.join(dirs, i))
+        print("已经使用大小", cls.sum_size)
+        return cls.sum_size

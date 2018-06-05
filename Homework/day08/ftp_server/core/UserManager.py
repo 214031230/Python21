@@ -35,13 +35,13 @@ class User:
             if not os.path.exists(home_path):
                 os.mkdir(home_path)
             self.log.info("创建%s用户成功" % self.username)
-            self.add_user_size()
+            self.add_user_size(self.__home_size)
             print("%s创建成功" % self.username)
             return True
 
-    def add_user_size(self):
+    def add_user_size(self, size):
         """配置用户的磁盘配额"""
-        self.user_size_dic[self.username] = self.__home_size
+        self.user_size_dic[self.username] = size
         MyJson.dump(self.user_size_dic, self.user_size)
         self.log.info("%s用户的磁盘配额为%s" % (self.username, self.__home_size))
 

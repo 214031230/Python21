@@ -17,3 +17,9 @@ log_dir = r"../logs/access.log"
 
 # 家目录大小单位是M
 home_size = 500
+
+# buffer_size
+buffer_size = 8192
+
+# send code
+code = "utf-8"

@@ -9,6 +9,6 @@ day8博客地址：https://www.cnblogs.com/spf21/p/9117803.html
           put    ->上传文件         示例：put filename 示例：put /path/filename
           cd     ->切换目录         示例：cd test  示例：cd test/test1/test2  示例：cd .. (返回上一层)
           rm     ->删除文件或者目录 示例：rm filename  示例：rm dirname
-          mkdir  ->创建目录         示例：mkdir dirname  示例：mkdir dirname1/dirname2/dirname3
+          mkdir  ->创建目录         示例：mkdir dirname
           exit   ->退出             示例：exit
 ----------------------Ftp Client------------------------

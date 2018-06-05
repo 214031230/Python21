@@ -27,7 +27,7 @@ class FtpClient:
                     if not data:continue
                     cmd = data.split()[0]
                     if hasattr(self, cmd):
-                        self.client.send(data.encode("utf-8"))
+                        self.client.send(data.encode(settings.code))
                         getattr(self, cmd)(data)
                     else:
                         print("Error：命令不存在")
@@ -49,8 +49,8 @@ class FtpClient:
                 continue
             user_info = (self.username, self.password)
             user_info_json = json.dumps(user_info)
-            self.client.send(user_info_json.encode("utf-8"))
-            if self.client.recv(1024).decode("utf-8") == "True":
+            self.client.send(user_info_json.encode(settings.code))
+            if self.client.recv(settings.buffer_size).decode(settings.code) == "True":
                 return True
             else:
                 print("Error：用户或密码错误")
@@ -61,26 +61,26 @@ class FtpClient:
 
     def ls(self, data):
         """客户端接受ls执行返回的结果并打印"""
-        ret = self.client.recv(1024).decode("utf-8")
+        ret = self.client.recv(settings.buffer_size).decode(settings.code)
         if ret != "False":
-            ret = self.client.recv(1024).decode("utf-8")
+            ret = self.client.recv(settings.buffer_size).decode(settings.code)
             print(ret)
         else:
             print("Error：ls不需要带参数")
 
     def get(self, data):
         """下载文件"""
-        check_file = self.client.recv(1024).decode("utf-8")
+        check_file = self.client.recv(settings.buffer_size).decode(settings.code)
         if check_file == "True":
             header_len_bytes = self.client.recv(4)
             header_len = struct.unpack("i", header_len_bytes)[0]
-            header = self.client.recv(header_len).decode("utf-8")
+            header = self.client.recv(header_len).decode(settings.code)
             header = json.loads(header)
             file_path = os.path.join(settings.download, header["name"])
             recv_size = 0
             with open(file_path, "wb") as f:
                 while recv_size < header["size"]:
-                    line = self.client.recv(1024)
+                    line = self.client.recv(settings.buffer_size)
                     f.write(line)
                     recv_size += len(line)
                     Public.Progress_Bar(recv_size, header["size"])
@@ -106,15 +106,15 @@ class FtpClient:
             header_file_json = json.dumps(header_file)
             header_file_len = struct.pack("i", len(header_file_json))
             self.client.send(header_file_len)
-            self.client.send(header_file_json.encode("utf-8"))
-            if self.client.recv(1024).decode("utf-8") == "True":
+            self.client.send(header_file_json.encode(settings.code))
+            if self.client.recv(settings.buffer_size).decode(settings.code) == "True":
                 send_size = 0
                 with open(file_path, "rb") as f:
                     for line in f:
                         self.client.send(line)
                         send_size += len(line)
                         Public.Progress_Bar(send_size, header_file["size"])
-                if self.client.recv(1024).decode("utf-8") == "True":
+                if self.client.recv(settings.buffer_size).decode(settings.code) == "True":
                     print("INFO：上传成功")
                     self.log.info("%s上传%s文件成功" % (self.username, file_path))
                 else:
@@ -127,40 +127,41 @@ class FtpClient:
 
     def du(self, data):
         """获取用户存储使用情况"""
-        ret = self.client.recv(1024).decode("utf-8")
+        ret = self.client.recv(settings.buffer_size).decode(settings.code)
         if ret != "False":
-            ret = self.client.recv(1024).decode("utf-8")
+            ret = self.client.recv(settings.buffer_size).decode(settings.code)
             print(json.loads(ret))
         else:
             print("Error：du不需要带参数")
 
     def cd(self, data):
-        """获取切换目录状态"""
+        """获取切换目录结果"""
         pass
-        ret = self.client.recv(1024).decode("utf-8")
+        ret = self.client.recv(settings.buffer_size).decode(settings.code)
         if ret == "True":
             print("Info：切换目录成功")
         else:
             print("Error：目录不存在")
 
     def mkdir(self, data):
-        """获取目录创建状态"""
-        ret = self.client.recv(1024).decode("utf-8")
+        """获取创建目录结果"""
+        ret = self.client.recv(settings.buffer_size).decode(settings.code)
         if ret == "True":
             print("Info：创建目录成功")
         else:
             print("Error：目录已经存在")
 
     def rm(self, data):
-        ret = self.client.recv(1024).decode("utf-8")
+        """获取删除文件结果"""
+        ret = self.client.recv(settings.buffer_size).decode(settings.code)
         if ret == "True":
-            print("Info：删除目录成功")
+            print("Info：删除成功")
         else:
             print("Error：不是空目录无法删除")
 
     def exit(self, data):
         """退出"""
-        ret = self.client.recv(1024).decode("utf-8")
+        ret = self.client.recv(settings.buffer_size).decode(settings.code)
         if ret != "False":
             self.client.close()
             exit()
