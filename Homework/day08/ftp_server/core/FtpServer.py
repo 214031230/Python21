@@ -14,6 +14,7 @@ class FtpServer:
         self.host = host
         self.port = port
         self.server = socket.socket()
+        self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.server.bind((self.host, self.port))
         self.server.listen()
         self.home_dir = settings.home_dir
@@ -48,6 +49,7 @@ class FtpServer:
                                 getattr(self, cmd)(data)
                             else:
                                 print("命令不存在")
+                                break
                 except Exception as e:
                     print(e)
                     self.log.error(e)
@@ -74,7 +76,9 @@ class FtpServer:
             ret = os.popen("dir %s" % os.path.abspath(self.home_path)).read()
             self.log.info("%s查看了家目录" % self.username)
         else:
-            ret = os.popen("ls -l %s" % os.path.abspath(os.path.join(self.home_dir, self.username))).read()
+            ret = os.popen("ls -l %s" % os.path.abspath(self.home_path)).read()
+            if not ret:
+                ret = "."
             self.log.info("%s查看了家目录" % self.username)
         self.conn.send(ret.encode(settings.code))
         print(ret)

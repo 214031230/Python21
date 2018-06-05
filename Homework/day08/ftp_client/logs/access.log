@@ -9,3 +9,31 @@
 2018-06-05 16:31:54,748  root   INFO  spf上传C:\Users\lanpa\Desktop\Python自动化21期\Python21\Homework\day08\ftp_client\help文件成功 File:<FtpClient.py line 119>
 2018-06-05 16:32:01,250  root   INFO  spf下载../download\help文件成功 File:<FtpClient.py line 89>
 2018-06-05 16:32:26,420  root   INFO  spf上传C:\Users\lanpa\Desktop\Python自动化21期\Python21\Homework\day08\ftp_client\help文件成功 File:<FtpClient.py line 119>
+2018-06-05 21:16:20,725  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:16:32,975  root   INFO  spf下载../download/help文件成功 File:<FtpClient.py line 89>
+2018-06-05 21:16:52,523  root   INFO  spf上传/Users/xuxu/Desktop/python自动化21期/Python21/Homework/day08/ftp_client/logs/access.log文件成功 File:<FtpClient.py line 119>
+2018-06-05 21:18:19,805  root   ERROR  [Errno 54] Connection reset by peer File:<FtpClient.py line 35>
+2018-06-05 21:18:24,038  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:20:15,101  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:20:32,163  root   INFO  spf下载../download/help文件成功 File:<FtpClient.py line 89>
+2018-06-05 21:20:44,223  root   INFO  spf上传/Users/xuxu/Desktop/python自动化21期/Python21/Homework/day08/ftp_client/logs/access.log文件成功 File:<FtpClient.py line 119>
+2018-06-05 21:26:04,866  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:26:53,102  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:27:58,796  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:28:45,517  root   ERROR  [Errno 54] Connection reset by peer File:<FtpClient.py line 35>
+2018-06-05 21:28:49,751  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:29:17,806  root   INFO  spf上传/Users/xuxu/Desktop/python自动化21期/Python21/Homework/day08/ftp_server/logs/access.log文件成功 File:<FtpClient.py line 119>
+2018-06-05 21:29:57,616  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:30:10,159  root   ERROR  [Errno 32] Broken pipe File:<FtpClient.py line 38>
+2018-06-05 21:30:19,406  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:31:45,738  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:34:40,986  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:34:50,008  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:35:13,428  root   INFO  spf上传/Users/xuxu/Desktop/python自动化21期/Python21/Homework/day08/readme文件成功 File:<FtpClient.py line 119>
+2018-06-05 21:35:19,548  root   INFO  spf下载../download/access.log文件成功 File:<FtpClient.py line 89>
+2018-06-05 21:36:36,175  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:37:22,107  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:37:35,307  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:37:54,530  root   ERROR  [Errno 32] Broken pipe File:<FtpClient.py line 38>
+2018-06-05 21:41:52,123  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:42:25,795  root   INFO  spf登录成功 File:<FtpClient.py line 24>
