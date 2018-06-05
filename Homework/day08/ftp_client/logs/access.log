@@ -37,3 +37,7 @@
 2018-06-05 21:37:54,530  root   ERROR  [Errno 32] Broken pipe File:<FtpClient.py line 38>
 2018-06-05 21:41:52,123  root   INFO  spf登录成功 File:<FtpClient.py line 24>
 2018-06-05 21:42:25,795  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:49:30,568  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-05 21:50:38,376  root   INFO  spf下载../download\access.log文件成功 File:<FtpClient.py line 89>
+2018-06-05 21:51:26,153  root   INFO  spf上传D:\老男孩python自动化21期\Python21\day9\test.py文件成功 File:<FtpClient.py line 119>
+2018-06-05 21:52:53,816  root   INFO  spf登录成功 File:<FtpClient.py line 24>

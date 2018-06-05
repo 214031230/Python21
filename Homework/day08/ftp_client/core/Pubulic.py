@@ -43,7 +43,8 @@ class Public:
         return logger
 
     @staticmethod
-    def Progress_Bar(num, total):
+    def progress_bar(num, total):
+        """进度条"""
         rate = num / total
         rate_num = int(rate * 100)
         if rate_num == 100:

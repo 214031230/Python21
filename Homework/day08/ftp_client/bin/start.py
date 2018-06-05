@@ -8,4 +8,3 @@ from core.FtpClient import FtpClient
 if __name__ == "__main__":
     func = FtpClient(settings.server_ip, settings.server_port)
     func.run()
-

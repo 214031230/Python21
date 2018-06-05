@@ -83,7 +83,7 @@ class FtpClient:
                     line = self.client.recv(settings.buffer_size)
                     f.write(line)
                     recv_size += len(line)
-                    Public.Progress_Bar(recv_size, header["size"])
+                    Public.progress_bar(recv_size, header["size"])
             if Public.get_md5(file_path) == header["md5"]:
                 print("INFO：下载成功")
                 self.log.info("%s下载%s文件成功" % (self.username, file_path))
@@ -113,7 +113,7 @@ class FtpClient:
                     for line in f:
                         self.client.send(line)
                         send_size += len(line)
-                        Public.Progress_Bar(send_size, header_file["size"])
+                        Public.progress_bar(send_size, header_file["size"])
                 if self.client.recv(settings.buffer_size).decode(settings.code) == "True":
                     print("INFO：上传成功")
                     self.log.info("%s上传%s文件成功" % (self.username, file_path))

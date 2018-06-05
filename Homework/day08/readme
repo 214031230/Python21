@@ -13,10 +13,10 @@ ftp_client：ftp客户端
                   ls     ->查看家目录       示例：ls
                   du     ->查看存储使用情况 示例：du
                   get    ->下载文件         示例：get filename
-                  put    ->上传文件         示例：put filename 示例：put /path/filename
-                  cd     ->切换目录         示例：cd test  示例：cd test/test1/test2  示例：cd .. (返回上一层)
-                  rm     ->删除文件或者目录 示例：rm filename  示例：rm dirname
-                  mkdir  ->创建目录         示例：mkdir dirname  示例：mkdir dirname1/dirname2/dirname3
+                  put    ->上传文件         示例：put filename     示例：put /path/filename
+                  cd     ->切换目录         示例：cd test          示例：cd test/test1/test2              示例：cd .. (返回上一层)
+                  rm     ->删除文件或者目录 示例：rm filename      示例：rm dirname
+                  mkdir  ->创建目录         示例：mkdir dirname    示例：mkdir dirname1/dirname2/dirname3
                   exit   ->退出             示例：exit
 
         上传下载目录说明：
