@@ -73,10 +73,10 @@ class FtpServer:
         else:
             self.conn.send("True".encode(settings.code))
         if os.name == "nt":
-            ret = os.popen("dir %s" % os.path.abspath(self.home_path)).read()
+            ret = os.popen("dir %s" % self.home_path).read()
             self.log.info("%s查看了家目录" % self.username)
         else:
-            ret = os.popen("ls -l %s" % os.path.abspath(self.home_path)).read()
+            ret = os.popen("ls -l %s" % self.home_path).read()
             if not ret:
                 ret = "."
             self.log.info("%s查看了家目录" % self.username)
@@ -190,8 +190,8 @@ class FtpServer:
 
     def mkdir(self, data):
         """创建目录"""
-        home_path = os.path.join(os.path.abspath(self.home_path))
-        mk_path = os.path.join(home_path, data[1])
+        # home_path = os.path.join(os.path.abspath(self.home_path))
+        mk_path = os.path.join(self.home_path, data[1])
         if not os.path.exists(mk_path):
             os.makedirs(mk_path)
             self.conn.send("True".encode(settings.code))

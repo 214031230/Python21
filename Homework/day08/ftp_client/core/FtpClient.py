@@ -136,7 +136,6 @@ class FtpClient:
 
     def cd(self, data):
         """获取切换目录结果"""
-        pass
         ret = self.client.recv(settings.buffer_size).decode(settings.code)
         if ret == "True":
             print("Info：切换目录成功")

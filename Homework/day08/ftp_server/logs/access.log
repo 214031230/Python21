@@ -403,3 +403,74 @@
 2018-06-05 21:53:35,356  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
 2018-06-05 21:53:35,356  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
 2018-06-05 21:53:35,356  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-06 16:52:09,600  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-06 16:52:14,731  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:52:14,731  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:52:15,754  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:52:15,754  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:52:37,824  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:52:37,824  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:52:56,258  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:52:56,258  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:53:08,552  root   INFO  spf上传了start.py文件 File:<FtpServer.py line 134>
+2018-06-06 16:53:08,552  root   INFO  spf上传了start.py文件 File:<FtpServer.py line 134>
+2018-06-06 16:53:10,709  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:53:10,709  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:53:14,507  root   INFO  spf下载了start.py文件 File:<FtpServer.py line 105>
+2018-06-06 16:53:14,507  root   INFO  spf下载了start.py文件 File:<FtpServer.py line 105>
+2018-06-06 16:53:14,511  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-06 16:53:14,511  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-06 16:56:46,314  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-06 16:56:46,314  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-06 16:56:49,804  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:56:49,804  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:56:49,804  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:56:50,282  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:56:50,282  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:56:50,282  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:57:28,503  root   INFO  spf下载了readme文件 File:<FtpServer.py line 105>
+2018-06-06 16:57:28,503  root   INFO  spf下载了readme文件 File:<FtpServer.py line 105>
+2018-06-06 16:57:28,503  root   INFO  spf下载了readme文件 File:<FtpServer.py line 105>
+2018-06-06 16:57:44,751  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-06 16:57:44,751  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-06 16:57:44,751  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-06 16:57:50,395  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:57:50,395  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:57:50,395  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:57:50,395  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:59:24,660  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-06 16:59:26,789  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:59:26,789  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 16:59:27,465  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:59:27,465  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 16:59:29,947  root   INFO  spf下载了readme文件 File:<FtpServer.py line 105>
+2018-06-06 16:59:29,947  root   INFO  spf下载了readme文件 File:<FtpServer.py line 105>
+2018-06-06 16:59:29,951  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-06 16:59:29,951  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-06 17:00:23,104  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-06 17:00:27,440  root   ERROR  [WinError 10054] 远程主机强迫关闭了一个现有的连接。 File:<FtpServer.py line 55>
+2018-06-06 17:00:27,632  root   INFO  Run 127.0.0.1:9000 File:<FtpServer.py line 31>
+2018-06-06 17:00:31,043  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 17:00:31,043  root   INFO  spf登录成功 File:<FtpServer.py line 38>
+2018-06-06 17:00:31,983  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:00:31,983  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:00:34,683  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:00:34,683  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:00:38,124  root   INFO  spf下载了help文件 File:<FtpServer.py line 105>
+2018-06-06 17:00:38,124  root   INFO  spf下载了help文件 File:<FtpServer.py line 105>
+2018-06-06 17:00:39,301  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:00:39,301  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:00:43,693  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:00:43,693  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:40,748  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:40,748  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:45,785  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:45,785  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:48,452  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:48,452  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:52,242  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:52,242  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:54,318  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:54,318  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:56,558  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>
+2018-06-06 17:01:56,558  root   INFO  spf查看了家目录 File:<FtpServer.py line 77>

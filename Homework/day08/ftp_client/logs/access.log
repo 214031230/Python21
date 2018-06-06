@@ -41,3 +41,13 @@
 2018-06-05 21:50:38,376  root   INFO  spf下载../download\access.log文件成功 File:<FtpClient.py line 89>
 2018-06-05 21:51:26,153  root   INFO  spf上传D:\老男孩python自动化21期\Python21\day9\test.py文件成功 File:<FtpClient.py line 119>
 2018-06-05 21:52:53,816  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-06 16:52:14,731  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-06 16:53:08,552  root   INFO  spf上传C:\Users\lanpa\Desktop\Python自动化21期\Python21\Homework\day08\ftp_client\bin\start.py文件成功 File:<FtpClient.py line 119>
+2018-06-06 16:53:14,507  root   ERROR  [Errno 2] No such file or directory: '../server\\start.py' File:<FtpClient.py line 38>
+2018-06-06 16:56:49,804  root   INFO  spf登录成功 File:<FtpClient.py line 25>
+2018-06-06 16:57:28,503  root   ERROR  [Errno 2] No such file or directory: '../server\\readme' File:<FtpClient.py line 39>
+2018-06-06 16:57:41,818  root   ERROR  [WinError 10053] 你的主机中的软件中止了一个已建立的连接。 File:<FtpClient.py line 39>
+2018-06-06 16:57:50,395  root   INFO  spf登录成功 File:<FtpClient.py line 25>
+2018-06-06 16:59:26,789  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-06 17:00:31,043  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-06 17:00:38,125  root   INFO  spf下载../download\help文件成功 File:<FtpClient.py line 89>
