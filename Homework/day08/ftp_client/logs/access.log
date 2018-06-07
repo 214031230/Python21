@@ -51,3 +51,6 @@
 2018-06-06 16:59:26,789  root   INFO  spf登录成功 File:<FtpClient.py line 24>
 2018-06-06 17:00:31,043  root   INFO  spf登录成功 File:<FtpClient.py line 24>
 2018-06-06 17:00:38,125  root   INFO  spf下载../download\help文件成功 File:<FtpClient.py line 89>
+2018-06-07 15:20:11,438  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-07 16:40:55,119  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-07 16:41:45,864  root   INFO  spf登录成功 File:<FtpClient.py line 24>

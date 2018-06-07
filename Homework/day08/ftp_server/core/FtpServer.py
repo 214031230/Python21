@@ -74,6 +74,8 @@ class FtpServer:
             self.conn.send("True".encode(settings.code))
         if os.name == "nt":
             ret = os.popen("dir %s" % self.home_path).read()
+            if not ret:
+                ret = "dir 路径包含空格！暂无法处理"
             self.log.info("%s查看了家目录" % self.username)
         else:
             ret = os.popen("ls -l %s" % self.home_path).read()
