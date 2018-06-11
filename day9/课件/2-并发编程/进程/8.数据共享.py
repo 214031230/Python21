@@ -10,7 +10,6 @@ if __name__ == '__main__':
     lock=Lock()
     m = Manager()
     dic = m.dict({'count':100})
-    #dic = {'count':100}
     p_l=[]
     for i in range(50):
         p=Process(target=work,args=(dic,lock))
