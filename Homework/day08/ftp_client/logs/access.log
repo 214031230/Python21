@@ -54,3 +54,10 @@
 2018-06-07 15:20:11,438  root   INFO  spf登录成功 File:<FtpClient.py line 24>
 2018-06-07 16:40:55,119  root   INFO  spf登录成功 File:<FtpClient.py line 24>
 2018-06-07 16:41:45,864  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-13 09:29:34,190  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-13 09:29:42,636  root   INFO  wxx登录成功 File:<FtpClient.py line 24>
+2018-06-13 09:33:50,412  root   ERROR  [WinError 10053] 你的主机中的软件中止了一个已建立的连接。 File:<FtpClient.py line 38>
+2018-06-13 09:35:25,596  root   INFO  spf登录成功 File:<FtpClient.py line 24>
+2018-06-13 09:35:29,578  root   ERROR  [WinError 10053] 你的主机中的软件中止了一个已建立的连接。 File:<FtpClient.py line 38>
+2018-06-13 09:35:44,823  root   INFO  wxx登录成功 File:<FtpClient.py line 24>
+2018-06-13 09:35:49,068  root   INFO  spf登录成功 File:<FtpClient.py line 24>

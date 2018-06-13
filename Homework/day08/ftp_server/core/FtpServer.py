@@ -3,32 +3,25 @@ import socket
 import json
 import os
 import struct
+import socketserver
 from core.UserManager import User
 from conf import settings
 from core.Pubulic import Public
 from core.MyJson import MyJson
 
 
-class FtpServer:
-    def __init__(self, host, port):
-        self.host = host
-        self.port = port
-        self.server = socket.socket()
-        self.server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        self.server.bind((self.host, self.port))
-        self.server.listen()
+class FtpServer(socketserver.BaseRequestHandler):
+    def handle(self):
+        """启动server等待用户输入指令"""
         self.home_dir = settings.home_dir
         self.status = False
         self.log = Public.log()
         self.user_size = settings.user_size
         self.user_size_dic = MyJson.load(self.user_size)
-
-    def run(self):
-        """启动server等待用户输入指令"""
         print("<---Server start---->")
         while True:
-            self.conn, self.address = self.server.accept()
-            self.log.info("Run %s:%s" % (self.host, self.port))
+            self.conn = self.request
+            self.address = self.client_address
             print(self.address)
             if not self.status:
                 try:
