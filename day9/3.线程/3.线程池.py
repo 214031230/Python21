@@ -6,19 +6,19 @@
 """
 
 # 开启进程线程池
-# from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor
-# import time
-#
-#
-# def func(i):
-#     time.sleep(1)
-#     print("%s thread is running" % i)
-#
-#
-# if __name__ == '__main__':
-#     t = ThreadPoolExecutor(5)
-#     for i in range(20):
-#        t.submit(func, i)
-#     t.shutdown()    # 和join用法一样
-#     print("done")
+from concurrent.futures import ThreadPoolExecutor,ProcessPoolExecutor
+import time
+
+
+def func(i):
+    time.sleep(1)
+    print("%s thread is running" % i)
+
+
+if __name__ == '__main__':
+    t = ThreadPoolExecutor(5)
+    for i in range(20):
+       t.submit(func, i)
+    t.shutdown()    # 和join用法一样
+    print("done")
 
