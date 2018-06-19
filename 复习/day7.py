@@ -34,7 +34,7 @@
 #     print(md5.hexdigest())
 
 
-import configparser
-config = configparser.ConfigParser()
-config.read("hosts.ini")
-print(config.sections())
+# import configparser
+# config = configparser.ConfigParser()
+# config.read("hosts.ini")
+# print(config.sections())
