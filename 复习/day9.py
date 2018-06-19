@@ -156,42 +156,210 @@
 from multiprocessing import Process,Event
 import time
 import random
-def run(e):
-    if e.is_set:
-        time.sleep(random.randint(3,5))
-        print("可以通行了")
-    else:
-        print("请等一等")
-        e.wait()
+# def run(e):
+#     if e.is_set:
+#         time.sleep(random.randint(3,5))
+#         print("可以通行了")
+#     else:
+#         print("请等一等")
+#         e.wait()
+#
+# def stop(e):
+#     while 1:
+#         if e.is_set:
+#             time.sleep(1)
+#             print("TRUE")
+#             e.clear()
+#             time.sleep(1)
+#         else:
+#             time.sleep(1)
+#             print("False")
+#             e.set()
+#             time.sleep(1)
+#
+#
+# if __name__ == '__main__':
+#     e = Event()
+#
+#     p1 = Process(target=stop, args=(e, ))
+#     p1.daemon = True
+#     p1.start()
+#
+#     lst = []
+#     for i in range(10):
+#         p = Process(target=run, args=(e, ))
+#         p.start()
+#         lst.append(p)
+#     for p in lst:p.join()
 
-def stop(e):
-    while 1:
-        if e.is_set:
-            time.sleep(1)
-            print("TRUE")
-            e.clear()
-            time.sleep(1)
-        else:
-            time.sleep(1)
-            print("False")
-            e.set()
-            time.sleep(1)
+# from multiprocessing import Process
+# import os
+# import time
+# import random
+#
+# def fun():
+#     time.sleep(random.randint(0, 3))
+#     print(os.getpid())
+#
+#
+# def fun1():
+#     while True:
+#         time.sleep(1)
+#         print("守护进程is running")
+#
+# if __name__ == '__main__':
+#     p1 = Process(target=fun1)
+#     p1.daemon = True
+#     p1.start()
+#     lst = []
+#     for i in range(10):
+#         p = Process(target=fun)
+#         p.start()
+#         lst.append(p)
+#     for rp in lst:rp.join()
+
+# from threading import Thread
+#
+# n = 100
+# def fun():
+#     global n
+#     n -= 1
+#     print(n)
+# if __name__ == '__main__':
+#     for i in range(10):
+#         p = Thread(target=fun)
+#         p.start()
+
+# from multiprocessing import Process,Lock,Semaphore
+# import os
+# import time
+# import random
+# import json
+# def buy(l):
+#     time.sleep(random.random())
+#     with open("./info") as f:
+#         ret = json.load(f)
+#     print("%s查到%s张票" % (os.getpid(), ret["count"]))
+#     time.sleep(random.random())
+#     with l:
+#         with open("./info") as f:
+#             ret = json.load(f)
+#         if ret["count"] > 0:
+#             ret["count"] -= 1
+#             with open("./info", "w") as f:
+#                 json.dump(ret, f)
+#             print("%s够买了一张票" % os.getpid())
+#
+# if __name__ == '__main__':
+#     s = Semaphore(2)
+#     for i in range(10):
+#         p = Process(target=buy, args=(s,))
+#         p.start()
+
+# from multiprocessing import Process,Event,Queue
+# import os
+# import time
+# import random
+#
+# def eat(q):
+#     ret = q.get()
+#     print("%s吃了%s" %(os.getpid(), ret))
+#
+# def make(q, food):
+#     while True:
+#         q.put("%s" % (food))
+#         print("%s制作了1个%s" %(os.getpid(), food))
+#         time.sleep(1)
+#
+# if __name__ == '__main__':
+#     q = Queue(1)
+#     p1 = Process(target=make, args=(q,"包子"))
+#     p1.start()
+#     for i in range(10):
+#         p = Process(target=eat, args=(q, ))
+#         p.start()
+
+
+
+
+# def car_run(e):
+#     while True:
+#         if not e.is_set():
+#             print("%s看见红灯,请停住" %os.getpid())
+#             e.wait()
+#             print("%s看见绿灯，请通过"% os.getpid())
+#             time.sleep(random.randint(3, 6))
+#             if not e.is_set():continue
+#             print("%s走远了"%os.getpid())
+#             break
+#
+#
+# def deng_run(e):
+#     while True:
+#         time.sleep(3)
+#         if e.is_set():
+#             e.clear()
+#         else:
+#             e.set()
+#
+#
+# if __name__ == '__main__':
+#     e = Event()
+#     deng = Process(target=deng_run, args=(e,))
+#     deng.start()
+#
+#     for i in range(10):
+#         car = Process(target=car_run, args=(e, ))
+#         car.start()
+
+
+from concurrent.futures import ThreadPoolExecutor
+from threading import Thread
+import time
+#
+#
+# def run(i):
+#     time.sleep(1)
+#     print("线程is running")
+#
+#
+# if __name__ == '__main__':
+#     pool = ThreadPoolExecutor(2)
+#     pool.map(run, range(10))
+# urls = ["www.qq.com", "www.baidu.com", "www.123.com"]
+#
+# def get(url):
+#     time.sleep(random.randint(1, 3))
+#     print("获取%s内容" % url)
+#     return url
+# def info(ret):
+#     # return "处理成功%s" % ret.result()
+#     time.sleep(random.random())
+#     print("处理成功%s" % ret.result())
+# if __name__ == '__main__':
+#     t = ThreadPoolExecutor(3)
+#     for i in urls:
+#         t.submit(get, i).add_done_callback(info)
+
+import gevent
+from gevent import monkey;monkey.patch_all()
+
+def get():
+    print("获取A数据")
+    time.sleep(1)
+    print("获取B数据")
+
+
+def put():
+    print("处理A数据")
+    time.sleep(1)
+    print("处理B数据")
 
 
 if __name__ == '__main__':
-    e = Event()
-
-    p1 = Process(target=stop, args=(e, ))
-    p1.daemon = True
-    p1.start()
-
-    lst = []
-    for i in range(10):
-        p = Process(target=run, args=(e, ))
-        p.start()
-        lst.append(p)
-    for p in lst:p.join()
-
-
-
+    g1 = gevent.spawn(get)
+    g2 = gevent.spawn(put)
+    # g1.join()
+    # g2.join()
+    gevent.joinall([g1, g2])
 
