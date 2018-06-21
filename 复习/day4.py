@@ -158,21 +158,95 @@
 # print(list(g1))
 # print(list(g2))
 
-def add(n,i): # 定义一个求和函数
-    return n+i # 返回和
+# def add(n,i): # 定义一个求和函数
+#     return n+i # 返回和
+#
+# def test(): # 生成器函数，里面有4个值0,1,2,3
+#     for i in range(4):
+#         yield i
+#
+# g=test() # g = 生成器
+# for n in [1,10]: # 列表里面有2个数字 1 和 10
+#     g = (add(n, i) for i in g)
+#     # n = 1
+#     # g=(add(n,i) for i in g)
+#     # n = 10
+#     # g=(add(n,i) for i in g)
+#
+#
+# print(list(g)) # g = (add(n,i) for i in (add(10,i) for i in g)) --> (add(n,i) for i in (add(10,i) for i in (0,1,2,3,4))) -->
+#                #  (add(10,i) for i in (10,11,12,13) --->(20,21,22,23) --->[20,21,22,23]
 
-def test(): # 生成器函数，里面有4个值0,1,2,3
-    for i in range(4):
-        yield i
-
-g=test() # g = 生成器
-for n in [1,10]: # 列表里面有2个数字 1 和 10
-    g = (add(n, i) for i in g)
-    # n = 1
-    # g=(add(n,i) for i in g)
-    # n = 10
-    # g=(add(n,i) for i in g)
 
 
-print(list(g)) # g = (add(n,i) for i in (add(10,i) for i in g)) --> (add(n,i) for i in (add(10,i) for i in (0,1,2,3,4))) -->
-               #  (add(10,i) for i in (10,11,12,13) --->(20,21,22,23) --->[20,21,22,23]
+# print(format('test', '<20'))
+# print(format('test', '>20'))
+# print(format('test', '^20'))
+
+
+
+# print(all([1,2,3,4,5]))
+# print(all([0,1,2,3,4,5]))
+# print(all(['a',1,2,3,4,5]))
+# print(all(['',1,2,3,4,5]))
+# print(any([0,None,False]))
+#
+# ret = zip([1,2,3,4,5],('a','b','c','d'),(4,5))
+# for i in ret:
+#     print(i)
+
+
+
+# lst = [1, 4, 6, 7, 9, 12, 17]
+# def fun(x):
+#     if x % 2 == 0:
+#         return x
+#
+# ret = filter(lambda x: x % 2 == 0, lst)
+# print(list(ret))
+#
+# l = ['test', None, '', 'str', '  ', 'END']
+#
+# ret = filter(lambda x: bool(x) == True and bool(x.strip()) == True, l)
+# print(list(ret))
+#
+# l = [1,2,3]
+# ret = map(lambda x:x * 2, l)
+# print(list(ret))
+
+# s = (('a'), ('b')), (('c'), ('d'))
+# ret = map(lambda x:{x[0]:x[1]},zip((('a'), ('b')), (('c'), ('d'))))
+# print(list(ret))
+import os
+
+
+with open("./info") as f, open("./new_info", "a") as f1:
+    for i in f:
+        line = i.replace("坏人","好人")
+        f1.write(line)
+
+
+os.rename("./new_info", "./info")
+
+
+
+l = []
+l.extend(['111',222,333])
+print(l)
+
+
+l = ['老男孩', 'alex', 'wusir', 'taibai', 'ritian']
+l[1:3] = [111,222,333,444]
+print(l)
+
+
+
+
+
+
+
+
+
+
+
+
