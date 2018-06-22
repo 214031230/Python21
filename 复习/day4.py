@@ -217,33 +217,36 @@
 # s = (('a'), ('b')), (('c'), ('d'))
 # ret = map(lambda x:{x[0]:x[1]},zip((('a'), ('b')), (('c'), ('d'))))
 # print(list(ret))
-import os
+# import os
+#
+#
+# with open("./info") as f, open("./new_info", "a") as f1:
+#     for i in f:
+#         line = i.replace("坏人","好人")
+#         f1.write(line)
+#
+#
+# os.rename("./new_info", "./info")
+#
+#
+#
+# l = []
+# l.extend(['111',222,333])
+# print(l)
+#
+#
+# l = ['老男孩', 'alex', 'wusir', 'taibai', 'ritian']
+# l[1:3] = [111,222,333,444]
+# print(l)
 
 
-with open("./info") as f, open("./new_info", "a") as f1:
-    for i in f:
-        line = i.replace("坏人","好人")
-        f1.write(line)
+# dic = {"name":"jin","age":18,"sex":"male"}
+# print(dic.get("namea"))
 
-
-os.rename("./new_info", "./info")
-
-
-
-l = []
-l.extend(['111',222,333])
-print(l)
-
-
-l = ['老男孩', 'alex', 'wusir', 'taibai', 'ritian']
-l[1:3] = [111,222,333,444]
-print(l)
-
-
-
-
-
-
+a = 1
+b = 2
+a,b = b,a
+print(a,b)
 
 
 
