@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- <link rel="stylesheet" type="text/css" href="https://unpkg.com/reset-css@4.0.1/reset.css"> -->
+	<style type="text/css" media="screen">
+
+	/*后代选择器*/
+	/*#box p{
+		color: red;
+	}*/
+	/*子代选择器*/
+	/*#box>p{
+		color: yellow;
+	}*/
+
+
+	/*2 1 1*/
+/*	#box #box2 div .app{
+		color: yellow;
+	}*/
+	/*2 2 0*/
+	/*#box #box2 .wrap3 .app{
+		color: red;
+	}*/
+	/*继承来的标签权重为0*/
+	#box #box2 .wrap3{
+		color: red;
+	}
+	#box #box2 div{
+		color: green;
+	}
+	span{
+		color: red;
+	}
+	span.active{
+		font-size: 20px;
+		color: green;
+	}
+	/*伪类选择器*/
+	span:hover{
+		color: green;
+		font-size: 20px;
+	}
+	</style>
+	
+	
+</head>
+<body>
+	<div id="box" class="wrap">
+		<!-- <p>哈哈哈</p> -->
+		<div id="box2" class="wrap2">
+		
+			<div class="wrap3" id="box3">
+				<p id="pa" class="app">猜猜我是什么颜色</p>
+			</div>
+			
+		</div>
+	</div>
+
+	<span>鸡蛋大的</span>
+	<span>鸡蛋大的</span>
+	<span>鸡蛋大的</span>
+	<span>鸡蛋大的</span>
+	<span>鸡蛋大的</span>
+
+	
+
+
+</body>
+</html>
