@@ -1,0 +1,481 @@
+SELECT
+	*
+FROM
+(SELECT COUNT(DISTINCT bec.id) AS '班级统计'
+FROM bd_edu_class bec
+INNER JOIN bd_grade bg ON bg.business_key = bec.grade_business_key
+INNER JOIN bd_school bs ON bs.business_key = bg.school_business_key
+WHERE bs.name LIKE '北京研发' AND bs.is_delete = 'N' AND bg.is_delete = 'N' AND bec.is_delete = 'N') as tm1,
+
+(SELECT COUNT(DISTINCT bt.id) AS '学生统计'
+FROM bd_student bt
+INNER JOIN base_user bu ON (bu.id = bt.id AND bu.category = 'student')
+INNER JOIN bd_school bs ON bs.business_key = bt.school_business_key
+WHERE bs.name LIKE '北京研发' AND bs.is_delete = 'N' AND bu.is_delete = 'N') as tm2,
+
+(SELECT COUNT(DISTINCT bt.id) AS '教师统计'
+FROM bd_teacher bt
+INNER JOIN base_user bu ON (bu.id = bt.id AND bu.category = 'teacher')
+INNER JOIN bd_school bs ON bs.business_key = bt.school_business_key
+WHERE bs.name LIKE '北京研发' AND bs.is_delete = 'N' AND bu.is_delete = 'N') as tm3,
+
+(SELECT COUNT(DISTINCT krt.id) AS '教学资源统计'
+FROM ks_resource_teaching krt
+WHERE krt.`status` = 'STARTUSE' AND (krt.`level` = 'DISTRICT' OR ((krt.`level` = 'SCHOOL' OR krt.`level` = 'PERSONAL') AND EXISTS (
+SELECT 'E'
+FROM bd_school bs
+WHERE bs.business_key = krt.school_id AND bs.name LIKE '北京研发')))) as tm4,
+
+(SELECT COUNT(DISTINCT kqb.id) AS '试题统计'
+FROM ks_question_base kqb
+WHERE kqb.audit_status = 'APPROVED' AND (kqb.`level` = 'DISTRICT' OR ((kqb.`level` = 'SCHOOL' OR kqb.`level` = 'PERSONAL') AND EXISTS (
+SELECT 'E'
+FROM bd_school bs
+WHERE bs.business_key = kqb.school_id AND bs.name LIKE '北京研发')))) as tm5,
+	(
+		SELECT
+			t0.作业总次数,
+			t0.作业总题数,
+			t00.布置作业人数,
+			round(
+				t0.作业总次数 / t00.布置作业人数,
+				2
+			) AS 人均布置作业次数,
+			round(
+				t0.作业总题数 / t0.作业总次数,
+				2
+			) AS 平均每份作业题目数
+		FROM
+			(
+				SELECT
+					count(1) AS 作业总次数,
+					sum(题数) AS 作业总题数
+				FROM
+					(
+						SELECT
+							sum(题数) AS 题数
+						FROM
+							(
+								SELECT
+									p.question_num AS 题数,
+									p.send_date
+								FROM
+									paper_release p
+								WHERE
+									task_type IN (
+										'questionWork',
+										'traditionalWork',
+										'atWillWork',
+										'home'
+									)
+							) AS t
+						GROUP BY
+							t.send_date
+					) AS t1
+			) AS t0,
+			(
+				SELECT
+					count(1) AS 布置作业人数
+				FROM
+					(
+						SELECT
+							count(1) AS 某学生布置作业次数
+						FROM
+							student_paper_release s
+						INNER JOIN paper_release p ON s.paper_release_id = p.id
+						AND p.task_type IN (
+							'questionWork',
+							'traditionalWork',
+							'atWillWork',
+							'home'
+						)
+						GROUP BY
+							student_code
+					) AS t2
+			) AS t00
+	) AS T1,
+	(
+		SELECT
+			t0.检测总次数,
+			t0.检测总题数,
+			t00.布置检测人数,
+			round(
+				t0.检测总次数 / t00.布置检测人数,
+				2
+			) AS 人均布置检测次数,
+			round(
+				t0.检测总题数 / t0.检测总次数,
+				2
+			) AS 平均每份检测题目数
+		FROM
+			(
+				SELECT
+					count(1) AS 检测总次数,
+					sum(题数) AS 检测总题数
+				FROM
+					(
+						SELECT
+							sum(题数) AS 题数
+						FROM
+							(
+								SELECT
+									p.question_num AS 题数,
+									p.send_date
+								FROM
+									paper_release p
+								WHERE
+									task_type IN (
+										'examination',
+										'examAtWillWork'
+									)
+							) AS t
+						GROUP BY
+							t.send_date
+					) AS t1
+			) AS t0,
+			(
+				SELECT
+					count(1) AS 布置检测人数
+				FROM
+					(
+						SELECT
+							count(1) AS 学生布置检测次数
+						FROM
+							student_paper_release s
+						INNER JOIN paper_release p ON s.paper_release_id = p.id
+						AND p.task_type IN (
+							'examination',
+							'examAtWillWork'
+						)
+						GROUP BY
+							student_code
+					) AS t2
+			) AS t00
+	) AS T2,
+	(
+		SELECT
+			t0.随堂练习总次数,
+			t0.随堂练习总题数,
+			t00.布置随堂练习人数,
+			round(
+				t0.随堂练习总次数 / t00.布置随堂练习人数,
+				2
+			) AS 人均布置随堂练习次数,
+			round(
+				t0.随堂练习总题数 / t0.随堂练习总次数,
+				2
+			) AS 平均每份随堂练习题目数
+		FROM
+			(
+				SELECT
+					count(1) AS 随堂练习总次数,
+					sum(题数) AS 随堂练习总题数
+				FROM
+					(
+						SELECT
+							sum(题数) AS 题数
+						FROM
+							(
+								SELECT
+									p.question_num AS 题数,
+									p.send_date
+								FROM
+									paper_release p
+								WHERE
+									task_type IN ('lesson', 'lessonOutWork')
+							) AS t
+						GROUP BY
+							t.send_date
+					) AS t1
+			) AS t0,
+			(
+				SELECT
+					count(1) AS 布置随堂练习人数
+				FROM
+					(
+						SELECT
+							count(1) AS 学生布置随堂练习次数
+						FROM
+							student_paper_release s
+						INNER JOIN paper_release p ON s.paper_release_id = p.id
+						AND p.task_type IN ('lesson', 'lessonOutWork')
+						GROUP BY
+							student_code
+					) AS t2
+			) AS t00
+	) AS T3,
+	(
+		SELECT
+			t.*, round(
+				t.实际课堂互动使用人数 / t.课堂互动次数,
+				2
+			) AS 课堂互动人均使用次数,
+			CONCAT(
+				ROUND(
+					t.实际课堂互动使用人数 / 课堂互动使用人数,
+					4
+				) * 100,
+				'%'
+			) AS 使用课堂互动人数比例
+		FROM
+			(
+				SELECT
+					(
+						随机提问人数 + 所有参与抢答人数 + 所有参与申请展示人数 + 分组讨论人数 + 所有参与投票人数 + 所有参与课堂反馈人数 + 所有参与信息收集人数
+					) AS 课堂互动使用人数,
+					(
+						随机提问人数 + 实际抢答人数 + 实际申请展示人数 + 分组讨论人数 + 实际投票人数 + 实际课堂反馈人数 + 实际信息收集人数
+					) AS 实际课堂互动使用人数,
+					(
+						发起抢答次数 + 发起申请展示次数 + 发起分组讨论次数 + 发起投票次数 + 发起课堂反馈次数 + 发起信息收集次数 + 随机提问人数
+					) AS 课堂互动次数
+				FROM
+					(
+						SELECT
+							count(1) AS 随机提问人数
+						FROM
+							roll_call
+					) AS t1,
+					(
+						SELECT
+							count(1) AS 实际抢答人数
+						FROM
+							quick_answer_data
+					) AS t2,
+					(
+						SELECT
+							count(1) AS 实际申请展示人数
+						FROM
+							apply_show_data
+					) AS t3,
+					(
+						SELECT
+							count(1) AS 分组讨论人数
+						FROM
+							activity_group_data
+					) AS t4,
+					(
+						SELECT
+							count(1) AS 实际投票人数
+						FROM
+							vote_records
+					) AS t5,
+					(
+						SELECT
+							count(1) AS 实际课堂反馈人数
+						FROM
+							class_comment_data
+					) AS t6,
+					(
+						SELECT
+							count(1) AS 实际信息收集人数
+						FROM
+							class_collect_data
+					) AS t7,
+					(
+						SELECT
+							IFNULL(sum(参与抢答人数), 0) AS 所有参与抢答人数
+						FROM
+							(
+								SELECT
+									IFNULL(
+										LENGTH(t.receiver) - LENGTH(REPLACE(t.receiver, ',', '')) = 0,
+										1
+									) AS 参与抢答人数
+								FROM
+									(
+										SELECT
+											SUBSTRING_INDEX(
+												REPLACE (
+													content,
+													CONCAT(
+														SUBSTRING_INDEX(content, '"receiver":', 1),
+														'"receiver":"'
+													),
+													''
+												),
+												'"',
+												1
+											) AS receiver
+										FROM
+											failure_send_log
+										WHERE
+											content LIKE '%QUICK_ANSWER%'
+									) AS t
+							) AS t
+					) AS t8,
+					(
+						SELECT
+							IFNULL(
+								sum(参与申请展示人数),
+								0
+							) AS 所有参与申请展示人数
+						FROM
+							(
+								SELECT
+									IFNULL(
+										LENGTH(t.receiver) - LENGTH(REPLACE(t.receiver, ',', '')) = 0,
+										1
+									) AS 参与申请展示人数
+								FROM
+									(
+										SELECT
+											SUBSTRING_INDEX(
+												REPLACE (
+													content,
+													CONCAT(
+														SUBSTRING_INDEX(content, '"receiver":', 1),
+														'"receiver":"'
+													),
+													''
+												),
+												'"',
+												1
+											) AS receiver
+										FROM
+											failure_send_log
+										WHERE
+											content LIKE '%ALLOW_SHOW%'
+									) AS t
+							) AS t
+					) AS t9,
+					(
+						SELECT
+							IFNULL(sum(参与投票人数), 0) AS 所有参与投票人数
+						FROM
+							(
+								SELECT
+									IFNULL(
+										LENGTH(t.receiver) - LENGTH(REPLACE(t.receiver, ',', '')) = 0,
+										1
+									) AS 参与投票人数
+								FROM
+									(
+										SELECT
+											SUBSTRING_INDEX(
+												REPLACE (
+													content,
+													CONCAT(
+														SUBSTRING_INDEX(content, '"receiver":', 1),
+														'"receiver":"'
+													),
+													''
+												),
+												'"',
+												1
+											) AS receiver
+										FROM
+											failure_send_log
+										WHERE
+											content LIKE '%VOTE%'
+									) AS t
+							) AS t
+					) AS t10,
+					(
+						SELECT
+							IFNULL(
+								sum(参与课堂反馈人数),
+								0
+							) AS 所有参与课堂反馈人数
+						FROM
+							(
+								SELECT
+									IFNULL(
+										LENGTH(t.receiver) - LENGTH(REPLACE(t.receiver, ',', '')) = 0,
+										1
+									) AS 参与课堂反馈人数
+								FROM
+									(
+										SELECT
+											SUBSTRING_INDEX(
+												REPLACE (
+													content,
+													CONCAT(
+														SUBSTRING_INDEX(content, '"receiver":', 1),
+														'"receiver":"'
+													),
+													''
+												),
+												'"',
+												1
+											) AS receiver
+										FROM
+											failure_send_log
+										WHERE
+											content LIKE '%COMMENT_TEACHER%'
+									) AS t
+							) AS t
+					) AS t11,
+					(
+						SELECT
+							IFNULL(
+								sum(参与信息收集人数),
+								0
+							) AS 所有参与信息收集人数
+						FROM
+							(
+								SELECT
+									IFNULL(
+										LENGTH(t.receiver) - LENGTH(REPLACE(t.receiver, ',', '')) = 0,
+										1
+									) AS 参与信息收集人数
+								FROM
+									(
+										SELECT
+											SUBSTRING_INDEX(
+												REPLACE (
+													content,
+													CONCAT(
+														SUBSTRING_INDEX(content, '"receiver":', 1),
+														'"receiver":"'
+													),
+													''
+												),
+												'"',
+												1
+											) AS receiver
+										FROM
+											failure_send_log
+										WHERE
+											content LIKE '%CLASS_COLLECT%'
+									) AS t
+							) AS t
+					) AS t12,
+					(
+						SELECT
+							count(1) AS 发起抢答次数
+						FROM
+							quick_answer
+					) AS t13,
+					(
+						SELECT
+							count(1) AS 发起申请展示次数
+						FROM
+							apply_show
+					) AS t14,
+					(
+						SELECT
+							count(1) AS 发起分组讨论次数
+						FROM
+							activity_group
+					) AS t15,
+					(
+						SELECT
+							count(1) AS 发起投票次数
+						FROM
+							vote
+					) AS t16,
+					(
+						SELECT
+							count(1) AS 发起课堂反馈次数
+						FROM
+							class_comment
+					) AS t17,
+					(
+						SELECT
+							count(1) AS 发起信息收集次数
+						FROM
+							class_collect
+					) AS t18
+			) AS t
+	) AS T4
