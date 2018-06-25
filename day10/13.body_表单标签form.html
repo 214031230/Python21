@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--表单标签用<form>表示，用于与服务器的交互。表单就是收集用户信息的，就是让用户填写的、选择的。-->
+
+<form action="./index.py">
+    用户名：<input type="text" name="user" id="user"><br>
+    密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" id="password"><br>
+    <input type="submit" name="login" id="login" value="登录">
+</form>
+<form>
+    选择文件<input type="file" class="sc" id="sc">
+    <!--<input type="image" src="./课件/timg.jpg" class="img" value="图片按钮">-->
+</form>
+
+<form>
+    <select>
+            <option>小学</option>
+            <option>初中</option>
+            <option>高中</option>
+            <option>大学</option>
+            <option selected="">研究生</option>
+    </select>
+    <select size="3">
+            <option>小学</option>
+            <option>初中</option>
+            <option>高中</option>
+            <option>大学</option>
+            <option selected="">研究生</option>
+    </select>
+    <select multiple="">
+            <option>小学</option>
+            <option>初中</option>
+            <option selected="">高中</option>
+            <option selected="">大学</option>
+            <option>研究生</option>
+    </select>
+    <textarea name="" id="" cols="30" rows="10">建议：
+    </textarea>
+            <fieldset>
+        <legend>账号信息</legend>
+        姓名：<input value="呵呵" >逗比<br>
+        密码：<input type="password" value="pwd" size="50"><br>
+        </fieldset>
+
+        <fieldset>
+        <legend>其他信息</legend>
+        性别：<input type="radio" name="gender" value="male" checked="">男
+              <input type="radio" name="gender" value="female" >女<br>
+        爱好：<input type="checkbox" name="love" value="eat">吃饭
+              <input type="checkbox" name="love" value="sleep">睡觉
+              <input type="checkbox" name="love" value="bat">打豆豆
+        </fieldset>
+    <input type="radio" name="sex" id="nan" /> <label for="nan">男</label>
+    <input type="radio" name="sex" id="nv"  /> <label for="nv">女</label>
+</form>
+</body>
+</html>
