@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <title>注册百度账户</title>
     <style type="text/css">
-        .top{
-            height: 75px;
-            font-size: 12px;
+        div{
             width: 980px;
             margin-left: auto;
             margin-right: auto;
+        }
+        .top{
+            height: 75px;
+            font-size: 12px;
             border-bottom: 2px solid black;
         }
         .content{
-            width: 980px;
-            margin-left: 200px;
             margin-top: 100px;
         }
         .top img{
@@ -36,9 +36,9 @@
             width: 320px;
             height: 30px;
         }
-        .huoqu{
+        .get{
             width: 105px;
-            height: 30px;
+            height: 40px;
         }
         .register{
             background: #2892F1;
@@ -53,19 +53,19 @@
 <body>
     <div class="top">
         <a href="#">
-            <img src="./baidu.gif" alt="logo">
+            <img src="baidu.gif" alt="logo">
         </a>
         <span>丨注册百度账号</span>
     </div>
     <div class="content">
         <form action="#" method="get">
         <!--<form action="http://127.0.0.1:9000" method="get">-->
-            <span>用户名</span><input type="text" name="username" id="username" placeholder="请设置用户名"><br><br>
+            <span>用户名</span><input type="text" name="username" placeholder="请设置用户名"><br><br>
             <span>手机号</span><input type="text" placeholder="用于登录和找回密码"><br><br>
-            <span>&nbsp;&nbsp;&nbsp;密码:</span><input type="password" name="password" id="password" placeholder="请设置登录密码"><br><br>
-            <span>验证码</span><input type="text" name="yzm" id="yzm" placeholder="请输入验证码">
-            <input type="button" value="获取短信验证码" class="huoqu"><br><br>
-            <input type="submit" value="注册" class="register" id="register">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;密码</span><input type="password" name="password"  placeholder="请设置登录密码"><br><br>
+            <span>验证码</span><input type="text" name="yzm"  placeholder="请输入验证码">
+            <input type="button" value="获取短信验证码" class="get"><br><br>
+            <input type="submit" value="注册" class="register">
         </form>
     </div>
     <div class="foot"></div>
