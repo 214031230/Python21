@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import socket
 server = socket.socket()
-server.bind(("127.0.0.1", 9000))
+server.bind(("127.0.0.1", 9001))
 server.listen()
 print("启动server...")
 while True:
