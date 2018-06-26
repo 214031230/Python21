@@ -4,28 +4,68 @@
     <meta charset="UTF-8">
     <title>注册百度账户</title>
     <style type="text/css">
-        .register{
-            background: #2892F1;
-            width: 150px;
-            color: white;
+        .top{
+            height: 75px;
+            font-size: 12px;
+            width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: 2px solid black;
         }
         .content{
-            width: 1024px;
-            padding-top: 20%;
-            padding-left: 50%;
+            width: 980px;
+            margin-left: 200px;
+            margin-top: 100px;
+        }
+        .top img{
+            margin-top: 15px;
+        }
+        span{
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .top span{
+            font-size: 20px;
+            margin-left: 10px;
+            color: #666666;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        input{
+            margin-left: 5px;
+            width: 320px;
+            height: 30px;
+        }
+        .huoqu{
+            width: 105px;
+            height: 30px;
+        }
+        .register{
+            background: #2892F1;
+            width: 320px;
+            height: 50px;
+            color: white;
+            font-size: 20px;
+            margin-left: 48px;
         }
     </style>
 </head>
 <body>
-    <div class="top"></div>
+    <div class="top">
+        <a href="#">
+            <img src="./baidu.gif" alt="logo">
+        </a>
+        <span>丨注册百度账号</span>
+    </div>
     <div class="content">
-        <form action="http://127.0.0.1:9000" method="get">
-            用户名:<input type="text" name="username" id="username"><br>
-            <!--手机号:<input type="text"><br>-->
-            密&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="password" name="password" id="password"><br>
-            <!--验证码:<input type="text">-->
-            <!--<input type="button" value="获取验证码"><br>-->
-            <input type="submit" value="注册" class="register">
+        <form action="#" method="get">
+        <!--<form action="http://127.0.0.1:9000" method="get">-->
+            <span>用户名</span><input type="text" name="username" id="username" placeholder="请设置用户名"><br><br>
+            <span>手机号</span><input type="text" placeholder="用于登录和找回密码"><br><br>
+            <span>&nbsp;&nbsp;&nbsp;密码:</span><input type="password" name="password" id="password" placeholder="请设置登录密码"><br><br>
+            <span>验证码</span><input type="text" name="yzm" id="yzm" placeholder="请输入验证码">
+            <input type="button" value="获取短信验证码" class="huoqu"><br><br>
+            <input type="submit" value="注册" class="register" id="register">
         </form>
     </div>
     <div class="foot"></div>

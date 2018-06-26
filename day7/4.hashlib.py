@@ -62,5 +62,5 @@ def check_file(src_file, dest_file):
     return True if ret[0] == ret[1] else False
 
 
-print(check_file("./test.py", "test.py"))
+print(check_file("./data_sum.py", "data_sum.py"))
 

@@ -1,5 +1,5 @@
 SELECT
-	*
+ *
 FROM
 (SELECT COUNT(DISTINCT bec.id) AS '班级统计'
 FROM bd_edu_class bec
@@ -21,14 +21,14 @@ WHERE bs.name LIKE '北京研发' AND bs.is_delete = 'N' AND bu.is_delete = 'N')
 
 (SELECT COUNT(DISTINCT krt.id) AS '教学资源统计'
 FROM ks_resource_teaching krt
-WHERE krt.`status` = 'STARTUSE' AND (krt.`level` = 'DISTRICT' OR ((krt.`level` = 'SCHOOL' OR krt.`level` = 'PERSONAL') AND EXISTS (
+WHERE krt.status = 'STARTUSE' AND (krt.level = 'DISTRICT' OR ((krt.level = 'SCHOOL' OR krt.level = 'PERSONAL') AND EXISTS (
 SELECT 'E'
 FROM bd_school bs
 WHERE bs.business_key = krt.school_id AND bs.name LIKE '北京研发')))) as tm4,
 
 (SELECT COUNT(DISTINCT kqb.id) AS '试题统计'
 FROM ks_question_base kqb
-WHERE kqb.audit_status = 'APPROVED' AND (kqb.`level` = 'DISTRICT' OR ((kqb.`level` = 'SCHOOL' OR kqb.`level` = 'PERSONAL') AND EXISTS (
+WHERE kqb.audit_status = 'APPROVED' AND (kqb.level = 'DISTRICT' OR ((kqb.level = 'SCHOOL' OR kqb.level = 'PERSONAL') AND EXISTS (
 SELECT 'E'
 FROM bd_school bs
 WHERE bs.business_key = kqb.school_id AND bs.name LIKE '北京研发')))) as tm5,
@@ -289,12 +289,12 @@ WHERE bs.business_key = kqb.school_id AND bs.name LIKE '北京研发')))) as tm5
 												REPLACE (
 													content,
 													CONCAT(
-														SUBSTRING_INDEX(content, '"receiver":', 1),
-														'"receiver":"'
+														SUBSTRING_INDEX(content, '\"receiver\":', 1),
+														'\"receiver\":\"'
 													),
 													''
 												),
-												'"',
+												'\"',
 												1
 											) AS receiver
 										FROM
@@ -324,12 +324,12 @@ WHERE bs.business_key = kqb.school_id AND bs.name LIKE '北京研发')))) as tm5
 												REPLACE (
 													content,
 													CONCAT(
-														SUBSTRING_INDEX(content, '"receiver":', 1),
-														'"receiver":"'
+														SUBSTRING_INDEX(content, '\"receiver\":', 1),
+														'\"receiver\":\"'
 													),
 													''
 												),
-												'"',
+												'\"',
 												1
 											) AS receiver
 										FROM
@@ -356,12 +356,12 @@ WHERE bs.business_key = kqb.school_id AND bs.name LIKE '北京研发')))) as tm5
 												REPLACE (
 													content,
 													CONCAT(
-														SUBSTRING_INDEX(content, '"receiver":', 1),
-														'"receiver":"'
+														SUBSTRING_INDEX(content, '\"receiver\":', 1),
+														'\"receiver\":\"'
 													),
 													''
 												),
-												'"',
+												'\"',
 												1
 											) AS receiver
 										FROM
@@ -391,12 +391,12 @@ WHERE bs.business_key = kqb.school_id AND bs.name LIKE '北京研发')))) as tm5
 												REPLACE (
 													content,
 													CONCAT(
-														SUBSTRING_INDEX(content, '"receiver":', 1),
-														'"receiver":"'
+														SUBSTRING_INDEX(content, '\"receiver\":', 1),
+														'\"receiver\":\"'
 													),
 													''
 												),
-												'"',
+												'\"',
 												1
 											) AS receiver
 										FROM
@@ -426,12 +426,12 @@ WHERE bs.business_key = kqb.school_id AND bs.name LIKE '北京研发')))) as tm5
 												REPLACE (
 													content,
 													CONCAT(
-														SUBSTRING_INDEX(content, '"receiver":', 1),
-														'"receiver":"'
+														SUBSTRING_INDEX(content, '\"receiver\":', 1),
+														'\"receiver\":\"'
 													),
 													''
 												),
-												'"',
+												'\"',
 												1
 											) AS receiver
 										FROM
