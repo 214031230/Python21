@@ -1,0 +1,42 @@
+.wrapper{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.top{
+    height: 75px;
+    font-size: 12px;
+    border-bottom: 2px solid black;
+    letter-spacing: 1px;
+}
+.content{
+    margin-top: 100px;
+}
+img{
+    margin-top: 15px;
+}
+#top_span{
+    font-size: 25px;
+    margin-left: 10px;
+    color: #666666;
+}
+input{
+    margin-left: 5px;
+    width: 320px;
+    height: 35px;
+}
+.get{
+    width: 105px;
+    height: 40px;
+}
+.register{
+    background: #2892F1;
+    width: 325px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    margin-left: 55px;
+}
+a:link{
+    text-decoration: none;
+}

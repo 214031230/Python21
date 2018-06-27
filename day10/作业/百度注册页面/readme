@@ -1,0 +1,4 @@
+第一步：启动socket server  运行文件register.py
+第二步：打开register.html页面
+第三步：输入用任意字符返回ERROR
+       输入用户名：spf 密码：123 返回OK

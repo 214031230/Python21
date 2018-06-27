@@ -27,14 +27,15 @@ class MyServer:
                         self.conn.send(b"HTTP/1.1 200 OK\r\n\r\n<html><body>ERROR</body></html>")
                         self.conn.close()
                 except Exception as e:
+                    print(e)
                     break
 
     def login(self,username,password):
         print("地址:%s 用户名：%s 密码：%s" % (self.addr,username,password))
         if username == "spf" and password == "123":
-            return  True
+            return True
         else:
-            return  False
+            return False
 
 
 server = MyServer("127.0.0.1",9000)
