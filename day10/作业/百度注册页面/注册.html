@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>注册百度账户</title>
+    <title>注册百度账号</title>
     <style type="text/css">
-        div{
+        .wrapper{
             width: 980px;
             margin-left: auto;
             margin-right: auto;
@@ -13,28 +13,23 @@
             height: 75px;
             font-size: 12px;
             border-bottom: 2px solid black;
+            letter-spacing: 1px;
         }
         .content{
             margin-top: 100px;
         }
-        .top img{
+        img{
             margin-top: 15px;
         }
-        span{
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .top span{
-            font-size: 20px;
+        #top_span{
+            font-size: 25px;
             margin-left: 10px;
             color: #666666;
-            margin-top: auto;
-            margin-bottom: auto;
         }
         input{
             margin-left: 5px;
             width: 320px;
-            height: 30px;
+            height: 35px;
         }
         .get{
             width: 105px;
@@ -42,32 +37,48 @@
         }
         .register{
             background: #2892F1;
-            width: 320px;
+            width: 325px;
             height: 50px;
             color: white;
             font-size: 20px;
-            margin-left: 48px;
+            margin-left: 55px;
+        }
+        a:link{
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+<div class="wrapper">
+    <!--头部导航条开始-->
     <div class="top">
-        <a href="#">
-            <img src="baidu.gif" alt="logo">
-        </a>
-        <span>丨注册百度账号</span>
+            <a href="#">
+                <img src="baidu.gif" alt="logo">
+                <span id="top_span">| 注册百度账号</span>
+            </a>
+
     </div>
+    <!--头部导航条结束-->
+    <!--用户注册开始-->
     <div class="content">
-        <form action="#" method="get">
-        <!--<form action="http://127.0.0.1:9001" method="get" >-->
-            <span>用户名</span><input type="text" name="username" placeholder="请设置用户名"><br><br>
-            <span>手机号</span><input type="text" placeholder="用于登录和找回密码"><br><br>
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;密码</span><input type="password" name="password"  placeholder="请设置登录密码"><br><br>
-            <span>验证码</span><input type="text" name="yzm"  placeholder="请输入验证码">
-            <input type="button" value="获取短信验证码" class="get"><br><br>
-            <input type="submit" value="注册" class="register">
-        </form>
-    </div>
+            <!--<form action="#" method="get">-->
+            <form action="http://127.0.0.1:9000" method="get" >
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username" placeholder="请设置用户名"><br><br>
+                <label for="phone">手机号</label>
+                <input type="text" id="phone" placeholder="用于登录和找回密码"><br><br>
+                <label for="password">&nbsp;&nbsp;&nbsp;&nbsp;密码</label>
+                <input type="password" id="password" name="password"  placeholder="请设置登录密码"><br><br>
+                <label for="yzm">验证码</label>
+                <input type="text" id="yzm"  placeholder="请输入验证码">
+                <input type="button" value="获取短信验证码" class="get"><br><br>
+                <input type="submit" value="注册" class="register">
+            </form>
+        </div>
+    <!--用户注册结束-->
+    <!--底部开始-->
     <div class="foot"></div>
+    <!--底部结束-->
+</div>
 </body>
 </html>
