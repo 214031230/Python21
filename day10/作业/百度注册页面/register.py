@@ -17,8 +17,8 @@ class MyServer:
             while True:
                 try:
                     msg = self.conn.recv(1024).decode("utf-8")
-                    ret = re.search("GET.*username.*password.*HTTP", msg).group()
-                    username = re.search(r"username=.*&",ret).group().split("=")[1].split("&")[0]
+                    ret = re.search(r"GET.*username.*password.*HTTP", msg).group()
+                    username = re.search(r"username=.*&", ret).group().split("=")[1].split("&")[0]
                     password = ret.split("&")[1].split()[0].split("=")[1]
                     if self.login(username,password):
                         self.conn.send(b"HTTP/1.1 200 OK\r\n\r\n<html><body>OK</body></html>")
