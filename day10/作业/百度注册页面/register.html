@@ -9,10 +9,15 @@
 <div class="wrapper">
     <!--头部导航条开始-->
     <div class="top">
+        <div class="top-l">
             <a href="#">
                 <img src="img/baidu.gif" alt="logo">
                 <span id="top_span">| 注册百度账号</span>
             </a>
+        </div>
+        <div class="top-r">
+            <span>我已注册，现在就</span><input type="button" value="登录" id="login">
+        </div>
     </div>
     <!--头部导航条结束-->
     <!--用户注册开始-->
@@ -27,7 +32,14 @@
                 <input type="password" id="password" name="password"  placeholder="请设置登录密码"><br><br>
                 <label for="yzm">验证码</label>
                 <input type="text" id="yzm"  placeholder="请输入验证码">
-                <input type="button" value="获取短信验证码" class="get"><br><br>
+                <input type="button" value="获取短信验证码" class="get">
+                <p>
+                <label>
+                    <input type="radio" id="xy">阅读并接受协议
+                </label>
+                <a href="#">《百度用户协议》</a>及
+                <a href="#">《百度隐私权保护声明》</a>
+                </p>
                 <input type="submit" value="注册" class="register">
             </form>
         </div>

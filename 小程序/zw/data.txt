@@ -1,0 +1,2 @@
+rfinex-linux-online-nginx|api_nginx_response_code_500|rfinex-nginx-logs*|doc|response_code:"500"|time
+ip-10-0-14-55|api_nginx_response_code_500|rfinex-nginx-logs*|doc|response_code:"500"|time
