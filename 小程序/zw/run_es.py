@@ -4,6 +4,7 @@ from sys import path as sys_path
 import json
 import time
 import io
+import logging
 from concurrent.futures import ThreadPoolExecutor
 sys_path.insert(0, path.dirname(path.dirname(path.abspath(__file__))))
 import requests
@@ -16,7 +17,22 @@ end_time = time.strftime("%Y-%m-%d %H:%M:59", time.localtime(time.time() - 120))
 start_time = time.strftime("%Y-%m-%d %H:%M:00", time.localtime(time.time() - 120))
 # 数据文件
 data_file = r"./data.txt"
+log_file_path = r"./run.log"
 ES = Elasticsearch(['https://vpc-rfinex-nxaxxpo3dm6fog2i7ltdsabkne.ap-northeast-2.es.amazonaws.com'], use_ssl=True, ca_certs=certifi.where())
+
+
+def my_logger(log_file):
+    """
+    定义日志输出合格
+    :return: 返回一个可以直接使用的logger对象
+    """
+    logger = logging.getLogger()
+    fh = logging.FileHandler(log_file, encoding='utf-8')
+    formatter = logging.Formatter('%(asctime)s  %(name)s   %(levelname)s  %(message)s File:<%(filename)s line %(lineno)d>')
+    logger.setLevel(logging.DEBUG)  # 定义文件日志级别
+    fh.setFormatter(formatter)
+    logger.addHandler(fh)
+    return logger
 
 
 def get_metrics_from_es(index, doc_type, query_para, s_time, e_time, time_field):
@@ -119,13 +135,20 @@ def run(endpoint_host, show_key, index, doc_type, query_para, time_field, s_time
 
 
 if __name__ == '__main__':
+    log = my_logger(log_file_path)
     t = ThreadPoolExecutor(50)
-    g = get_argv()
-    while True:
-        try:
-            a1, a2, a3, a4, a5, a6 = next(g)
-            t.submit(run(a1, a2, a3, a4, a5, a6, start_time, end_time))
-            # t.submit(run(*next(g), start_time, end_time))
-        except StopIteration:
-            break
+    try:
+        g = get_argv()
+        while True:
+            try:
+                a1, a2, a3, a4, a5, a6 = next(g)
+                t.submit(run(a1, a2, a3, a4, a5, a6, start_time, end_time))
+                # t.submit(run(*next(g), start_time, end_time))
+            except StopIteration:
+                break
+            except Exception as e:
+                log.debug(e)
+    except Exception as e:
+        log.debug(e)
+
 
