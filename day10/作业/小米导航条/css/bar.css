@@ -1,0 +1,39 @@
+.top{
+    margin-top: 30px;
+    height: 40px;
+    line-height: 40px;
+    background: #666666;
+    font-size: 14px;
+}
+.top_l{
+    width: 1226px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #666666;
+}
+.top-car{
+    float: right;
+    margin-left: 15px;
+    background: #3f3f3f;
+    width: 90px;
+    text-align: center;
+}
+.sep{
+    margin-left: 5px;
+    margin-right: 5px;
+    color: whitesmoke;
+}
+.top-r1{
+    float: right;
+}
+a:link{
+    color: whitesmoke;
+    text-decoration: none;
+}
+a:visited{
+    color: whitesmoke;
+}
+a:hover{
+    color: orange;
+}
