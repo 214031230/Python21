@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-import asyncio
 
-def fun(ni):
-    print()
+
+def fun():
+    pass
+
+
+def fun2():
+    pass
