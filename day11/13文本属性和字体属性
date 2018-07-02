@@ -1,0 +1,77 @@
+文本属性
+    介绍几个常用的。
+    文本对齐
+    text-align 属性规定元素中的文本的水平对齐方式。
+    属性值：none | center | left | right | justify
+
+
+    文本颜色
+    color属性
+
+    文本首行缩进
+    text-indent 属性规定元素首行缩进的距离，单位建议使用em
+
+    文本修饰
+
+    text-decoration属性规定文本修饰的样式
+    属性值：none(默认) | underline(下划线) | overline(定义文本上的一条线)  | line-through (定义穿过文本下的一条线) | inherit(继承父元素的text-decoration属性的值。)
+
+    行高
+    line-height就是行高的意思，指的就是一行的高度。
+
+字体属性
+    字体大小
+    font-size表示设置字体大小，如果设置成inherit表示继承父元素的字体大小值。
+
+    字体粗细
+    font-weight表示设置字体的粗细
+    属性值：none(默认值，标准粗细) | bold(粗体) | border(更粗）| lighter(更细) | 100~900（设置具体粗细，400等同于normal，而700等同于bold）| inherit（继承父元素字体的粗细值）
+
+    字体系列
+    font-family
+
+    font-family: "Microsoft Yahei", "微软雅黑", "Arial", sans-serif
+    如果浏览器不支持第一个字体，则会尝试下一个。浏览器会使用它可识别的第一个值。如果都不支持则显示宋体。
+
+
+
+    行高 line-height
+    针对单行文本垂直居中
+
+    公式：行高的高度等于盒子的高度，可以使当行文本垂直居中，注意只适用单行文本。
+    针对多行文本垂直居中
+    行高的高度不能小于字体的大小，不然上下字之间会紧挨一起。
+
+    第一步，一个宽度300*300的盒子，看盒子中一共显示了几行文字，假如是5行，再看一下行高，如果行高是line-height:30px; 那么就知道行高*5=150px
+    第二步，让(盒子的高度-150px)/2=75;那么设置盒子的padding-top:75px;同时保证盒子的高度为300px,那么高度改为225px;
+
+
+
+    font-family介绍
+    使用font-family注意几点：
+
+    1.网页中不是所有字体都能用哦，因为这个字体要看用户的电脑里面装没装，
+    比如你设置： font-family: "华文彩云"; 如果用户电脑里面没有这个字体，
+    那么就会变成宋体
+    页面中，中文我们只使用： 微软雅黑、宋体、黑体。
+    如果页面中，需要其他的字体，那么需要切图。 英语：Arial 、 Times New Roman
+
+    2.为了防止用户电脑里面，没有微软雅黑这个字体。
+    就要用英语的逗号，隔开备选字体，就是说如果用户电脑里面，
+    没有安装微软雅黑字体，那么就是宋体：
+    font-family: "微软雅黑","宋体"; 备选字体可以有无数个，用逗号隔开。
+    3.我们要将英语字体，放在最前面，这样所有的中文，就不能匹配英语字体，
+    就自动的变为后面的中文字体：
+    font-family: "Times New Roman","微软雅黑","宋体";
+
+    4.所有的中文字体，都有英语别名，
+    我们也要知道： 微软雅黑的英语别名：
+    font-family: "Microsoft YaHei";
+    宋体的英语别名： font-family: "SimSun";
+    font属性能够将font-size、line-height、font-family合三为一： font:12px/30px "Times New Roman","Microsoft YaHei","SimSun";
+
+    5.行高可以用百分比，表示字号的百分之多少。
+    一般来说，都是大于100%的，因为行高一定要大于字号。
+    font:12px/200% “宋体” 等价于 font:12px/24px “宋体”;
+    反过来，比如： font:16px/48px “宋体”;
+    等价于 font:16px/300% “宋体”

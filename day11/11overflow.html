@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11overflow</title>
+    <style type="text/css">
+        .box{
+            float: left;
+            height: 200px;
+            width: 200px;
+
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: blue;
+
+        }
+        .outer_box{
+            background-color: black;
+            overflow: hidden;
+
+        }
+    </style>
+</head>
+<body>
+<div class="outer_box clearfix">
+    <div class="box1 box"></div>
+    <div class="box2 box"></div>
+</div>
+</body>
+</html>

@@ -8,7 +8,8 @@
             margin: 0;
             padding: 0;
         }
-        div{
+        /*浮动*/
+        .box{
             float: left;
             width: 200px;
             height: 200px;
@@ -19,10 +20,24 @@
         .box2{
             background: blue;
         }
+        .outer{
+            background: black;
+        }
+        /*清除浮动带来的影响*/
+        .outer:after{
+            content: "";
+            display: block;
+            visibility: hidden;
+            clear: both;
+        }
+
+
     </style>
 </head>
 <body>
-<div class="box1"></div>
-<div class="box2"></div>
+<div class="outer">
+<div class="box1 box"></div>
+<div class="box2 box"></div>
+</div>
 </body>
 </html>

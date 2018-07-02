@@ -1,0 +1,19 @@
+当一个div元素设置margin：0 auto;时就会居中盒子，那我们知道margin:0 auto;表示上下外边距离为0，左右为auto的距离，那么auto是什么意思呢？
+
+设置margin-left:auto；我们发现盒子尽可能大的右边有很大的距离，没有什么意义。当设置margin-right:auto；我们发现盒子尽可能大的左边有很大的距离。
+当两条语句并存的时候，我们发现盒子尽可能大的左右两边有很大的距离。此时我们就发现盒子居中了。
+
+
+
+另外如何给盒子设置浮动，那么margin:0 auto失效。
+
+使用margin：0 auto;注意点：
+
+1.使用margin: 0 auto;水平居中盒子必须有width，要有明确width，文字水平居中使用text-align: center;
+
+2.只有标准流下的盒子 才能使用margin:0 auto; 当一个盒子浮动了，固定定位，绝对定位(后面会讲)，margin:0 auto; 不能用了
+
+3.margin：0 auto;居中盒子。而不是居中文本，文字水平居中使用text-align: center;
+
+
+另外大家一定要知道margin属性是描述兄弟盒子的关系，而padding描述的是父子盒子的关系
