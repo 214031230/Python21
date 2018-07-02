@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+		p::first-letter{
+			color: red;
+		}
+		p::before{
+			content: '阿根廷'
+		}
+		p::after{
+
+			/*解决浮动带来的问题*/
+			content:'.';
+			/*display: block;*/
+			/*width: 100px;
+			height: 100px;
+			background-color: red;*/
+			visibility: hidden; 
+			height: 0;
+		}
+
+	</style>
+</head>
+<body>
+
+	<p>alex</p>
+	<div>daddadadad</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7盒模型</title>
+    <style type="text/css">
+        /*那么在这里要注意看了。标准盒模型，width不等于盒子真实的宽度。
+        另外如果要保持盒子真实的宽度，那么加padding就一定要减width，减padding就一定要加width。真实高度一样设置。*/
+        div{
+            width: 200px; /*width：内容的宽度*/
+            height: 200px; /*height: 内容的高度*/
+            background-color: #2892F1;
+            margin: 50px; /*margin：外边距，盒子边框到附近最近盒子的距离*/
+            padding: 50px; /*padding：内边距，边框到内容的距离*/
+            border: 5px solid red;/*border: 边框，就是指的盒子的宽度*/
+        }
+
+        /*那么我们一般在做站的时候，是要清除页面标签中默认的padding和margin。以便于我们更好的去调整元素的位置*/
+        /*我们现在初学可以使用通配符选择器*/
+        *{
+          padding:0;
+          margin:0;
+        }
+        /*https://unpkg.com/reset-css@4.0.1/reset.css*/
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

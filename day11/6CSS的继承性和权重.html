@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6CSS的继承性和权重</title>
+    <style type="text/css">
+        /*继承性*/
+        /*可以继承的属性：color 、 font-*、 text-*、line-* ，主要是文本级的标签元素。*/
+        /*不能继承的属性：定位的元素（浮动，绝对定位，固定定位）*/
+
+        /*权重*/
+        /*数数：id的数量 class的数量 标签的数量，顺序不能乱*/
+        /*先看标签元素有没有被选中，如果选中了，就数数 （id,class,标签的数量） 谁的权重大 就显示谁的属性。权重一样大，后来者居上*/
+        /*如果没有被选中标签元素，权重为0。 如果属性都是被继承下来的 权重都是0 。权重都是0:"就近原则" ： 谁描述的近，就显示谁的属性*/
+
+
+        /*1 0 0*/
+        #box{
+            width: 30px;
+            height: 30px;
+            color: red;
+        }
+        /*0 1 0*/
+        .box{
+            width: 30px;
+            height: 30px;
+            color: red;
+        }
+        /*0 0 1*/
+        div{
+            width: 30px;
+            height: 30px;
+            color: red;
+        }
+        /*权重示例2*/
+        /*201*/
+        #box1 #box2 p{
+            color: yellow;
+        }
+        /*111*/
+        #box2 .wrap3 p{
+            color: red;
+        }
+        /*103*/
+        div div #box3 p{
+            color: purple;
+        }
+        /*031*/
+        div.wrap1 div.wrap2 div.wrap3 p{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box" id="box"></div>
+<div id='box1' class="wrap1">
+        <div id="box2" class="wrap2">
+            <div id="box3" class="wrap3">
+                <p>再来猜猜我是什么颜色？</p>
+            </div>
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.CSS的高级选择器</title>
+    <style type="text/css">
+        /*后代选择器*/
+        /*父元素的后代（包括儿子，孙子，重孙子）*/
+        div p{
+            color: red;
+        }
+        /*子代选择器*/
+        /*仅仅表示的是当前div元素选中的子代(不包含孙子....)元素p。*/
+        div>p{
+            color: yellow;
+        }
+        /*并集选择器*/
+        p,a{
+            color: blue;
+        }
+        /*使用此并集选择器选中页面中所有的标签，页面布局的时候会使用*!*/
+         body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td {
+              margin: 0;
+              padding: 0
+        }
+         /*并集选择器*/
+        /*第一个标签必须是标签选择器，第二个标签必须是类选择器 语法：div.active*/
+        div.box1{
+            background: blue;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box1" id="box">
+    <div class="box2">
+        <p>我是孙子标签</p>
+        <a href="#">我是a标签</a>
+    </div>
+    <p>我是儿子标签</p>
+</div>
+</body>
+</html>
