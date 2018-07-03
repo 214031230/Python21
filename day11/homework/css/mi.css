@@ -1,0 +1,343 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 730283 */
+  src: url('http://at.alicdn.com/t/font_730283_pc7h3nra99.eot');
+  src: url('http://at.alicdn.com/t/font_730283_pc7h3nra99.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_730283_pc7h3nra99.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_730283_pc7h3nra99.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_730283_pc7h3nra99.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.clearfix:after{
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.topbar{
+    height: 40px;
+    background-color: black;
+}
+.container{
+    width: 1226px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+.topbar_nav{
+    float: left;
+}
+.topbar_cart{
+    float: right;
+    margin-left: 20px;
+    background-color: #3f3f3f;
+    width: 100px;
+    text-align: center;
+}
+.topbar_info{
+    float: right;
+}
+.container a,span{
+    line-height: 40px;
+    color: #b0b0b0;
+}
+.container span{
+    margin: 0 8px;
+}
+.iconfont{
+    color: white;
+}
+.container a:link{
+    text-decoration: none;
+    color: #b0b0b0;
+}
+.container a:visited{
+    color: #b0b0b0;
+}
+.container a:hover{
+    color: white;
+}
+.container a:active{
+    color: white;
+}
+.box{
+    width: 1226px;
+    margin: 0 auto;
+}
+.bar{
+    margin-top: 20px;
+    font-size: 20px;
+}
+.bar .logo{
+    background-color: rgb(255,103,0);
+    float: left;
+    margin-right: 100px;
+    width: 49px;
+    height: 49px;
+}
+.bar .nav li{
+    float:left;
+    margin: 0 10px;
+    line-height: 49px;
+}
+.bar a:link{
+    color: black;
+    text-decoration: none;
+}
+.bar a:visited{
+    color: black;
+}
+.bar a:hover{
+    color: rgb(255,103,0);
+}
+
+.bar a:active{
+    color: rgb(255,103,0);
+}
+.bar .search{
+    float: right;
+    line-height: 49px;
+}
+input.search{
+    width: 180px;
+    height: 49px;
+    float: right;
+    padding-left: 20px;
+}
+input.search_button{
+    width: 49px;
+    height: 54px;
+    float: right;
+}
+.nav{
+    margin-top: 20px;
+}
+.nav .nav_left{
+    background-color: #555555;
+    float: left;
+    width: 20%;
+}
+.nav .nav_left a:link{
+    color: white;
+    text-decoration: none;
+}
+.nav .nav_left a:visited{
+    color: white;
+    text-decoration: none;
+}
+.nav .nav_left a:hover{
+    color: rgb(255,103,0);
+    text-decoration: none;
+}
+.nav .nav_left li{
+    margin:23px;
+}
+.nav .nav_right{
+    width: 80%;
+    float: right;
+}
+.nav .nav_right img{
+    width: 100%;
+    height: 463px;
+}
+.home_sub{
+    margin-top: 5px;
+}
+.home_sub .span1{
+    background-color: #555555;
+    float: left;
+    width: 20%;
+    height: 170px;
+}
+.home_sub .span1 li{
+    float: left;
+    width: 79px;
+    height: 83px;
+    border: 1px beige solid;
+}
+
+.home_sub .span2 img{
+    width: 316px;
+    height: 170px;
+    float: right;
+    margin-left: 10px;
+}
+.good_list{
+    margin-top: 40px;
+}
+.good_list .box-hd h2{
+    float: left;
+    font-size: 22px;
+    font-weight: 200;
+}
+.good_list .box-hd div{
+    float: right;
+}
+.good_list .box-bd{
+    margin-top: 20px;
+}
+.good_list .box-bd .time{
+    background-color: snow;
+    width: 234px;
+    height: 340px;
+    float: left;
+    text-align: center;
+    border-top: #795da3 1px solid;
+}
+.good_list .box-bd .time .start{
+    font-size: 21px;
+    color: red;
+    padding-top: 40px;
+}
+.good_list .box-bd .time img{
+    padding-top: 50px;
+}
+.good_list .box-bd .time .start_time{
+    font-size: 21px;
+    color: #777777;
+    padding-top: 40px;
+}
+.good_list .box-bd .time .run_time{
+    font-size: 30px;
+    color: #777777;
+    padding-top: 40px;
+}
+.good_list .box-bd .list li{
+    background-color: #FAFAFA;
+    float: right;
+    text-align: center;
+    margin-left: 8px;
+    width: 234px;
+    height: 339px;
+    border-top: red 1px solid;
+}
+.good_list .box-bd .list li a:link{
+    text-decoration: none;
+    color: black;
+}
+.good_list .box-bd .list li a:visited{
+    color: black;
+}
+.good_list .box-bd .list li a:hover{
+    color: black;
+}
+.good_list .box-bd .list li a:active{
+    color: black;
+}
+.good_list .box-bd .list img{
+    width: 160px;
+}
+.good_list .box-bd .list h3{
+    margin-top: 30px;
+}
+.good_list .box-bd .list p{
+    margin-top: 20px;
+    font-size: 14px;
+    white-space: normal;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+}
+.good_list .box-bd .list span{
+    color: red;
+}
+.phone{
+    margin-top: 20px;
+}
+.phone img{
+    height: 120px;
+}
+.footer{
+    margin-top: 20px;
+    border-top: #e7e1cd 1px solid;
+}
+.footer .service_cen{
+    margin: 0 auto;
+    width: 1000px;
+}
+.footer .service li{
+    float: left;
+}
+.footer .service li span{
+    margin: 0 45px;
+}
+.footer .service a:link{
+    text-decoration: none;
+    color: black;
+}
+.footer .service a:visited{
+    color: black;
+}
+.footer .service a:hover{
+    color: black;
+}
+.footer .service a:active{
+    color: black;
+}
+
+.footer .links{
+    margin-top: 40px;
+    border-top: #e7e1cd 1px solid;
+}
+.footer .links dl{
+    margin-top: 20px;
+    float: left;
+    width: 150px;
+    font-size: 12px;
+}
+.footer .links dt{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.footer .links  a:link{
+    text-decoration: none;
+    color: black;
+}
+.footer .links  a:visited{
+    color: black;
+}
+.footer .links  a:hover{
+    color: rgb(255,103,0);
+}
+.footer .links  a:active{
+    color: black;
+}
+.phone_400{
+    width: 150px;
+    height: 80px;
+    border-left: #b0b0b0 1px solid;
+    float: right;
+    margin-right: 100px;
+    margin-top: 20px;
+    padding-left: 50px;
+    font-size: 13px;
+    text-align: center;
+}
+p.phone{
+    color: #ff6700;
+    font-size: 22px;
+}
+p.workday{
+    font-size: 12px;
+}
