@@ -17,15 +17,23 @@ time, mark, audio, video {
 }
 @font-face {
   font-family: 'iconfont';  /* project id 730283 */
-  src: url('http://at.alicdn.com/t/font_730283_pc7h3nra99.eot');
-  src: url('http://at.alicdn.com/t/font_730283_pc7h3nra99.eot?#iefix') format('embedded-opentype'),
-  url('http://at.alicdn.com/t/font_730283_pc7h3nra99.woff') format('woff'),
-  url('http://at.alicdn.com/t/font_730283_pc7h3nra99.ttf') format('truetype'),
-  url('http://at.alicdn.com/t/font_730283_pc7h3nra99.svg#iconfont') format('svg');
+  src: url('http://at.alicdn.com/t/font_730283_da2df1h5cl7.eot');
+  src: url('http://at.alicdn.com/t/font_730283_da2df1h5cl7.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_730283_da2df1h5cl7.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_730283_da2df1h5cl7.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_730283_da2df1h5cl7.svg#iconfont') format('svg');
 }
 .iconfont{
     font-family:"iconfont" !important;
     font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.iconfont_big{
+    font-family:"iconfont" !important;
+    font-size:24px;font-style:normal;
+    color: white;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
@@ -39,12 +47,12 @@ time, mark, audio, video {
 }
 .topbar{
     height: 40px;
-    background-color: black;
+    background-color: rgb(51,51,51);
 }
 .container{
     width: 1226px;
     margin: 0 auto;
-    font-size: 14px;
+    font-size: 12px;
 }
 .topbar_nav{
     float: left;
@@ -88,7 +96,7 @@ time, mark, audio, video {
 }
 .bar{
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 16px;
 }
 .bar .logo{
     background-color: rgb(255,103,0);
@@ -130,6 +138,9 @@ input.search_button{
     width: 49px;
     height: 54px;
     float: right;
+    color: black;
+    background-color: white;
+    border: #b0b0b0 1px solid;
 }
 .nav{
     margin-top: 20px;
@@ -137,7 +148,9 @@ input.search_button{
 .nav .nav_left{
     background-color: #555555;
     float: left;
-    width: 20%;
+    font-size: 14px;
+    width: 234px;
+    height: 463px;
 }
 .nav .nav_left a:link{
     color: white;
@@ -155,7 +168,7 @@ input.search_button{
     margin:23px;
 }
 .nav .nav_right{
-    width: 80%;
+    width: 992px;
     float: right;
 }
 .nav .nav_right img{
@@ -166,7 +179,7 @@ input.search_button{
     margin-top: 5px;
 }
 .home_sub .span1{
-    background-color: #555555;
+    background-color: rgb(95,87,80);
     float: left;
     width: 20%;
     height: 170px;
@@ -174,8 +187,13 @@ input.search_button{
 .home_sub .span1 li{
     float: left;
     width: 79px;
-    height: 83px;
-    border: 1px beige solid;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 2px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    /*border: 1px beige solid;*/
 }
 
 .home_sub .span2 img{
@@ -269,7 +287,7 @@ input.search_button{
     height: 120px;
 }
 .footer{
-    margin-top: 20px;
+    margin-top: 40px;
     border-top: #e7e1cd 1px solid;
 }
 .footer .service_cen{
@@ -280,7 +298,7 @@ input.search_button{
     float: left;
 }
 .footer .service li span{
-    margin: 0 45px;
+    margin: 0 25px;
 }
 .footer .service a:link{
     text-decoration: none;
@@ -336,16 +354,19 @@ input.search_button{
 }
 p.phone{
     color: #ff6700;
-    /*padding-top: 20px;*/
     font-size: 22px;
 }
 p.workday{
     font-size: 12px;
 }
+.phone_list .box-bd .time{
+    border: 0;
+    background-color: #f5f5f5;
+}
 .phone_list .box-bd .time  img{
     width: 234px;
     height: 614px;
-    padding-top: 0;
+    padding-top: 20px;
 }
 .phone_home {
     background-color: #f5f5f5;
@@ -357,7 +378,7 @@ p.workday{
 .phone_list .box-bd .list li{
     height: 280px;
     width: 200px;
-    margin: 20px;
+    margin: 23px;
     border: 0;
     background-color: white;
 }
@@ -367,4 +388,27 @@ p.workday{
 .phone_list .box-bd .list li p{
     margin-top: 0;
 }
-
+.site-info{
+    background-color: #f5f5f5;
+    height: 200px;
+    margin-top: 40px;
+}
+.site-info .slogan{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 30px;
+    color: rgb(255,103,0);
+}
+.button:link{
+    color: black;
+    text-decoration: none;
+}
+.button:visited{
+    color: black;
+}
+.button:hover{
+    color: rgb(255,103,0);
+}
+.button:active{
+    color: black;
+}
