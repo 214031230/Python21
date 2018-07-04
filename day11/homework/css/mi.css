@@ -81,6 +81,7 @@ time, mark, audio, video {
 }
 .container span{
     margin: 0 8px;
+    color: #777777;
 }
 .iconfont{
     color: white;
