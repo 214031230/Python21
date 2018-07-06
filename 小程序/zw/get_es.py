@@ -12,9 +12,12 @@ from elasticsearch import Elasticsearch
 import certifi
 
 # 2分钟前时间从59结束
-end_time = time.strftime("%Y-%m-%d %H:%M:59", time.localtime(time.time() - 120))
+# end_time = time.strftime("%Y-%m-%d %H:%M:59", time.localtime(time.time() - 120))
+# # 2分钟前时间从00开始
+# start_time = time.strftime("%Y-%m-%d %H:%M:00", time.localtime(time.time() - 120))
+end_time = "2018-07-05 00:00:00"
 # 2分钟前时间从00开始
-start_time = time.strftime("%Y-%m-%d %H:%M:00", time.localtime(time.time() - 120))
+start_time = "2018-07-06 11:00:00"
 # 数据文件
 data_file = r"./data.txt"
 log_file_path = r"./run.log"
@@ -77,7 +80,7 @@ def get_metrics_from_es(index, doc_type, query_para, s_time, e_time, time_field)
     )
 
     res = response['hits']['total']
-    print(res)
+    print("命中数量：%s" % res)
     return int(res)
 
 
@@ -102,7 +105,8 @@ def report_data(show_key, value, endpoint_host):
           }
       ] 
 
-    r = requests.post("http://127.0.0.1:1988/v1/push", data=json.dumps(payload))    
+    print("payload:" % payload)
+    # r = requests.post("http://127.0.0.1:1988/v1/push", data=json.dumps(payload))
 
 
 def get_argv():
