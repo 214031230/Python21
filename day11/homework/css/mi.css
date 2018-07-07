@@ -17,11 +17,11 @@ time, mark, audio, video {
 }
 @font-face {
   font-family: 'iconfont';  /* project id 730283 */
-  src: url('http://at.alicdn.com/t/font_730283_pc7h3nra99.eot');
-  src: url('http://at.alicdn.com/t/font_730283_pc7h3nra99.eot?#iefix') format('embedded-opentype'),
-  url('http://at.alicdn.com/t/font_730283_pc7h3nra99.woff') format('woff'),
-  url('http://at.alicdn.com/t/font_730283_pc7h3nra99.ttf') format('truetype'),
-  url('http://at.alicdn.com/t/font_730283_pc7h3nra99.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_730283_ifxrste3k7a.eot');
+  src: url('//at.alicdn.com/t/font_730283_ifxrste3k7a.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_730283_ifxrste3k7a.woff') format('woff'),
+  url('//at.alicdn.com/t/font_730283_ifxrste3k7a.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_730283_ifxrste3k7a.svg#iconfont') format('svg');
 }
 .iconfont{
     font-family:"iconfont" !important;
@@ -122,12 +122,14 @@ time, mark, audio, video {
 }
 input.search{
     width: 180px;
-    height: 49px;
+    height: 48px;
     float: right;
     padding-left: 20px;
 }
 input.search_button{
-    width: 49px;
+    position: absolute;
+    font-size:16px;
+    width: 48px;
     height: 54px;
     float: right;
 }
