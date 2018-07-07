@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>定时器</title>
+  <script>
+    var intervalId;
+
+    function f() {
+      var timeStr = (new Date()).toLocaleString();
+      var inputEle = document.getElementById("i1");
+      inputEle.value = timeStr;
+    }
+
+    function start() {
+      f();
+      if (intervalId === undefined) {
+        intervalId = setInterval(f, 1000);
+      }
+    }
+    function end() {
+      clearInterval(intervalId);
+      intervalId = undefined;
+    }
+
+  </script>
+</head>
+<body>
+
+<input type="text" id="i1">
+<input type="button" value="开始" id="start" onclick="start();">
+<input type="button" value="结束" id="end" onclick="end();">
+</body>
+</html>

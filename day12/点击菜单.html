@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击菜单</title>
+    <style type="text/css">
+        .box_left{
+            float: left;
+            width: 20%;
+            background-color: #2892F1;
+            height: 200px;
+        }
+        .box_right{
+            float: right;
+            width: 80%;
+            background-color: red;
+            height: 200px;
+        }
+        li{
+            margin-top: 30px;
+        }
+        p {
+            display: none;
+        }
+        li:hover{
+            color: yellow;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box_left">
+    <ul>
+        <li class="li">菜单一</li>
+        <li class="li">菜单二</li>
+        <li class="li">菜单三</li>
+    </ul>
+</div>
+<div class="box_right">
+</div>
+<script>
+    var ele_li = document.getElementsByClassName("li");
+    var ele_p = document.getElementsByClassName("box_right");
+    for (var i in ele_li) {
+        ele_li[i].onclick = function () {
+            ele_p[0].style.backgroundColor="black"
+        }
+    }
+
+</script>
+</body>
+</html>
