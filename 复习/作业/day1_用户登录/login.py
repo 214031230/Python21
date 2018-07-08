@@ -78,7 +78,7 @@ def main():
             try:
                 choice = int(choice)
                 if choice == 1:
-                    if run("Error:用户名或者密码错误","login"):print("INFO:注册成功")
+                    if run("Error:用户名或者密码错误","login_model"):print("INFO:注册成功")
                     else:print("Error:注册失败")
                 elif choice == 2:
                     if run("Error:用户名已经存在","register"):print("INFO:注册成功")

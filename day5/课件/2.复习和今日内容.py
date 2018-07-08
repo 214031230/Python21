@@ -26,7 +26,7 @@
 
 # a c func d b
 
-# timmer login
+# timmer login_model
 # timmer logger
 
 # 生成器和迭代器

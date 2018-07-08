@@ -65,7 +65,7 @@ def register(): ##注册
                 break
         f1.close()
         f2.close()
-@wrapper # article = login(article)
+@wrapper # article = login_model(article)
 def article():
        with open('article',encoding='utf-8') as f1:
 

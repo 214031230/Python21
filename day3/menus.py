@@ -126,6 +126,6 @@ def blog_exit():
 # password = input("请输入密码：").strip()
 # username = "allen"
 # password = "123"
-# login(username, password)
+# login_model(username, password)
 # registered(username, password)
 # log_out("wxx")

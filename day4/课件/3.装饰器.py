@@ -116,7 +116,7 @@ def index(name):
     print('欢迎%s来到博客园首页~'%name)
 
 @login
-@timmer    # manager = login(manager)
+@timmer    # manager = login_model(manager)
 def manager(name):
     print('欢迎%s来到博客园管理页~'%name)
 

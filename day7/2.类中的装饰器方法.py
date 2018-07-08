@@ -28,7 +28,7 @@ class Student:
         if name == "" and pwd == "":
             print('实例化')
 
-# Student.login()
+# Student.login_model()
 
 
 # property

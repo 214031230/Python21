@@ -15,17 +15,41 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 }
-@font-face {
-  font-family: 'iconfont';  /* project id 730283 */
-  src: url('//at.alicdn.com/t/font_730283_ifxrste3k7a.eot');
-  src: url('//at.alicdn.com/t/font_730283_ifxrste3k7a.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_730283_ifxrste3k7a.woff') format('woff'),
-  url('//at.alicdn.com/t/font_730283_ifxrste3k7a.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_730283_ifxrste3k7a.svg#iconfont') format('svg');
+
+@font-face {font-family: 'iconfont';
+    src: url('../fonts/iconfont/iconfont.eot');
+    src: url('../fonts/iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/iconfont/iconfont.woff') format('woff'),
+    url('../fonts/iconfont/iconfont.ttf') format('truetype'),
+    url('../fonts/iconfont/iconfont.svg#iconfont') format('svg');
 }
+/*@font-face {*/
+  /*font-family: 'iconfont';  !* project id 730283 *!*/
+  /*src: url('http://at.alicdn.com/t/font_730283_da2df1h5cl7.eot');*/
+  /*src: url('http://at.alicdn.com/t/font_730283_da2df1h5cl7.eot?#iefix') format('embedded-opentype'),*/
+  /*url('http://at.alicdn.com/t/font_730283_da2df1h5cl7.woff') format('woff'),*/
+  /*url('http://at.alicdn.com/t/font_730283_da2df1h5cl7.ttf') format('truetype'),*/
+  /*url('http://at.alicdn.com/t/font_730283_da2df1h5cl7.svg#iconfont') format('svg');*/
+/*}*/
 .iconfont{
     font-family:"iconfont" !important;
     font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.iconfont_big{
+    font-family:"iconfont" !important;
+    font-size:24px;font-style:normal;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.iconfont_Small{
+    font-family:"iconfont" !important;
+    font-size:14px;font-style:normal;
+    color: white;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
@@ -39,12 +63,12 @@ time, mark, audio, video {
 }
 .topbar{
     height: 40px;
-    background-color: black;
+    background-color: rgb(51,51,51);
 }
 .container{
     width: 1226px;
     margin: 0 auto;
-    font-size: 14px;
+    font-size: 12px;
 }
 .topbar_nav{
     float: left;
@@ -65,6 +89,7 @@ time, mark, audio, video {
 }
 .container span{
     margin: 0 8px;
+    color: #777777;
 }
 .iconfont{
     color: white;
@@ -88,7 +113,7 @@ time, mark, audio, video {
 }
 .bar{
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 16px;
 }
 .bar .logo{
     background-color: rgb(255,103,0);
@@ -122,16 +147,17 @@ time, mark, audio, video {
 }
 input.search{
     width: 180px;
-    height: 48px;
+    height: 49px;
     float: right;
     padding-left: 20px;
 }
 input.search_button{
-    position: absolute;
-    font-size:16px;
-    width: 48px;
+    width: 49px;
     height: 54px;
     float: right;
+    color: black;
+    background-color: white;
+    border: #b0b0b0 1px solid;
 }
 .nav{
     margin-top: 20px;
@@ -139,7 +165,11 @@ input.search_button{
 .nav .nav_left{
     background-color: #555555;
     float: left;
-    width: 20%;
+    font-size: 14px;
+    width: 234px;
+    height: 463px;
+    position: absolute;
+    top: 135px;
 }
 .nav .nav_left a:link{
     color: white;
@@ -150,15 +180,26 @@ input.search_button{
     text-decoration: none;
 }
 .nav .nav_left a:hover{
-    color: rgb(255,103,0);
+    color: white;
+    /*background-color: rgb(255,103,0);*/
+        /*background-color: #ff6700;*/
     text-decoration: none;
 }
 .nav .nav_left li{
-    margin:23px;
+    margin:16px 0 ;
+    padding-top: 5px;
+    padding-left: 20px;
+    width: 214px;
+    height: 23px;
+}
+.nav .nav_left li:hover{
+    background-color: rgb(255,103,0);
 }
 .nav .nav_right{
-    width: 80%;
-    float: right;
+    /*width: 992px;*/
+    /*float: right;*/
+    /*position: absolute;*/
+    /*top: 200px;*/
 }
 .nav .nav_right img{
     width: 100%;
@@ -168,16 +209,21 @@ input.search_button{
     margin-top: 5px;
 }
 .home_sub .span1{
-    background-color: #555555;
+    background-color: rgb(95,87,80);
     float: left;
-    width: 20%;
+    width: 234px;
     height: 170px;
 }
 .home_sub .span1 li{
     float: left;
-    width: 79px;
-    height: 83px;
-    border: 1px beige solid;
+    width: 71px;
+    height: 60px;
+    margin-top: 20px;
+    margin-left: 2px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    /*border: 1px beige solid;*/
 }
 
 .home_sub .span2 img{
@@ -253,10 +299,11 @@ input.search_button{
 }
 .good_list .box-bd .list h3{
     margin-top: 30px;
+    font-size: 14px;
 }
 .good_list .box-bd .list p{
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 12px;
     white-space: normal;
     color: #b0b0b0;
     margin-bottom: 20px;
@@ -271,18 +318,18 @@ input.search_button{
     height: 120px;
 }
 .footer{
-    margin-top: 20px;
-    border-top: #e7e1cd 1px solid;
+    margin-top: 40px;
+    border-top: #e9e9e9 1px solid;
 }
 .footer .service_cen{
-    margin: 0 auto;
+    margin: 20px auto;
     width: 1000px;
 }
 .footer .service li{
     float: left;
 }
 .footer .service li span{
-    margin: 0 45px;
+    margin: 0 30px;
 }
 .footer .service a:link{
     text-decoration: none;
@@ -292,25 +339,28 @@ input.search_button{
     color: black;
 }
 .footer .service a:hover{
-    color: black;
+    color: rgb(255,103,0);
 }
 .footer .service a:active{
     color: black;
 }
 
 .footer .links{
-    margin-top: 40px;
+    margin-top: 80px;
     border-top: #e7e1cd 1px solid;
 }
 .footer .links dl{
     margin-top: 20px;
     float: left;
-    width: 150px;
+    width: 160px;
     font-size: 12px;
 }
 .footer .links dt{
     font-size: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+.footer .links dd{
+    margin-top: 10px;
 }
 .footer .links  a:link{
     text-decoration: none;
@@ -330,7 +380,7 @@ input.search_button{
     height: 80px;
     border-left: #b0b0b0 1px solid;
     float: right;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-top: 20px;
     padding-left: 50px;
     font-size: 13px;
@@ -338,35 +388,80 @@ input.search_button{
 }
 p.phone{
     color: #ff6700;
-    /*padding-top: 20px;*/
     font-size: 22px;
 }
 p.workday{
     font-size: 12px;
 }
+.phone_list .box-bd .time{
+    border: 0;
+    background-color: #f5f5f5;
+}
 .phone_list .box-bd .time  img{
     width: 234px;
-    height: 614px;
-    padding-top: 0;
+    height: 616px;
+    padding-top: 9px;
 }
 .phone_home {
     background-color: #f5f5f5;
 }
 .phone_list .box-hd{
-    margin-top: 20px;
-    padding-top: 40px;
+    /*margin-top: 1px;*/
+    padding-top: 30px;
 }
 .phone_list .box-bd .list li{
-    height: 280px;
-    width: 200px;
-    margin: 20px;
+    height: 300px;
+    width: 230px;
+    margin: 8px;
     border: 0;
     background-color: white;
 }
 .phone_list .box-bd .list li h3{
     margin-top: 0;
+    font-size: 14px;
 }
 .phone_list .box-bd .list li p{
-    margin-top: 0;
+    margin-top: 4px;
+    font-size: 12px;
 }
-
+.site-info{
+    background-color: #f5f5f5;
+    height: 200px;
+    margin-top: 40px;
+}
+.site-info .slogan{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 30px;
+    color: rgb(255,103,0);
+}
+.button:link{
+    color: black;
+    text-decoration: none;
+}
+.button:visited{
+    color: black;
+}
+.button:hover{
+    color: rgb(255,103,0);
+}
+.button:active{
+    color: black;
+}
+.span1 a:link{
+    color: white;
+    text-decoration: none;
+}
+.span1 a:visited{
+    color: white;
+}
+.span1 a:hover{
+    color:  rgb(255,103,0);
+}
+.span1 a:active{
+    color: rgb(255,103,0);
+}
+.nav_left i{
+    position: absolute;
+    left: 200px
+}
