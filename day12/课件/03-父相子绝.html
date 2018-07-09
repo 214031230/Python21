@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css" media="screen">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		input,button{
+			outline: none;
+			border: 0;
+		}
+		.search{
+			width: 296px;
+			height: 48px;
+			margin: 100px auto;
+
+		}
+		.search form{
+			position: relative;
+		}
+		.search input[type='text']{
+			width: 223px;
+			height: 48px;
+			font-size: 14px;
+			border: 1px solid #e0e0e0;
+			padding: 0 5px;
+			position: absolute;
+		}
+		.search span{
+			font-size: 12px;
+			background-color: #eee;
+			padding: 0 5px;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.search span.t{
+			top: 20px;
+			right: 162px;
+			z-index: 2;
+		}
+		.search span.s{
+			top: 20px;
+			right: 82px;
+			z-index: 1;
+		}
+		.search input[type='submit']{
+			height: 48px;
+			width: 50px;
+			border: 1px solid #e0e0e0;
+			background: #fff;
+			position: absolute;
+			right: 12px;
+			top: 0px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="search">
+		<form>
+			
+			<input type="text" name=""><input type="submit" value="按钮">
+			<span class="t">小米8</span>
+			<span class="s">小米MIX 2S</span>
+
+		</form>
+	</div>
+	
+
+</body>
+</html>

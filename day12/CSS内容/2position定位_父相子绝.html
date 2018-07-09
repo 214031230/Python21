@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2position定位_父相子绝</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* 父相子绝
+           以父辈盒子作为参考点
+                1.父辈元素设置相对定位，子元素设置绝对定位，那么会以父辈元素左上角为参考点，这个父辈元素不一定是爸爸，它也可以是爷爷，曾爷爷。
+                2.如果父亲设置了定位，那么以父亲为参考点。那么如果父亲没有设置定位，那么以父辈元素设置定位的为参考点
+                3.不仅仅是父相子绝，父绝子绝 ，父固子绝,都是以父辈元素为参考点
+            注意了：父绝子绝，没有实战意义，做站的时候不会出现父绝子绝。因为绝对定位脱离标准流，影响页面的布局。相反‘父相子绝’
+            在我们页面布局中，是常用的布局方案。因为父亲设置相对定位，不脱离标准流，子元素设置绝对定位，仅仅的是在当前父辈元素内调整该元素的位置。
+
+            还要注意，绝对定位的盒子无视父辈的padding
+
+            设置绝对定位之后，margin:0 auto;不起任何作用，如果想让绝对定位的盒子居中。当做公式记下来 设置子元素绝对定位，
+            然后left:50%; margin-left等于元素宽度的一半，实现绝对定位盒子居中
+	    */
+        .father{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            left: 200px;
+            top: 200px;
+            padding: 100px;
+            position: relative;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+
+</body>
+</html>

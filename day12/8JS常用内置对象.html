@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8JS常用内置对象</title>
+</head>
+<body>
+<!--由于JS是基于标签的操作，需要等待标签加载完毕在执行JS，JS代码放到body的最底部-->
+<script type="text/javascript">
+    // 数组Array
+        var colors = ['red','color','yellow'];
+        // 增
+        colors[3] = "blue";  // python不支持这种添加方式
+        var ret = colors.push("AAA");  // 往数组的最后添加一个元素，并返回新的长度
+        var ret1 = colors.unshift("CCC"); // 往数组的前面添加一个元素，并返回新的长度
+        console.log(ret);
+        console.log(ret1);
+        console.log(colors);
+        // 删
+        console.log(colors.pop()); // 移除最后一个元素 并返回删除的元素
+        console.log(colors.shift()); // 移除第一个元素 并返回删除的元素
+        // 改
+         colors[0] = "DDD";
+        // 查
+        console.log(colors[0]);
+        console.log(colors.indexOf("DDD")); // 根据元素找索引，找不到返回-1
+        console.log(colors.slice(0,3));  // 切片查找
+        // 其他
+        var newC = colors.concat([1,2,3]); // 生成一个新的数组
+        console.log(newC);
+        console.log(colors.join("_"));  // 把数组元素拼接成字符串
+        console.log(colors.reverse());  // 反转数组
+        console.log(colors.length);  // 返回数组的长度
+        console.log(colors.sort());  // 注意不是根据数值大小进行排序
+        console.log(Array.isArray(colors)); // 判断是不是数组
+
+    // string 字符串
+        var s = "ABC123";
+        console.log(s.charAt(0)); // 根据索引查元素
+        console.log(s.concat("DDDDDD","CCCCCC")); // 拼接字符串
+        var  newS = s.replace("A","a");
+        console.log(newS); // 替换字符串
+        console.log(s.search("B")); // 查找元素，找到返回索引，找不到返回-1
+        console.log(s.slice(0,3)); // 切片查找
+        console.log(s.split("1")); // 指定字符串分割字符串
+        console.log(s.toLowerCase()); // 大写变小写
+        console.log(s.toUpperCase()); // 小写变大写
+    // Date
+        //创建了一个date对象
+        var myDate = new Date();
+        console.log(myDate.getDate()); // 返回日期 1-31
+        console.log(Date());  // 返回详细的时间
+        console.log(myDate.getMonth()); // 返回月份 0-11
+        console.log(myDate.getFullYear()); // 返回年
+        console.log(myDate.getDay()); //返回星期几 0-6
+        console.log(myDate.getHours()); // 返回时 0-23
+        console.log(myDate.getMinutes()); // 返回分 0-59
+        console.log(myDate.getSeconds()); // 返回秒 0-59
+        console.log(myDate.toLocaleString()); // 2018/5/27 下午10:36:23
+
+    // Math
+        console.log(Math.floor(12.3)); // 向下取整，地板函数
+        console.log(Math.ceil(12.9)); // 向上取整，天花板函数
+        console.log(Math.max(1,2,3,4,5)); // 求最大值
+        console.log(Math.min(1,2,3,4,5)); // 求最小值
+        console.log(Math.random()); // 0-1之间的随机数
+        // 求0 - 100 之间的随机数 min+Math.random()*(max-min)
+        console.log(parseInt(0 + Math.random()*(100-0)));
+</script>
+</body>
+</html>

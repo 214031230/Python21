@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2JS字符串拼和数据类型转换</title>
+</head>
+<body>
+<!--由于JS是基于标签的操作，需要等待标签加载完毕在执行JS，JS代码放到body的最底部-->
+<script type="text/javascript">
+    // 字符串拼接
+    var a = "我是";
+    var b = "好人！";
+    console.log(a + b); // 我是好人！
+
+    var c = "1";
+    var d = 2;
+    console.log(c + d); // 12
+
+    var e = 1;
+    var f = 2;
+    console.log(e + f); // 3
+    // 如果加号两边都是数值，此时是加。否则，就是连字符（用来连接字符串）。
+
+
+    var a1 = "3";
+    var a2 = 2;
+    console.log(a1 - a2); // 1
+    // 效果：（注意，字符串 - 数值 = 数值）
+</script>
+</body>
+</html>

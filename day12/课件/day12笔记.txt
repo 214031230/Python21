@@ -1,0 +1,182 @@
+
+
+
+python为主：
+	js基础语法
+	jsDOM
+	jsBOM
+jQuery框架****
+Bootstrap框架****
+
+
+今日内容：
+		
+		1.css的定位
+			background-position: -20px -40px;
+			
+			
+			
+			(1)相对定位
+				
+			
+			     如果仅仅对当前盒子设置相对定位，那么它与原来的盒子没有任何变化、
+				 
+				 只有一个作用：父相子绝
+				 不要使用相对定位来做压盖现象
+				 
+				 二种现象：
+					1.不脱标
+					2.形影分离老家留坑（恶心）
+					
+				 
+				 
+			(2)绝对定位
+				现象：
+					1.设置绝对定位的盒子，脱离标准流
+				参考点：
+				
+					一、单独一个绝对定位的盒子
+
+					1.当我使用top属性描述的时候 是以页面的左上角（跟浏览器的左上角区分）为参考点来调整位置
+					2.当我使用bottom属性描述的时候。是以首屏页面左下角为参考点来调整位置。（爱立信）
+					
+					二、以父辈盒子作为参考点
+					1.父辈元素设置相对定位，子元素设置绝对定位，那么会以父辈元素左上角为参考点，这个父辈元素不一定是爸爸，它也可以是爷爷，曾爷爷。
+
+					2.如果父亲设置了定位，那么以父亲为参考点。那么如果父亲没有设置定位，那么以父辈元素设置定位的为参考点
+
+					3.不仅仅是父相子绝，父绝子绝 ，父固子绝,都是以父辈元素为参考点
+
+					注意了：父绝子绝，没有实战意义，做站的时候不会出现父绝子绝。因为绝对定位脱离标准流，影响页面的布局。相反‘父相子绝’在我们页面布局中，是常用的布局方案。因为父亲设置相对定位，不脱离标准流，子元素设置绝对定位，仅仅的是在当前父辈元素内调整该元素的位置。
+
+					还要注意，绝对定位的盒子无视父辈的padding
+					
+					
+				设置绝对定位之后，margin:0 auto;不起任何作用，如果想让绝对定位的盒子居中。当做公式记下来 设置子元素绝对定位，然后left:50%; margin-left等于元素宽度的一半，实现绝对定位盒子居中
+				
+				
+					(3)固定定位
+		
+			
+			
+		2.z-index
+		
+			1.z-index 值表示谁压着谁，数值大的压盖住数值小的，
+			2.只有定位了的元素，才能有z-index,也就是说，不管相对定位，绝对定位，固定定位，都可以使用z-index，而浮动元素不能使用z-index
+			3.z-index值没有单位，就是一个正整数，默认的z-index值为0如果大家都没有z-index值，或者z-index值一样，那么谁写在HTML后面，谁在上面压着别人，定位了元素，永远压住没有定位的元素。
+			4.从父现象：父亲怂了，儿子再牛逼也没用
+			
+			
+			
+			
+		css的重要知识点：
+			(1)每个标签 span==> 1.display属性 none|inline|inline-block|block 2.浮动 3.绝对定位
+			
+			
+			(2)浮动原理：为了实现并排 
+				清除浮动三种方式：
+					1.给父盒子设置固定高度
+					2.给父元素设置类clearfix,伪元素清除法
+					
+						.clearfix:after{
+							content:'.',
+							clear:both;
+							display:block;
+							visibility:hidden;
+							height: 0;
+						}
+					3.overflow:hidden(小心点)
+			（3）定位：
+				相对定位：不脱标 position:relative;
+						作用：1.做父相子绝的参考 2.微调元素
+						参考点：以原来的自身的位置进行定位
+				绝对定位：脱标 position: absolute
+						作用：1.父相子绝，页面排版布局 2.压盖现象
+						参考点：
+							1个盒子：以页面左上角
+							父子盒子：以父辈元素左上角为参考点
+							
+				固定定位：position: fixed;
+						1.脱标 2.固定导航栏 3.小广告
+							
+						
+				body{
+					padding-top: 80px;
+				}
+				.head{
+					width: 100%;
+					height: 80px;
+					background-color: rgba(0,0,0,.5);
+					position: fixed;
+					top: 0;
+					left: 0;
+					z-index: 99999;
+				}						
+			
+			（4）z-index的用法
+			
+			
+			
+			
+			
+	js：JavaScript
+		1.ECMAScript5基础语法
+			es1 2 4 5 
+			es5： 没有类的概念（伪面向对象）
+			es6：
+			es7 
+			es8
+			
+		print()
+		
+		console.log();
+		
+		nodejs  npm install jquery --save
+		
+		import ooo from 'xxx'
+		ooo.find()
+		
+		
+		
+		
+		python  pip3 install 
+		from xxx import ooo
+		
+		
+		
+		（1）声明变量 var
+		（2）String Number boolean undefine 
+		 (3) Array Math
+		 
+		toNumber()
+		toString()
+		
+		
+	二、jsDOM
+		Document Object Model
+		
+		（1）获取DOM的三种方式：
+			var oDiv = document.getElementById('box');
+			//获取的是集合，跟数组不同，它没有数组的方法
+			var oDiv = document.getElementsByTagName('div')[0];
+			var oDiv = document.getElementsByClassName('box')[0];
+		
+		（2）设置style样式
+		
+			oDiv.style.width
+			oDiv.style.height
+			oDiv.style.marginLeft
+			.......只要是css中的属性都能通过style对象点出来，所有的css中类似margin-left，都要写成驼峰，marginLeft
+		
+		（3）设置标签中的属性
+			console.log(oDiv.id);getter方法 获取id的属性值
+			oDiv.id= '123';setter方法 设置id的属性值
+			
+			除了id，还有class，使用className,title
+			
+			
+			
+		本周作业：
+		1.小米轮播图左右按钮切换
+		2.js基础语法演示一遍上交
+		

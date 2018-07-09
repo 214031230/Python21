@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2JS基础数据类型</title>
+</head>
+<body>
+<!--由于JS是基于标签的操作，需要等待标签加载完毕在执行JS，JS代码放到body的最底部-->
+<script type="text/javascript">
+    // 数值类型number
+    var a = 123;
+    // 查看数据类型
+    console.log(typeof a);
+    var a1 = 5/0;
+    console.log(typeof a1); // Infinity 无限大. number类型
+
+    // 字符串类型string
+    var b = "abc";
+    console.log(typeof b);
+    var c = ""; // 空字符串也是string类型
+    console.log(typeof c);
+
+    // 布尔boolean
+    var b1 = false;
+    console.log(typeof b1);
+
+    // null
+    var c1 = null; //空对象. object
+    console.log(c1);
+
+    // undefined
+    var d1; //表示变量未定义
+    console.log(typeof d1)
+</script>
+</body>
+</html>

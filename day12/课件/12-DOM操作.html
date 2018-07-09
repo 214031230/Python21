@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.box1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			/**/
+		}
+		.active{
+			background-color: yellow;
+		}
+		
+	</style>
+	
+</head>
+<body>
+
+	<div id="box" class="box1">
+		
+	</div>
+
+	<img src="./xinyuan.jpg" alt="女优" title='黑' id="nv">
+	<!-- <img src="./xinyuan.jpg" alt="女优" title='黑'> -->
+
+	<button class="btn">切换</button>
+	<script>
+		//js中入口函数
+		//当文档和图片都加载完成之后 入口函数才调用
+		window.onload = function() {
+			console.log(111);
+			var oDiv = document.getElementById('box');
+			console.dir(oDiv);
+			console.log(oDiv.id);
+			console.log(oDiv.className);
+
+
+			var isRed = true;
+			oDiv.onclick = function() {
+				// if (isRed) {
+				// 	console.log(oDiv.style);
+				// 	oDiv.style.backgroundColor = 'green';
+				// 	oDiv.style.width = '300px';
+				// 	isRed = false;
+				// }else{
+				// 	oDiv.style.backgroundColor = 'red';
+				// 	oDiv.style.width = '200px';
+				// 	isRed = true;
+				// }
+
+
+				oDiv.className  += ' active';
+				
+				
+
+			};
+
+		var oImg = document.getElementsByTagName('img')[0];
+		console.log(oImg);
+
+		var oBtn = document.getElementsByClassName('btn')[0];
+
+
+		oBtn.onclick = function() {
+
+
+				// 点语法  setter和getter语法
+				
+				oImg.src = './1.jpg';
+				console.log(oImg.id);
+
+				oImg.id = 'lv';
+				// oImg.alt=
+				// oImg.className
+				// oImg.title
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		};
+		
+	</script>
+
+
+
+</body>
+</html>

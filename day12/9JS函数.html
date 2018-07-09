@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9函数</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 函数：就是将一些语句进行封装，然后通过调用的形式，执行这些语句。
+    // 函数的作用：
+    //     将大量重复的语句写在函数里，以后需要这些语句的时候，可以直接调用函数，避免重复劳动。
+    //     简化编程，让编程模块化。
+
+    // 定义函数
+    function foo() {
+        console.log("Hello word")
+    }
+    foo();
+
+    // 匿名函数
+    var fun = function () {
+        console.log("我是匿名函数")
+    };
+    fun();
+
+    // 函数的返回值
+    function fun2() {
+        return "我是返回值"
+    }
+    console.log(fun()); // 没有返回值返回undefined
+    console.log(fun2());
+
+    // 函数参数
+    function fun3(a,b) {
+        console.log(a);
+        console.log(b);
+        console.log(arguments);
+    }
+    fun3(1,2,3,4,5,6);
+</script>
+</body>
+</html>

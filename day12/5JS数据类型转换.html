@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5JS数据类型转换</title>
+</head>
+<body>
+<!--由于JS是基于标签的操作，需要等待标签加载完毕在执行JS，JS代码放到body的最底部-->
+<script type="text/javascript">
+    // 数据类型转换
+    // string --> number
+    var strNum = "123";
+    console.log(parseInt(strNum)); // 字符串转换成number类型  Int是整形
+    var strNum1 = "123.67";
+    console.log(parseInt(strNum1)); // 字符串转换成number类型  Int是整形  如果是小数则取整数部分，小数不四舍五入
+    console.log(parseInt("2018你真帅！！")); // 带有自动净化的功能；只保留字符串最开头的数字，后面的中文自动消失
+
+    console.log(parseFloat(strNum1)); // 字符串转换成number类型  float是浮点类型
+
+    // number --> string
+    var num1 = 123;
+    var numStr = num1.toString();
+    console.log(numStr);
+
+    //  --> boolean
+    var b1 = '123';
+    var b2 = 0;
+    var b3 = -123
+
+    var b4 = Infinity;
+    var b5 = NaN;
+
+    var b6; //undefined
+    var b7 = null;
+
+    console.log(Boolean(b1))
+
+</script>
+</body>
+</html>

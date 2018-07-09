@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2position定位_固定定位</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding-top: 80px;
+        }
+        /*固定导航栏*/
+        .topHead{
+            height: 80px;
+            width: 100%;
+            background-color: rgba(0,0,0,.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+        }
+        .info{
+            height: 4096px;
+            background-color: red;
+        }
+        /*返回顶部*/
+        .backTop{
+            height: 80px;
+            width: 100px;
+            background-color: rgb(0,0,0);
+            position: fixed;
+            bottom: 100px;
+            right:100px;
+            z-index: 99999;
+            line-height: 80px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="top"></div>
+<div class="topHead"></div>
+<div class="info"></div>
+<div class="backTop">
+    <a href="#top">返回顶部</a>
+</div>
+</body>
+</html>

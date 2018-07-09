@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7JS流程控制练习</title>
+</head>
+<body>
+<!--由于JS是基于标签的操作，需要等待标签加载完毕在执行JS，JS代码放到body的最底部-->
+<script type="text/javascript">
+    // 1-100之间所有数之和
+    var sum = 0;
+    for (var i = 1;i<=100;i++){
+        sum += i;
+    }
+    console.log(sum);
+
+    // 1-100之间所有的偶数
+    for (var i1 = 1;i1<=100;i1++){
+        if (i1 % 2 === 0){
+            console.log(i1)
+        }
+    }
+
+    // 在浏览器中输出直角三角形
+    for (var line = 1; line <= 10; line++){
+        for (var chr = 1;chr <= line;chr++){
+            document.write("*")
+        }
+        document.write("<br>")
+    }
+</script>
+</body>
+</html>

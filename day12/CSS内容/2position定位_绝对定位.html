@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2position定位_绝对定位</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: red;
+        }
+        .box2{
+            background-color: blue;
+            /* 绝对定位
+				现象：设置绝对定位的盒子，脱离标准流
+				参考点：
+					一、单独一个绝对定位的盒子
+					    1.当我使用top属性描述的时候 是以页面的左上角（跟浏览器的左上角区分）为参考点来调整位置
+					    2.当我使用bottom属性描述的时候。是以首屏页面左下角为参考点来调整位置。
+
+            */
+            position: absolute;
+            left: 200px;
+        }
+        .box3{
+            background-color: yellow;
+        }
+        .box4{
+            background-color: black;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body style="height: 2048px">
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+</body>
+</html>
