@@ -84,7 +84,7 @@ def timmer(f): # f = func
         return res
     return inner2
 
-@login  #  func = login(func) = login(inner2) = inner1
+@login  #  func = login_model(func) = login_model(inner2) = inner1
 @timmer  # func = timer(func) = inner2  # 向上传完值以后销毁
 def func(name):
     print("start_func")

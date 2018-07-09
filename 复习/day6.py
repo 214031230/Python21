@@ -101,12 +101,12 @@
 #         md5obj.update(self.__password.encode("utf-8"))
 #         return md5obj.hexdigest()
 #
-#     def login(self):
+#     def login_model(self):
 #         if self.name == "spf" and self.__md5() == "202cb962ac59075b964b07152d234b70":
 #             return "登录成功！"
 #
 #
 # spf = User("spf", "123")
-# print(spf.login())
+# print(spf.login_model())
 
 

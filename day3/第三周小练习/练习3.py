@@ -91,20 +91,20 @@
 #     return inner
 # wrapper = wrapper() # inner
 # wrapper() #inner()
-# def login(argv):
+# def login_model(argv):
 #     def inner(*args):
 #         print("登录成功！")
 #         res = argv(*args)
 #         return res
 #     return inner
 #
-# @login  # f1 = login(f1)
+# @login_model  # f1 = login_model(f1)
 # def f1(a, b, c):
 #     return (a,b,c)
 # print(f1(1,2,3))
-# @login
+# @login_model
 # def f2():
 #     pass
-# @login
+# @login_model
 # def f3():
 #     pass

@@ -23,13 +23,13 @@
 #     def __init__(self,name,pwd):
 #         self.name = name
 #         self.__pwd = pwd      # 私有的对象属性
-#     def login(self):
+#     def login_model(self):
 #         print(self.__dict__)
 #         if self.name == 'alex' and self.__pwd == 'alex3714':
 #             print('登录成功')
 #
 # alex = Person('alex','alex3714')
-# alex.login()
+# alex.login_model()
 # print(alex.__dict__)
 # print(alex.__pwd)
 
