@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11JSDOM事件</title>
+    <style type="text/css">
+        .d1{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+        .d2{
+            background: yellow;
+        }
+        .d3{
+            background: blue;
+            height: 300px;
+            width: 300px;
+            border: 1px solid red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="d1"></div>
+<script type="text/javascript">
+    // 获取节点
+    var divEle = document.getElementsByClassName("d1")[0];
+    // 给节点添加鼠标单击事件
+    divEle.onclick = function () {
+        if (divEle.className === "d1"){
+            divEle.className = "d1 d2";
+        }else {
+             divEle.className = "d1";
+        }
+    };
+    // 给节点添加鼠标悬停事件
+    divEle.onmouseover = function () {
+        if (divEle.className === "d1"){
+            divEle.className = "d3";
+        }else {
+             divEle.className = "d1";
+        }
+    };
+    // 给节点添加鼠标离开事件
+    divEle.onmouseout = function () {
+        if (divEle.className === "d3"){
+            divEle.className = "d1";
+        }else {
+             divEle.className = "d3";
+        }
+    }
+
+</script>
+</body>
+</html>

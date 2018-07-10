@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box1{
+            width: 41px;
+            height: 69px;
+            background-image: url("./images/icon-slides.png");
+            background-position: -84px;
+            background-repeat: no-repeat;
+        }
+        .box2{
+            width: 41px;
+            height: 69px;
+            background-image: url("./images/icon-slides.png");
+            background-position: -124px;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body style="background-color: #8cd6b7">
+<div class="box1">
+</div>
+<div class="box2">
+</div>
+<script type="text/javascript">
+    var divEle = document.getElementsByClassName("box1")[0];
+    divEle.onmouseover = function () {
+        if (divEle.style.backgroundPosition = "-84px") {
+            divEle.style.backgroundPosition = "0";
+        }
+    };
+    divEle.onmouseout = function () {
+        if (divEle.style.backgroundPosition = "0") {
+            divEle.style.backgroundPosition = "-84px";
+        }
+    };
+
+    var div2Ele = document.getElementsByClassName("box2")[0];
+    div2Ele.onmouseover = function () {
+        if (div2Ele.style.backgroundPosition = "-124px") {
+            div2Ele.style.backgroundPosition = "-42px";
+        }
+    };
+    div2Ele.onmouseout = function () {
+        if (div2Ele.style.backgroundPosition = "-42px") {
+            div2Ele.style.backgroundPosition = "-124px";
+        }
+    };
+</script>
+</body>
+</html>

@@ -3,8 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>10JSDOM基本操作</title>
+    <style type="text/css">
+    </style>
 </head>
 <body>
+<div class="father">
+    <div class="c1">
+        <div class="son">AAAA</div>
+    </div>
+</div>
+<span id="d1"></span>
+<img src="" alt="">
+<script type="text/javascript">
+    // 获取标签的3种方式
+    // 根据ID获取，返回一个元素
+    var spanEle = document.getElementById("d1");
+    console.log(spanEle);
+    // 根据类名获取，返回一个数组
+    var divEle = document.getElementsByClassName("c1")[0];
+    console.log(divEle);
+    // 根据标签名获取，返回一个数组
+    var imgEle = document.getElementsByTagName("img")[0];
+    console.log(imgEle);
 
+    // 根据节点找父节点  父节点只能有一个
+    var divFatherEle = divEle.parentNode;
+    console.log(divFatherEle);
+
+    // 根据节点找子节点  子节点可以有多个
+    var divSonEle = divEle.children;
+    console.log(divSonEle[0]);
+
+    // 创建标签
+    var a1Ele = document.createElement("a");
+    var a2Ele = document.createElement("a");
+    console.log(a1Ele);
+
+    // 添加标签
+    divEle.appendChild(a1Ele); // 父节点的最后插入一个新的子节点。
+    divEle.insertBefore(a2Ele,divSonEle[0]); //  在参考节点前插入一个新的节点
+
+    // 删除节点
+    divEle.removeChild(a1Ele); // 通过父节点删除子节点
+    a2Ele.parentNode.removeChild(a2Ele); // 可以直接删除指定节点
+
+    // 复制节点
+    var newDivEle = divEle.cloneNode();  // 复制节点，不包括子节点
+    divEle.appendChild(newDivEle); // 插入复制的节点
+    var new2DivEle = divEle.cloneNode(true); // 复制节点及子节点
+    divEle.appendChild(new2DivEle); // 插入复制的节点
+
+    // 设置节点的属性
+    console.log(divEle.className);  // 获取节点的类名
+    console.log(divEle.getAttribute("id"));  // 获取节点的ID
+    imgEle.setAttribute("src", "./2.jpg"); // 设置节点属性
+    imgEle.src = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=72323776,1263084726&fm=27&gp=0.jpg"; // 设置节点属性
+
+    // 删除节点属性
+    imgEle.removeAttribute("src");
+
+    // 获取标签的所有内容
+    console.log(divEle.innerHTML);
+
+    // 获取标签的文本
+    console.log(divEle.innerText);
+</script>
 </body>
 </html>
