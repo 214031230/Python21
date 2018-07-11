@@ -48,22 +48,3 @@ function runDate() {
 }
 window.onload = runDate;
 // 时钟结束
-
-// 购物车悬停框开始
-var cartinfoEle = document.getElementsByClassName("topbar_cart_info")[0];
-var cartEle = document.getElementsByClassName("topbar_cart")[0];
-cartEle.onmouseover = function () {
-    cartinfoEle.style.display = "block";
-};
-cartEle.onmouseout = function () {
-    cartinfoEle.style.display = "none";
-};
-// 购物车悬停框结束
-// var infoEle = document.getElementsByClassName("content");
-// console.log(infoEle[0]);
-// infoEle[0].onmouseover = function () {
-//     infoEle[0].style.boxShadow = "10px 10px 5px #888888;";
-// };
-
-
-

@@ -79,10 +79,6 @@ time, mark, audio, video {
     background-color: #3f3f3f;
     width: 100px;
     text-align: center;
-    border: 0;
-}
-topbar_cart:hover{
-    color: #ff6700;
 }
 .topbar_info{
     float: right;
@@ -98,39 +94,26 @@ topbar_cart:hover{
 .iconfont{
     color: white;
 }
-.container .nav_t:link{
+.container a:link{
     text-decoration: none;
     color: #b0b0b0;
 }
-.container .nav_t:visited{
+.container a:visited{
     color: #b0b0b0;
 }
-.container .nav_t:hover{
+.container a:hover{
     color: white;
 }
-.container .nav_t:active{
+.container a:active{
     color: white;
 }
-.topbar_cart a:link{
-    text-decoration: none;
-    font-size: 14px;
-}
-.topbar_cart:hover a{
-    background-color: white;
-    color: rgb(255,103,0);
-    padding: 13px;
-}
-/*.topbar_cart a:hover{*/
-    /*color: rgb(255,103,0);*/
-/*}*/
 .box{
     width: 1226px;
     margin: 0 auto;
 }
 .bar{
-    margin-top: 0;
+    margin-top: 20px;
     font-size: 16px;
-    position: relative;
 }
 .bar .logo{
     background-color: rgb(255,103,0);
@@ -138,15 +121,11 @@ topbar_cart:hover{
     margin-right: 100px;
     width: 49px;
     height: 49px;
-    margin-top: 20px;
-    margin-bottom: 25px;
 }
 .bar .nav li{
     float:left;
     margin: 0 10px;
     line-height: 49px;
-    margin-top: 20px;
-    margin-bottom: 25px;
 }
 .bar a:link{
     color: black;
@@ -173,7 +152,7 @@ topbar_cart:hover{
     font-size: 12px;
     position: absolute;
     z-index: 99;
-    top: 35px;
+    top: 15px;
     padding: 2px;
     display: inline-block;
     text-align: center;
@@ -193,8 +172,6 @@ input.search{
     height: 49px;
     float: right;
     padding-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 input.search_button{
     width: 49px;
@@ -203,30 +180,20 @@ input.search_button{
     color: black;
     background-color: white;
     border: #b0b0b0 1px solid;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 input.search_button:hover{
     background-color: rgb(255,103,0);
     color: white;
 }
 .topbar_cart_info{
+    margin-top: 0;
     width: 200px;
-    height: 0;
-    background-color: white;
-    border: #b0b0b0 1px solid;
-    border-top: 0;
-    position: absolute;
-    right: 0;
-    z-index: 999;
-    text-align: center;
-    padding: 47px;
-    /*padding-top: 35px;*/
-    font-size: 12px;
-    display: none;
+    height: 80px;
+    background-color: black;
+    float: right;
 }
 .nav{
-    /*margin-top: 20px;*/
+    margin-top: 20px;
 }
 .nav .nav_left{
     background-color: #555555;

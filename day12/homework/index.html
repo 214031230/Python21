@@ -11,34 +11,34 @@
 <div class="topbar">
     <div class="container">
         <div class="topbar_nav">
-            <a href="#" class="">小米商城</a>
+            <a href="#" class="nav_t">小米商城</a>
             <span>|</span>
-            <a href="#" class="">MIUI</a>
+            <a href="#" class="nav_t">MIUI</a>
             <span>|</span>
-            <a href="#" class="">loT</a>
+            <a href="#" class="nav_t">loT</a>
             <span>|</span>
-            <a href="#" class="">云服务</a>
+            <a href="#" class="nav_t">云服务</a>
             <span>|</span>
-            <a href="#" class="">金融</a>
+            <a href="#" class="nav_t">金融</a>
             <span>|</span>
-            <a href="#" class="">有品</a>
+            <a href="#" class="nav_t">有品</a>
             <span>|</span>
-            <a href="#" class="">小爱开放平台</a>
+            <a href="#" class="nav_t">小爱开放平台</a>
             <span>|</span>
-            <a href="#" class="">政企服务</a>
+            <a href="#" class="nav_t">政企服务</a>
             <span>|</span>
-            <a href="#" class="">SelectRegion</a>
+            <a href="#" class="nav_t">SelectRegion</a>
         </div>
         <div class="topbar_cart">
-            <i class="iconfont icon-gouwuchekong"></i>
-            <a href="#" class="">购物车(0)</a>
+            <!--<i class="iconfont icon-gouwuchekong"></i>-->
+            <a href="#" class="iconfont icon-gouwuchekong">购物车(0)</a>
         </div>
         <div class="topbar_info">
-            <a href="#" class="">登录</a>
+            <a href="#" class="nav_t">登录</a>
             <span>|</span>
-            <a href="#" class="">注册</a>
+            <a href="#" class="nav_t">注册</a>
             <span>|</span>
-            <a href="#" class="">消息通知</a>
+            <a href="#" class="nav_t">消息通知</a>
         </div>
     </div>
 </div>
@@ -64,10 +64,13 @@
             <li><a href="#">社区</a></li>
         </ul>
     </div>
+    <div class="topbar_cart_info">购物车中还没有商品，赶紧选购吧！</div>
     <div class="search">
+        <a href="" class="a2">小米8</a>
+        <a href="" class="a1">小米MIX2S</a>
         <form action="#">
             <input type="submit" class="search_button iconfont_big" value="&#xe622;">
-            <input type="text" name="search" class="search" placeholder="搜索产品">
+            <input type="text" name="search" class="search">
         </form>
     </div>
 </div>
@@ -100,12 +103,18 @@
 <div class="clearfix home_sub box">
     <div class="span1">
         <ul type="none">
-        <li><a href="#"><i class="iconfont_big">&#xe606;</i><p>选购手机</p></a></li>
-        <li><a href="#"><i class="iconfont_big">&#xe602;</i><p>选购手机</p></a></li>
-        <li><a href="#"><i class="iconfont_big">&#xe629;</i><p>选购手机</p></a></li>
-        <li><a href="#"><i class="iconfont_big">&#xe733;</i><p>选购手机</p></a></li>
-        <li><a href="#"><i class="iconfont_big">&#xe749;</i><p>选购手机</p></a></li>
-        <li><a href="#"><i class="iconfont_big">&#xe640;</i><p>选购手机</p></a></li>
+            <li><a href="#"><i class="iconfont_big">&#xe606;</i>
+                <p>选购手机</p></a></li>
+            <li><a href="#"><i class="iconfont_big">&#xe602;</i>
+                <p>选购手机</p></a></li>
+            <li><a href="#"><i class="iconfont_big">&#xe629;</i>
+                <p>选购手机</p></a></li>
+            <li><a href="#"><i class="iconfont_big">&#xe733;</i>
+                <p>选购手机</p></a></li>
+            <li><a href="#"><i class="iconfont_big">&#xe749;</i>
+                <p>选购手机</p></a></li>
+            <li><a href="#"><i class="iconfont_big">&#xe640;</i>
+                <p>选购手机</p></a></li>
         </ul>
     </div>
     <div class="span2">
@@ -128,7 +137,13 @@
             <div class="start">18:00场</div>
             <img src="./images/flashpurchase.png" alt="">
             <div class="start_time">距离开始还有</div>
-            <div class="run_time">00:00:00</div>
+            <div class="run_time">
+                <div class="H date">00</div>
+                <div>:</div>
+                <div class="M date">00</div>
+                <div>:</div>
+                <div class="S date">00</div>
+            </div>
         </div>
         <div class="list">
             <ul type="none">
@@ -279,11 +294,16 @@
     <div class="service">
         <div class="service_cen">
             <ul type="none">
-                <li><a href="#"><i class="iconfont_big" style="color: black">&#xe629;</i>&nbsp;预约未修服务</a><span>|</span></li>
-                <li><a href="#"><i class="iconfont_big" style="color: black">&#xe602;</i>&nbsp;7天无理由退出</a> <span>|</span></li>
-                <li><a href="#"><i class="iconfont_big" style="color: black">&#xe733;</i>&nbsp;15天免费换货</a><span>|</span></li>
-                <li><a href="#"><i class="iconfont_big" style="color: black">&#xe640;</i>&nbsp;满150元包邮</a><span>|</span></li>
-                <li><a href="#"><i class="iconfont_big" style="color: black">&#xe629;</i>&nbsp;520余家售后网点</a><span></span></li>
+                <li><a href="#"><i class="iconfont_big" style="color: black">&#xe629;</i>&nbsp;预约未修服务</a><span>|</span>
+                </li>
+                <li><a href="#"><i class="iconfont_big" style="color: black">&#xe602;</i>&nbsp;7天无理由退出</a>
+                    <span>|</span></li>
+                <li><a href="#"><i class="iconfont_big" style="color: black">&#xe733;</i>&nbsp;15天免费换货</a><span>|</span>
+                </li>
+                <li><a href="#"><i class="iconfont_big" style="color: black">&#xe640;</i>&nbsp;满150元包邮</a><span>|</span>
+                </li>
+                <li><a href="#"><i class="iconfont_big"
+                                   style="color: black">&#xe629;</i>&nbsp;520余家售后网点</a><span></span></li>
             </ul>
         </div>
     </div>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            font-size: 30px;
+        }
+        .left{
+            float: left;
+            background-color: #8cd6b7;
+            height: 300px;
+            width: 29%;
+            border: 1px solid red;
+        }
+        .right{
+            float: right;
+            background-color: #8cd6b7;
+            width: 70%;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="left">
+    <label>留言板:<br>
+        <textarea name="liuyan" id="liuyan" cols="40" rows="16"></textarea>
+    </label>
+    <button id="tijiao">提价</button>
+    <button id="tongji">统计</button>
+</div>
+<div class="right">
+
+</div>
+</body>
+<script type="text/javascript">
+    var msgEle = document.getElementById("liuyan");
+    var tijiaoEle = document.getElementById("tijiao");
+    var tongjiEle = document.getElementById("tongji");
+    var infoEle = document.getElementsByClassName("right")[0];
+    tijiaoEle.onclick = function () {
+        var pEle = document.createElement("p");
+        infoEle.appendChild(pEle);
+        pEle.innerText = "Admin:" + msgEle.value;
+        msgEle.value = "";
+    };
+
+    tongjiEle.onclick = function () {
+        var pEle = document.getElementsByTagName("p");
+        alert(pEle.length)
+    };
+</script>
+</html>

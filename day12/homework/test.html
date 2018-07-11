@@ -4,51 +4,44 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
-        .box1{
-            width: 41px;
-            height: 69px;
-            background-image: url("./images/icon-slides.png");
-            background-position: -84px;
-            background-repeat: no-repeat;
-        }
-        .box2{
-            width: 41px;
-            height: 69px;
-            background-image: url("./images/icon-slides.png");
-            background-position: -124px;
-            background-repeat: no-repeat;
+        div{
+            float: left;
+            font-size: 20px;
+            margin-left: 5px;
+            margin-right: 5px;
         }
     </style>
 </head>
-<body style="background-color: #8cd6b7">
-<div class="box1">
-</div>
-<div class="box2">
-</div>
+<body>
+<div class="H">00</div>
+<div>:</div>
+<div class="M">00</div>
+<div>:</div>
+<div class="S">00</div>
 <script type="text/javascript">
-    var divEle = document.getElementsByClassName("box1")[0];
-    divEle.onmouseover = function () {
-        if (divEle.style.backgroundPosition = "-84px") {
-            divEle.style.backgroundPosition = "0";
+    function runDate() {
+        var myDate = new Date();
+        var hEle = document.getElementsByClassName("H")[0];
+        var h  = myDate.getHours();
+        if (h < 10){
+            h = "0" + h;
         }
-    };
-    divEle.onmouseout = function () {
-        if (divEle.style.backgroundPosition = "0") {
-            divEle.style.backgroundPosition = "-84px";
+        hEle.innerText = h;
+        var mEle = document.getElementsByClassName("M")[0];
+        var m = myDate.getMinutes();
+        if (m < 10){
+            m = "0" + m;
         }
-    };
-
-    var div2Ele = document.getElementsByClassName("box2")[0];
-    div2Ele.onmouseover = function () {
-        if (div2Ele.style.backgroundPosition = "-124px") {
-            div2Ele.style.backgroundPosition = "-42px";
+        mEle.innerText = m;
+        var sEle = document.getElementsByClassName("S")[0];
+        var s = myDate.getSeconds();
+        if (s < 10){
+            s  = "0" + s;
         }
-    };
-    div2Ele.onmouseout = function () {
-        if (div2Ele.style.backgroundPosition = "-42px") {
-            div2Ele.style.backgroundPosition = "-124px";
-        }
-    };
+        sEle.innerText = s;
+        window.setTimeout(runDate,1000)
+    }
+    window.onload = runDate;
 </script>
 </body>
 </html>
