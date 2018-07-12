@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态对话框</title>
+    <style type="text/css">
+        .bgc {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #666666;
+            opacity: 0.5;
+        }
+
+        .bgcform {
+            position: fixed;
+            width: 500px;
+            height: 350px;
+            top: 100px;
+            left: 50%;
+            margin-left: -250px;
+            background-color: #8cd6b7;
+            border: 1px solid red;
+        }
+
+        .bgcform_inner {
+            padding: 120px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .usertab {
+            border-color: black;
+            text-align: center;
+        }
+
+        .model {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button class="adduser">添加学员</button>
+<table border="1" class="usertab">
+    <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>年龄</td>
+        <td colspan="2">操作</td>
+    </tr>
+    <tr class="model">
+        <td>test</td>
+        <td>男</td>
+        <td>18</td>
+        <td class="yangben">
+            <button class="edituser">编辑</button>
+        </td>
+        <td class="yangben">
+            <button class="deluser">删除</button>
+        </td>
+    </tr>
+    <tr>
+        <td>孙鹏飞</td>
+        <td>男</td>
+        <td>18</td>
+        <td>
+            <button class="edituser">编辑</button>
+        </td>
+        <td>
+            <button class="deluser">删除</button>
+        </td>
+    </tr>
+</table>
+
+<div class="bgc hide"></div>
+<div class="bgcform hide">
+    <div class="bgcform_inner">
+        <form action="">
+            <label>
+                姓名：<input type="text" class="info">
+            </label><br>
+            <label>
+                性别：<input type="text" class="info">
+            </label><br>
+            <label>
+                年龄：<input type="text" class="info">
+            </label><br>
+            <input type="button" value="提交" class="submit">
+            <input type="button" value="取消" class="cancel"><br>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function add_hide() {
+        bgcEle.classList.add("hide");
+        bgcformEle.classList.add("hide");
+    }
+
+    var adduserEle = document.getElementsByClassName("adduser")[0];
+    var bgcEle = document.getElementsByClassName("bgc")[0];
+    var bgcformEle = document.getElementsByClassName("bgcform")[0];
+    // 添加学员
+    adduserEle.onclick = function () {
+        bgcEle.classList.remove("hide");
+        bgcformEle.classList.remove("hide");
+    };
+    // 取消
+    var cancelEle = document.getElementsByClassName("cancel")[0];
+    cancelEle.onclick = function () {
+        add_hide()
+    };
+    // 点击灰色区域取消
+    bgcEle.onclick = function () {
+        bgcEle.classList.add("hide");
+        bgcformEle.classList.add("hide");
+    };
+    // 提交
+    var submitEle = document.getElementsByClassName("submit")[0];
+    var infoEle = bgcformEle.getElementsByClassName("info");
+    var usertabEle = document.getElementsByClassName("usertab")[0];
+    var yangbenEle = document.getElementsByClassName("yangben");
+    submitEle.onclick = function () {
+        var trEle = document.createElement("tr");
+        for (var i = 0; i < infoEle.length; i++) {
+            var tdEle = document.createElement("td");
+            tdEle.innerHTML = infoEle[i].value;
+            trEle.appendChild(tdEle);
+            infoEle[i].value = "";
+        }
+        // 添加 编辑删除按钮
+        for (var j = 0; j < yangbenEle.length; j++) {
+            console.log(yangbenEle[j]);
+            var modelEle = yangbenEle[j].cloneNode(true);
+            modelEle.className = "";
+            trEle.appendChild(modelEle);
+        }
+        usertabEle.appendChild(trEle);
+        add_hide();
+        // 删除
+        var deluserEle = document.getElementsByClassName("deluser");
+        for (var x = 0; x < deluserEle.length; x++) {
+            deluserEle[x].onclick = function () {
+                this.parentNode.parentNode.innerHTML = "";
+            };
+        }
+        // // 编辑
+        // var edituserEle = document.getElementsByClassName("edituser");
+        // for (var y = 0; y < edituserEle.length; y++) {
+        //     edituserEle[y].onclick = function () {
+        //         console.log(this.parentNode.parentNode)
+        //     };
+        // }
+    };
+    // 删除
+    var deluserEle = document.getElementsByClassName("deluser");
+    for (var x = 0; x < deluserEle.length; x++) {
+        deluserEle[x].onclick = function () {
+            this.parentNode.parentNode.innerHTML = "";
+        };
+    }
+
+    // // 编辑
+    // var edituserEle = document.getElementsByClassName("edituser");
+    // for (var y = 0; y < edituserEle.length; y++) {
+    //     edituserEle[y].onclick = function () {
+    //         console.log(this.parentNode.parentNode)
+    //     };
+    // }
+
+</script>
+</body>
+</html>

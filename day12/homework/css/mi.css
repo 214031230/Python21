@@ -81,7 +81,7 @@ time, mark, audio, video {
     text-align: center;
     border: 0;
 }
-topbar_cart:hover{
+.topbar_cart:hover{
     color: #ff6700;
 }
 .topbar_info{
@@ -113,12 +113,12 @@ topbar_cart:hover{
 }
 .topbar_cart a:link{
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12px;
 }
 .topbar_cart:hover a{
     background-color: white;
     color: rgb(255,103,0);
-    padding: 13px;
+    padding: 18px;
 }
 /*.topbar_cart a:hover{*/
     /*color: rgb(255,103,0);*/
@@ -568,4 +568,29 @@ p.workday{
 .nav_left i{
     position: absolute;
     left: 200px
+}
+.radius_item{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    z-index: 999;
+}
+.radius,.radius1{
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #666666;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.radius {
+    background-color: #666666;
+}
+.radius1 {
+    background-color: white;
+}
+.radius1,.radius:hover {
+    background-color: white;
 }

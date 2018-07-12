@@ -58,12 +58,18 @@ cartEle.onmouseover = function () {
 cartEle.onmouseout = function () {
     cartinfoEle.style.display = "none";
 };
-// 购物车悬停框结束
-// var infoEle = document.getElementsByClassName("content");
-// console.log(infoEle[0]);
-// infoEle[0].onmouseover = function () {
-//     infoEle[0].style.boxShadow = "10px 10px 5px #888888;";
-// };
+
+// 圆点翻页开始
+var radiusEle = document.getElementsByClassName("radius");
+for (var i = 0; i < radiusEle.length; i++) {
+    radiusEle[i].onclick = function () {
+        for (var i = 0; i < radiusEle.length; i++) {
+            radiusEle[i].style.backgroundColor = "#666666"
+        }
+        this.style.backgroundColor = "white";
+    };
+}
+// 圆点翻页结束
 
 
 
