@@ -4,26 +4,40 @@
     <meta charset="UTF-8">
     <title>tab栏选择卡</title>
     <style type="text/css">
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        .menus{
-            background-color: #8cd6b7;
+
+        .menus {
+            background-color: #666;
+            width: 600px;
             height: 100px;
         }
-        .menus li{
+
+        .menus li {
             float: left;
-            width: 30%;
+            width: 200px;
             font-size: 50px;
             line-height: 100px;
         }
-        .context{
-            background-color: #666666;
-            height: 1000px;
+
+        .context {
+            background-color: red;
+            width: 600px;
+            height: 500px;
         }
-        .active{
-            background-color: #666666;
+
+        .active {
+            background-color: red;
+        }
+
+        p {
+            display: none;
+        }
+
+        .links {
+            display: block;
         }
     </style>
 </head>
@@ -36,9 +50,30 @@
     </ul>
 </div>
 <div class="context">
-    <p>首页内容</p>
+    <p class="links">首页内容</p>
     <p>新闻内容</p>
     <p>图片内容</p>
 </div>
+<script type="text/javascript">
+    var liEle = document.getElementsByTagName("li");
+    var pEle = document.getElementsByTagName("p");
+    for (var i = 0; i < liEle.length; i++) {
+        liEle[i].onclick = function () {
+            var liactiveEle = document.getElementsByClassName("active")[0];
+            liactiveEle.classList.remove("active");
+            this.classList.add("active");
+            var plinksEle = document.getElementsByClassName("links")[0];
+            plinksEle.classList.remove("links");
+            console.log(pEle);
+             var liEle = document.getElementsByTagName("li");
+             for (var i = 0;i<liEle.length;i++){
+                 if (liEle[i].className === "active"){
+                     pEle[i].classList.add("links");
+                 }
+             }
+
+        };
+    }
+</script>
 </body>
 </html>
