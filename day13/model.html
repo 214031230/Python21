@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态对话框</title>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <style type="text/css">
+        .bgc {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #666666;
+            opacity: 0.5;
+        }
+
+        .bgcform {
+            position: fixed;
+            width: 500px;
+            height: 350px;
+            top: 100px;
+            left: 50%;
+            margin-left: -250px;
+            background-color: #8cd6b7;
+            border: 1px solid red;
+        }
+
+        .bgcform_inner {
+            padding: 120px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .usertab {
+            border-color: black;
+            text-align: center;
+        }
+
+        .model {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button class="adduser">添加学员</button>
+<table border="1" class="usertab">
+    <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>年龄</td>
+        <td colspan="2">操作</td>
+    </tr>
+    <tr class="model">
+        <td>test</td>
+        <td>男</td>
+        <td>18</td>
+        <td class="yangben">
+            <button class="edituser">编辑</button>
+        </td>
+        <td class="yangben">
+            <button class="deluser">删除</button>
+        </td>
+    </tr>
+    <tr>
+        <td>孙鹏飞</td>
+        <td>男</td>
+        <td>18</td>
+        <td>
+            <button class="edituser">编辑</button>
+        </td>
+        <td>
+            <button class="deluser">删除</button>
+        </td>
+    </tr>
+</table>
+
+<div class="bgc hide"></div>
+<div class="bgcform hide">
+    <div class="bgcform_inner">
+        <form action="">
+            <label>
+                姓名：<input type="text" class="info">
+            </label><br>
+            <label>
+                性别：<input type="text" class="info">
+            </label><br>
+            <label>
+                年龄：<input type="text" class="info">
+            </label><br>
+            <input type="button" value="提交" class="submit">
+            <input type="button" value="取消" class="cancel"><br>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".adduser").click(function () {
+        $(".bgc").removeClass("hide").next().removeClass("hide");
+    });
+    $(".cancel,.bgc").click(function () {
+        $(".bgc").addClass("hide").next().addClass("hide");
+    });
+    $(".submit").click(function () {
+        console.log($(".info").eq(0))
+    });
+    $(".deluser").click(function () {
+        $(this).parent().parent().remove();
+    });
+
+</script>
+</body>
+</html>
