@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.box{
+			 position: absolute;
+            left: 20px;
+            top: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+		}
+
+	</style>
+</head>
+<body>
+	<button id="btn">显示</button>
+	<div class="box">
+	
+		
+	</div>
+	<script src="01/node_modules/jquery/dist/jquery.min.js"></script>
+	<script>
+		
+
+		$(function() {
+			/*
+			var isShow = true;
+			$('#btn').click(function(event) {
+
+				var _this = $(this);
+				if (isShow) {
+					$('.box').show(2000,function() {
+						_this.text('隐藏');
+					});
+					isShow = false;
+					
+
+				}else{
+					$('.box').hide(2000);
+					isShow = true;
+					$(this).text('显示');
+				}
+				
+			});
+			*/
+
+			$('#btn').click(function(event) {
+				/* Act on the event */
+
+				// $('.box').stop().toggle('slow');
+
+				// $('.box').stop().slideToggle(1000, function() {
+					
+				// });
+
+				// $('.box').stop().fadeToggle(1000, function() {
+					
+				// });
+
+				var json = {"width": 500, "height": 500, "left": 300, "top": 300, "border-radius": 100};
+                var json2 = {
+                    "width": 100,
+                    "height": 100,
+                    "left": 100,
+                    "top": 100,
+                    "border-radius": 100,
+                    "background-color": "red"
+                };
+
+                //自定义动画
+                $(".box").animate(json, 1000, function () {
+                    $(".box").animate(json2, 1000, function () {
+                        alert("动画执行完毕！");
+                    });
+                });
+			});
+
+
+		})
+	</script>
+
+</body>
+</html>

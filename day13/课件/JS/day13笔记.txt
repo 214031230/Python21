@@ -1,0 +1,235 @@
+
+内容回顾：
+		js包含三部分：
+			1.ESMAScript基础语法
+			
+				Array()
+					索引
+					length
+					
+					push()
+					pop(_)
+			2.DOM
+			   获取DOM的三种方式
+				（1）id
+				 (2) className
+				 (3)TagName
+				 
+				 document.getELementsByClassName('box');
+			3.BOM
+			
+			入口函数：
+				等待着文档和图片都加载完成
+				window.onload = function(){}
+
+今日内容：
+		
+		1.var 和 let 以及const区别
+			var 声明的变量 存在变量提升。
+			
+			let 声明的变量 是块级作用域
+			
+			const 声明的是常量  一旦声明变量 不可改变
+			
+			
+			//直接会报错  Uncaught TypeError: Assignment to constant variable.
+			const a = 1;
+			
+			a  = 2;
+			
+			
+			//设置标签属性
+			<div class='box' id='box' title='哈哈哈'></div>
+			var oDiv = document.getELementsByClassName('box')[0];
+			oDiv.className+=' active'
+			oDiv.id
+			oDiv.title
+			
+			//样式属性
+			oDiv.style.width = '200px';
+			oDiv.style.backgroundColor  = 'red';
+			
+			
+		2.DOM的创建和添加
+			//创建节点
+			var oP = document.createElement('p');
+			
+			//设置文本
+			// oP.innerText = '<a href="#">123</a>';
+			oP.innerHTML = '<a href="#">123</a>';
+			//追加孩子节点
+			oBox.appendChild(oP);
+			
+			父节点.insertBefor(新的节点,参考的子节点);
+			
+			
+			//对属性节点的操作
+			getAttribute();
+			setAttribute();
+			removeAttribute();
+			
+			python:
+				def add():
+					
+			    class Person：
+					
+			
+			
+		3.js中创建对象的方式
+		
+			(1)谁做的事件，这个this指的就是这个对象
+		
+			1.字面量方式创建
+			var person = {
+				name:"张三",
+				age:18,
+				fav:function(){}
+			
+			};
+			person.name
+			person.age
+			person.fav();
+			
+			4.使用原型（prototype）继承的方式来创建对象
+			
+			function Person(name,age){
+				this.name = name;
+				this.age  = age;
+			};
+			Person.prototype.showName = function(){
+			
+				console.log(this);//Person对象
+			};
+			JS中使用new关键字来创建对象，没有对象new一个
+			var p1 = new Person('ZS',19);
+		
+		
+			js中：
+				function add(){}
+				
+				//构造函数
+				function Person(){}
+				
+				new Person()
+				
+				
+				在js中prototype原型 是每个对象的父类
+				
+			
+			
+			function add(){
+			}
+			
+			//es6中的函数可以写成箭头函数
+			
+			function add(a,b){
+			
+				return a+b
+			};
+			
+			var add = function(a,b){
+				return a+b
+			}
+			console.log(add(1,2));
+			
+			
+			
+			
+			var add = (a,b)=>{
+			
+			 return a+b
+			}
+			
+			
+			es5中引入模块的方式 一个js文件就是一个模块
+			script引入  但是引入的模块，属于同步调用
+			
+			
+			from xxx import ooo;
+			
+			
+			es6中引入模块
+			import ooo from 'xxx'
+			
+			
+			前端中有三大工具
+			grunt工具
+			glup工具
+			webpack工具			
+			babel工具能将es6的代码转化成es5的代码
+			
+			nodejs
+			
+			
+			作用：文件压缩 打包
+			
+			
+			nodejs下载
+			
+			安装python3 自带pip3
+			安装了nodejs 自带了npm   node -v 查看版本
+			
+			npm install jquery --save
+			
+			var fs = require('fs');
+			
+			fs.readFile('/etc/passwd', 'utf8', callback);
+			
+			
+			
+			DOM	
+				1.获取事件源的三种方式
+				2.设置标签的属性
+				3.设置样式属性
+				4.创建节点  追加节点 移除节点
+				5.DOM树结构
+						 document
+					
+							html 
+						
+						head    body  
+						        div  p ul li....
+								
+				在html中一切都是节点
+				
+				操作DOM的三步
+				
+				1.事件源 2.事件 3.事件处理程序
+				
+			
+			BOM
+			
+			
+			5.使用jquery
+			  （1）先引入jquery
+			   (2) 入口函数：
+				$(function(){})
+			   (3)js对象和jquery对象的转化
+			     js=》jquery  $(js对象)
+				 jquery=>js $('.box')[0]
+			
+				
+				
+			作业：
+				1.小米的轮播图
+				2.百度登录之后的页面的天气显示效果
+				
+					
+				3.注册和风天气账号
+				http://www.heweather.com/documents/api/v5/weather
+			
+				预习：ajax技术
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		

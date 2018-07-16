@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div class="box">
+		哈哈
+		<!-- ff0011 -->
+	</div>
+	<div class="box">
+		嘿嘿啊
+		<!-- ff0012 -->
+	</div>
+	<script>
+		
+		window.onload = function() {
+			// var a;
+			// alert(a);
+			// var a = 1;
+			// alert(a);
+
+			var oBoxs = document.getElementsByClassName('box');
+
+			console.log(oBoxs);
+			// oBoxs.push(1);
+
+
+			// var声明的变量 存在变量提升
+			for(var i = 0;i < oBoxs.length; i++){
+
+
+				oBoxs[i].I = i;
+
+				oBoxs[i].onclick = function() {
+					console.log(oBoxs[this.I].innerText);
+					console.log(this);
+					console.log(this.innerText);
+				}
+			}
+		};
+
+		// window.onload = function() {
+		// 	alert(3);
+		// };
+
+
+	</script>
+</body>
+</html>

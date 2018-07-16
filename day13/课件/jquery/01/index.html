@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="box1">
+		<p class="p1">heihei</p>
+		<p>哈哈哈哈</p>
+		<p>哈哈哈哈2</p>
+		<p>哈哈哈哈3</p>
+	</div>
+	<div class="box">
+		
+	</div>
+	<div class="box">
+		
+	</div>
+	<!-- 1.先引包 -->
+	<script src="./node_modules/jquery/dist/jquery.js"></script>
+
+	<script>
+		
+		// console.log($(document));
+
+
+		/*
+		//文档加载完成之后
+		$(document).ready(function() {
+
+
+			
+			
+		});
+		*/
+		console.log($('#box1'))
+		//jquery的链式编程
+		$('#box1').css('color','red').click(function() {
+			// innerText innerHTML
+			// console.log($(this).text().trim());
+			// console.log($(this).html());
+			// val()用在表单控件中
+			// console.log($(this).val())
+		})
+
+		// jquery 库 在js的基础上封装
+		$(function() {
+			console.log($('.box'))
+			
+			$('.box').click(function() {
+				console.log(this);
+				
+				// $('.box').css('background-color','yellow');
+				console.log($($('.box')[0]))
+				/*
+				$($('.box')[0]).css({
+					'background-color':'green',
+					"width":'300px'
+				});
+				*/
+
+				$(this).css({
+					'background-color':'green',
+					"width":'300px'
+				});
+
+
+
+			});
+		});
+
+		// $(document).ready(function() {
+
+
+		// 	alert(3)
+			
+		// });
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        div{
+          width: 100px;
+          height: 100px;
+       }
+       .wrap{
+      
+        background-color: red;
+       }
+       .wrap2{
+        background-color: yellow;
+       }
+    </style>
+    <script src="./01/node_modules/jquery/dist/jquery.min.js"></script>
+    
+
+</head>
+<body>
+<div class="wrap" id="box" title='123'>
+ 
+</div>
+
+<input type="text" name="" value="123">
+
+<!-- 男<input type="radio" id='test' name="sex"  checked='ddd'/>
+    女<input type="radio" id='test2' name="sex" />
+ -->
+<script>
+        //入口函数
+        $(document).ready(function () {
+            /*
+            console.log($('.wrap').attr('id'));
+            console.log($('.wrap').attr('class'));
+
+            // $('.wrap').attr('class','wrap wrap2') 
+
+             $('.wrap').removeAttr('class id');
+
+             console.log($('#test').attr('checked'));
+              console.log($('#test'));
+             console.log($('#test2').prop('checked'));
+
+            */
+
+            $('div').addClass("box box2 box3 box4");
+
+           console.log( $('input').val());
+
+
+        });
+    </script>
+</body>
+</html>

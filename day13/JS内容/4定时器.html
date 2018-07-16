@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            // 定时器 异步运行
+            function hello(){
+            alert("hello");
+            }
+            //setTimeout
+            var t1 = window.setTimeout(hello,2000); // 2000 = 2秒  2秒后执行，只会执行一次
+            window.clearTimeout(t1); //去掉定时器
+
+            // setInterval
+            var t2 = window.setInterval(hello,3000); // 循环执行，每个3秒执行一次
+            window.clearTimeout(t2); //去掉定时器
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

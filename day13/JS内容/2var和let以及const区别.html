@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            // var
+            console.log(name); // 输出结果：undefined
+            var name = "spf";  // var声明的变量 存在变量提升。相当于第一步：var name; 第二步：name = "spf";
+            console.log(name); // 输出结果：spf
+
+
+            // 对比var 和 let
+            function foo1() {
+                var name = "spf";
+            }
+            console.log(name); // 输出结果：spf
+
+            function foo2() {
+                let name1 = "spf";  // 声明的变量 是块级作用域 用于解决for循环绑定事件操作
+            }
+            console.log(name1);  // 报错Uncaught ReferenceError: name1 is not defined at window.onload
+
+
+            // const 声明的是常量  一旦声明变量 不可改变
+			const a = 1;
+			a  = 2; //直接会报错  Uncaught TypeError: Assignment to constant variable.
+        };
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

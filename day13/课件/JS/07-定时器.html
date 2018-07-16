@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div id='box' style="width: 100px;height: 100px;background-color: red;">
+		
+	</div>
+
+	<button id="btn">停止</button>
+
+	<script>
+		
+		/*
+		var a = 0;
+
+
+
+
+		function $(id){
+			return document.getElementById(id);
+		}
+
+		// var oDiv = document.getElementById('box');
+		// var oBtn = document.getElementById('btn');
+
+		var c = setInterval(function() {
+
+
+			// body... 
+			a+=3;
+
+			$('box').style.marginLeft = a+'px';
+			console.log(a);
+		},50)
+
+
+		$('btn').onclick = function(){
+
+			clearInterval(c);
+		}
+		*/
+
+		//等待2秒之后 fn会去执行 fn我们称为叫回调函数
+		setTimeout(function() {
+			// body...
+			console.log(2222);
+		}, 2000)
+
+		console.log(1111);
+
+	</script>
+
+</body>
+</html>

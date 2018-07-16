@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script>
+		
+
+       //字面量方式创建对象
+		// var person  = {
+		// 	name:'张三',
+		// 	age:18,
+		// 	fav:function() {
+		// 		alert(this.name)
+		// 	}
+		// };
+        //1.普通函数
+		// function add() {
+		// 	// body...
+		// }
+		// add();
+  //       //2.函数对象
+		// var add2  = function() {
+		// 	// body...
+		// };
+		// add2();
+
+
+
+
+		// new Array(params...?: any);
+		// new String(value: any)
+		 // new Object(value?: any)
+
+
+		 // class Person():
+
+        /*
+        //在js中我们使用构造函数的方式创建对象
+		 var person = new Object();
+
+		 person.name = 'zhangsan';
+
+		
+		console.log(person.name);
+		*/
+
+        //工厂模式创建对象
+        /*
+		function createPerson(name,age) {
+
+			var p =  new Object();
+			p.name1 = name;
+			p.age1= age;
+
+			return p;
+			
+		};
+
+		function createFruit(name,age) {
+
+			var f =  new Object();
+			f.name1 = name;
+			f.age1= age;
+
+			return f;
+			
+		};
+
+		var p1 = createPerson('ZS',18);
+		var f1 = createFruit('西瓜',2);
+
+		console.log(p1 instanceof Object);
+		console.log(f1 instanceof Object);
+		*/
+
+// new Array(params...?: any)
+
+/*
+function student(name, age) {
+  console.log(this)
+  this.name = name;
+  this.age = age;
+  this.alertName = function(){
+    alert(this.name)
+  };
+}
+
+function fruit(name, color) {
+  console.log(this)
+  this.name = name;
+  this.color = color;
+  this.alertName = function(){
+    alert(this.name)
+  };
+}
+
+
+var s = new student('这是你敢',17);
+var f = new fruit('哈哈哈',18);
+
+//所有的类都是继承Object
+console.log(s instanceof student);
+console.log(f instanceof fruit);
+*/
+function Student(name,age) {
+    this.name = name;
+    this.age = age;
+}
+
+
+
+
+Student.prototype.alertName = function(){
+    alert(this.name);
+};
+Student.prototype.alertAge = function(){
+    alert(this.age);
+};
+
+
+var stu1 = new Student('zs',19);
+var stu2 = new Student('ddd',20);
+
+console.log(stu1);
+console.log(stu2);
+
+
+stu1.alertName();  //easy
+stu2.alertName();  //easy
+
+alert(stu1.alertName == stu2.alertName);  //true 二者共享同一函数
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

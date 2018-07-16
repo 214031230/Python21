@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	ul{
+		list-style: none;
+	}
+	.box ul.list li{
+		float: left;
+		width: 100px;
+		height: 40px;
+		/*line-height: 40px;*/
+		text-align: center;
+		background-color: red;
+
+	
+	}
+	.box ul.list li a{
+		display: inline-block;
+		width: 50px;
+		height: 20px;
+		line-height: 20px;
+		background-color: green;
+		color: #fff;
+	}
+
+	</style>
+</head>
+<body>
+
+	<div class="box">
+		<ul class="list">
+			<li class="item">
+				<a href="javascript:;" title="">1</a>
+			</li>
+			<li>
+				<a href="javascript:;" title="">2</a>
+			</li>
+			<li>
+				<a href="javascript:;" title="">3</a>
+			</li>
+			<li>
+				<a href="javascript:;" title="">4</a>
+			</li>
+
+		</ul>
+		<!-- <ul class="list2">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+
+		</ul> -->
+		
+	</div>
+	<script src="01/node_modules/jquery/dist/jquery.min.js"></script>
+	<script>
+		
+
+		$(function() {
+			// console.log($('.box').find('li.item'));
+			// console.log($('.box').children('ul'));
+			// console.log($('.box').parent('body'));
+
+			// console.log($('.box ul.list li').eq(1));
+
+			/*
+			$('.box ul.list li').click(function() {
+
+
+				$(this).css('color','red').siblings('li').css('color','black');
+				
+			});
+			*/
+
+			$('.box ul.list li a').click(function() {
+
+
+				$(this).css('backgroundColor','yellow').parent().siblings('li').children().css('backgroundColor','green');
+				
+			});
+
+
+
+		})
+	</script>
+
+</body>
+</html>
