@@ -51,6 +51,8 @@ $(function () {
         $(this).css("backgroundColor","white");
     })
 // 圆点翻页结束
+
+
 });
 
 

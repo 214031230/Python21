@@ -4,30 +4,51 @@
     <meta charset="UTF-8">
     <title></title>
     <style type="text/css">
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        img{
+
+        img {
             width: 1226px;
             height: 463px;
+            display: none;
+        }
+
+        .hide {
+            display: block;
+        }
+
+        .btn {
+            display: block;
         }
     </style>
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            $(".btn").click(function () {
-            })
+            function next() {
+                for (let i = 0; i < $("img").length; i++) {
+                    if ($("img").eq(i).hasClass("hide")) {
+                        if (i == 5) {
+                            i = -1
+                        }
+                        $("img").eq(i + 1).addClass("hide").siblings().removeClass("hide");
+                        return
+                    }
+                }
+            }
+            setInterval(next, 1000)
+
         });
     </script>
 </head>
 <body>
 <button class="btn">切换</button>
-<img class="c1" src="./img/1.jpg" alt="">
-<img class="c2" src="./img/2.jpg" alt="">
-<img class="c3" src="./img/3.jpg" alt="">
-<img class="c4" src="./img/4.jpg" alt="">
-<img class="c5" src="./img/5.jpg" alt="">
-<img class="c6" src="./img/6.jpg" alt="">
+<img class="hide" src="./img/1.jpg" alt="">
+<img class="" src="./img/2.jpg" alt="">
+<img class="" src="./img/3.jpg" alt="">
+<img class="" src="./img/4.jpg" alt="">
+<img class="" src="./img/5.jpg" alt="">
+<img class="" src="./img/6.jpg" alt="">
 </body>
 </html>
