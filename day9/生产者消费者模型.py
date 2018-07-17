@@ -13,4 +13,3 @@ def consumer(name, q):
 if __name__ == '__main__':
     q = Queue()
     # 创建生产者们
-
