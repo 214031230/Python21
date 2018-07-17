@@ -236,6 +236,7 @@ input.search_button:hover{
     height: 463px;
     position: absolute;
     top: 135px;
+    opacity: 0.8;
 }
 .nav .nav_left a:link{
     color: white;
@@ -294,8 +295,12 @@ input.search_button:hover{
     z-index: 999;
 }
 .nav .nav_right img{
-    width: 100%;
+    width: 1226px;
     height: 463px;
+    display: none;
+}
+.nav .nav_right .hide{
+    display: inline;
 }
 .home_sub{
     margin-top: 5px;
@@ -577,8 +582,8 @@ p.workday{
 }
 .radius,.radius1{
     display: inline-block;
-    height: 8px;
-    width: 8px;
+    height: 10px;
+    width: 10px;
     border: 1px solid black;
     border-radius: 50%;
     background-color: #666666;
@@ -594,3 +599,6 @@ p.workday{
 .radius1,.radius:hover {
     background-color: white;
 }
+/*.hide{*/
+    /*display: block;*/
+/*}*/

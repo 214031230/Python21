@@ -37,18 +37,38 @@
                     }
                 }
             }
-            setInterval(next, 1000)
+            function prev() {
+                for (let i = 5; i >= 0; i--) {
+                    if ($("img").eq(i).hasClass("hide")) {
+                        if (i == 0) {
+                            i = 5
+                        }
+                        $("img").eq(i - 1).addClass("hide").siblings().removeClass("hide");
+                        return
+                    }
+                }
+            }
 
+            var down = setInterval(next, 3000);
+            $(".btn_down").click(function () {
+                clearInterval(down);
+                next();
+            });
+            $(".btn_up").click(function () {
+                clearInterval(down);
+                prev();
+            })
         });
     </script>
 </head>
 <body>
-<button class="btn">切换</button>
+<button class="btn_up">上一张</button>
+<button class="btn_down">下一张</button>
 <img class="hide" src="./img/1.jpg" alt="">
-<img class="" src="./img/2.jpg" alt="">
-<img class="" src="./img/3.jpg" alt="">
-<img class="" src="./img/4.jpg" alt="">
-<img class="" src="./img/5.jpg" alt="">
-<img class="" src="./img/6.jpg" alt="">
+<img src="./img/2.jpg" alt="">
+<img src="./img/3.jpg" alt="">
+<img src="./img/4.jpg" alt="">
+<img src="./img/5.jpg" alt="">
+<img src="./img/6.jpg" alt="">
 </body>
 </html>

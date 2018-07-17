@@ -1,0 +1,197 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@font-face {
+    font-family: 'iconfont';  /* project id 730283 */
+    src: url('http://at.alicdn.com/t/font_730283_geg38xd8ejh.eot');
+    src: url('http://at.alicdn.com/t/font_730283_geg38xd8ejh.eot?#iefix') format('embedded-opentype'),
+    url('http://at.alicdn.com/t/font_730283_geg38xd8ejh.woff') format('woff'),
+    url('http://at.alicdn.com/t/font_730283_geg38xd8ejh.ttf') format('truetype'),
+    url('http://at.alicdn.com/t/font_730283_geg38xd8ejh.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 20px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+}
+
+.head {
+    height: 35px;
+    border-bottom: #e9e9e9 1px solid;
+}
+
+.head > * {
+    line-height: 35px;
+}
+
+em {
+    font-style: normal;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+em.kongqi {
+    color: #38f;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hefeng {
+    float: left;
+    margin: 0 10px;
+    font-size: 12px;
+    color: #555;
+}
+
+.skin {
+    font-size: 14px;
+    color: #555;
+    float: left;
+}
+
+.skin span {
+    margin-left: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.menus {
+    float: right;
+    margin-right: 20px;
+}
+
+.menus * {
+    margin-left: 20px;
+    text-decoration: underline;
+}
+
+.menus button {
+    background: #398bfb;
+    width: 86px;
+    height: 33px;
+    color: white;
+    border: #398bfb 1px solid;
+    text-decoration: none;
+}
+
+.menus a {
+    font-weight: bold;
+    color: #555;
+
+}
+
+.menus span {
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.menus button {
+    cursor: pointer;
+}
+
+.hefenginfo {
+    position: fixed;
+    top: 35px;
+    left: 0;
+    width: 500px;
+    height: 300px;
+    border: #b0b0b0 1px solid;
+    display: none;
+}
+
+.hf_head {
+    height: 50px;
+    line-height: 50px;
+}
+
+.hf_head .logo {
+    width: 80px;
+    float: left;
+    background-color: #FD0;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+
+}
+
+.hf_head .info {
+    width: 400px;
+    float: right;
+    padding-left: 20px;
+    background-color: #eeeeee;
+}
+
+.hf_day, .hf_tianqi {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hf_day span {
+    float: left;
+    font-size: 12px;
+    margin-left: 10px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.hf_day .setting {
+    float: right;
+    height: 40px;
+    line-height: 40px;
+}
+
+.day7 {
+    color: #0079F4;
+}
+
+.nongli {
+    color: #555;
+}
+
+.hf_tianqi {
+    height: 210px;
+    margin-top: 40px;
+    border-top: #b0b0b0 1px solid;
+    font-size: 12px;
+}
+
+.hf_tianqi li {
+    float: left;
+    margin-left: 14px;
+}
+
+.hf_tianqi li p {
+    margin-top: 13px;
+}
+
+.hf_tianqi li .logo {
+    font-size: 50px;
+    color: #555;
+}
+
+.active {
+    font-weight: bold;
+}
