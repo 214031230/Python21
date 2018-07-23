@@ -1,0 +1,201 @@
+
+内容回顾：	
+
+		1.先引入jquery的包
+		2.入口函数
+			$(document).ready()
+			
+			$(function(){})
+		3.jquery的选择器
+		
+		$('ul li:eq(1)') 过滤
+		
+		筛选选择器$('ul li').silbings()
+		
+		属性操作：
+			img	 src='./1.png'
+			
+			js:操作标签上属性  
+			
+			1.获取jsdom对象
+				var oImg = document.getElementsByTagName('img')[0];
+			2.获取属性
+			// oImg.src  获取src的属性值  oImg.getAttribute('src')  oImg['src']
+			
+			oImg.style.width = '200px'
+			
+			jquery;
+			1.获取jquery对象
+			
+			$('img').attr('src')
+			$('img').attr('src','2.png')
+			jquery:$('ul li').attr()
+			
+			$('img').css('width','200px')
+			
+			js对象《==》jquery对象转化
+			
+			类操作
+			addClass()
+			removeClass()
+			
+			prop()  单选按钮 checked
+			
+			
+			
+			
+			
+			
+			前端  杂乱无章
+			
+			
+			操作DOM  节点
+			
+				document
+			
+				标签节点
+			
+			样式节点   属性节点  DOM操作
+			
+			style		getAttribute||setAttribute  document.createElement() appendChild()
+			
+			
+			
+			jquery
+			
+			css()         attr()                        append() 
+			
+			
+			
+			
+			
+			
+			
+			
+			__prop__
+今日内容：
+		1.jq的dom操作
+			父子标签之间的操作：
+				父.append(子)
+				子.appendTo(父)
+				
+				父.prepend(子) 插入到父元素的第一个元素
+				子.prependTo(父)
+			兄弟标签之间的操作
+				after()  before()
+				insertAfter() insertBefore()
+			删除：
+				remove(); 删除节点，事件也一起删除 ***
+				detach();删除节点，事件会保留
+				
+				empty();清空父元素中的内容
+				
+			js中： appendChild() insertBefore()  removeChild()
+		
+		2.js中事件对象
+			每个事件都会有event
+			
+		
+			事件对象的方法：
+			阻止默认事件：比如a标签和form标签会有自己的默认的跳转行为，我们可以通过e.preventDefault()来阻止当前的默认事件
+			
+			阻止冒泡： 因为冒泡是属于DOM2级事件流的第三个阶段，在这个阶段，会对自己的网页产生一定的影响，所以在对页面中所有的标签做事件操作时，event.stopPropagation()来阻止当前标签的冒泡
+		
+		
+		3.jq的ajax
+		//get请求 
+		
+		
+		请求：请求头和请求体
+		
+		响应： 响应头和响应体
+		
+		
+		input  name='username' id='username'
+		input  name='pwd' id='pwd'
+		
+		input type='button'
+		
+		get请求的数据会保存到请求体（url上）
+		
+		var username = $('#username').val();
+		var pwd = $('#pwd').val();
+		$.ajax({
+			url:`http://127.0.0.1:8080/index?username=${username}&pwd=${pwd}`,
+			type:'get',
+			success:function(data){
+			
+			
+			},
+		
+		});
+		
+		
+		post请求  请求头和请求体    post请求案例
+		          响应头和响应体
+		
+		var username = $('#username').val();
+		var pwd = $('#pwd').val();
+		$.ajax({
+			url:`http://127.0.0.1:8080/index`,
+			data:{
+				username:username,
+				password:pwd
+			},
+			type:'get',
+			success:function(data){
+			
+			
+			},
+		
+		});
+		
+		
+		XMLHtttpRequest()
+		
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		4.插件库介绍
+		
+		5.bootstrap
+		
+		
+		小作业：
+			1.解决单双击冲突的问题
+			var time = null;
+			//单击事件
+			function click(){
+				//取消上次延时未执行的方法
+				clearTimeout(time);
+				//设置延时300ms
+				time = setTimeout(function(){
+					//在此写单击事件要执行的代码
+				},300);
+			}
+			 
+			//双击事件
+			function dblclick(){
+				//取消上次延时未执行的方法
+				clearTimeout(time);
+				//下面写双击事件要执行的代码
+			}
+			
+			2.百度天气完成 ajax
+			
+			
+			3.bootstrap css的全局样式
+			 给我演示一遍
+			
+			
+			
+			
+		

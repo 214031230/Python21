@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div>
+    <div>
+        <a href="http://www.qq.com">点我</a>
+    </div>
+    <form action="http://www.baidu.com">
+        <label>
+            User <input type="text">
+        </label>
+        <label>
+            Password <input type="password">
+        </label>
+        <input type="submit" value="提交">
+    </form>
+</div>
+<script type="text/javascript">
+    $("a").click(function () {
+        // 阻止a标签和from表单的默认行为
+        event.preventDefault();
+        // 阻止冒泡
+        event.stopPropagation();
+        console.log("a");
+    });
+    $("form").click(function () {
+        // 阻止a标签和from表单的默认行为
+        event.preventDefault();
+        // 阻止冒泡
+        event.stopPropagation();
+        console.log("form");
+    });
+    $("div").click(function () {
+        // 阻止a标签和from表单的默认行为
+        event.preventDefault();
+        // 阻止冒泡
+        event.stopPropagation();
+        console.log("div");
+    })
+</script>
+</body>
+</html>

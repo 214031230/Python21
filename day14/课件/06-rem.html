@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+        <title>移动端布局</title>
+        <style type="text/css">
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            .clearfix:after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            html{
+                width: 100%;
+                height: 100%;
+                font-size: 20px;
+                /*1rem=20px 1px=0.05rem*/
+                overflow: hidden;
+            }
+            body{
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+            }
+            .head-box{
+                width: 100%;
+                height: 4rem;
+                background-color: red;
+                position: absolute;
+                top: 0;
+                left: 0;    
+            }
+            .list{
+                margin-top: 4rem;
+                font-size:12px;
+            }
+            
+            .list .item{
+                float: left;
+                width: 5rem;
+                height: 5rem;
+                border: 1px solid black;
+                margin: 0.5rem;
+            }
+            
+            
+            
+        </style>
+    </head>
+    <body>
+        
+        <header class="head-box">
+            <div class="head-top"></div>
+            <div class="head-bottom"></div>
+        </header>
+        
+        <ul class="list clearfix">
+            <li class="item">1111111</li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+             <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+             <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+        </ul>
+        
+    </body>
+    <script src="./resize.js"></script>
+</html>

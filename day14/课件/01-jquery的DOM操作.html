@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="box">
+		
+	</div>
+
+	<ul>
+		<li>1</li>
+		<li>2</li>
+
+	</ul>
+
+	<h2 class="p1">呜呜呜呜</h2>
+
+
+	<button id="btn">删除</button>
+
+
+	<form>
+		
+	</form>
+	<script src="jquery.js"></script>
+
+	<script>
+		
+
+		$(function () {
+			formDom();
+
+			function formDom(argument) {
+				$('form').append(`
+				<label>用户名</label>
+				<input type="text">
+				<input type="submit">`);
+			}
+
+
+
+
+			
+			var op = document.createElement('p');
+
+			//js设置内容
+			// op.innerText = 'h欸嘿嘿'；
+
+			$(op).text('嘿嘿');
+
+
+			$('.box').append('<p id="p2">哈哈哈</p>');
+
+
+
+
+			
+
+			// $('.box').append(op);
+
+
+			// $('.box').append($('.p1'));
+
+			$('<h3>我是三级</h3>').appendTo('.box').css({
+				color: 'red'
+				
+			});
+
+
+			$('<h4>哈哈哈哈是</h4>').prependTo('.box');
+
+			$('ul').after('<h4>我是一个h4标题</h4>');
+			$('ul').before('<h4>我是一个h4标题2</h4>');
+
+
+			$('<h5>我是一个h5标题</h5>').insertAfter('ul');
+			$('<h5>我是一个h5标题2</h5>').insertBefore('ul');
+			
+
+			$('h5').replaceWith('<a href="#">hello world</a>')
+
+
+			$('#btn').click(function(event) {
+				alert(2);
+				/* Act on the event */
+
+
+				// var rBtn = $(this).remove();
+				// console.log(rBtn);
+
+
+				// $('ul').remove();
+
+				var $btn = $(this).detach();
+				console.log($btn);
+
+				// $('.box').append($btn);
+
+				$('ul').empty();
+			});
+
+		});
+	</script>
+
+</body>
+</html>
