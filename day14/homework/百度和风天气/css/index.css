@@ -126,26 +126,31 @@ em.kongqi {
     height: 50px;
     line-height: 50px;
 }
-
-.hf_head .logo {
-    width: 80px;
-    float: left;
+.hf_head img{
+    height: 50px;
     background-color: #FD0;
-    font-size: 40px;
-    text-align: center;
-    color: white;
-
 }
 
+/*.hf_head .logo {*/
+    /*width: 80px;*/
+    /*float: left;*/
+    /*background-color: #FD0;*/
+    /*font-size: 40px;*/
+    /*text-align: center;*/
+    /*color: white;*/
+
+/*}*/
+
 .hf_head .info {
-    width: 400px;
+    width: 430px;
     float: right;
     padding-left: 20px;
+    height: 50px;
     background-color: #eeeeee;
 }
 
 .hf_day, .hf_tianqi {
-    width: 450px;
+    width: 430px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -168,7 +173,9 @@ em.kongqi {
 .day7 {
     color: #0079F4;
 }
-
+.hf_tianqi img{
+    height: 70px;
+}
 .nongli {
     color: #555;
 }
@@ -182,7 +189,8 @@ em.kongqi {
 
 .hf_tianqi li {
     float: left;
-    margin-left: 14px;
+    margin-left: 50px;
+    text-align: center;
 }
 
 .hf_tianqi li p {

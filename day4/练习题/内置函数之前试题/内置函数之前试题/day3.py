@@ -3,7 +3,7 @@
 #
 #
 # 1. 有两个文件A.txt和B.txt,各存放一行字母,要求把这两个文件中的信息合并(按字母顺序排列), 输出到一个新文件C中。
-# with open("day1.py", encoding="utf-8") as f1, open("day2.py", encoding="utf-8") as f2, open("test", mode="a", encoding="utf-8") as f3:
+# with open("day1.py", encoding="utf-8") as f1, open("day1.py", encoding="utf-8") as f2, open("test", mode="a", encoding="utf-8") as f3:
 #     for i in f1:
 #         f3.write(i)
 #     for i in f2:
