@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 file = "./dbfile"
 
-
 # with open(file,"a") as f:
 #     for i in range(10):
 #         f.write(str(i))
@@ -102,12 +101,63 @@ file = "./dbfile"
 # add_b()
 
 
-def wrapper(fun):
-    def inner(*args,**kwargs):
-        # 装饰器前的代码
-        ret = fun(*args, **kwargs)
-        # 装饰器后的代码
-        return ret
-    return inner
+# def wrapper(fun):
+#     def inner(*args,**kwargs):
+#         # 装饰器前的代码
+#         ret = fun(*args, **kwargs)
+#         # 装饰器后的代码
+#         return ret
+#     return inner
+# flag = True
+#
+#
+# def outer(flag):
+#     def wrapper(fun):
+#         def inner(*args, **kwargs):
+#             if flag:
+#                 print("功能A")
+#                 res = fun(*args, **kwargs)
+#                 print("功能B")
+#                 return res
+#             else:
+#                 return fun(*args, **kwargs)
+#
+#         return inner
+#
+#     return wrapper
+#
+#
+# @outer(flag)
+# def fun():
+#     print("我是fun")
+#
+#
+# fun()
 
 
+#  多个装饰器装饰一个函数
+def wrapper1(f):  # f = inner2
+    def inner1():
+        print("我是wrapper1")
+        f()  # inner2()
+        print("我是wrapper1")
+
+    return inner1
+
+
+def wrapper2(f):  # f = func
+    def inner2():
+        print("我是wrapper2")
+        f()  # func()
+        print("我是wrapper2")
+
+    return inner2
+
+
+@wrapper1  # func = wrapper1(func)= wrapper1(inner2) = inner1
+@wrapper2  # func = wrapper2(func) = inner2
+def func():
+    print("我是func")
+
+
+func()  # func = inner1 = inner1()
