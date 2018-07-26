@@ -60,17 +60,17 @@
 # print(p1.talk)
 # print(p2.talk)
 
-# def sq11(host,name,pwd,db,sql):
+# def sq11(host,name,pwd,db.json,sql):
 #     print("增加SQL")
-# def sq12(host,name,pwd,db,sql2):
+# def sq12(host,name,pwd,db.json,sql2):
 #     print("删除SQL")
 #
 # class Sql:
-#     def __init__(self, host, name, pwd, db):
+#     def __init__(self, host, name, pwd, db.json):
 #         self.host = host
 #         self.name = name
 #         self.pwd = pwd
-#         self.db = db
+#         self.db.json = db.json
 #     def sql_add(self,sql):
 #         print("增加sql%s" % sql)
 #     def sql_dql(self,sql):

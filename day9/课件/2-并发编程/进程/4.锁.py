@@ -25,16 +25,16 @@
 from multiprocessing import Process,Lock
 import time,json,random
 def search():
-    dic=json.load(open('db'))
+    dic=json.load(open('db.json'))
     print('\033[43m剩余票数%s\033[0m' %dic['count'])
 
 def get(num):
-    dic=json.load(open('db'))
+    dic=json.load(open('db.json'))
     time.sleep(random.random()) #模拟读数据的网络延迟
     if dic['count'] >0:
         dic['count']-=1
         time.sleep(random.random()) #模拟写数据的网络延迟
-        json.dump(dic,open('db','w'))
+        json.dump(dic,open('db.json','w'))
         print('\033[43m%s购票成功\033[0m'%num)
 
 def task(num,lock):

@@ -239,3 +239,252 @@ class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
+
+    @staticmethod
+    def say():
+        print("in say")
+
+    def talk(self):
+        print("%s in talk" % self.name)
+
+
+# while 1:
+#     fun = input(">>>:").strip()
+#     p = Person("spf", 18)
+#     if hasattr(p, fun):
+#         getattr(p, fun)()
+def fun():
+    print("in fun")
+
+
+import sys
+
+# print(sys.modules[__name__])
+
+# getattr(sys.modules[__name__], "fun")()
+p = Person("name", 18)
+setattr(p, "name", "wxx")
+
+
+# print(p.name)
+
+class Foo:
+    def __new__(cls, *args, **kwargs):
+        print('执行我啦')
+        obj = object.__new__(cls)
+        print(obj)
+        return obj
+
+    def __init__(self):
+        print('1', self)
+
+
+# Foo()
+
+# class Person:
+#     __isinstance = None
+#
+#     def __new__(cls, *args, **kwargs):
+#         if not cls.__isinstance:
+#             obj = object.__new__(cls)
+#             cls.__isinstance = obj
+#         return cls.__isinstance
+#
+#     def __init__(self, name):
+#         self.name = name
+#
+#
+# p = Person("spf")
+# print(id(p))
+# p1 = Person("wxx")
+# print(id(p1))
+
+
+class Person:
+    __isinstance = None
+
+    def __new__(cls, *args, **kwargs):
+        if not cls.__isinstance:
+            obj = object.__new__(cls)
+            cls.__isinstance = obj
+        return cls.__isinstance
+
+    def __init__(self, name):
+        self.name = name
+
+
+#
+# p = Person("spf")
+# p1 = Person("wxx")
+# print(p.name, p1.name)
+
+
+import json
+
+dic = {"name": "spf"}
+# sdic = json.dumps(dic)
+# print(sdic, type(sdic))
+# print(json.loads(sdic))
+
+# with open("db.json","a",encoding="utf-8") as f, open("db.json", "r", encoding="utf-8") as f1:
+# with open("db.json") as f1:
+#     print(json.load(f1))
+
+# with open("db.json","a",encoding="utf-8") as f:
+#     for i in range(10):
+#         ret = json.dumps(dic)
+#         f.write(ret+"\n")
+#
+# with open("db.json", encoding="utf-8") as f:
+#     for j in f:
+#         print(json.loads(j.strip()))
+import pickle
+
+# ret = {}
+# with open("db.pkl", "rb") as f, open("db.pkl", "ab") as f1:
+#     ret["spf"] = p
+#     ret["wxx"] = p2
+#     pickle.dump(ret, f1)
+#     # try:
+#     ret = pickle.load(f)
+#     print(ret)
+# except EOFError:
+#     pass
+
+
+# ret = pickle.dumps(p)
+# print(pickle.loads(ret))
+# with open("db.pkl", "ab") as f:
+#     pickle.dump(p, f)
+
+
+p = Person("spf")
+p2 = Person("wxx")
+
+# class MyPickle:
+#     @staticmethod
+#     def load(file_path):
+#         with open(file_path, "rb") as f:
+#             return pickle.load(f)
+#
+#     @staticmethod
+#     def dump(obj, file_path):
+#         with open(file_path, "wb") as f:
+#             pickle.dump(obj, f)
+#
+#
+# MyPickle.dump(p, "db.pkl")
+# ret = MyPickle.load("db.pkl")
+# print(ret.name)
+
+
+# import hashlib
+# # 普通md5加密
+# md5obj = hashlib.md5()
+# md5obj.update("123".encode("utf-8"))
+# print(md5obj.hexdigest())
+#
+# # 加盐
+# md5obj = hashlib.md5("spf".encode("utf-8"))
+# md5obj.update("123".encode("utf-8"))
+# print(md5obj.hexdigest())
+#
+# # 动态加盐
+# username = "spf"
+# md5obj = hashlib.md5(username.encode("utf-8"))
+# md5obj.update("123".encode("utf-8"))
+# print(md5obj.hexdigest())
+import hashlib
+
+
+class Login:
+    def __init__(self, username, password):
+        self.username = username
+        self.__password = password
+        self.__code = "utf-8"
+
+    def __encryption(self):
+        """
+        mad5加密（动态加盐）
+        :return: 加密后的密码
+        """
+        md5obj = hashlib.md5(self.username.encode(self.__code))
+        md5obj.update(self.__password.encode(self.__code))
+        return md5obj.hexdigest()
+
+    def login(self):
+        """
+        登录
+        :return: 返回登录状态
+        """
+        status = True if self.username == "spf" and self.__encryption() == "6b783000a3177ac09ae3706a077d6d80" else False
+        return status
+
+
+# while 1:
+#     username = input("User:").strip()
+#     password = input("Password:").strip()
+#     p = Login(username, password)
+#     print(p.login())
+
+
+# file1 = "./day3.py"
+# file2 = "./day4.py"
+#
+#
+# def check_file(file1,file2):
+#     """
+#     校验文件MAD5
+#     :param file1:  第一个文件
+#     :param file2:  第二个文件
+#     :return: True or False
+#     """
+#     with open(file1, "rb") as f, open(file2, "rb") as f1:
+#         md5obj1 = hashlib.md5()
+#         md5obj2 = hashlib.md5()
+#         for i in f:
+#             md5obj1.update(i)
+#         for j in f1:
+#             md5obj2.update(j)
+#
+#         if md5obj1.hexdigest() == md5obj2.hexdigest():
+#             return True
+#         else:
+#             return False
+#
+# ret = check_file(file1,file2)
+# print(ret)
+
+
+# md5obj = hashlib.md5()
+# md5obj.update("123".encode("utf-8"))
+# print(md5obj.hexdigest())
+# md5obj = hashlib.md5()
+# md5obj.update("123".encode("utf-8"))
+# print(md5obj.hexdigest())
+# try:
+#     msg = int(input(">>>:").strip())
+#     print(msg)
+# except ValueError as e:
+#     print(e)
+#     print("你输入不是数字！")
+# except Exception as e:
+#     print(e)
+# else:  # 代码顺利结束执行
+#     print("代码顺利结束")
+# finally:  # 无论如何都执行
+#     print("结束了")
+
+
+# import sys
+# print(__file__)
+# print(sys.modules[__name__])
+
+# from sys import path as sys_path
+# from os import path
+# sys_path.insert(0, path.dirname(path.abspath(__file__)))
+# from 复习1 import day3
+# print(day3.add(3,3))
+# print(sys_path)
+
+

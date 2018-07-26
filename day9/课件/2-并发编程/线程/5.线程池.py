@@ -15,7 +15,7 @@ def parse_page(res):
     res=res.result()
     print('<进程%s> parse %s' %(os.getpid(),res['url']))
     parse_res='url:<%s> size:[%s]\n' %(res['url'],len(res['text']))
-    with open('db.txt','a') as f:
+    with open('db.json.txt','a') as f:
         f.write(parse_res)
 
 

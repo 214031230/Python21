@@ -8,7 +8,7 @@ import time
 import random
 import os
 import json
-dbfile = "./db"
+dbfile = "./db.json"
 
 
 def search():
