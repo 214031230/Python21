@@ -17,12 +17,12 @@ time, mark, audio, video {
 }
 
 @font-face {
-    font-family: 'iconfont';  /* project id 730283 */
-    src: url('http://at.alicdn.com/t/font_730283_geg38xd8ejh.eot');
-    src: url('http://at.alicdn.com/t/font_730283_geg38xd8ejh.eot?#iefix') format('embedded-opentype'),
-    url('http://at.alicdn.com/t/font_730283_geg38xd8ejh.woff') format('woff'),
-    url('http://at.alicdn.com/t/font_730283_geg38xd8ejh.ttf') format('truetype'),
-    url('http://at.alicdn.com/t/font_730283_geg38xd8ejh.svg#iconfont') format('svg');
+  font-family: 'iconfont';  /* project id 730283 */
+  src: url('http://at.alicdn.com/t/font_730283_5aeev3l1gfr.eot');
+  src: url('http://at.alicdn.com/t/font_730283_5aeev3l1gfr.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_730283_5aeev3l1gfr.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_730283_5aeev3l1gfr.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_730283_5aeev3l1gfr.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -62,9 +62,11 @@ em.kongqi {
     font-size: 12px;
     color: #555;
 }
-.hefeng img{
+
+.hefeng img {
     height: 25px;
 }
+
 .skin {
     font-size: 14px;
     color: #555;
@@ -118,26 +120,28 @@ em.kongqi {
     left: 0;
     width: 500px;
     height: 300px;
-    border: #b0b0b0 1px solid;
+    border: #e9e9e9 1px solid;
     display: none;
 }
 
 .hf_head {
     height: 50px;
     line-height: 50px;
+    /*display: none;*/
 }
-.hf_head img{
+
+.hf_head img {
     height: 50px;
     background-color: #FD0;
 }
 
 /*.hf_head .logo {*/
-    /*width: 80px;*/
-    /*float: left;*/
-    /*background-color: #FD0;*/
-    /*font-size: 40px;*/
-    /*text-align: center;*/
-    /*color: white;*/
+/*width: 80px;*/
+/*float: left;*/
+/*background-color: #FD0;*/
+/*font-size: 40px;*/
+/*text-align: center;*/
+/*color: white;*/
 
 /*}*/
 
@@ -169,13 +173,28 @@ em.kongqi {
     height: 40px;
     line-height: 40px;
 }
-
-.day7 {
+.hf_day .setting:hover {
     color: #0079F4;
 }
-.hf_tianqi img{
+
+.day3 {
+    color: #0079F4;
+}
+.day3:link{
+    color: #0079F4;
+    text-decoration: none;
+}
+.day3:hover{
+    text-decoration: underline;
+}
+.day3:active{
+    color: #0079F4;
+}
+
+.hf_tianqi img {
     height: 70px;
 }
+
 .nongli {
     color: #555;
 }
@@ -183,7 +202,7 @@ em.kongqi {
 .hf_tianqi {
     height: 210px;
     margin-top: 40px;
-    border-top: #b0b0b0 1px solid;
+    border-top: #e9e9e9 1px solid;
     font-size: 12px;
 }
 

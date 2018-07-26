@@ -1,13 +1,20 @@
 $(function () {
     $(".hefeng").mouseover(function () {
-        $(".hefenginfo").stop().slideDown(500);
+        $(".hefenginfo").stop().slideDown(300);
     }).mouseout(function () {
-        $(".hefenginfo").stop().slideUp(500);
+        $(".hefenginfo").stop().slideUp(300);
     });
     $(".hefenginfo").mouseover(function () {
-        $(".hefenginfo").stop().slideDown(500);
+        $(".hefenginfo").stop().slideDown(300);
     }).mouseout(function () {
-        $(".hefenginfo").stop().slideUp(500);
+        $(".hefenginfo").stop().slideUp(300);
+    });
+    $(".day").mouseover(function () {
+        $(this).css("color", "#0caff4")
+    }).mouseout(function () {
+        $(this).css("color", "black")
+    }).click(function () {
+        window.open("http://www.weather.com.cn/weather/101010100.shtml#7d","_blank")
     });
     var run = function () {
         $.ajax({
@@ -27,7 +34,7 @@ $(function () {
                 for (var i = 0; i < 3; i++) {
                     $(".hf_tianqi .day").eq(i).children().eq(0).text(d.daily_forecast[i].date);
                     $(".hf_tianqi .day").eq(i).children().eq(1).attr("src", "./images/cond-icon-heweather/" + d.daily_forecast[i].cond_code_d + ".png");
-                    $(".hf_tianqi .day").eq(i).children().eq(2).text(d.now.tmp + "℃");
+                    $(".hf_tianqi .day").eq(i).children().eq(2).text(d.daily_forecast[i].tmp_min + "℃" + " ~ " + d.daily_forecast[i].tmp_max + "℃");
                     $(".hf_tianqi .day").eq(i).children().eq(3).text(d.daily_forecast[i].cond_txt_d);
                     $(".hf_tianqi .day").eq(i).children().eq(4).text(d.daily_forecast[i].wind_dir);
                 }
@@ -54,6 +61,4 @@ $(function () {
         })
     };
     run();
-    // var t = setInterval(run,3000);
-
 });
