@@ -40,6 +40,24 @@
     );
 
     从约束角度看primary key字段的值不为空且唯一，那我们直接使用not null+unique不就可以了吗，要它干什么？
-    主键primary key是innodb存储引擎组织数据的依据，innodb称之为索引组织表，一张表中必须有且只有一个主键。
+    主键primary key是innodb存储引擎组织数据的依据，innodb称之为索引组织表，一张表中必须有且只有一个主键
+
+# auto_increment(自增字段必须是一个key)
+    create table t1(
+    id int primary key auto_increment,
+    name varchar(20));
+
+    验证:
+    mysql> insert into t1(name) values("spf");
+    Query OK, 1 row affected (0.00 sec)
+
+    mysql> select * from t1;
+    +----+------+
+    | id | name |
+    +----+------+
+    |  1 | spf  |
+    +----+------+
+    1 row in set (0.01 sec)
+
 
 

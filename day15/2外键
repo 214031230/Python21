@@ -1,0 +1,24 @@
+# foreign key
+    # 创建部门表
+    create table dep(
+    id int primary key auto_increment,
+    name varchar(50) not null
+    );
+
+    # 创建员工表
+    create table emp(
+    id int primary key auto_increment,
+    name varchar(20) not null,
+    dep_id int,
+    constraint kf_name foreign key(dep_id)
+    references dep(id)
+    on delete cascade
+    on update cascade
+    );
+
+
+    insert into dep(name) values("研发"),("销售"),("运维");
+    insert into emp(name,dep_id) values("spf",3),("wxx",1);
+
+    update dep set id=4 where id=1;
+

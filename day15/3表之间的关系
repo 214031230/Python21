@@ -1,0 +1,61 @@
+
+# 创建班级
+create table class(
+cid int primary key auto_increment,
+caption varchar(20) not null
+);
+
+# 创建老师
+create table teacher(
+tid int primary key auto_increment,
+tname varchar(20) not null
+);
+
+# 创建课程表
+create table course(
+cid int primary key auto_increment,
+cname varchar(20) not null,
+teacher_id int,
+foreign key(teacher_id)
+references teacher(tid)
+on delete cascade
+on update cascade
+);
+
+# 创建学生表
+create table student(
+sid int primary key auto_increment,
+sname varchar(20) not null,
+gender enum("男","女") not null default "男",
+class_id int,
+foreign key(class_id)
+references class(cid)
+on delete cascade
+on update cascade
+);
+
+
+# 成绩表
+create table score(
+sid int primary key auto_increment,
+student_id int not null,
+course_id int not null,
+number int not null,
+unique(student_id,course_id),
+foreign key(student_id)
+references student(sid)
+on delete cascade
+on update cascade,
+foreign key(course_id)
+references course(cid)
+on delete cascade
+on update cascade
+);
+
+
+insert into t9(name) values("spf"),("wxx"),("mmm");
+
+insert into t8(name) select name from t9 where name="spf";
+
+
+
