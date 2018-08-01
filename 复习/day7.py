@@ -35,6 +35,6 @@
 
 
 # import configparser
-# config = configparser.ConfigParser()
-# config.read("hosts.ini")
-# print(config.sections())
+# conf = configparser.ConfigParser()
+# conf.read("hosts.ini")
+# print(conf.sections())

@@ -3,7 +3,7 @@ import pymysql
 username = input("user:").strip()
 password = input("password:").strip()
 conn = pymysql.connect(
-    host="127.0.01",
+    host="127.0.0.1",
     port=3306,
     database="test",
     user="root",
@@ -13,12 +13,11 @@ conn = pymysql.connect(
 cursor = conn.cursor()
 
 
-sql = "select id from user where username=%s and password=%s"
+# sql = "select id from user where username=%s and password=%s"
+sql = "insert into user(username,password) values(%s,%s)"
 
 
 ret = cursor.execute(sql, (username, password))
-
-if ret:
-    print("登录成功！")
-else:
-    print("用户名密码错误！")
+conn.commit()
+cursor.close()
+conn.close()
