@@ -18,8 +18,3 @@ day15博客地址：https://www.cnblogs.com/spf21/p/9389283.html
             username VARCHAR (20) NOT NULL UNIQUE,
             password VARCHAR (50) NOT NULL
         );
-        CREATE TABLE t1 (
-            id INT PRIMARY KEY auto_increment,
-            username VARCHAR (20) NOT NULL UNIQUE,
-            password VARCHAR (50) NOT NULL
-        );
