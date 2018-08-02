@@ -1,9 +1,25 @@
 day15博客地址：https://www.cnblogs.com/spf21/p/9389283.html
 
-数据库：test
+功能描述：
+        用户登录：
+                输入用户名密码进行登录
+        用户注册：
+                账号唯一性
+                密码采用md5加密
+        数据库配置文件：./conf/setting.py
+
+
+数据库：
+        CREATE DATABASE test;
 创建表：
-CREATE TABLE USER (
-	id INT PRIMARY KEY auto_increment,
-	username VARCHAR (20) NOT NULL UNIQUE,
-	password VARCHAR (50) NOT NULL
-);
+        USE test;
+        CREATE TABLE USER (
+            id INT PRIMARY KEY auto_increment,
+            username VARCHAR (20) NOT NULL UNIQUE,
+            password VARCHAR (50) NOT NULL
+        );
+        CREATE TABLE t1 (
+            id INT PRIMARY KEY auto_increment,
+            username VARCHAR (20) NOT NULL UNIQUE,
+            password VARCHAR (50) NOT NULL
+        );

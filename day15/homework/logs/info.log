@@ -38,3 +38,21 @@
 2018-08-01 18:25:26,217  root   ERROR  用户名或密码错误 File:<main.py line 49>
 2018-08-01 18:26:13,493  root   INFO  注册成功 File:<main.py line 68>
 2018-08-01 18:26:40,395  root   INFO  登录成功 File:<main.py line 47>
+2018-08-02 09:24:32,228  root   INFO  登录成功 File:<choice.py line 47>
+2018-08-02 09:24:37,042  root   INFO  注册成功 File:<choice.py line 70>
+2018-08-02 09:44:13,859  root   INFO  login Success File:<choice.py line 46>
+2018-08-02 09:44:13,859  root   INFO  login Success File:<choice.py line 46>
+2018-08-02 09:44:37,989  root   INFO  login Success File:<choice.py line 46>
+2018-08-02 09:44:51,495  root   INFO  register Success File:<choice.py line 46>
+2018-08-02 09:44:51,495  root   INFO  register Success File:<choice.py line 46>
+2018-08-02 09:44:51,495  root   INFO  register Success File:<choice.py line 46>
+2018-08-02 09:47:00,300  root   INFO  login Success File:<choice.py line 48>
+2018-08-02 09:47:00,300  root   INFO  login Success File:<choice.py line 48>
+2018-08-02 09:47:08,299  root   INFO  register Success File:<choice.py line 48>
+2018-08-02 09:47:08,299  root   INFO  register Success File:<choice.py line 48>
+2018-08-02 09:47:08,299  root   INFO  register Success File:<choice.py line 48>
+2018-08-02 09:47:31,141  root   INFO  register Success File:<choice.py line 48>
+2018-08-02 09:47:34,695  root   INFO  login Success File:<choice.py line 48>
+2018-08-02 09:47:34,695  root   INFO  login Success File:<choice.py line 48>
+2018-08-02 09:48:40,574  root   INFO  login Success File:<choice.py line 49>
+2018-08-02 09:52:18,694  root   INFO  login Success File:<choice.py line 49>
