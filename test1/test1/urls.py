@@ -1,4 +1,4 @@
-"""day16_site URL Configuration
+"""test1 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,19 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.shortcuts import HttpResponse, render, redirect
-
-
-def index(request):
-    if request.method == "POST":
-        username = request.POST.get("user")
-        password = request.POST.get("pwd")
-        if username == "spf" and password == "123":
-            return redirect("http://127.0.0.1:8000/admin/")
-    return render(request, "index.html")
-
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r"^login$", index)
 ]
