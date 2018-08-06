@@ -38,3 +38,6 @@
 时间：2018-04-20 22:54:01 用户：wxx 运行函数：<function logs_page at 0x101ea79d8>
 时间：2018-04-20 22:54:04 用户：wxx 运行函数：<function comment_page at 0x101ea7ae8>
 时间：2018-04-20 22:54:06 用户：None 运行函数：<function log_out at 0x101ea7d08>
+时间：2018-08-06 20:46:19 用户：spf 运行函数：<function logs_page at 0x108c319d8>
+时间：2018-08-06 20:46:21 用户：spf 运行函数：<function comment_page at 0x108c31ae8>
+时间：2018-08-06 20:46:23 用户：None 运行函数：<function log_out at 0x108c31d08>

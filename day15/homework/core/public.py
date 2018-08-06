@@ -18,4 +18,4 @@ class Public:
         fh.setFormatter(formatter)
         logger.addHandler(fh)
         return logger
-    
+

@@ -130,11 +130,11 @@ def init(request):
         password = Public.md5("admin", "123456")
         try:
             os.chdir(os.path.dirname(os.path.dirname(__file__)))
-            os.popen("python manage.py  makemigrations").read()
-            os.popen("python manage.py  migrate").read()
+            os.popen("python3 manage.py  makemigrations").read()
+            os.popen("python3 manage.py  migrate").read()
             models.UserInfo.objects.create(username="admin", password=password)
-            os.popen("python manage.py  makemigrations").read()
-            ret2 = os.popen("python manage.py  migrate").read()
+            os.popen("python3 manage.py  makemigrations").read()
+            ret2 = os.popen("python3 manage.py  migrate").read()
             return render(request, "init.html", {"msg": "初始化成功", "status": "btn-success"})
         except Exception:
             pass
