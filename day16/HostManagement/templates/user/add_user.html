@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运维管理后台</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="top">
+    <nav class="navbar navbar-default navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/platform/">运维管理平台</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">欢迎：admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/login/">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+<div class="row content">
+    <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" class="active view"><a href="/user_list/">用户管理</a></li>
+            <li role="presentation" class="view"><a href="/host_list/">主机管理</a></li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5>创建用户</h5>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal" action="/add_user/" method="post">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">用户唯一编号</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" name="username" id="username" placeholder="用户名">
+                            <span style="color: red;">{{ user_msg }}</span>
+                            <span style="color: red;">{{ msg }}</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">密码</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="password" placeholder="密码" name="password">
+                            <span style="color: red;">{{ pwd_msg }}</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-1">
+                            <button type="submit" class="btn btn-success">创建用户</button>
+                        </div>
+                        <div class=" col-sm-1">
+                            <button type="button" class="btn btn-default change">取消创建</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="/static/js/platform.js"></script>
+</body>
+</html>

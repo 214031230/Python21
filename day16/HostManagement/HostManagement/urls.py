@@ -20,4 +20,11 @@ from user import views as user_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', user_views.login),
+    url(r'^platform/$', user_views.platform),
+    url(r'^user_list/$', user_views.user_list),
+    url(r'^add_user/$', user_views.add_user),
+    url(r'^delete_user/$', user_views.delete_user),
+    url(r'^edit_user/$', user_views.edit_user),
+    url(r'^host_list/$', user_views.host_list),
+    url(r'^init/$', user_views.init)
 ]

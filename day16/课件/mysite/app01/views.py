@@ -2,6 +2,7 @@
 from django.shortcuts import HttpResponse, render, redirect
 from app01 import models
 
+
 # 定义一些处理用户请求的函数
 def index(request):
     """
