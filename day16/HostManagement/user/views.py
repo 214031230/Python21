@@ -10,19 +10,17 @@ def login(request):
     :param request:
     :return: get:登录页面 post:登录认证
     """
+    code = Public.code(4)
     if request.method == "POST":
         user = request.POST.get("username")
         pwd = request.POST.get("password")
+        # user_code = request.POST.get("code")
         pwd = Public.md5(user, pwd)
-        try:
-            obj = models.UserInfo.objects.get(username=user)
-        except Exception:
-            return render(request, "user/login.html", {"msg": "用户名或密码错误！"})
-        if obj.username == user and obj.password == pwd:
+        if models.UserInfo.objects.filter(username=user, password=pwd).first():
             return redirect("/platform/")
         else:
-            return render(request, "user/login.html", {"msg": "用户名或密码错误！"})
-    return render(request, "user/login.html")
+            return render(request, "user/login.html", {"msg": "用户名或密码错误！", "code": code})
+    return render(request, "user/login.html", {"code": code})
 
 
 def platform(request):
@@ -59,10 +57,9 @@ def add_user(request):
         if not password.strip():
             return render(request, "user/add_user.html", {"pwd_msg": "密码不能为空！"})
         password = Public.md5(username, password)
-        try:
+        if not models.UserInfo.objects.filter(username=username).first():
             models.UserInfo.objects.create(username=username, password=password)
-        except Exception as e:
-            print(e)
+        else:
             return render(request, "user/add_user.html", {"msg": "用户名已经存在！"})
         return redirect("/user_list/")
     return render(request, "user/add_user.html")
@@ -97,12 +94,12 @@ def edit_user(request):
             return render(request, "user/edit_user.html",
                           {"username": obj.username, "user_id": obj.id, "pwd_msg": "密码不能为空！"})
         password = Public.md5(username, password)
-        try:
+        if not models.UserInfo.objects.filter(username=username).first():
             obj = models.UserInfo.objects.get(id=user_id)
             obj.username = username
             obj.password = password
             obj.save()
-        except Exception:
+        else:
             return render(request, "user/edit_user.html", {"msg": "用户名已经存在！"})
         return redirect("/user_list/")
 
@@ -134,10 +131,9 @@ def init(request):
             os.popen("python3 manage.py  migrate").read()
             models.UserInfo.objects.create(username="admin", password=password)
             os.popen("python3 manage.py  makemigrations").read()
-            ret2 = os.popen("python3 manage.py  migrate").read()
+            os.popen("python3 manage.py  migrate").read()
             return render(request, "init.html", {"msg": "初始化成功", "status": "btn-success"})
         except Exception:
             pass
         return render(request, "init.html", {"msg": "初始化成功", "status": "btn-success"})
-
     return render(request, "init.html", {"msg": "初始化数据库", "status": "btn-danger"})

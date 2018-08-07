@@ -75,6 +75,7 @@ WSGI_APPLICATION = 'HostManagement.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# sqlite配置
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -82,7 +83,7 @@ DATABASES = {
     }
 }
 
-
+# mysql配置
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',

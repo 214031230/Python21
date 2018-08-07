@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import hashlib
+import random
 
 
 class Public:
@@ -15,5 +16,20 @@ class Public:
         obj.update(pwd.encode("utf-8"))
         return obj.hexdigest()
 
+    @staticmethod
+    def code(n):
+        """
+        随机验证码
+        :param n: 验证码长度
+        :return: 返回验证码
+        """
+        code = ""
+        for i in range(n):
+            big_letter = chr(random.randint(65, 90))
+            letter = chr(random.randint(97, 122))
+            number = str(random.randint(0, 9))
+            code += random.choice([big_letter, letter, number])
+        return code
 
 
+print(Public.code(6))
