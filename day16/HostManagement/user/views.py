@@ -1,6 +1,9 @@
 from django.shortcuts import render, HttpResponse, redirect
 from user import models
 from user.public import Public
+import logging
+
+logger = logging.getLogger('sourceDns.webdns.views')
 
 
 def login(request):
