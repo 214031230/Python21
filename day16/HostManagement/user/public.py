@@ -30,6 +30,3 @@ class Public:
             number = str(random.randint(0, 9))
             code += random.choice([big_letter, letter, number])
         return code
-
-
-print(Public.code(6))

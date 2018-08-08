@@ -2,10 +2,13 @@ day16博客地址：https://www.cnblogs.com/spf21/p/9427852.html
 
 功能说明：
     数据库使用：mysql
-    请先初始化：127.0.0.1:8000/init/
+    请先创建数据库：
+                    create database userinfo;
+                    python manage.py makemigrations
+                    python manage.py migrate
     ---------------------------------------------------
     登录页面：http://127.0.0.1:8000/login/
-              管理员：admin 密码：123456  验证码：请忽略我
+              管理员：admin 密码：123456  验证码：请输入正确验证码(区分大小写)
 
     ---------------------------------------------------
     后台管理页面：http://127.0.0.1:8000/platform/

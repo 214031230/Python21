@@ -16,7 +16,6 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from user import views as user_views
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', user_views.login),
@@ -26,5 +25,4 @@ urlpatterns = [
     url(r'^delete_user/$', user_views.delete_user),
     url(r'^edit_user/$', user_views.edit_user),
     url(r'^host_list/$', user_views.host_list),
-    url(r'^init/$', user_views.init)
 ]
