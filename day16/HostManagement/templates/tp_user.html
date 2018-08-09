@@ -5,6 +5,8 @@
     <title>运维管理平台</title>
     <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/platform.css">
+    {% block css %}
+    {% endblock %}
 </head>
 <body>
 <div class="top">
@@ -18,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/platform/?user={{ user }}">运维管理平台</a>
+                <a class="navbar-brand" href="/platform/">运维管理平台</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -38,9 +40,9 @@
 <div class="row content">
     <div class="col-md-2">
         <ul class="nav nav-pills nav-stacked">
-            <li role="presentation" class="view"><a href="/platform/?user={{ user }}">首页</a></li>
-            <li role="presentation" class="active view"><a href="/user_list/?user={{ user }}">用户管理</a></li>
-            <li role="presentation" class="view"><a href="/host_list/?user={{ user }}">主机管理</a></li>
+            <li role="presentation" class="view"><a href="/platform/">首页</a></li>
+            <li role="presentation" class="active view"><a href="/user_list/">用户管理</a></li>
+            <li role="presentation" class="view"><a href="/host_list/">主机管理</a></li>
         </ul>
     </div>
     <div class="col-md-10">
@@ -48,6 +50,8 @@
         {% endblock %}
     </div>
 </div>
+{% block model %}
+{% endblock %}
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script src="/static/plugins/bootstrap/js/bootstrap.js"></script>
 <script src="/static/js/platform.js"></script>

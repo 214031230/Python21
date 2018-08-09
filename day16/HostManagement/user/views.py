@@ -1,9 +1,24 @@
 from django.shortcuts import render, HttpResponse, redirect
 from user import models
 from user.public import Public
-import logging
 
-logger = logging.getLogger('sourceDns.webdns.views')
+
+def auth(f):
+    """
+    登录装饰器
+    :param f:
+    :return:
+    """
+
+    def inner(re, *args, **kwargs):
+        # if not re.COOKIES.get("ticket"):
+        # if re.get_signed_cookie("ticket", salt="sunpengfei", default="xxx") == "xxx":
+        if not re.session.get("name"):
+            return redirect("/login")
+        ret = f(re, *args, **kwargs)
+        return ret
+
+    return inner
 
 
 def login(request):
@@ -18,55 +33,71 @@ def login(request):
         pwd = request.POST.get("password")
         pwd = Public.md5(user, pwd)
         if models.UserInfo.objects.filter(username=user, password=pwd).first():
-            return redirect("/platform/?user=%s" % user)
+            request.session["name"] = user
+            return redirect("/platform/")
+            # obj.set_cookie("ticket", "%s" % user, max_age=60)
+            # obj.set_signed_cookie("ticket", "%s" % user, salt="sunpengfei", max_age=300)
+            # return obj
         else:
             return render(request, "user/login.html", {"msg": "用户名或密码错误！", "code": code})
     return render(request, "user/login.html", {"code": code})
 
 
+@auth
 def platform(request):
     """
     管理后台页面
     :param request:
     :return:
     """
-    user = request.GET.get("user")
+    # user = request.COOKIES.get("ticket")
+    # user = request.get_signed_cookie("ticket", salt="sunpengfei")
+    user = request.session.get("name")
     data = models.UserInfo.objects.all()
     return render(request, "platform.html", {"userinfo": data, "user": user})
 
 
+@auth
 def user_list(request):
     """
     用户管理页面
     :param request:
     :return:
     """
+    # user = request.COOKIES.get("ticket")
+    # user = request.get_signed_cookie("ticket", salt="sunpengfei")
+    user = request.session.get("name")
     data = models.UserInfo.objects.all()
-    return render(request, "user/user_list.html", {"userinfo": data})
+    return render(request, "user/user_list.html", {"userinfo": data, "user": user})
 
 
+@auth
 def add_user(request):
     """
     创建用户
     :param request:
     :return: platform页面
     """
+    # user = request.COOKIES.get("ticket")
+    # user = request.get_signed_cookie("ticket", salt="sunpengfei")
+    user = request.session.get("name")
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
         if not username.strip():
-            return render(request, "user/add_user.html", {"user_msg": "用户名不能为空！"})
+            return render(request, "user/add_user.html", {"user_msg": "用户名不能为空！", "user": user})
         if not password.strip():
-            return render(request, "user/add_user.html", {"pwd_msg": "密码不能为空！"})
+            return render(request, "user/add_user.html", {"pwd_msg": "密码不能为空！", "user": user})
         password = Public.md5(username, password)
         if not models.UserInfo.objects.filter(username=username).first():
             models.UserInfo.objects.create(username=username, password=password)
         else:
-            return render(request, "user/add_user.html", {"msg": "用户名已经存在！"})
+            return render(request, "user/add_user.html", {"msg": "用户名已经存在！", "user": user})
         return redirect("/user_list/")
-    return render(request, "user/add_user.html")
+    return render(request, "user/add_user.html", {"user": user})
 
 
+@auth
 def delete_user(request):
     """
     删除用户
@@ -78,12 +109,16 @@ def delete_user(request):
     return redirect("/user_list/")
 
 
+@auth
 def edit_user(request):
     """
     编辑用户
     :param request:
     :return:
     """
+    # user = request.COOKIES.get("ticket")
+    # user = request.get_signed_cookie("ticket", salt="sunpengfei")
+    user = request.session.get("name")
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -91,7 +126,7 @@ def edit_user(request):
         obj = models.UserInfo.objects.get(id=user_id)
         if not password.strip():
             return render(request, "user/edit_user.html",
-                          {"username": obj.username, "user_id": obj.id, "pwd_msg": "密码不能为空！"})
+                          {"username": obj.username, "user_id": obj.id, "pwd_msg": "密码不能为空！", "user": user})
         password = Public.md5(username, password)
         obj = models.UserInfo.objects.filter(username=username).first()
         obj.password = password
@@ -99,16 +134,20 @@ def edit_user(request):
         return redirect("/user_list/")
     user_id = request.GET.get("id")
     obj = models.UserInfo.objects.get(id=user_id)
-    return render(request, "user/edit_user.html", {"username": obj.username, "user_id": obj.id})
+    return render(request, "user/edit_user.html", {"username": obj.username, "user_id": obj.id, "user": user})
 
 
+@auth
 def host_list(request):
     """
     主机列表
     :param request: 
     :return: 
     """
-    return render(request, "host/host_list.html")
+    # user = request.COOKIES.get("ticket")
+    # user = request.get_signed_cookie("ticket", salt="sunpengfei")
+    user = request.session.get("name")
+    return render(request, "host/host_list.html", {"user": user})
 
 
 def init():
