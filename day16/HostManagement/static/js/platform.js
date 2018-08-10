@@ -6,6 +6,6 @@ $(function () {
         location.href="/add_user/"
     })
     $(".change").click(function () {
-        location.href="/platform/"
+        location.href="/user_list/"
     })
 });
