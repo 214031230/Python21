@@ -135,7 +135,7 @@ STATICFILES_DIRS = [
 ]
 
 # 日志
-BASE_LOG_DIR = os.path.join(BASE_DIR, "logs")
+# BASE_LOG_DIR = os.path.join(BASE_DIR, "logs")
 
 # LOGGING = {
 #     'version': 1,

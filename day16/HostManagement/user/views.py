@@ -11,8 +11,6 @@ def auth(f):
     """
 
     def inner(re, *args, **kwargs):
-        # if not re.COOKIES.get("ticket"):
-        # if re.get_signed_cookie("ticket", salt="sunpengfei", default="xxx") == "xxx":
         if not re.session.get("name"):
             return redirect("/login")
         ret = f(re, *args, **kwargs)
@@ -35,9 +33,6 @@ def login(request):
         if models.UserInfo.objects.filter(username=user, password=pwd).first():
             request.session["name"] = user
             return redirect("/platform/")
-            # obj.set_cookie("ticket", "%s" % user, max_age=60)
-            # obj.set_signed_cookie("ticket", "%s" % user, salt="sunpengfei", max_age=300)
-            # return obj
         else:
             return render(request, "user/login.html", {"msg": "用户名或密码错误！", "code": code})
     return render(request, "user/login.html", {"code": code})
@@ -50,8 +45,6 @@ def platform(request):
     :param request:
     :return:
     """
-    # user = request.COOKIES.get("ticket")
-    # user = request.get_signed_cookie("ticket", salt="sunpengfei")
     user = request.session.get("name")
     data = models.UserInfo.objects.all()
     return render(request, "platform.html", {"userinfo": data, "user": user})
@@ -64,8 +57,6 @@ def user_list(request):
     :param request:
     :return:
     """
-    # user = request.COOKIES.get("ticket")
-    # user = request.get_signed_cookie("ticket", salt="sunpengfei")
     user = request.session.get("name")
     data = models.UserInfo.objects.all()
     return render(request, "user/user_list.html", {"userinfo": data, "user": user})
@@ -78,8 +69,6 @@ def add_user(request):
     :param request:
     :return: platform页面
     """
-    # user = request.COOKIES.get("ticket")
-    # user = request.get_signed_cookie("ticket", salt="sunpengfei")
     user = request.session.get("name")
     if request.method == "POST":
         username = request.POST.get("username")
@@ -116,8 +105,6 @@ def edit_user(request):
     :param request:
     :return:
     """
-    # user = request.COOKIES.get("ticket")
-    # user = request.get_signed_cookie("ticket", salt="sunpengfei")
     user = request.session.get("name")
     if request.method == "POST":
         username = request.POST.get("username")
@@ -144,8 +131,6 @@ def host_list(request):
     :param request: 
     :return: 
     """
-    # user = request.COOKIES.get("ticket")
-    # user = request.get_signed_cookie("ticket", salt="sunpengfei")
     user = request.session.get("name")
     return render(request, "host/host_list.html", {"user": user})
 
