@@ -5,6 +5,8 @@ from django.urls import reverse
 from django import views
 from django.utils.decorators import method_decorator
 from functools import wraps
+
+
 # Create your views here.
 
 
@@ -20,6 +22,7 @@ def login_check(func):
             return func(request, *args, **kwargs)
         else:
             return redirect("/login/?next={}".format(next))
+
     return inner
 
 
@@ -127,7 +130,6 @@ def template_test(request):
     today = datetime.datetime.today()
     link = "<script>for(;;){alert(123)}</script>"
 
-
     class Person(object):
         def __init__(self, name, dream):
             self.name = name
@@ -135,6 +137,7 @@ def template_test(request):
 
         def dream(self):
             return "我的梦想是学好Python!"
+
     pw = Person("彭玮", "不去下一期！")
 
     return render(request, "t.html", {
@@ -190,7 +193,7 @@ class EditBook(views.View):
     def get(self, request, pk):
         book_obj = models.Book.objects.get(id=pk)
         publisher_list = models.Publisher.objects.all()
-        return render(request, "edit_book.html", {"book": book_obj, "publisher_list":publisher_list})
+        return render(request, "edit_book.html", {"book": book_obj, "publisher_list": publisher_list})
 
     def post(self, request, pk):
         book_obj = models.Book.objects.get(id=pk)

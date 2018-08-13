@@ -1,6 +1,9 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, redirect
 from user import models
 from user.public import Public
+from functools import wraps
+from django.utils.decorators import method_decorator
+from django.views import View
 
 
 def auth(f):
@@ -10,11 +13,13 @@ def auth(f):
     :return:
     """
 
+    @wraps(f)
     def inner(re, *args, **kwargs):
         if not re.session.get("name"):
-            return redirect("/login")
-        ret = f(re, *args, **kwargs)
-        return ret
+            path = re.path_info
+            return redirect("/login/?path=%s" % path)
+        else:
+            return f(re, *args, **kwargs)
 
     return inner
 
@@ -30,12 +35,19 @@ def login(request):
         user = request.POST.get("username")
         pwd = request.POST.get("password")
         pwd = Public.md5(user, pwd)
+        path = request.GET.get("path")
         if models.UserInfo.objects.filter(username=user, password=pwd).first():
             request.session["name"] = user
-            return redirect("/platform/")
+            if path:
+                return redirect(path)
+            else:
+                return redirect("/platform/")
         else:
-            return render(request, "user/login.html", {"msg": "用户名或密码错误！", "code": code})
-    return render(request, "user/login.html", {"code": code})
+            if path:
+                return redirect(request.GET.get("path"))
+            else:
+                return render(request, "login.html", {"msg": "用户名或密码错误！", "code": code})
+    return render(request, "login.html", {"code": code})
 
 
 @auth
@@ -47,7 +59,7 @@ def platform(request):
     """
     user = request.session.get("name")
     data = models.UserInfo.objects.all()
-    return render(request, "platform.html", {"userinfo": data, "user": user})
+    return render(request, "index/platform.html", {"userinfo": data, "user": user})
 
 
 @auth
@@ -128,17 +140,83 @@ def edit_user(request):
 def host_list(request):
     """
     主机列表
-    :param request: 
-    :return: 
+    :param request:
+    :return:
     """
     user = request.session.get("name")
     return render(request, "host/host_list.html", {"user": user})
 
 
+class BsLine(View):
+    """
+    业务线页面
+    """
+
+    @method_decorator(auth)
+    def get(self, request):
+        data = models.Product.objects.all()
+        return render(request, "bsline/bsline_list.html", {"data": data})
+
+
+class AddBsline(View):
+    """
+    添加业务线
+    """
+
+    @method_decorator(auth)
+    def get(self, request):
+        return render(request, "bsline/add_asline.html")
+
+    def post(self, request):
+        name = request.POST.get("name")
+        if not models.Product.objects.filter(name=name).filter():
+            models.Product.objects.create(name=name)
+            return redirect("/bsline_list/")
+        else:
+            return render(request, "bsline/add_asline.html", {"msg": "业务名已经存在！"})
+
+
+class DeleteBsline(View):
+    """
+    删除业务线
+    """
+
+    @method_decorator(auth)
+    def get(self, request):
+        bsline_id = request.GET.get("id")
+        models.Product.objects.filter(id=bsline_id).delete()
+        return redirect("/bsline_list/")
+
+
+class EditBsline(View):
+    """
+    编辑业务线名称
+    """
+
+    @method_decorator(auth)
+    def get(self, request):
+        bsline_id = request.GET.get("id")
+        bsline_name = models.Product.objects.filter(id=bsline_id).first()
+        return render(request, "bsline/edit_bsline.html", {"name": bsline_name.name})
+
+    def post(self, request):
+        name = request.POST.get("name")
+        bsline_id = request.GET.get("id")
+        obj = models.Product.objects.filter(id=bsline_id).first()
+        if not models.Product.objects.filter(name=name).first():
+            obj.name = name
+            obj.save()
+            return redirect("/bsline_list/")
+        else:
+            bsline_id = request.GET.get("id")
+            bsline_name = models.Product.objects.filter(id=bsline_id).first()
+            return render(request, "bsline/edit_bsline.html", {"msg": "业务名称已经存在", "name": bsline_name.name})
+
+
 def init():
     """
     初始化数据库
-    :return: 
+    :return:
     """
     password = Public.md5("admin", "123456")
     if not models.UserInfo.objects.filter(username="admin").first():

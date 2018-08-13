@@ -2,94 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da3335fb-a0e7-43f9-99c9-d21a8bd60944" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/HostManagement.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/dataSources/2932d405-f7ef-4bbf-a311-dd7b34e14e1d/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/dataSources/3b8d86de-f7ff-45a9-a347-19355f1b464b.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/dataSources/3b8d86de-f7ff-45a9-a347-19355f1b464b/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/dataSources/4f9758bc-b425-4a4d-ae89-2a78e64f6acc/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/dataSources/af81ef0b-5ff2-4b1a-8c0e-7354a3d3f8fd/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/dictionaries/xuxu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/HostManagement/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/HostManagement/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/HostManagement/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/HostManagement/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/logs/collect.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/logs/error.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/logs/info.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/readme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/css/platform.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/css/user_list.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/js/add_user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/js/platform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/js/user_list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/css/bootstrap-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/static/plugins/bootstrap/js/npm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/templates/host/host_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/templates/platform.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/templates/tp_host.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/templates/tp_index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/templates/tp_top.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/templates/tp_user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/templates/user/add_user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/templates/user/edit_user.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/templates/user/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/templates/user/user_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/user/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/user/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/user/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/user/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/user/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/user/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/user/public.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/user/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HostManagement/user/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../day17课上笔记和代码.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/xuxu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/mysite.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/Python21.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/Python21.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day16/HostManagement/.idea/HostManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day16/HostManagement/.idea/HostManagement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day16/HostManagement/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day16/HostManagement/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day16/HostManagement/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day16/HostManagement/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day16/HostManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day16/HostManagement/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day16/HostManagement/HostManagement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day16/HostManagement/HostManagement/settings.py" afterDir="false" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/login.html" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/Python21.iml" afterPath="$PROJECT_DIR$/../../.idea/Python21.iml" />
+      <change beforePath="$PROJECT_DIR$/../../day16/mysite/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../day16/mysite/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/../../day16/mysite/.idea/mysite.iml" afterPath="$PROJECT_DIR$/../../day16/mysite/.idea/mysite.iml" />
+      <change beforePath="$PROJECT_DIR$/../../day16/mysite/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../day16/mysite/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../day17课件/mysite/.idea/misc.xml" afterPath="$PROJECT_DIR$/../day17课件/mysite/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/../day17课件/mysite/.idea/mysite.iml" afterPath="$PROJECT_DIR$/../day17课件/mysite/.idea/mysite.iml" />
+      <change beforePath="$PROJECT_DIR$/../day17课件/mysite/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../day17课件/mysite/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../day17课件/mysite/app01/views.py" afterPath="$PROJECT_DIR$/../day17课件/mysite/app01/views.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/mysite.iml" afterPath="$PROJECT_DIR$/.idea/mysite.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app01/views.py" afterPath="$PROJECT_DIR$/app01/views.py" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" afterPath="$PROJECT_DIR$/mysite/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="26907892">
@@ -129,42 +66,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
-              <folding>
-                <element signature="e#640#672#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app01/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="2" />
-              <folding>
-                <marker date="1534084662219" expanded="true" signature="113:118" ph="..." />
-                <marker date="1534084662219" expanded="true" signature="166:222" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/upload.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="10" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -180,9 +82,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/mysite/settings.py" />
-        <option value="$PROJECT_DIR$/app01/views.py" />
         <option value="$PROJECT_DIR$/templates/upload.html" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/mysite/urls.py" />
+        <option value="$PROJECT_DIR$/app01/views.py" />
       </list>
     </option>
   </component>
@@ -198,10 +101,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="945" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2869" />
+    <option name="y" value="-11" />
+    <option name="width" value="2422" />
+    <option name="height" value="1372" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -292,7 +196,17 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -304,14 +218,11 @@
               <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="mysite" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -320,6 +231,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -342,7 +254,6 @@
   </component>
   <component name="RunManager">
     <configuration name="mysite" type="Python.DjangoServer" factoryName="Django server">
-      <module name="mysite" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -354,6 +265,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="mysite" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="" />
@@ -363,8 +275,10 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
-      <method v="2" />
     </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
@@ -380,30 +294,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="945" extended-state="0" />
-    <editor active="true" />
+    <frame x="2869" y="-11" width="2422" height="1372" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32942554" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30051368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17367066" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,7 +325,39 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mysite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding>
+            <element signature="e#640#672#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app01/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="746">
@@ -420,34 +365,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/编辑django配置1.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/templates/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="10" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1169">
+          <caret line="230" column="45" lean-forward="false" selection-start-line="230" selection-start-column="45" selection-end-line="230" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app01/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="2" />
+        <state relative-caret-position="231">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
           <folding>
-            <marker date="1534084662219" expanded="true" signature="113:118" ph="..." />
-            <marker date="1534084662219" expanded="true" signature="166:222" ph="..." />
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mysite/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        <state relative-caret-position="489">
+          <caret line="22" column="43" lean-forward="false" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
           <folding>
             <element signature="e#640#672#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="10" selection-end-column="7" />
         </state>
       </provider>
     </entry>

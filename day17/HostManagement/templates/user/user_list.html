@@ -1,78 +1,67 @@
-{% extends "tp_user.html" %}
-{#{% block css %}#}
-{#    <link rel="stylesheet" href="/static/css/user_list.css">#}
-{#{% endblock %}#}
-{% block content %}
-    <div class="col-md-10">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h5>用户管理</h5>
-            </div>
-            <div class="panel-body">
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th>序号</th>
-                        <th>用户名</th>
-                        <th>编辑</th>
-                        <th>删除</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for obj in userinfo %}
-                        {% if forloop.counter == 1 %}
-                            <tr>
-                                <td>
-                                    {{ forloop.counter }}
-                                </td>
-                                <td>
-                                    {{ obj.username }}
-                                </td>
-                                <td>
-                                    <a href="/edit_user/?id={{ obj.id }}">
-                                        <button class="btn btn-success">编辑</button>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="/edit_user/?id={{ obj.id }}">
-                                        <button class="btn btn-danger" disabled="disabled">删除</button>
-                                    </a>
-                                </td>
-                                {% else %}
-                            <tr>
-                                <td>
-                                    {{ forloop.counter }}
-                                </td>
-                                <td>
-                                    {{ obj.username }}
-                                </td>
-                                <td>
-                                    <a href="/edit_user/?id={{ obj.id }}">
-                                        <button class="btn btn-success">编辑</button>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="/delete_user/?id={{ obj.id }}" class="delete">
-                                        <button class="btn btn-danger">删除</button>
-                                    </a>
-                                </td>
-                            </tr>
-                        {% endif %}
+{% extends "tp.html" %}
+{% block left %}
+    {% include "user/tp_left.html" %}
+{% endblock %}
+{% block rigth %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>用户管理</h5>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>用户名</th>
+                    <th>编辑</th>
+                    <th>删除</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in userinfo %}
+                    {% if forloop.counter == 1 %}
+                        <tr>
+                            <td>
+                                {{ forloop.counter }}
+                            </td>
+                            <td>
+                                {{ obj.username }}
+                            </td>
+                            <td>
+                                <a href="/edit_user/?id={{ obj.id }}">
+                                    <button class="btn btn-success">编辑</button>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/edit_user/?id={{ obj.id }}">
+                                    <button class="btn btn-danger" disabled="disabled">删除</button>
+                                </a>
+                            </td>
+                            {% else %}
+                        <tr>
+                            <td>
+                                {{ forloop.counter }}
+                            </td>
+                            <td>
+                                {{ obj.username }}
+                            </td>
+                            <td>
+                                <a href="/edit_user/?id={{ obj.id }}">
+                                    <button class="btn btn-success">编辑</button>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/delete_user/?id={{ obj.id }}" class="delete">
+                                    <button class="btn btn-danger">删除</button>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endif %}
 
-                    {% endfor %}
-                    </tbody>
-                </table>
-                <button class="btn btn-success adduser">添加用户</button>
-            </div>
+                {% endfor %}
+                </tbody>
+            </table>
+            <button class="btn btn-success adduser">添加用户</button>
         </div>
     </div>
 {% endblock %}
-{#{% block model %}#}
-{#    <div class="bgc hide"></div>#}
-{#    <div class="bgcform hide">#}
-{#        <a href=""><button class="btn btn-danger mbtn">确定</button></a>#}
-{#        <a href=""><button class="btn btn-success mbtn">取消</button></a>#}
-{#    </div>#}
-{#{% endblock %}#}
-{#{% block js %}#}
-{#{% endblock %}#}

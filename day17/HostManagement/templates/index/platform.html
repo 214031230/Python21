@@ -1,6 +1,8 @@
-{% extends "tp_index.html" %}
-{% block content %}
-    <div class="col-md-10">
+{% extends "tp.html" %}
+{% block left %}
+    {% include "index/tp_left.html" %}
+{% endblock %}
+{% block rigth %}
         <div class="panel panel-default">
             <div class=" panel-heading">
                 <h5>首页</h5>
@@ -13,5 +15,4 @@
                 </div>
             </div>
         </div>
-    </div>
 {% endblock %}

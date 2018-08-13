@@ -1,7 +1,7 @@
-day16博客地址：https://www.cnblogs.com/spf21/p/9427852.html
+day17博客地址：https://www.cnblogs.com/spf21/p/9467853.html
 
 功能说明：
-    数据库使用：mysql
+    数据库使用：sqlite3
     请先创建数据库(运行项目会自动创建管理员账号，这里只需要创建库即可)：
                     create database userinfo;
                     python manage.py makemigrations

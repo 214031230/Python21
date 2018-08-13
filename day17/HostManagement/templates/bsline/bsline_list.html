@@ -1,0 +1,40 @@
+{% extends "tp.html" %}
+{% block left %}
+    {% include  "bsline/tp_left.html" %}
+{% endblock %}
+{% block rigth %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>业务线管理</h5>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>业务名称</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in data %}
+                    <tr>
+                        <td>
+                            {{ forloop.counter }}
+                        </td>
+                        <td>
+                            {{ obj.name }}
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/edit_bsline/?id={{ obj.id }}">编辑</a>
+                            <a class="btn btn-danger" href="/delete_bsline/?id={{ obj.id }}">删除</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="/add_bsline/" class="btn btn-success adduser">添加业务线</a>
+        </div>
+    </div>
+
+{% endblock %}

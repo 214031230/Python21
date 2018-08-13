@@ -18,6 +18,7 @@ from django.contrib import admin
 from app01 import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^upload/$', views.Upload.as_view())
+    url(r'^admin/$', admin.site.urls),
+    url(r'^upload/$', views.Upload.as_view()),
+    url(r'^login/$', views.Login.as_view())
 ]
