@@ -13,8 +13,7 @@
                 <tr>
                     <th>序号</th>
                     <th>用户名</th>
-                    <th>编辑</th>
-                    <th>删除</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -31,8 +30,6 @@
                                 <a href="/edit_user/?id={{ obj.id }}">
                                     <button class="btn btn-success">编辑</button>
                                 </a>
-                            </td>
-                            <td>
                                 <a href="/edit_user/?id={{ obj.id }}">
                                     <button class="btn btn-danger" disabled="disabled">删除</button>
                                 </a>
@@ -46,22 +43,21 @@
                                 {{ obj.username }}
                             </td>
                             <td>
-                                <a href="/edit_user/?id={{ obj.id }}">
-                                    <button class="btn btn-success">编辑</button>
+                                <a href="/edit_user/?id={{ obj.id }}" class="btn btn-success">
+                                    编辑
+                                </a>
+                                <a href="/delete_user/?id={{ obj.id }}" class="btn btn-danger">
+                                    删除
                                 </a>
                             </td>
-                            <td>
-                                <a href="/delete_user/?id={{ obj.id }}" class="delete">
-                                    <button class="btn btn-danger">删除</button>
-                                </a>
-                            </td>
+
                         </tr>
                     {% endif %}
 
                 {% endfor %}
                 </tbody>
             </table>
-            <button class="btn btn-success adduser">添加用户</button>
+            <a href="/add_user/" class="btn btn-success adduser">添加用户</a>
         </div>
     </div>
 {% endblock %}

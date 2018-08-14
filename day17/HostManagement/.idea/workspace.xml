@@ -2,67 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c00a4e1-4e1f-45a9-9eff-ad228b84c752" name="Default Changelist" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/add_bsline.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/bsline/add_asline.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/bsline/bsline_list.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/bsline/edit_bsline.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/bsline/tp_left.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/host/tp_left.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/index/tp_left.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/tp.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/user/tp_left.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../mysite/templates/login.html" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/Python21.iml" afterPath="$PROJECT_DIR$/../../.idea/Python21.iml" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.xml" afterPath="$PROJECT_DIR$/../../.idea/dataSources.xml" />
-      <change beforePath="$PROJECT_DIR$/../../day16/HostManagement/db.sqlite3" afterPath="$PROJECT_DIR$/../../day16/HostManagement/db.sqlite3" />
-      <change beforePath="$PROJECT_DIR$/../../day16/mysite/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../day16/mysite/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/../../day16/mysite/.idea/mysite.iml" afterPath="$PROJECT_DIR$/../../day16/mysite/.idea/mysite.iml" />
-      <change beforePath="$PROJECT_DIR$/../../day16/mysite/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../day16/mysite/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/HostManagement.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2932d405-f7ef-4bbf-a311-dd7b34e14e1d/storage_v2/_src_/schema/main.uQUzAA.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b8d86de-f7ff-45a9-a347-19355f1b464b.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3b8d86de-f7ff-45a9-a347-19355f1b464b/storage_v2/_src_/schema/main.uQUzAA.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f9758bc-b425-4a4d-ae89-2a78e64f6acc/storage_v2/_src_/schema/main.uQUzAA.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/af81ef0b-5ff2-4b1a-8c0e-7354a3d3f8fd/storage_v2/_src_/schema/main.uQUzAA.meta" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/xuxu.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/HostManagement/settings.py" afterPath="$PROJECT_DIR$/HostManagement/settings.py" />
-      <change beforePath="$PROJECT_DIR$/HostManagement/urls.py" afterPath="$PROJECT_DIR$/HostManagement/urls.py" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/readme" afterPath="$PROJECT_DIR$/readme" />
-      <change beforePath="$PROJECT_DIR$/static/js/login.js" afterPath="$PROJECT_DIR$/static/js/login.js" />
-      <change beforePath="$PROJECT_DIR$/templates/host/host_list.html" afterPath="$PROJECT_DIR$/templates/host/host_list.html" />
-      <change beforePath="$PROJECT_DIR$/templates/platform.html" afterPath="$PROJECT_DIR$/templates/index/platform.html" />
-      <change beforePath="$PROJECT_DIR$/templates/tp_host.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/tp_index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/tp_top.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/tp_user.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/user/add_user.html" afterPath="$PROJECT_DIR$/templates/user/add_user.html" />
-      <change beforePath="$PROJECT_DIR$/templates/user/edit_user.html" afterPath="$PROJECT_DIR$/templates/user/edit_user.html" />
-      <change beforePath="$PROJECT_DIR$/templates/user/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
-      <change beforePath="$PROJECT_DIR$/templates/user/user_list.html" afterPath="$PROJECT_DIR$/templates/user/user_list.html" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0001_initial.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" afterPath="$PROJECT_DIR$/user/models.py" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" afterPath="$PROJECT_DIR$/user/views.py" />
-      <change beforePath="$PROJECT_DIR$/../day17课件/mysite/.idea/misc.xml" afterPath="$PROJECT_DIR$/../day17课件/mysite/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/../day17课件/mysite/.idea/mysite.iml" afterPath="$PROJECT_DIR$/../day17课件/mysite/.idea/mysite.iml" />
-      <change beforePath="$PROJECT_DIR$/../day17课件/mysite/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../day17课件/mysite/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../day17课件/mysite/app01/views.py" afterPath="$PROJECT_DIR$/../day17课件/mysite/app01/views.py" />
-      <change beforePath="$PROJECT_DIR$/../mysite/.idea/misc.xml" afterPath="$PROJECT_DIR$/../mysite/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/../mysite/.idea/mysite.iml" afterPath="$PROJECT_DIR$/../mysite/.idea/mysite.iml" />
-      <change beforePath="$PROJECT_DIR$/../mysite/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../mysite/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../mysite/app01/views.py" afterPath="$PROJECT_DIR$/../mysite/app01/views.py" />
-      <change beforePath="$PROJECT_DIR$/../mysite/mysite/urls.py" afterPath="$PROJECT_DIR$/../mysite/mysite/urls.py" />
+      <change afterPath="$PROJECT_DIR$/.idea/HostManagement.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/add_host.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bsline/add_bsline.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/host/add_host.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources/63629c58-42b8-446b-9d0b-f0b605e8f006.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HostManagement/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HostManagement/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/platform.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/platform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bsline/add_asline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bsline/add_bsline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bsline/bsline_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bsline/bsline_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/host/host_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/host/host_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index/tp_left.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/tp_left.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/add_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/add_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/edit_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/edit_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/user_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,53 +122,53 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1364011725">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="18" />
+          <entry key="js" value="2" />
+          <entry key="py" value="7" />
+          <entry key="readme" value="1" />
+          <entry key="user_hostinfo" value="1" />
+          <entry key="user_product" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Database Element" value="3" />
+          <entry key="HTML" value="18" />
+          <entry key="JavaScript" value="2" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cell" value="39" />
+          <entry key="html" value="433" />
+          <entry key="js" value="33" />
+          <entry key="py" value="549" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="433" />
+          <entry key="JavaScript" value="33" />
+          <entry key="Python" value="549" />
+          <entry key="Scratch" value="39" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HostManagement/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4371">
-              <caret line="214" column="0" lean-forward="true" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tp.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/tp.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="70" column="46" lean-forward="true" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit_bsline.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/bsline/edit_bsline.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-              <folding>
-                <element signature="e#716#734#0#HTML" expanded="true" />
-                <element signature="e#1218#1279#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -270,32 +234,34 @@
         <option value="$PROJECT_DIR$/templates/tp_index.html" />
         <option value="$PROJECT_DIR$/templates/tp_user.html" />
         <option value="$PROJECT_DIR$/templates/test.html" />
-        <option value="$PROJECT_DIR$/static/js/platform.js" />
         <option value="$PROJECT_DIR$/templates/platform.html" />
-        <option value="$PROJECT_DIR$/templates/user/user_list.html" />
         <option value="$PROJECT_DIR$/HostManagement/settings.py" />
         <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/index/platform.html" />
-        <option value="$PROJECT_DIR$/templates/host/host_list.html" />
         <option value="$PROJECT_DIR$/templates/login_error.html" />
         <option value="$PROJECT_DIR$/templates/tp.html" />
-        <option value="$PROJECT_DIR$/templates/index/tp_left.html" />
         <option value="$PROJECT_DIR$/templates/bsline/host_list.html" />
         <option value="$PROJECT_DIR$/static/js/login.js" />
         <option value="$PROJECT_DIR$/readme" />
         <option value="$PROJECT_DIR$/user/models.py" />
         <option value="$PROJECT_DIR$/templates/bsline/bsline.html" />
-        <option value="$PROJECT_DIR$/templates/bsline/bsline_list.html" />
         <option value="$PROJECT_DIR$/templates/bsline/tp_left.html" />
         <option value="$PROJECT_DIR$/templates/host/tp_left.html" />
         <option value="$PROJECT_DIR$/templates/user/tp_left.html" />
         <option value="$PROJECT_DIR$/static/js/add_bsline.js" />
+        <option value="$PROJECT_DIR$/templates/bsline/edit_bsline.html" />
+        <option value="$PROJECT_DIR$/templates/bsline/bsline_list.html" />
+        <option value="$PROJECT_DIR$/static/js/platform.js" />
         <option value="$PROJECT_DIR$/templates/bsline/add_asline.html" />
         <option value="$PROJECT_DIR$/templates/user/add_user.html" />
         <option value="$PROJECT_DIR$/templates/user/edit_user.html" />
+        <option value="$PROJECT_DIR$/static/js/add_host.js" />
         <option value="$PROJECT_DIR$/HostManagement/urls.py" />
-        <option value="$PROJECT_DIR$/templates/bsline/edit_bsline.html" />
         <option value="$PROJECT_DIR$/user/views.py" />
+        <option value="$PROJECT_DIR$/templates/host/add_host.html" />
+        <option value="$PROJECT_DIR$/templates/host/host_list.html" />
+        <option value="$PROJECT_DIR$/templates/user/user_list.html" />
+        <option value="$PROJECT_DIR$/templates/index/tp_left.html" />
       </list>
     </option>
   </component>
@@ -311,11 +277,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2869" />
-    <option name="y" value="-11" />
-    <option name="width" value="2422" />
-    <option name="height" value="1372" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="945" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -406,17 +371,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -427,27 +382,11 @@
               <item name="HostManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="HostManagement" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="HostManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HostManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HostManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HostManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HostManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HostManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,7 +394,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;Sqlite (Xerial)" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -470,17 +409,17 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/js" />
+      <recent name="$PROJECT_DIR$/templates/host" />
+      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\templates\bsline" />
+      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\static\js" />
+      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\user\migrations" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\templates\index" />
       <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\templates" />
       <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day16\HostManagement\templates\user" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\templates\bsline" />
-      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\static\js" />
-      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\user\migrations" />
-      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement" />
-      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -497,6 +436,7 @@
   </component>
   <component name="RunManager" selected="Django server.HostManagement">
     <configuration name="public" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="HostManagement" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -507,15 +447,18 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="HostManagement" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" runner="coverage.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/user/public.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="HostManagement" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -526,15 +469,18 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="HostManagement" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" runner="coverage.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HostManagement/urls.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="HostManagement" type="Python.DjangoServer" factoryName="Django server">
+      <module name="HostManagement" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -546,7 +492,6 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="HostManagement" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="" />
@@ -556,21 +501,19 @@
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
+      <method v="2" />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Django server.HostManagement" />
-      <item index="1" class="java.lang.String" itemvalue="Python.public" />
-      <item index="2" class="java.lang.String" itemvalue="Python.urls" />
+    <list>
+      <item itemvalue="Django server.HostManagement" />
+      <item itemvalue="Python.public" />
+      <item itemvalue="Python.urls" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.urls" />
-        <item index="1" class="java.lang.String" itemvalue="Python.public" />
+      <list>
+        <item itemvalue="Python.urls" />
+        <item itemvalue="Python.public" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
@@ -586,32 +529,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2869" y="-11" width="2422" height="1372" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1680" height="945" extended-state="6" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33904108" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32791096" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37328768" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19468267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1771012" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@HostManagement" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962328" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1965812" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32962328" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34819278" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.32942554" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.37328768" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32791096" />
+      <window_info anchor="bottom" id="manage.py@HostManagement" order="14" weight="0.32962328" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32975987" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.17704518" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,251 +562,176 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/http/response.py" />
-    <entry file="file://$PROJECT_DIR$/static/css/user_list.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/error.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="103" lean-forward="false" selection-start-line="0" selection-start-column="103" selection-end-line="0" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/public.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="e#72#748#0" expanded="false" />
-            <element signature="e#118#348#0" expanded="false" />
-            <element signature="e#118#229#1" expanded="false" />
-            <element signature="e#393#748#0" expanded="false" />
-            <element signature="e#393#469#1" expanded="false" />
-            <element signature="e#527#728#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#69#82#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/tp_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1617">
-          <caret line="49" column="92" lean-forward="true" selection-start-line="49" selection-start-column="92" selection-end-line="49" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tp_user.html" />
     <entry file="file://$PROJECT_DIR$/templates/test.html" />
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding>
-            <element signature="e#22#31#0" expanded="false" />
+            <element signature="e#22#31#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/tp_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/tp_top.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1419">
-          <caret line="43" column="53" lean-forward="false" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/tp_host.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/tp_index.html" />
+    <entry file="file://$PROJECT_DIR$/templates/tp_top.html" />
+    <entry file="file://$PROJECT_DIR$/templates/tp_host.html" />
     <entry file="file://$PROJECT_DIR$/HostManagement/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/host/host_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index/platform.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
-          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding />
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login_error.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bsline/host_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index/tp_left.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="69" lean-forward="false" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login_error.html" />
+    <entry file="file://$PROJECT_DIR$/templates/bsline/host_list.html" />
     <entry file="file://$PROJECT_DIR$/static/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/db/models/fields/related.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="791" column="8" lean-forward="false" selection-start-line="791" selection-start-column="8" selection-end-line="791" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/3be6dfd9/3b8d86de-f7ff-45a9-a347-19355f1b464b/main.user_userinfo">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/db/models/fields/related.py" />
+    <entry file="das://table:/3be6dfd9/3b8d86de-f7ff-45a9-a347-19355f1b464b/main.user_userinfo" />
     <entry file="file://$PROJECT_DIR$/user/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3b8d86de-f7ff-45a9-a347-19355f1b464b/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/3be6dfd9/3b8d86de-f7ff-45a9-a347-19355f1b464b/main.django_migrations">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3b8d86de-f7ff-45a9-a347-19355f1b464b/console.sql" />
+    <entry file="das://table:/3be6dfd9/3b8d86de-f7ff-45a9-a347-19355f1b464b/main.django_migrations" />
     <entry file="file://$PROJECT_DIR$/HostManagement/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://table:/3be6dfd9/916ea013-ddcc-4e05-97ea-2c79bfcff9d6/main.django_migrations" />
+    <entry file="das://table:/3be6dfd9/60d20c14-0a2d-4187-9402-37a94edc4115/main.django_migrations" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/db/models/fields/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/user/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-1044" />
+      </provider>
+    </entry>
+    <entry file="das://table:/3be6dfd9/60d20c14-0a2d-4187-9402-37a94edc4115/main.user_userinfo" />
+    <entry file="das://table:/3be6dfd9/60d20c14-0a2d-4187-9402-37a94edc4115/main.user_hostinfo" />
+    <entry file="file://$PROJECT_DIR$/static/js/user_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/3be6dfd9/916ea013-ddcc-4e05-97ea-2c79bfcff9d6/main.django_migrations">
+    <entry file="file://$PROJECT_DIR$/static/js/add_user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/3be6dfd9/60d20c14-0a2d-4187-9402-37a94edc4115/main.user_product" />
+    <entry file="file://$PROJECT_DIR$/static/js/add_bsline.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/tp_left.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/platform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/add_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/edit_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding>
+            <element signature="e#738#756#0#HTML" expanded="true" />
+            <element signature="e#1787#1848#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bsline/tp_left.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bsline/edit_bsline.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bsline/bsline_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="38" />
+          <folding>
+            <element signature="e#119#1262#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://60d20c14-0a2d-4187-9402-37a94edc4115/schema/main/table/user_product">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/3be6dfd9/60d20c14-0a2d-4187-9402-37a94edc4115/main.django_migrations">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/templates/bsline/add_bsline.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding>
+            <element signature="e#665#684#0#HTML" expanded="true" />
+            <element signature="e#737#756#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HostManagement/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7326">
-          <caret line="222" column="0" lean-forward="false" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-          <folding>
-            <element signature="e#319#328#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="3285">
+          <caret line="222" selection-start-line="222" selection-end-line="222" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/db/models/fields/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1691">
-          <caret line="1325" column="0" lean-forward="true" selection-start-line="1325" selection-start-column="0" selection-end-line="1325" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1044">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/3be6dfd9/60d20c14-0a2d-4187-9402-37a94edc4115/main.user_userinfo">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/3be6dfd9/60d20c14-0a2d-4187-9402-37a94edc4115/main.user_hostinfo">
+    <entry file="das://9b5ea6ba-727d-4c12-b4e5-5cd109d9fe02/schema/main/table/user_product">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -873,159 +740,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/user_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612">
-          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/platform.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bsline/tp_left.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="54" lean-forward="false" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/host/tp_left.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="60" lean-forward="false" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bsline/bsline_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/user_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/add_user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/3be6dfd9/60d20c14-0a2d-4187-9402-37a94edc4115/main.user_product">
+    <entry file="das://9b5ea6ba-727d-4c12-b4e5-5cd109d9fe02/schema/main/table/user_hostinfo">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bsline/add_asline.html">
+    <entry file="file://$PROJECT_DIR$/HostManagement/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        <state relative-caret-position="390">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
           <folding>
-            <element signature="e#665#684#0#HTML" expanded="true" />
-            <element signature="e#737#756#0#HTML" expanded="true" />
-            <element signature="e#1230#1291#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/add_bsline.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/add_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/edit_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/user/tp_left.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/bsline/edit_bsline.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="e#716#734#0#HTML" expanded="true" />
-            <element signature="e#1218#1279#0#HTML" expanded="true" />
+            <element signature="e#648#680#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4371">
-          <caret line="214" column="0" lean-forward="true" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="224">
+          <caret line="247" lean-forward="true" selection-start-line="247" selection-end-line="247" />
+          <folding>
+            <marker date="1534255953736" expanded="true" signature="6839:7062" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/host/add_host.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+          <folding>
+            <element signature="e#665#684#0#HTML" expanded="true" />
+            <element signature="e#737#756#0#HTML" expanded="true" />
+            <element signature="e#1124#1143#0#HTML" expanded="true" />
+            <element signature="e#1196#1215#0#HTML" expanded="true" />
+            <element signature="e#1227#1288#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/user/user_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="34" column="36" lean-forward="true" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/tp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="70" column="46" lean-forward="true" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="239">
+          <caret line="63" column="10" lean-forward="true" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HostManagement/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/index/tp_left.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="30">
+          <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/host/host_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/add_host.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-start-column="3" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/host/tp_left.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
         </state>
       </provider>
     </entry>

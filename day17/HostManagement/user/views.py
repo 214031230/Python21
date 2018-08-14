@@ -136,17 +136,6 @@ def edit_user(request):
     return render(request, "user/edit_user.html", {"username": obj.username, "user_id": obj.id, "user": user})
 
 
-@auth
-def host_list(request):
-    """
-    主机列表
-    :param request:
-    :return:
-    """
-    user = request.session.get("name")
-    return render(request, "host/host_list.html", {"user": user})
-
-
 class BsLine(View):
     """
     业务线页面
@@ -165,7 +154,7 @@ class AddBsline(View):
 
     @method_decorator(auth)
     def get(self, request):
-        return render(request, "bsline/add_asline.html")
+        return render(request, "bsline/add_bsline.html")
 
     def post(self, request):
         name = request.POST.get("name")
@@ -173,7 +162,7 @@ class AddBsline(View):
             models.Product.objects.create(name=name)
             return redirect("/bsline_list/")
         else:
-            return render(request, "bsline/add_asline.html", {"msg": "业务名已经存在！"})
+            return render(request, "bsline/add_bsline.html", {"msg": "业务名已经存在！"})
 
 
 class DeleteBsline(View):
@@ -211,6 +200,50 @@ class EditBsline(View):
             bsline_id = request.GET.get("id")
             bsline_name = models.Product.objects.filter(id=bsline_id).first()
             return render(request, "bsline/edit_bsline.html", {"msg": "业务名称已经存在", "name": bsline_name.name})
+
+
+class HostList(View):
+    """
+    查看主机列表
+    """
+
+    @method_decorator(auth)
+    def get(self, request):
+        data = models.HostInfo.objects.all()
+        return render(request, "host/host_list.html", {"data": data})
+
+
+class AddHost(View):
+    """
+    添加主机
+    """
+
+    @method_decorator(auth)
+    def get(self, request):
+        bsline_list = models.Product.objects.all()
+        print(bsline_list)
+        return render(request, "host/add_host.html", {"bsline_list": bsline_list})
+
+    def post(self, request):
+        ip = request.POST.get("ip")
+        hostname = request.POST.get("hostname")
+        bsline_id = request.POST.get("bsline_name")
+        if not models.HostInfo.objects.filter(ip=ip).filter():
+            models.HostInfo.objects.create(ip=ip, hostname=hostname, product_id=bsline_id)
+            return redirect("/host_list/")
+        else:
+            return render(request, "host/host_list.html", {"msg": "主机已经存在！"})
+
+
+class DeleteHost(View):
+    """
+    删除主机
+    """
+    @method_decorator(auth)
+    def get(self, request):
+        host_id = request.GET.get("id")
+        models.HostInfo.objects.filter(id=host_id).delete()
+        return redirect("/host_list/")
 
 
 def init():
