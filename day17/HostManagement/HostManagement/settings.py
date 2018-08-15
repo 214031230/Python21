@@ -136,7 +136,6 @@ STATICFILES_DIRS = [
 
 # 日志
 # BASE_LOG_DIR = os.path.join(BASE_DIR, "logs")
-
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,
@@ -209,18 +208,14 @@ STATICFILES_DIRS = [
 
 
 # session配置文件
-
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # 引擎
-
-
 SESSION_COOKIE_NAME = "host"  # Session的cookie保存在浏览器上时的key，即：sessionid＝随机字符串
 SESSION_COOKIE_PATH = "/"  # Session的cookie保存的路径
 SESSION_COOKIE_DOMAIN = None  # Session的cookie保存的域名
 SESSION_COOKIE_SECURE = False  # 是否Https传输cookie
 SESSION_COOKIE_HTTPONLY = True  # 是否Session的cookie只支持http传输
-SESSION_COOKIE_AGE = 600000  # Session的cookie失效日期（2周） 默认1209600秒
+SESSION_COOKIE_AGE = 60*60*12*14  # Session的cookie失效日期（2周） 默认1209600秒
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # 是否关闭浏览器使得Session过期
-
 SESSION_SAVE_EVERY_REQUEST = True
 # 如果你设置了session的过期时间 30分钟后，这个参数是False30分钟过后，session准时失效
 # 如果设置 True，在30分钟期间有请求服务端，就不会过期！（为什么逛一晚上淘宝，也不会登出，但是不浏览器不刷新了就会自动登出）

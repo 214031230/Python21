@@ -20,7 +20,7 @@
                 {% for obj in data %}
                     <tr>
                         <td>
-                            {{ forloop.counter }}
+                            {{ forloop.counter|add:start }}
                         </td>
                         <td>
                             {{ obj.name }}
@@ -33,6 +33,7 @@
                 {% endfor %}
                 </tbody>
             </table>
+            {% include "paging.html" %}
             <a href="/add_bsline/" class="btn btn-success adduser">添加业务线</a>
         </div>
     </div>

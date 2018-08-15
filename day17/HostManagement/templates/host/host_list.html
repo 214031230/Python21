@@ -24,7 +24,7 @@
                 {% for obj in data %}
                     <tr>
                         <td>
-                            {{ forloop.counter }}
+                            {{ forloop.counter|add:start }}
                         </td>
                         <td>
                             {{ obj.ip }}
@@ -43,8 +43,8 @@
                 {% endfor %}
                 </tbody>
             </table>
+            {% include "paging.html" %}
             <a href="/add_host/" class="btn btn-success adduser">添加主机</a>
         </div>
     </div>
-
 {% endblock %}

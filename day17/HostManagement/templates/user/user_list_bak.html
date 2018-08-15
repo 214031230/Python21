@@ -1,5 +1,4 @@
 {% extends "tp.html" %}
-
 {% block left %}
     {% include "user/tp_left.html" %}
 {% endblock %}
@@ -18,8 +17,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% for obj in data %}
-                    {% if obj.id == 1 %}
+                {% for obj in userinfo %}
+                    {% if forloop.counter == 1 %}
                         <tr>
                             <td>
                                 {{ forloop.counter }}
@@ -38,7 +37,7 @@
                             {% else %}
                         <tr>
                             <td>
-                                {{ forloop.counter|add:start }}
+                                {{ forloop.counter }}
                             </td>
                             <td>
                                 {{ obj.username }}
@@ -58,7 +57,6 @@
                 {% endfor %}
                 </tbody>
             </table>
-            {% include "paging.html" %}
             <a href="/add_user/" class="btn btn-success adduser">添加用户</a>
         </div>
     </div>

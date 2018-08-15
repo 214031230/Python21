@@ -4,6 +4,7 @@ from user.public import Public
 from functools import wraps
 from django.utils.decorators import method_decorator
 from django.views import View
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def auth(f):
@@ -14,12 +15,12 @@ def auth(f):
     """
 
     @wraps(f)
-    def inner(re, *args, **kwargs):
-        if not re.session.get("name"):
-            path = re.path_info
+    def inner(request, *args, **kwargs):
+        if not request.session.get("name"):
+            path = request.path_info
             return redirect("/login/?path=%s" % path)
         else:
-            return f(re, *args, **kwargs)
+            return f(request, *args, **kwargs)
 
     return inner
 
@@ -58,8 +59,7 @@ def platform(request):
     :return:
     """
     user = request.session.get("name")
-    data = models.UserInfo.objects.all()
-    return render(request, "index/platform.html", {"userinfo": data, "user": user})
+    return render(request, "index/platform.html", {"user": user})
 
 
 @auth
@@ -71,7 +71,18 @@ def user_list(request):
     """
     user = request.session.get("name")
     data = models.UserInfo.objects.all()
-    return render(request, "user/user_list.html", {"userinfo": data, "user": user})
+    current_page = request.GET.get('p')
+    paginator = Paginator(data, 5)
+    try:
+        posts = paginator.page(current_page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+    if not current_page:
+        current_page = 1
+    start = (int(current_page) - 1) * 5
+    return render(request, "user/user_list.html", {"user": user, "data": posts, "start": start})
 
 
 @auth
@@ -143,8 +154,21 @@ class BsLine(View):
 
     @method_decorator(auth)
     def get(self, request):
+        user = request.session.get("name")
         data = models.Product.objects.all()
-        return render(request, "bsline/bsline_list.html", {"data": data})
+        current_page = request.GET.get('p')
+        paginator = Paginator(data, 5)
+        try:
+            posts = paginator.page(current_page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+        if not current_page:
+            current_page = 1
+        start = (int(current_page) - 1) * 5
+        return render(request, "bsline/bsline_list.html",
+                      {"user": user, "data": posts, "start": start})
 
 
 class AddBsline(View):
@@ -154,7 +178,8 @@ class AddBsline(View):
 
     @method_decorator(auth)
     def get(self, request):
-        return render(request, "bsline/add_bsline.html")
+        user = request.session.get("name")
+        return render(request, "bsline/add_bsline.html", {"user": user})
 
     def post(self, request):
         name = request.POST.get("name")
@@ -184,9 +209,10 @@ class EditBsline(View):
 
     @method_decorator(auth)
     def get(self, request):
+        user = request.session.get("name")
         bsline_id = request.GET.get("id")
         bsline_name = models.Product.objects.filter(id=bsline_id).first()
-        return render(request, "bsline/edit_bsline.html", {"name": bsline_name.name})
+        return render(request, "bsline/edit_bsline.html", {"names": bsline_name.name, "user": user})
 
     def post(self, request):
         name = request.POST.get("name")
@@ -209,8 +235,21 @@ class HostList(View):
 
     @method_decorator(auth)
     def get(self, request):
+        user = request.session.get("name")
         data = models.HostInfo.objects.all()
-        return render(request, "host/host_list.html", {"data": data})
+        current_page = request.GET.get('p')
+        paginator = Paginator(data, 5)
+        try:
+            posts = paginator.page(current_page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+        if not current_page:
+            current_page = 1
+        start = (int(current_page) - 1) * 5
+        return render(request, "host/host_list.html",
+                      {"user": user, "data": posts, "start": start})
 
 
 class AddHost(View):
@@ -221,29 +260,55 @@ class AddHost(View):
     @method_decorator(auth)
     def get(self, request):
         bsline_list = models.Product.objects.all()
-        print(bsline_list)
-        return render(request, "host/add_host.html", {"bsline_list": bsline_list})
+        user = request.session.get("name")
+        return render(request, "host/add_host.html", {"bsline_list": bsline_list, "user": user})
 
     def post(self, request):
         ip = request.POST.get("ip")
         hostname = request.POST.get("hostname")
         bsline_id = request.POST.get("bsline_name")
+        bsline_list = models.Product.objects.all()
         if not models.HostInfo.objects.filter(ip=ip).filter():
             models.HostInfo.objects.create(ip=ip, hostname=hostname, product_id=bsline_id)
             return redirect("/host_list/")
         else:
-            return render(request, "host/host_list.html", {"msg": "主机已经存在！"})
+            return render(request, "host/add_host.html", {"msg": "主机已经存在！", "bsline_list": bsline_list})
 
 
 class DeleteHost(View):
     """
     删除主机
     """
+
     @method_decorator(auth)
     def get(self, request):
         host_id = request.GET.get("id")
         models.HostInfo.objects.filter(id=host_id).delete()
         return redirect("/host_list/")
+
+
+class EditHost(View):
+    """
+    编辑主机
+    """
+
+    @method_decorator(auth)
+    def get(self, request):
+        user = request.session.get("name")
+        bsline_list = models.Product.objects.all()
+        host_id = request.GET.get("id")
+        obj = models.HostInfo.objects.filter(id=host_id).first()
+        return render(request, "host/edit_host.html/", {"bsline_list": bsline_list, "obj": obj, "user": user})
+
+    def post(self, request):
+        host_id = request.GET.get("id")
+        hostname = request.POST.get("hostname")
+        bsline_id = request.POST.get("bsline_name")
+        obj = models.HostInfo.objects.filter(id=host_id).first()
+        obj.hostname = hostname
+        obj.product_id = bsline_id
+        obj.save()
+        return redirect("/host_list")
 
 
 def init():

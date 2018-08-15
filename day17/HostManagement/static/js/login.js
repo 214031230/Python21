@@ -4,8 +4,8 @@ $(function () {
             $("#check").text("用户名或密码不能为空").css("color", "red");
             return false
         }
-        // if ($.trim($("#code").val().toUpperCase()) == $.trim($("#user_code").val().toUpperCase())) {
-        if ($.trim($("#code").val().toUpperCase()) == "666") {
+        if ($.trim($("#code").val().toUpperCase()) == $.trim($("#user_code").val().toUpperCase())) {
+        // if ($.trim($("#code").val().toUpperCase()) == "666") {
             return true
         }
         else {
