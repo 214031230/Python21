@@ -1,0 +1,303 @@
+day18  2018-08-19
+
+1. 讲课内容：
+	1. session：https://www.cnblogs.com/liwenzhou/p/8343243.html
+		1. Cookie是保存在浏览器端的键值对
+		   用来解决HTTP请求是无状态的
+		
+		2. Django里面使用Cookie
+			1. 设置Cookie
+				1. 回复响应时设置的
+					rep = HttpResponse("OK")
+					rep.set_cookie("key", "value", max_age=超时时间（秒）)
+					rep.set_signed_cookie("key", "value", salt="盐", max_age=超时时间（秒）)
+			2. 获取Cookie
+				请求来的时候从请求中找cookie
+				1. request.COOKIES.get("key")
+				2. request.get_signed_cookie("key", default="", salt="盐")
+					
+		3. 为什么要有session
+			1. Cookied额缺点：
+				1. 数据量只有4096
+				2. 数据都保存在客户端（浏览器）上，不安全
+
+			2. Session
+				保存在服务端的键值对
+				
+				1. 请求来了之后，还是生成随机字符串
+				2. 以随机字符串为key,在服务端生成一个大字典，真正保存数据是value
+				3. 把随机字符串以cookie的形式回复给浏览器
+				
+				4. 下一次请求再来的时候，会携带上一步的随机字符串
+				5. 从请求中拿到随机字符串，
+				6. 去后端以 该随机字符串为key找对应的value
+				7. value里面存的就是真正有用的数据
+				
+			3. Django中如何使用Session
+				1. 无论设置Session还是获取Session都是针对request对象来操作
+				
+				2. 设置Session
+					request.session["key"] = "value"
+				3. 获取session
+					request.session.get("key")
+				
+				4. 其他常用命令
+					1. # 将所有Session失效日期小于当前日期的数据删除
+						request.session.clear_expired()
+					2. # 删除当前的会话数据并删除会话的Cookie。
+						request.session.flush() 
+					
+					3. 设置超时时间
+					request.session.set_expiry(7)
+				
+				5. 常用配置项（写在Settings.py中）
+					# 全局配置session超时时间
+					SESSION_COOKIE_AGE = 60 * 60 * 24 * 2
+
+					# 是否每次请求都刷新session超时时间
+					SESSION_SAVE_EVERY_REQUEST = True
+					
+					
+	
+	2. 分页：https://www.cnblogs.com/liwenzhou/p/8343243.html最下面
+		1. 如何在单独的一个脚本文件中使用Django的一些变量或方法
+		2. bulk_create()   Django ORM批量创建的一个方法
+		
+		分页：
+			每页显示10条
+			
+			1             0-10
+			2             10-20
+			3             20-30
+			
+			n             (n-1)*10-n*10
+		
+	
+	3. 中间件:https://www.cnblogs.com/liwenzhou/p/8761803.html
+		1. 什么时候使用中间件？
+			当需要在全局改变Django框架的输入输出时
+		2. 中间件不宜添加过多，功能过于复杂
+			否则会增加请求的响应时间
+				
+		3. Django如何使用
+			1. 五个方法（三个常用）
+				主要记忆：执行时间、执行顺序、参数和返回值
+				1. process_request(self,request)
+					1. 执行时间
+						在执行视图函数之前执行
+					2. 执行顺序
+						按照注册的顺序执行
+					3. 参数和返回值
+						1. request参数和视图函数中是同一个对象
+						2. 返回值：
+							1. 返回None:请求继续往后执行
+							2. 返回响应对象：请求就结束了，要返回响应了
+				2. process_response(self, request, response)		
+					1. 执行时间
+						视图函数执行之后（拿到响应对象之后）
+					
+					2. 执行顺序
+						按照注册的倒序执行
+					3. 参数和返回值
+						1. 参数：request请求对象
+								 response:响应对象
+						2. 返回值：
+							只能返回响应对象
+								1. 返回默认的
+								2. 自己生成一个响应对象返回	
+				3. process_view(self, request, view_func, view_args, view_kwargs)
+					1. 执行时间
+						视图函数之前，在urls.py找到将要执行的视图函数之后
+					2. 执行顺序
+						注册的顺序执行
+						
+					3. 参数和返回值
+						1. 参数：
+							1. request: 请求对象
+							2. view_func:将要执行的视图函数
+						2. 返回值：
+							1. 返回None:继续往后执行
+							2. 返回响应对象，直接跳出，按照process_response方法的顺序执行
+				
+				有条件触发：
+				4. process_template_response(self,request,response)
+					1. 执行时间：
+						1. 视图函数之后，并且返回的响应对象是要有render方法
+					2. 执行顺序：
+						1. 按照注册的倒序执行
+					3. 返回值：
+						1. 对传递过来的响应对象，调用其render方法，把返回值向后继续传递
+				5. process_exception(self, request, exception)
+					1. 执行时间：
+						1. 当视图函数中抛出异常的时候才执行
+					2. 执行顺序：
+						1. 注册的倒序
+					3. 参数和返回值
+						exception：视图函数中抛出的异常
+						返回响应对象，就跳出按照process_response方法的顺序执行
+	
+			2. 额外补充
+				1. 反射      --> 由一个字符串找到方法、函数(可调用对象)
+				2. importlib --> 由字符串动态导入   **自己回去查
+			3. 示例：
+				限制用户访问我网站的频率，一分钟最多访问3次
+				15:52:13 15:52:11 15:52:04 15:52:01
+				{
+					'11.12.13.14': [15:52:11, 15:52:04, 15:52:01]
+				}
+				
+	4. ORM（多对多）
+		1. ORM多对多字段
+			# 多对多,自动帮我们在数据库建立第三张关系表
+			books = models.ManyToManyField(to='Book', related_name="authors")
+			参数：
+				- to：表示和哪张表建立多对多的关系
+				- related_name:表示返乡查询时使用的那个字段名，默认反向查询时使用表名_set的方式
+		
+		2. 多对多字段的方法
+			1. 查询
+				.all()  --> 多对多查询的方法，
+			
+			2. 删除
+			
+			3. 添加新作者
+				1. 当form表单提交的数据是列表（多选的select\多选的checkbox）取值?
+					request.POST.getlist("hobby")
+	
+				2. .set([id1,id2,...])  参数是一个列表  --> 删除原来的设置新的
+				3. .add(id值)                           --> 在原来的基础上增加新的纪录
+	
+	
+		3. 13条
+			1. 返回QuerySet类型的
+				1. all()
+				2. filter()
+				3. exclude()
+				4. order_by()
+				5. reverse()
+				6. distinct()
+				
+				7. values()      -> QuerySet中是字典类型
+				8. values_list() -> QuerySet中是元祖类型
+				
+			2. 返回具体对象的
+				1. get()
+				2. first()
+				3. last()
+				
+			3. 返回数字
+				1. count()
+			4. 返回布尔值
+				1. exist()
+		
+	5. ajax:https://www.cnblogs.com/liwenzhou/p/8718861.html
+		1. 目前已知浏览器和服务端发请求的方式
+			1. 浏览器地址栏 输入url直接回车   GET
+			2. a标签						  GET
+			3. form表单                       GET/POST
+			4. ajax                           GET/POST
+			
+			
+			ajax的特点：
+				优点：
+					1. 偷偷发请求，用户无感知
+					2. 局部刷新  相对于其他请求方式而言，返回的数据量小  
+					3. 同一个页面可以发送多次请求     异步
+				缺点：
+					1. 如果滥用，对服务端的压力比较大
+					
+			ajax的使用：
+				jQuery版：
+					导入jQuery
+					$.ajax({
+						url: "往哪里发请求",
+						type: "发送请求的类型",
+						data: {
+						
+						},
+						success:function(res){
+							
+						}
+					})
+					
+			ajax注意事项：
+				data
+					
+	
+	6. jQuery：https://www.cnblogs.com/liwenzhou/p/8178806.html
+		1. 选择器
+			1. 基本选择器
+				1. id
+				2. 类
+				3. 标签
+				4. 属性
+				5. 组合
+			
+			2. 层级选择器
+				1. 后代选择器
+				2. 毗邻选择器
+				3. 儿子选择器
+		2. .text()
+			1. 获取标签的文本内容            $("div").text()         --> 默认取所有div的文本内容
+			2. 有参数表示 设置标签的文本内容 $("div").text(‘哈哈’)   --> 设置所有div标签的文本为哈哈      
+		3. .html()
+			1. 获取标签的html内容            $("div").html()         --> 默认取第一个div的html内容
+			2. 有参数表示 设置标签的html内容 $("div").html(‘哈哈’)   --> 设置所有div标签的html内容为哈哈  
+			
+		4. val()
+			1. 获取input标签的值            $("input").val()         --> 默认取第一个input的值
+			2. 有参数表示 设置input标签的值 $("input").val(666)      --> 设置所有input标签的值为666 
+		
+
+	
+		AJAX上传文件，下周再讲
+	5. Form & ModelForm（下周再讲）
+	
+	
+技术的提升只是量的积累，思想的提升才是质的飞跃。
+在公司混：政治正确才是最重要的！
+
+	
+2. 练习题：
+	1. django请求生命周期
+	2. csrf原理
+	3. ORM和原生SQL区别？
+	4. django中装饰器和中间件的应用场景？
+	5. 为什么要使用母板？
+	6. ORM查询示例：
+		表结构：
+			出版社表：
+				ID   名称
+			图书表：
+				ID   书名称    价格     出版社ID
+
+			作者表：
+				ID   作者姓名
+
+			作者和图书关系表：
+				ID   图书ID    作业ID
+		题目：
+			1. 查询alex出过的所有书籍的名字(多对多)
+			2. 查询alex的手机号
+			3. 查询人民出版社出版过的所有书籍的名字以及作者的姓名
+			4. 统计每一本书的作者个数
+			5. 统计不止一个作者的图书
+			6. 根据一本图书作者数量的多少对查询集 QuerySet进行排序
+			7. 查询各个作者出的书的总价格
+
+
+3. 作业：主机管理【03】：业务线管理
+	1. 基于django创建表：
+		用户表：ID、用户名、密码
+		业务线表：ID、名称
+		主机表：ID、主机名、密码、业务线ID
+		用户和业务线关系表：ID、业务线ID、管理员ID
+	2. 业务线管理：增删改查（多对多）
+	3. 使用模板和动态路由
+	4. 主机管理使用CBV实现
+	5. 套用BootStrap样式
+
+	采分点：
+		练习题：20
+		实现所有功能：70
+		代码写的清晰、健壮、可扩展：10

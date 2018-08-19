@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{#<p>{{ data.1 }}</p>#}
+<p>{{ data|default:"暂无数据" }}</p>
+<p>{{ file_size|filesizeformat }}</p>
+<p>{{ today }}</p>
+
+
+<p>{{ link }}</p>
+{#<p>{{ link|safe }}</p>#}
+
+<hr>
+
+<p>
+    {% for teacher in data %}
+        {% if forloop.last %}
+            {{ teacher }}
+        {% else %}
+            {{ teacher }},
+        {% endif %}
+    {% endfor %}
+</p>
+{#<p>{% if 3 > 2 > 1 %}{% endif %}</p>#}
+{##}
+{#<p>{% if 3 > 2 and 2 > 1  %}{% endif %}</p>#}
+
+<hr>
+
+{{ person.name }}
+{{ person.dream }}
+
+
+</body>
+</html>

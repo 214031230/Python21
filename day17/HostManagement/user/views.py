@@ -31,7 +31,7 @@ def login(request):
     :param request:
     :return: get:登录页面 post:登录认证
     """
-    code = Public.code(5)
+    code = Public.code(4)
     if request.method == "POST":
         user = request.POST.get("username")
         pwd = request.POST.get("password")
@@ -309,6 +309,15 @@ class EditHost(View):
         obj.product_id = bsline_id
         obj.save()
         return redirect("/host_list")
+
+
+# def page_not_found(request):
+#     """
+#     自定义404页面
+#     :param request:
+#     :return:
+#     """
+#     return render(request, "404.html")
 
 
 def init():

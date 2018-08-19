@@ -1,0 +1,33 @@
+{% extends 'mama.html' %}
+
+{% block page-main %}
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>id</th>
+        <th>出版社名称</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for publisher in publisher_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ publisher.id }}</td>
+            <td>{{ publisher.name }}</td>
+            <td>
+                <a href="/edit_publisher/{{ publisher.id }}/" class="btn btn-info">编辑</a>
+                <a href="/delete_publisher/" class="btn btn-danger">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+{#我这个页面才用到的一个js文件#}
+{% block page-js %}
+    <script src="/static/1.js"></script>
+{% endblock %}

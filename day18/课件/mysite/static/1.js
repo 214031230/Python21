@@ -1,0 +1,1 @@
+alert('这是publisher_list页面才用到的js文件！');

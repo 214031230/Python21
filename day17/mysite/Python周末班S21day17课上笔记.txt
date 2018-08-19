@@ -1,0 +1,478 @@
+day17 2018-08-12 
+
+Django框架02
+
+1. 今日内容：
+	1. 路由系统进阶：https://www.cnblogs.com/liwenzhou/articles/8271147.html
+		1. 动态路由
+			基本格式：
+	        from django.conf.urls import url
+	            urlpatterns = [
+	                 url(正则表达式, views视图函数，参数，别名),
+	            ]
+
+	        参数说明：
+		        1)正则表达式：一个正则表达式字符串
+				2)views视图函数：一个可调用对象，通常为一个视图函数或一个指定视图函数路径的字符串
+				3)参数：可选的要传递给视图函数的默认参数（字典形式）
+				4)别名：一个可选的name参数
+
+			注意事项：
+				1)urlpatterns中的元素按照书写顺序从上往下逐一匹配正则表达式，一旦匹配成功则不再继续。
+				2)若要从URL中捕获一个值，只需要在它周围放置一对圆括号（分组匹配）。
+				3)不需要添加一个前导的反斜杠，因为每个URL 都有。例如，应该是^articles 而不是 ^/articles。
+				4)每个正则表达式前面的'r' 是可选的但是建议加上。
+			
+
+            补充1：Django2.0写法
+	            from django.urls import path
+	            urlpatterns = [
+	                 path(正则表达式, views视图函数，参数，别名),
+	            ]
+
+	        补充2：是否开启URL访问地址后面不为/跳转至带有/的路径的配置项
+	        	APPEND_SLASH=True
+	        	Django settings.py配置文件中默认没有 APPEND_SLASH 这个参数，但 Django 默认这个参数为 APPEND_SLASH = True。 其作用就是自动在网址结尾加'/'。
+
+
+		2. urls.py中通过正则表达式的分组匹配，捕获用户访问的url中的值，传递给视图函数
+			分组匹配：
+				相当于给视图函数传递 位置参数
+					示例1：
+						url(r'^articles/([0-9]{4})/([0-9]{2})/([0-9]{2})/$', views.article_detail),
+						def date_test(request,year,month,day): # 形参名称可以修改
+							pass
+					示例2：
+						url(r'^articles/(\d+)/$', views.article_detail), # 相当于/articles/3/
+
+			分组命名匹配：
+				相当于给视图函数传递 关键字参数
+					示例1：
+						url(r'^articles/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/(?P<day>[0-9]{2})/$', views.article_detail),
+						def date_test(request,year,month,day): # 形参名称不可以修改
+			    
+			    	示例2：
+						url(r'^articles/(?P<uid>\d+)/$', views.article_detail), # 相当于/articles/3/
+
+		3. name 命名URL和URL反向解析
+			示例：
+				url(r'^home', views.home, name='home'),  # 给我的url匹配模式起名为 home
+				url(r'^index/(\d*)', views.index, name='index'),  # 给我的url匹配模式起名为index
+			防止将url硬编码到我们的业务逻辑代码中，给url起别名
+			通过别名，反向找到 url
+			在views.py中：
+				from django.urls import reverse
+				具体的url = reverse('url别名')
+
+		4. include其他的URLconfs 在多个APP中使用
+			from django.conf.urls import include, url
+			urlpatterns = [
+			   url(r'^blog/', include('blog.urls')),  # 可以包含其他的URLconfs文件
+			]
+					
+	2. 视图函数进阶:https://www.cnblogs.com/liwenzhou/articles/8305104.html
+		1. views.py
+			1. 基础必会三件套
+				1. HttpResponse('字符串')
+				2. render(request, "xx.html", {"key": value})
+				3. redirect("/其它的url/")
+
+			2. FBV（Function Base View） 基于函数的视图
+				通过request.method == "POST" 去判断
+				示例：
+					# FBV版添加班级
+					def add_class(request):
+					    if request.method == "POST":
+					        class_name = request.POST.get("class_name")
+					        models.Classes.objects.create(name=class_name)
+					        return redirect("/class_list/")
+					    return render(request, "add_class.html")
+				
+			3. CBV（Class Base View）    基于类的视图
+				1. 必须继承views.View     --> from django import views
+				2. 写一个自己的视图类
+				3. 通过定义不同的方法，来处理用户不同的请求
+				4. 在urls.py中注册视图的时候要写 views.类名.as_view()
+				示例：
+					# urls.py中
+					url(r'^add_class/$', views.AddClass.as_view()),
+
+					# CBV版添加班级
+					from django.views import View
+
+
+					class AddClass(View):
+					    def get(self, request):
+					        return render(request, "add_class.html")
+					    def post(self, request):
+					        class_name = request.POST.get("class_name")
+					        models.Classes.objects.create(name=class_name)
+					        return redirect("/class_list/")
+			
+			4. 给FBV和CBV添加装饰器的区别
+				# 装饰器
+				def wrapper(func):
+					def inner(request, *args, **kwagrs):
+						print("开始装饰")
+						ret = func(request, *args, **kwagrs)
+						print("结束装饰")
+						return ret
+					return inner
+
+
+				# 装饰FBV
+				@wrapper
+				def book_list(request):
+					pass
+
+
+				# 装饰CBV
+				from django.views import View
+				from django.utils.decorators import method_decorator  # 借助method_decorator来装饰
+
+
+				class BookList(Vies):
+
+					@method_decorator(wrapper)
+					def get(self, request):
+						pass
+
+					@method_decorator(wrapper)
+					def post(self, request):
+						pass
+
+		2. request对象的常用属性和方法
+			request表示的是和用户请求相关的所有数据
+			1. request.method       --> 用户当前请求的请求方法
+			2. request.GET          --> 用户请求中url中的参数
+			3. request.POST         --> 用户POST请求的数据
+			4. request.path_info    --> 用户访问的url路径是什么
+			
+		3. Django上传文件
+				1. 前端页面
+					1. form表单一定要有action，method必须是post
+					2. 一定要配置enctype="multipart/form-data
+					代码示例：
+						<form action="" method="post" enctype="multipart/form-data">
+						    {% csrf_token %}
+						    <input type="file" value="选择文件" name="code"><br>
+						    <input type="submit" value="确定">{{ status }}
+						</form>
+
+				2. 后端：
+					代码示例：
+						from django.views import View
+						class Upload(View):
+					    """
+					    上传文件
+					    """
+					    def get(self, request):
+					        return render(request, "upload.html")
+					    
+					    def post(self, request):
+							# 拿到用户发送的文件数据
+					        file_obj = request.FILES.get("code")
+
+					        # 把文件保存下来
+					        # 1. 拿到用户上传的文件名
+					        file_name = file_obj.name
+
+					        # 2. 在服务端创建一个同名的文件
+					        with open(file_name, "wb") as f:
+					        	3. 从用户上传的文件对象中一点一点读数据，往我本地创建的文件句柄里一点一点写
+					            for i in file_obj.chunks():
+					                f.write(i)
+					        return render(request, "upload.html", {"status": "上传成功"})
+
+		4. JsonResponse
+			专门用来返回JSON格式数据的响应对象
+			from django.http import JsonResponse
+			JsonResponse 默认只能传字典类型的数据
+			
+ 	3. 模板引擎进阶:https://www.cnblogs.com/liwenzhou/p/7931828.html
+		1. 已经学过的Django模板语言的语法
+			1. 两个语法：
+				1. {{ }}    --> 跟变量相关的操作
+				2. {% %}    --> 跟逻辑相关的操作
+			2. 变量相关
+				1. 传字典或对象类型的数据      obj.name/obj.age
+				2. 传数组类型的数据           obj.索引值
+			3. 日期格式化
+				<p>{{ today|date:"Y-m-d H:i:s"}}</p>
+			4. 显示真正的html代码
+				<p>{{ link|safe }}</p>
+			5. 逻辑语句
+				- for
+					<ul>
+						{% for user in user_list %}
+						    <li>{{ user.name }}</li>
+						{% endfor %}
+					</ul>
+
+				- for 循环可用的一些参数：
+					forloop.counter	当前循环的索引值（从1开始）
+					forloop.counter0	当前循环的索引值（从0开始）
+					forloop.revcounter	当前循环的倒序索引值（从1开始）
+					forloop.revcounter0	当前循环的倒序索引值（从0开始）
+					forloop.first	当前循环是不是第一次循环（布尔值）
+					forloop.last	当前循环是不是最后一次循环（布尔值）
+					forloop.parentloop	本层循环的外层循环
+
+				- for ... empty
+					<ul>
+						{% for user in user_list %}
+						    <li>{{ user.name }}</li>
+						{% empty %}
+						    <li>空空如也</li>
+						{% endfor %}
+					</ul>
+
+				- if,elif和else
+					{% if user_list %}
+					  用户人数：{{ user_list|length }}
+					{% elif black_list %}
+					  黑名单数：{{ black_list|length }}
+					{% else %}
+					  没有用户
+					{% endif %}
+
+				- if语句支持 and 、or、==、>、<、!=、<=、>=、in、not in、is、is not判断。
+
+		2. 母板
+			1. 为什么要用母版？
+				不同的页面有大量重复的代码，我们可以把公用的部分提取出来放在单独一个文件
+			2. 怎么使用？
+				1. 在子页面 通过使用 {% extends ‘模板名’ %}   --> 放在子页面的最上面
+				2. {% block xx %}{% endblock %}
+				完整示例：
+					<!DOCTYPE html>
+					<html lang="en">
+					<head>
+					<meta charset="UTF-8">
+					<meta http-equiv="x-ua-compatible" content="IE=edge">
+					<meta name="viewport" content="width=device-width, initial-scale=1">
+					<title>Title</title>
+					{% block page-css %}
+					{% endblock %}
+					</head>
+					<body>
+					<h1>这是母板的标题</h1>
+					{% block page-main %}
+					{% endblock %}
+
+					<h1>母板底部内容</h1>
+					{% block page-js %}
+					{% endblock %}
+					</body>
+					</html>
+
+		3. 组件
+			把单独的一段html代码放在一个文件，可以将常用的页面内容如导航条，页尾信息等组件保存在单独的文件中，然后在需要使用的地方按如下语法导入即可。
+			使用 {% include '组件名' %}导入
+			
+	4. CSRF
+		1. 为什么要有csrf_token?
+			这个标签用于跨站请求伪造保护。
+		2. Django中如何使用？
+			在render的页面上写上{% csrf_token %}
+		3. 如果是form表单形式提交，必须放在form表单中	
+		示例：
+			<form action="" method="post" enctype="multipart/form-data">
+			    {% csrf_token %}
+			    <input type="file" value="选择文件" name="code"><br>
+			    <input type="submit" value="确定">{{ status }}
+			</form>
+			
+	5. ORM单表查询13条+外键操作（一对多):https://www.cnblogs.com/liwenzhou/p/8688919.html
+		1. ORM上周知识点：
+			1. 查询
+				1. 查所有
+					models.Publisher.objects.all()
+				2. 查某个具体的记录
+					models.Publisher.objects.get(id=1)   --> 注意查询条件不成立就报错，建议使用filter
+			2. 删除一条记录
+				models.Publisher.objects.get(id=1).delete()
+			3. 创建一条记录
+				models.Publisher.objects.create(name="新出版社名字", addr="出版社地址") 
+			4. 修改一条记录
+				obj = models.Publisher.objects.get(id=1)
+				obj.name = "新名字"
+				obj.save()
+
+		2. 字段和参数：
+			1. 	常用字段和参数
+				1. 字段
+					1. CharField		--> 字符类型，必须提供max_length参数， max_length表示字符长度。
+					2. AutoField		--> int自增列，必须填入参数 primary_key=True。当model中如果没有自增列，则自动会创建一个列名为id的列。
+					3. DateField   		--> 日期字段，日期格式  YYYY-MM-DD，相当于Python中的datetime.date()实例。
+					4. DateTimeField()  --> 日期时间字段，格式 YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ]，相当于Python中的datetime.datetime()实例。
+					5. IntergeField()	--> 一个整数类型,范围在 -2147483648 to 2147483647。
+				2. 参数
+					1. null=True            --> 用于表示某个字段可以为空
+					2. default=默认值			--> 为该字段设置默认值。
+					3. unique=True。        --> 如果设置为unique=True 则该字段在此表中必须是唯一的 。
+					4. 时间字段	
+						1. auto_now_add=True    --> 第一次创建时,配置auto_now_add=True，创建数据记录的时候会把当前时间添加到数据库。
+						2. auto_add=True        --> 每次更新时,配置上auto_now=True，每次更新数据记录的时候会更新该字段。
+			
+		3. ORM必知必会单表查询13条	查询操作：https://www.cnblogs.com/liwenzhou/p/8660826.html
+			1. all()				             --> 查询所有结果
+			2. filter()                          --> 根据查询条件查询数据库的
+			3. get()                             --> 获取一个唯一的值
+			4. exclude()                         --> 将符合条件的都剔除掉，留下不符合条件的
+			5. values('字段名', ...)              --> 返回一个QuerySet,里面是字典
+			6. values_list(字段名', ...)          --> 返回一个QuerySet,里面是元祖
+			7. order_by()                        --> 对查询结果排序
+			8. reverse()                         --> 对一个有序的查询结果集做反转
+			9. distinct()                        --> 去重，跨表查询时去掉重复的记录
+			10. count()                          --> 返回数据条数
+			11. first()                          --> 取第一个数据
+			12. last()                           --> 取最后一条数据
+			13. exists()                         --> 判断表里有没有数据
+			
+			
+			分类：
+				1. 返回QuerySet列表的有哪一些？
+					1. all()	
+					2. filter()
+					3. exclude()
+					4. order_by()
+					5. reverse()
+					6. distinct()
+					
+					7. values('字段名', ...)     --> 查询结果的列表里，都是字典
+					8. values_list(字段名', ...) --> 查询结果的列表里，都是元祖
+					
+				2. 返回具体对象的
+					1. first()
+					2. last()
+					3. get()
+					
+				3. 返回数字的
+					1. count()
+
+				4. 返回布尔值
+					1. exists()
+			
+		4. 单表查询神奇的双下划线	查询操作：https://www.cnblogs.com/liwenzhou/p/8660826.html
+
+			models.Tb1.objects.filter(id__lt=10, id__gt=1)   # 获取id大于1 且 小于10的值
+			models.Tb1.objects.filter(id__in=[11, 22, 33])   # 获取id等于11、22、33的数据
+			models.Tb1.objects.exclude(id__in=[11, 22, 33])  # not in
+			models.Tb1.objects.filter(name__contains="ven")  # 获取name字段包含"ven"的
+			models.Tb1.objects.filter(name__icontains="ven") # icontains大小写不敏感
+			models.Tb1.objects.filter(id__range=[1, 3])      # id范围是1到3的，等价于SQL的bettwen and
+			类似的还有：startswith，istartswith, endswith, iendswith　
+			date字段还可以：
+				models.Class.objects.filter(first_day__year=2017)
+			
+		5. 外键+多表查询
+			1. 外键 ForeignKey 
+				示例：
+					class Publisher(models.Model):
+				    	name = models.CharField(max_length=32)
+
+					class Book(models.Model):
+					    name = models.CharField(max_length=32)
+					    publisher = models.ForeignKey(to="Publisher")
+
+				通过Foreignkey字段 ，能够得到和我关联的那个对象
+				数据库中保存的字段名是 外键字段_id
+
+			2. 外键增删改查
+
+
+
+			3. 跨表查询
+				1. 基于对象的查询
+					1. 正向查
+						语法：对象.关联字段.字段
+						book_obj = models.Book.objects.first()  # 第一本书对象
+						print(book_obj.publisher)  # 得到这本书关联的出版社对象
+						print(book_obj.publisher.name)  # 得到出版社对象的名称
+					2. 反向查
+						publisher_obj = models.Publisher.objects.first()  # 找到第一个出版社对象
+						books = publisher_obj.book_set.all()  # 找到第一个出版社出版的所有书
+						titles = books.values_list("title")  # 找到第一个出版社出版的所有书的书名
+				2. 基于QuerySet的查询
+					1. 正向查
+						语法：关联字段__字段
+						print(models.Book.objects.values_list("publisher__name"))
+					2. 反向查
+						print(models.Publisher.objects.values_list("book__title"))
+
+
+
+
+					
+	6. cookie&session:https://www.cnblogs.com/liwenzhou/p/8343243.html
+		1. Cookie
+			1. 是什么？
+				保存在浏览器端的键值对！
+				服务端在返回响应的时候，告诉浏览器保存的键值对！浏览器可以拒绝保存Cookie.
+				
+			2. 为什么要有cookie?
+				HTTP请求是无状态的，我们需要保存状态  --> cookie 
+				
+			3. Django中cookie的使用
+				1. 设置cookie
+					rep = HttpResponse("ok")
+					rep.set_cookie("key", "value", max_age=xx秒)
+					rep.set_signed_cookie("key", "value", salt="ooxx", max_age=xx秒)
+				2. 获取cookie
+					request.COOKIES.get("key")
+					request.get_signed_cookie("key", default="", salt="ooxx")
+				3. cookie有失效时间
+					1. Django中不设置，关闭浏览器就失效了
+					2. 通过max_age设置超时时间
+					
+			4. 补充3点：
+				1. 如何登陆后再跳转回之前访问的页面    --> next参数实现
+				2. 如何将FBV的装饰器应用到CBV上        --> from django.utils.decorators import method_decorator
+				3. 装饰器修复技术                      --> from functools import wraps
+		
+		
+		2. session
+			1. 保存在服务端的键值对！
+			下周讲！
+			
+
+2. 练习题：
+	1. django请求生命周期
+	2. values和values_list的区别？
+	3. session和cookie是什么？以及区别？
+	4. django路由系统中name的作用？
+	5. filter和exclude的区别？
+	6. ORM查询示例：
+		表结构：
+			出版社表：
+				ID   名称
+			图书表：
+				ID   书名称    价格     出版社ID
+		题目：
+			1. 查询老男孩出版社出版过的价格大于200的书籍
+			2. 查询所有以py开头的书籍名称
+			3. 查询价格为50,100或者150的所有书籍名称及其出版社名称
+			4. 查询价格在100到200之间的所有书籍名称及其价格
+			5. 查询所有人民出版社出版的书籍的价格（从高到低排序，去重）
+			6. 查询价格大于200的书籍的个数
+			7. 查询价格不等于100的所有书籍
+
+
+3. 作业：主机管理【02】：主机管理
+	1. 基于django创建表：
+		用户表：ID、用户名、密码
+		
+		业务线表：ID、名称
+		
+		主机表：ID、主机名、密码、业务线ID
+		
+	2. 主机管理：增删改查（一对多，不需要做业务线管理，只要在数据库录入业务线数据即可）
+	
+	3. 使用母板和动态路由
+	4. 套用BootStrap样式
+
+	采分点：
+		练习题：20
+		实现所有功能：70
+		代码写的清晰、健壮、可扩展：10
