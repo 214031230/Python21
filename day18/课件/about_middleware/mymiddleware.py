@@ -59,38 +59,38 @@ from django.shortcuts import HttpResponse
 #         print(exception)
 #         return HttpResponse("视图函数报错啦！！！")
 
-D = {}
+# D = {}
 # WHITE_LIST = ['/test/']
 
-import time
-class XianZhi(MiddlewareMixin):
-
-    def process_request(self, request):
-        # 限制访问频率
-        # 当前请求的IP
-        # print(request.META)
-        ip = request.META.get("REMOTE_ADDR")
-        now = time.time()
-        # print(ip)
-
-        # if request.path_info in WHITE_LIST:
-        #     return None
-
-        if ip not in D:
-            D[ip] = []
-        # 拿到当前ip的访问历史记录
-        history = D[ip]
-        # 不能遍历列表的同时又操作列表的元素个数
-        # for record in history:
-        #     if now - record > 60:
-
-        while history and now - history[-1] > 10:
-            history.pop()
-
-        if len(history) >= 3:
-            return HttpResponse("滚~")
-        else:
-            history.insert(0, now)
+# import time
+# class XianZhi(MiddlewareMixin):
+#
+#     def process_request(self, request):
+#         # 限制访问频率
+#         # 当前请求的IP
+#         # print(request.META)
+#         ip = request.META.get("REMOTE_ADDR")
+#         now = time.time()
+#         # print(ip)
+#
+#         # if request.path_info in WHITE_LIST:
+#         #     return None
+#
+#         if ip not in D:
+#             D[ip] = []
+#         # 拿到当前ip的访问历史记录
+#         history = D[ip]
+#         # 不能遍历列表的同时又操作列表的元素个数
+#         # for record in history:
+#         #     if now - record > 60:
+#
+#         while history and now - history[-1] > 10:
+#             history.pop()
+#
+#         if len(history) >= 3:
+#             return HttpResponse("滚~")
+#         else:
+#             history.insert(0, now)
 
 
 

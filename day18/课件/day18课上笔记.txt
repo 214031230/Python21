@@ -17,7 +17,7 @@ day18  2018-08-19
 				2. request.get_signed_cookie("key", default="", salt="盐")
 					
 		3. 为什么要有session
-			1. Cookied额缺点：
+			1. Cookied的缺点：
 				1. 数据量只有4096
 				2. 数据都保存在客户端（浏览器）上，不安全
 

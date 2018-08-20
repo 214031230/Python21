@@ -102,3 +102,61 @@ if __name__ == '__main__':
 
 
 
+    # # 外键查询 基于对象的查询
+    # # 正向查询
+    # print(models.Book.objects.first().publisher.name)
+    # # 反向查询
+    # print(models.Publisher.objects.first().book_set.all())
+    #
+    # # 外键查询 基于Query SET的查询
+    # # 正向查询
+    # print(models.Book.objects.all().values("publisher__name"))
+    # # 反向查询
+    # print(models.Publisher.objects.all().values("book__name"))
+
+    # 多对多   基于对象的查询
+    # 正向查询
+    # print(models.Author.objects.first().books.all())
+    # # 反向查询
+    # print(models.Book.objects.first().authors.all())
+    # 
+    # # 多对多 基于Query set 的查询
+    # print(models.Author.objects.all().values("books__name"))
+    # print(models.Book.objects.all().values("authors__name"))
+
+    # # 多对多ADD和SET
+    # models.Author.objects.first().books.add(9)
+    # print(models.Author.objects.first().books.all())
+    # models.Author.objects.first().books.set([9])
+    # print(models.Author.objects.first().books.all())
+
+    # print(models.Author.objects.first().books.all().values("name"))
+    # print(models.Author.objects.filter(id=2).values("books__name"))
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
