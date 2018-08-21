@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="db">
-  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.8">
-    <root id="1">
-      <ServerVersion>3.20.1</ServerVersion>
-    </root>
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.7">
+    <root id="1"/>
     <schema id="2" parent="1" name="main">
       <Current>1</Current>
       <Visible>1</Visible>
@@ -32,18 +30,18 @@
     </table>
     <column id="21" parent="6" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="22" parent="6" name="title">
       <Position>2</Position>
-      <DataType>varchar(32)|0s</DataType>
+      <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="23" parent="6" name="publisher_id">
       <Position>3</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="24" parent="6" name="app01_book_publisher_id_e407867a">
@@ -61,42 +59,42 @@
     </foreign-key>
     <column id="27" parent="7" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="28" parent="7" name="age">
       <Position>2</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="29" parent="7" name="birthday">
       <Position>3</Position>
-      <DataType>date|0s</DataType>
+      <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="30" parent="7" name="birthday2">
       <Position>4</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>datetime|0</DataType>
     </column>
     <column id="31" parent="7" name="phone">
       <Position>5</Position>
-      <DataType>varchar(11)|0s</DataType>
+      <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="32" parent="7" name="join_date">
       <Position>6</Position>
-      <DataType>date|0s</DataType>
+      <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="33" parent="7" name="last_date">
       <Position>7</Position>
-      <DataType>date|0s</DataType>
+      <DataType>date|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="34" parent="7" name="name">
       <Position>8</Position>
-      <DataType>varchar(12)|0s</DataType>
+      <DataType>varchar(12)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="35" parent="7" name="sqlite_autoindex_app01_person_1">
@@ -115,13 +113,13 @@
     </key>
     <column id="38" parent="8" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="39" parent="8" name="name">
       <Position>2</Position>
-      <DataType>varchar(12)|0s</DataType>
+      <DataType>varchar(12)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <key id="40" parent="8">
@@ -130,13 +128,13 @@
     </key>
     <column id="41" parent="9" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="42" parent="9" name="name">
       <Position>2</Position>
-      <DataType>varchar(80)|0s</DataType>
+      <DataType>varchar(80)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="43" parent="9" name="sqlite_autoindex_auth_group_1">
@@ -155,24 +153,25 @@
     </key>
     <column id="46" parent="10" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="47" parent="10" name="group_id">
       <Position>2</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="48" parent="10" name="permission_id">
       <Position>3</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="49" parent="10" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
       <ColNames>group_id
 permission_id</ColNames>
-      <ColumnCollations></ColumnCollations>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="50" parent="10" name="auth_group_permissions_group_id_b120cbf9">
@@ -199,29 +198,30 @@ permission_id</ColNames>
     </foreign-key>
     <column id="55" parent="11" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="56" parent="11" name="content_type_id">
       <Position>2</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="57" parent="11" name="codename">
       <Position>3</Position>
-      <DataType>varchar(100)|0s</DataType>
+      <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="58" parent="11" name="name">
       <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="59" parent="11" name="auth_permission_content_type_id_codename_01ab375a_uniq">
       <ColNames>content_type_id
 codename</ColNames>
-      <ColumnCollations></ColumnCollations>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="60" parent="11" name="auth_permission_content_type_id_2f476e4b">
@@ -239,57 +239,57 @@ codename</ColNames>
     </foreign-key>
     <column id="63" parent="12" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="64" parent="12" name="password">
       <Position>2</Position>
-      <DataType>varchar(128)|0s</DataType>
+      <DataType>varchar(128)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="65" parent="12" name="last_login">
       <Position>3</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>datetime|0</DataType>
     </column>
     <column id="66" parent="12" name="is_superuser">
       <Position>4</Position>
-      <DataType>bool|0s</DataType>
+      <DataType>bool|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="67" parent="12" name="first_name">
       <Position>5</Position>
-      <DataType>varchar(30)|0s</DataType>
+      <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="68" parent="12" name="last_name">
       <Position>6</Position>
-      <DataType>varchar(30)|0s</DataType>
+      <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="69" parent="12" name="email">
       <Position>7</Position>
-      <DataType>varchar(254)|0s</DataType>
+      <DataType>varchar(254)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="70" parent="12" name="is_staff">
       <Position>8</Position>
-      <DataType>bool|0s</DataType>
+      <DataType>bool|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="71" parent="12" name="is_active">
       <Position>9</Position>
-      <DataType>bool|0s</DataType>
+      <DataType>bool|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="72" parent="12" name="date_joined">
       <Position>10</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="73" parent="12" name="username">
       <Position>11</Position>
-      <DataType>varchar(150)|0s</DataType>
+      <DataType>varchar(150)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="74" parent="12" name="sqlite_autoindex_auth_user_1">
@@ -308,24 +308,25 @@ codename</ColNames>
     </key>
     <column id="77" parent="13" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="78" parent="13" name="user_id">
       <Position>2</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="79" parent="13" name="group_id">
       <Position>3</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="80" parent="13" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
       <ColNames>user_id
 group_id</ColNames>
-      <ColumnCollations></ColumnCollations>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="81" parent="13" name="auth_user_groups_user_id_6a12ed8b">
@@ -352,24 +353,25 @@ group_id</ColNames>
     </foreign-key>
     <column id="86" parent="14" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="87" parent="14" name="user_id">
       <Position>2</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="88" parent="14" name="permission_id">
       <Position>3</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="89" parent="14" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
       <ColNames>user_id
 permission_id</ColNames>
-      <ColumnCollations></ColumnCollations>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="90" parent="14" name="auth_user_user_permissions_user_id_a95ead1b">
@@ -396,41 +398,41 @@ permission_id</ColNames>
     </foreign-key>
     <column id="95" parent="15" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="96" parent="15" name="object_id">
       <Position>2</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="97" parent="15" name="object_repr">
       <Position>3</Position>
-      <DataType>varchar(200)|0s</DataType>
+      <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="98" parent="15" name="action_flag">
       <Position>4</Position>
-      <DataType>smallint unsigned|0s</DataType>
+      <DataType>smallint unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="99" parent="15" name="change_message">
       <Position>5</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="100" parent="15" name="content_type_id">
       <Position>6</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
     </column>
     <column id="101" parent="15" name="user_id">
       <Position>7</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="102" parent="15" name="action_time">
       <Position>8</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="103" parent="15" name="django_admin_log_content_type_id_c4bce8eb">
@@ -457,24 +459,25 @@ permission_id</ColNames>
     </foreign-key>
     <column id="108" parent="16" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="109" parent="16" name="app_label">
       <Position>2</Position>
-      <DataType>varchar(100)|0s</DataType>
+      <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="110" parent="16" name="model">
       <Position>3</Position>
-      <DataType>varchar(100)|0s</DataType>
+      <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="111" parent="16" name="django_content_type_app_label_model_76bd3d3b_uniq">
       <ColNames>app_label
 model</ColNames>
-      <ColumnCollations></ColumnCollations>
+      <ColumnCollations>
+</ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="112" parent="16">
@@ -483,23 +486,23 @@ model</ColNames>
     </key>
     <column id="113" parent="17" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="114" parent="17" name="app">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="115" parent="17" name="name">
       <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="116" parent="17" name="applied">
       <Position>4</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <key id="117" parent="17">
@@ -508,17 +511,17 @@ model</ColNames>
     </key>
     <column id="118" parent="18" name="session_key">
       <Position>1</Position>
-      <DataType>varchar(40)|0s</DataType>
+      <DataType>varchar(40)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="119" parent="18" name="session_data">
       <Position>2</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="120" parent="18" name="expire_date">
       <Position>3</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="121" parent="18" name="sqlite_autoindex_django_session_1">
@@ -538,23 +541,23 @@ model</ColNames>
     </key>
     <column id="124" parent="19" name="type">
       <Position>1</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="125" parent="19" name="name">
       <Position>2</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="126" parent="19" name="tbl_name">
       <Position>3</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="127" parent="19" name="rootpage">
       <Position>4</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
     </column>
     <column id="128" parent="19" name="sql">
       <Position>5</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="129" parent="20" name="name">
       <Position>1</Position>

@@ -1,0 +1,396 @@
+day18  2018-08-19
+
+
+1. Session：https://www.cnblogs.com/liwenzhou/p/8343243.html
+    1. 什么要有session？Cookied的缺点：
+        1. 存储的最大数据量只有4096字节
+        2. 数据都保存在客户端（浏览器）上，不安全
+
+    2. Session的简单流程(需要插入图片)
+        保存在服务端的键值对
+        1. 请求来了之后，还是生成随机字符串
+        2. 以随机字符串为key,在服务端生成一个大字典，真正保存数据是value
+        3. 把随机字符串以cookie的形式回复给浏览器
+        4. 下一次请求再来的时候，会携带上一步的随机字符串
+        5. 从请求中拿到随机字符串，
+        6. 去后端以 该随机字符串为key找对应的value
+        7. value里面存的就是真正有用的数据
+
+3. Django中如何使用Session
+    1. 无论设置Session还是获取Session都是针对request对象来操作
+
+    2. 设置Session
+        request.session["key"] = "value"
+        request.session.setdefault('k1', 'v1') # 存在则不设置
+
+    3. 获取session
+        request.session.get("key") # 如果没有key则返回None 推荐使用
+        request.session["key"]  # 如果没有key则会报错
+
+    4. 删除session
+        1. 将所有Session失效日期小于当前日期的数据删除
+           request.session.clear_expired()
+        2. 删除当前的会话数据并删除会话的Cookie
+           request.session.flush()
+        3. 删除session
+           del request.session['k1']
+        4. 删除当前会话的所有session
+           request.session.delete()
+
+    5. 其他常用命令
+        1. 设置超时时间
+           request.session.set_expiry(7)
+                * 如果value是个整数，session会在些秒数后失效。
+                * 如果value是个datatime或timedelta，session就会在这个时间后失效。
+                * 如果value是0,用户关闭浏览器session就会失效。
+                * 如果value是None,session会依赖全局session失效策略。
+        2. 获取会话session的key
+           request.session.session_key
+        3. 检查会话session的key在数据库中是否存在
+           request.session.exists("session_key")
+
+    6. Django中的Session配置(settings)
+        1. 数据库Session
+        SESSION_ENGINE = 'django.contrib.sessions.backends.db'   # 引擎（默认）
+
+        2. 缓存Session
+        SESSION_ENGINE = 'django.contrib.sessions.backends.cache'  # 引擎
+        SESSION_CACHE_ALIAS = 'default'                            # 使用的缓存别名（默认内存缓存，也可以是memcache），此处别名依赖缓存的设置
+
+        3. 文件Session
+        SESSION_ENGINE = 'django.contrib.sessions.backends.file'    # 引擎
+        SESSION_FILE_PATH = None                                    # 缓存文件路径，如果为None，则使用tempfile模块获取一个临时地址tempfile.gettempdir()
+
+        4. 缓存+数据库
+        SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'        # 引擎
+
+        5. 加密Cookie Session
+        SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'   # 引擎
+
+        其他公用设置项：
+        SESSION_COOKIE_NAME ＝ "sessionid"                       # Session的cookie保存在浏览器上时的key，即：sessionid＝随机字符串（默认）
+        SESSION_COOKIE_PATH ＝ "/"                               # Session的cookie保存的路径（默认）
+        SESSION_COOKIE_DOMAIN = None                             # Session的cookie保存的域名（默认）
+        SESSION_COOKIE_SECURE = False                            # 是否Https传输cookie（默认）
+        SESSION_COOKIE_HTTPONLY = True                           # 是否Session的cookie只支持http传输（默认）
+        SESSION_COOKIE_AGE = 60 * 60 * 24 * 2                    # Session的cookie失效日期（2周）（默认）
+        SESSION_EXPIRE_AT_BROWSER_CLOSE = False                  # 是否关闭浏览器使得Session过期（默认）
+        SESSION_SAVE_EVERY_REQUEST = False                       # 是否每次请求都保存Session，默认修改之后才保存（默认）
+
+
+2. 分页：https://www.cnblogs.com/liwenzhou/p/8343243.html最下面
+    1. 如何在单独的一个脚本文件中使用Django的一些变量或方法
+        #!/usr/bin/env python3
+        import os
+        if __name__ == '__main__':
+            os.environ.setdefault("DJANGO_SETTINGS_MODULE", "about_session.settings")
+            import django
+            django.setup()
+            from app01 import models
+
+            # 批量导入500条数据
+            data = [models.User(username="user{}".format(i), password="123") for i in
+                    range(1, 501)]
+            models.User.objects.bulk_create(data)
+
+        注释：bulk_create()   Django ORM批量创建的一个方法
+
+    2. 分页(需要插入代码)：
+        每页显示10条
+        1             0->10
+        2             10->20
+        3             20->30
+        n             (n-1)*10->n*10
+
+
+3. 中间件:https://www.cnblogs.com/liwenzhou/p/8761803.html
+    1. 什么时候使用中间件？
+        当需要在全局改变Django框架的输入输出时
+
+    2. 中间件不宜添加过多，功能过于复杂
+        否则会增加请求的响应时间
+
+    3. Django如何使用（需要插入代码）
+        1. 五个方法（三个常用）
+            主要记忆：执行时间、执行顺序、参数和返回值
+            1. process_request(self,request)
+                1. 执行时间
+                    在执行视图函数之前执行
+                2. 执行顺序
+                    按照注册的顺序执行
+                3. 参数和返回值
+                    1. request参数和视图函数中是同一个对象
+                    2. 返回值：
+                        1. 返回None：请求继续往后执行
+                        2. 返回响应对象：请求就结束了，要返回响应了
+
+            2. process_response(self, request, response)
+                1. 执行时间
+                    视图函数执行之后（拿到响应对象之后）
+                2. 执行顺序
+                    按照注册的倒序执行
+                3. 参数和返回值
+                    1. 参数：request请求对象
+                             response响应对象
+                    2. 返回值：
+                            只能返回响应对象
+                            1. 返回默认的
+                            2. 自己生成一个响应对象返回
+
+            3. process_view(self, request, view_func, view_args, view_kwargs)
+                1. 执行时间
+                    视图函数之前，在urls.py找到将要执行的视图函数之后
+                2. 执行顺序
+                    注册的顺序执行
+                3. 参数和返回值
+                    1. 参数：
+                        1. request: 请求对象
+                        2. view_func:将要执行的视图函数
+                    2. 返回值：
+                        1. 返回None:继续往后执行
+                        2. 返回响应对象，直接跳出，按照process_response方法的顺序执行
+
+            有条件触发：
+            4. process_template_response(self,request,response)
+                1. 执行时间：
+                    视图函数之后，并且返回的响应对象是要有render方法
+                2. 执行顺序：
+                    按照注册的倒序执行
+                3. 返回值：
+                    对传递过来的响应对象，调用其render方法，把返回值向后继续传递
+            5. process_exception(self, request, exception)
+                1. 执行时间：
+                    当视图函数中抛出异常的时候才执行
+                2. 执行顺序：
+                    注册的倒序
+                3. 参数和返回值
+                    exception：视图函数中抛出的异常
+                    返回响应对象，就跳出按照process_response方法的顺序执行
+            代码示例：
+                    在项目目录下创建py文件
+                        from django.utils.deprecation import MiddlewareMixin
+                        class MD1(MiddlewareMixin):
+                            def process_request(self, request):
+                                print("MD1里面的 process_request")
+
+                        class MD2(MiddlewareMixin):
+                            def process_request(self, request):
+                                print("MD2里面的 process_request")
+                                pass
+                    在settings.py的MIDDLEWARE配置项中注册上述两个自定义中间件
+                        MIDDLEWARE = [
+                        'django.middleware.security.SecurityMiddleware',
+                        'django.contrib.sessions.middleware.SessionMiddleware',
+                        'django.middleware.common.CommonMiddleware',
+                        'django.middleware.csrf.CsrfViewMiddleware',
+                        'django.contrib.auth.middleware.AuthenticationMiddleware',
+                        'django.contrib.messages.middleware.MessageMiddleware',
+                        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+                        'middlewares.MD1',  # 自定义中间件MD1
+                        'middlewares.MD2'  # 自定义中间件MD2
+                        ]
+
+            6. Django的请求流程（插入图示）
+
+
+4. ORM（多对多） https://www.cnblogs.com/liwenzhou/p/8660826.html
+    1. ORM多对多字段
+        class Book(models.Model):
+            """
+            图书表
+            """
+            name = models.CharField(max_length=24)
+            publisher = models.ForeignKey(to="Publisher")
+
+        class Author(models.Model):
+            """
+            作者表
+            多对多,自动帮我们在数据库建立第三张关系表
+            """
+            name = models.CharField(max_length=24)
+            books = models.ManyToManyField(to="Book", related_name="authors")
+        参数：
+            - to：表示和哪张表建立多对多的关系
+            - related_name:表示返乡查询时使用的那个字段名，默认反向查询时使用表名_set的方式
+
+    2. 多对多字段的方法
+        1. 查询
+            # 多对多  基于对象的查询
+            # 正向查询
+            print(models.Author.objects.first().books.all())
+            # 反向查询
+            print(models.Book.objects.first().authors.all())
+
+            # 多对多 基于QuerySet 的查询
+            # 正向查询
+            print(models.Author.objects.all().values("books__name"))
+            # 反向查询
+            print(models.Book.objects.all().values("authors__name"))
+
+        2. 删除
+            1. 从关联对象集中移除执行的model对象
+                models.Book.objects.first().authors.remove(3)
+            2. 从关联对象集中移除一切对象。
+                models.Book.objects.first().authors.clear()
+        3. 添加
+            1. 当form表单提交的数据是列表（多选的select\多选的checkbox）取值?
+                request.POST.getlist("hobby")
+
+            2. .set([id1,id2,...])  参数是一个列表  --> 删除原来的设置新的
+                models.Author.objects.first().books.set([9])
+                print(models.Author.objects.first().books.all())
+            3. .add(id值)                           --> 在原来的基础上增加新的纪录
+                models.Author.objects.first().books.add(9)
+                print(models.Author.objects.first().books.all())
+
+5. ajax:https://www.cnblogs.com/liwenzhou/p/8718861.html
+1. stringify与parse方法
+    JavaScript中关于JSON对象和字符串转换的两个方法：
+    1. JSON.parse(): 用于将一个 JSON 字符串转换为 JavaScript 对象　
+        JSON.parse('{"name":"Q1mi"}');
+        JSON.parse('{name:"Q1mi"}') ;   // 错误
+        JSON.parse('[18,undefined]') ;   // 错误
+    2. JSON.stringify(): 用于将 JavaScript 值转换为 JSON 字符串。　
+        JSON.stringify({"name":"Q1mi"})
+
+2. 目前已知浏览器和服务端发请求的方式
+    1. 浏览器地址栏 输入url直接回车   GET
+    2. a标签						  GET
+    3. form表单                       GET/POST
+    4. ajax                           GET/POST
+
+
+3. ajax的特点：
+    优点：
+        1. 偷偷发请求，用户无感知
+        2. 局部刷新  相对于其他请求方式而言，返回的数据量小
+        3. 同一个页面可以发送多次请求     异步
+    缺点：
+        1. 如果滥用，对服务端的压力比较大
+
+4. ajax的使用：
+    jQuery版：
+        导入jQuery
+        $.ajax({
+            url: "往哪里发请求",
+            type: "发送请求的类型",
+            data: {
+                "k1": "v1",
+                "k2": "v2",
+            },
+            success:function(res){
+
+            }
+        })
+    代码示例：
+            前端页面：
+            <script src="/static/plugins/jquery-3.3.1.min.js"></script>
+            <script>
+                $(function () {
+                    $("#username").blur(function () {
+                        $.ajax({
+                            url: "/check/",
+                            type: "post",
+                            data: {
+                                "username": $("#username").val(),
+                                "csrfmiddlewaretoken": $("[name = 'csrfmiddlewaretoken']").val()
+                            },
+                            success: function (res) {
+                                if (res == 0) {
+                                    $(".username").addClass("has-error")
+                                }
+                                else{
+                                    $(".username").addClass("has-success").removeClass("has-error")
+                                }
+                            }
+                        })
+                    })
+                })
+            </script>
+
+            后端代码：
+            def check(request):
+                username = request.POST.get("username")
+                obj = models.User.objects.filter(username=username)
+                if not obj.exists():
+                    return HttpResponse("1")
+                else:
+                    return HttpResponse("0")
+5. AJAX请求如何设置csrf_token
+   $.ajax({
+      url: "/cookie_ajax/",
+      type: "POST",
+      data: {
+        "username": "Q1mi",
+        "password": 123456,
+        "csrfmiddlewaretoken": $("[name = 'csrfmiddlewaretoken']").val()  // 使用jQuery取出csrfmiddlewaretoken的值，拼接到data中
+      },
+      success: function (data) {
+        console.log(data);
+      }
+    })
+
+
+6. jQuery：https://www.cnblogs.com/liwenzhou/p/8178806.html
+
+
+5. Form & ModelForm（下周再讲）AJAX上传文件，下周再讲
+
+	
+技术的提升只是量的积累，思想的提升才是质的飞跃。
+在公司混：政治正确才是最重要的！
+
+
+
+
+
+
+
+
+
+
+
+
+2. 练习题：
+	1. django请求生命周期
+	2. csrf原理
+	3. ORM和原生SQL区别？
+	4. django中装饰器和中间件的应用场景？
+	5. 为什么要使用母板？
+	6. ORM查询示例：
+		表结构：
+			出版社表：
+				ID   名称
+			图书表：
+				ID   书名称    价格     出版社ID
+
+			作者表：
+				ID   作者姓名
+
+			作者和图书关系表：
+				ID   图书ID    作业ID
+		题目：
+			1. 查询alex出过的所有书籍的名字(多对多)
+			2. 查询alex的手机号
+			3. 查询人民出版社出版过的所有书籍的名字以及作者的姓名
+			4. 统计每一本书的作者个数
+			5. 统计不止一个作者的图书
+			6. 根据一本图书作者数量的多少对查询集 QuerySet进行排序
+			7. 查询各个作者出的书的总价格
+
+
+3. 作业：主机管理【03】：业务线管理
+	1. 基于django创建表：
+		用户表：ID、用户名、密码
+		业务线表：ID、名称
+		主机表：ID、主机名、密码、业务线ID
+		用户和业务线关系表：ID、业务线ID、管理员ID
+	2. 业务线管理：增删改查（多对多）
+	3. 使用模板和动态路由
+	4. 主机管理使用CBV实现
+	5. 套用BootStrap样式
+
+	采分点：
+		练习题：20
+		实现所有功能：70
+		代码写的清晰、健壮、可扩展：10

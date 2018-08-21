@@ -8,7 +8,7 @@ class Paging(object):
 
     def __init__(self, current_page, total_count, url_prefix, per_page=10, max_show=11):
         """
-        初始化一个我自己定义的分页实例
+        初始化一个自定义的分页实例
         :param current_page: 当前页码
         :param total_count: 总的数据量
         :param url_prefix: 分页中a标签的url前缀

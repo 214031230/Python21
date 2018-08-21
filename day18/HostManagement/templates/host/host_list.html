@@ -1,0 +1,51 @@
+{% extends "tp.html" %}
+
+{% block left %}
+    {% include "host/tp_left.html" %}
+{% endblock %}
+
+{% block rigth %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>主机管理</h5>
+        </div>
+        <div class="panel-body">
+            <a href="/add_host/" class="btn btn-success adduser" style="margin-bottom: 10px">添加主机</a>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>主机IP</th>
+                    <th>服务名称</th>
+                    <th>所属业务线</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in data %}
+                    <tr>
+                        <td>
+                            {{ forloop.counter|add:num }}
+                        </td>
+                        <td>
+                            {{ obj.ip }}
+                        </td>
+                        <td>
+                            {{ obj.hostname }}
+                        </td>
+                        <td>
+                            {{ obj.product.name }}
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/edit_host/?id={{ obj.id }}">编辑</a>
+                            <a class="btn btn-danger" href="/delete_host/?id={{ obj.id }}">删除</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {#            {% include "paging.html" %}#}
+            {{ page_html|safe }}
+        </div>
+    </div>
+{% endblock %}

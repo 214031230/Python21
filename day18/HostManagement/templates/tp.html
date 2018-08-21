@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运维管理平台</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/platform.css">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+{#头部导航条开始#}
+<div class="top">
+    <nav class="navbar navbar-default  navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/platform/">运维管理平台</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">欢迎：{{ user }}<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/login/">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+{#头部导航条结束#}
+{#内容页开始#}
+<div class="row content" style="margin-right: 0">
+    {#左边导航条开始#}
+    <div class="col-md-2" style="padding-right: 0">
+        <div class="panel panel-default">
+            <div class=" panel-heading">
+                <h5 class="glyphicon glyphicon-screenshot">仪表盘</h5>
+            </div>
+            <div class=" panel-body" style="height: 466px">
+                <ul class="nav nav-pills nav-stacked">
+                    {% block left %}
+                    {% endblock %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {#左边导航条结束#}
+
+    {#右边内容页开始#}
+    <div class="col-md-10" style="padding-left: 0">
+        {% block rigth %}
+        {% endblock %}
+    </div>
+    {#右边内容页结束#}
+
+</div>
+{#内容页结束#}
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="/static/js/platform.js"></script>
+{% block js %}
+{% endblock %}
+</body>
+</html>
