@@ -294,6 +294,25 @@ class EditHost(View):
         return redirect("/host_list")
 
 
+def user_bsline_list(request):
+    """
+    管理员关联业务表
+    :param request:
+    :return:
+    """
+    user = request.session.get("name")
+    datas = models.Product.objects.all()
+    for i in datas:
+        print(i.userinfos.all())
+    total_count = datas.count()
+    current_page = request.GET.get("page", None)
+    page_obj = Paging(current_page, total_count, url_prefix="user_list", max_show=5)
+    data = datas[page_obj.start:page_obj.end]
+    page_html = page_obj.page_html()
+    return render(request, "user_bsline/user_bsline_list.html", {"user": user, "data": data,
+                                                                 "num": page_obj.num, "page_html": page_html})
+
+
 def init():
     """
     初始化数据库
