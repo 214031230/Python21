@@ -1,0 +1,50 @@
+{% extends "tp.html" %}
+{% block left %}
+    {% include "bsline_user/tp_left.html" %}
+{% endblock %}
+{% block rigth %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>用户权限管理</h5>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username" class="col-sm-2 control-label">用户名称</label>
+                    <div class="col-sm-4">
+                        <input type="text" value="{{ data.username }}" class="form-control" name="username"
+                               id="username" placeholder="用户名称" readonly>
+                        <span style="color: red">{{ msg }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="col-sm-2 control-label">选择业务</label>
+                    <div class="col-sm-4">
+                        <select name="product_name" id="product_name" class="form-control" multiple>
+                            {% for p in products %}
+                                {% if p in  data.products.all %}
+                                    <option value="{{ p.id }}" selected>{{ p.name }} </option>
+                                {% else %}
+                                   <option value="{{ p.id }}" >{{ p.name }} </option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-1">
+                        <button type="submit" class="btn btn-success">确认</button>
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="/bsline_user_list/" class="btn btn-default change">取消</a>
+                    </div>
+                    <span id="check" style="margin-left: 20px; font-size: 13px; line-height: 33px"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+{#    <script src="/static/js/add_user.js"></script>#}
+{% endblock %}

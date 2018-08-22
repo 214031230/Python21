@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from user import models
 from user.public import Public
 from functools import wraps
@@ -112,8 +112,8 @@ def delete_user(request):
     :return: platform页面
     """
     user_id = request.GET.get("id")
-    models.UserInfo.objects.get(id=user_id).delete()
-    return redirect("/user_list/")
+    models.UserInfo.objects.filter(id=user_id).delete()
+    return HttpResponse("1")
 
 
 @auth
@@ -188,7 +188,8 @@ class DeleteBsline(View):
     def get(self, request):
         bsline_id = request.GET.get("id")
         models.Product.objects.filter(id=bsline_id).delete()
-        return redirect("/bsline_list/")
+        return HttpResponse("1")
+        # return redirect("/bsline_list/")
 
 
 class EditBsline(View):
@@ -267,7 +268,8 @@ class DeleteHost(View):
     def get(self, request):
         host_id = request.GET.get("id")
         models.HostInfo.objects.filter(id=host_id).delete()
-        return redirect("/host_list/")
+        return HttpResponse("1")
+        # return redirect("/host_list/")
 
 
 class EditHost(View):
@@ -294,6 +296,7 @@ class EditHost(View):
         return redirect("/host_list")
 
 
+@auth
 def user_bsline_list(request):
     """
     管理员关联业务表
@@ -302,15 +305,69 @@ def user_bsline_list(request):
     """
     user = request.session.get("name")
     datas = models.Product.objects.all()
-    for i in datas:
-        print(i.userinfos.all())
     total_count = datas.count()
     current_page = request.GET.get("page", None)
-    page_obj = Paging(current_page, total_count, url_prefix="user_list", max_show=5)
+    page_obj = Paging(current_page, total_count, url_prefix="user_bsline_list", max_show=5)
     data = datas[page_obj.start:page_obj.end]
     page_html = page_obj.page_html()
     return render(request, "user_bsline/user_bsline_list.html", {"user": user, "data": data,
                                                                  "num": page_obj.num, "page_html": page_html})
+
+
+@auth
+def edit_user_bsline(request):
+    """
+    业务权限管理
+    :param request:
+    :return:
+    """
+    if request.method == "GET":
+        user = request.session.get("name")
+        product_id = request.GET.get("id")
+        obj = models.Product.objects.filter(id=product_id).first()
+        userinfos = models.UserInfo.objects.all()
+        return render(request, "user_bsline/edit_user_bsline.html", {"data": obj, "userinfos": userinfos, "user":user})
+    product_name = request.POST.get("product_name")
+    user_id = request.POST.getlist("username")
+    models.Product.objects.filter(name=product_name).first().userinfos.set(user_id)
+    return redirect("/user_bsline_list/")
+
+
+@auth
+def bsline_user_list(request):
+    """
+    管理员关联业务表
+    :param request:
+    :return:
+    """
+    user = request.session.get("name")
+    datas = models.UserInfo.objects.all()
+    total_count = datas.count()
+    current_page = request.GET.get("page", None)
+    page_obj = Paging(current_page, total_count, url_prefix="bsline_user_list", max_show=5)
+    data = datas[page_obj.start:page_obj.end]
+    page_html = page_obj.page_html()
+    return render(request, "bsline_user/user_bsline_list.html", {"user": user, "data": data,
+                                                                 "num": page_obj.num, "page_html": page_html})
+
+
+@auth
+def edit_bsline_user(request):
+    """
+    用户权限管理
+    :param request:
+    :return:
+    """
+    if request.method == "GET":
+        user = request.session.get("name")
+        user_id = request.GET.get("id")
+        obj = models.UserInfo.objects.filter(id=user_id).first()
+        products = models.Product.objects.all()
+        return render(request, "bsline_user/edit_user_bsline.html", {"data": obj, "products": products, "user": user})
+    username = request.POST.get("username")
+    product_id = request.POST.getlist("product_name")
+    models.UserInfo.objects.filter(username=username).first().products.set(product_id)
+    return redirect("/bsline_user_list/")
 
 
 def init():

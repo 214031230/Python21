@@ -32,5 +32,8 @@ urlpatterns = [
     url(r'^add_host/$', user_views.AddHost.as_view()),
     url(r'^delete_host/$', user_views.DeleteHost.as_view()),
     url(r'^edit_host/$', user_views.EditHost.as_view()),
-    url(r'^user_bsline_list/$', user_views.user_bsline_list)
+    url(r'^user_bsline_list/$', user_views.user_bsline_list),
+    url(r'^edit_user_bsline/$', user_views.edit_user_bsline),
+    url(r'^bsline_user_list/$', user_views.bsline_user_list),
+    url(r'^edit_bsline_user/$', user_views.edit_bsline_user),
 ]

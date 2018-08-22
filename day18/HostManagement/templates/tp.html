@@ -5,6 +5,8 @@
     <title>运维管理平台</title>
     <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/platform.css">
+{#    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-sweetalert/1.0.1/sweetalert.min.css">#}
+    <link rel="stylesheet" href="/static/plugins/sweetalert/sweetalert.css">
     {% block css %}
     {% endblock %}
 </head>
@@ -47,7 +49,7 @@
             <div class=" panel-heading">
                 <h5 class="glyphicon glyphicon-screenshot">仪表盘</h5>
             </div>
-            <div class=" panel-body" style="height: 466px">
+            <div class=" panel-body" >
                 <ul class="nav nav-pills nav-stacked">
                     {% block left %}
                     {% endblock %}
@@ -69,6 +71,8 @@
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script src="/static/plugins/bootstrap/js/bootstrap.js"></script>
 <script src="/static/js/platform.js"></script>
+{#<script src="https://cdn.bootcss.com/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>#}
+<script src="/static/plugins/sweetalert/sweetalert.js"></script>
 {% block js %}
 {% endblock %}
 </body>
