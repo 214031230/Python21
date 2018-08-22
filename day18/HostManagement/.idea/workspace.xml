@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c00a4e1-4e1f-45a9-9eff-ad228b84c752" name="Default Changelist" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/sweetalert/sweetalert.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/sweetalert/sweetalert.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/bsline_user/edit_user_bsline.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/bsline_user/tp_left.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/bsline_user/user_bsline_list.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/test.html" />
-      <change beforePath="$PROJECT_DIR$/.idea/HostManagement.iml" afterPath="$PROJECT_DIR$/.idea/HostManagement.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6b9db7ab-3c90-43a6-8564-b48c5fdc5019.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f9d15649-1fcc-4f1e-aa33-bdfca00f2eb8.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/HostManagement/urls.py" afterPath="$PROJECT_DIR$/HostManagement/urls.py" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change beforePath="$PROJECT_DIR$/readme" afterPath="$PROJECT_DIR$/readme" />
-      <change beforePath="$PROJECT_DIR$/templates/bsline/bsline_list.html" afterPath="$PROJECT_DIR$/templates/bsline/bsline_list.html" />
-      <change beforePath="$PROJECT_DIR$/templates/bsline/tp_left.html" afterPath="$PROJECT_DIR$/templates/bsline/tp_left.html" />
-      <change beforePath="$PROJECT_DIR$/templates/host/host_list.html" afterPath="$PROJECT_DIR$/templates/host/host_list.html" />
-      <change beforePath="$PROJECT_DIR$/templates/host/tp_left.html" afterPath="$PROJECT_DIR$/templates/host/tp_left.html" />
-      <change beforePath="$PROJECT_DIR$/templates/index/tp_left.html" afterPath="$PROJECT_DIR$/templates/index/tp_left.html" />
-      <change beforePath="$PROJECT_DIR$/templates/tp.html" afterPath="$PROJECT_DIR$/templates/tp.html" />
-      <change beforePath="$PROJECT_DIR$/templates/user/tp_left.html" afterPath="$PROJECT_DIR$/templates/user/tp_left.html" />
-      <change beforePath="$PROJECT_DIR$/templates/user/user_list.html" afterPath="$PROJECT_DIR$/templates/user/user_list.html" />
-      <change beforePath="$PROJECT_DIR$/templates/user_bsline/add_user.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/templates/user_bsline/edit_user.html" afterPath="$PROJECT_DIR$/templates/user_bsline/edit_user_bsline.html" />
-      <change beforePath="$PROJECT_DIR$/templates/user_bsline/tp_left.html" afterPath="$PROJECT_DIR$/templates/user_bsline/tp_left.html" />
-      <change beforePath="$PROJECT_DIR$/templates/user_bsline/user_bsline_list.html" afterPath="$PROJECT_DIR$/templates/user_bsline/user_bsline_list.html" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" afterPath="$PROJECT_DIR$/user/views.py" />
-      <change beforePath="$PROJECT_DIR$/../课件/about_orm/.idea/about_orm.iml" afterPath="$PROJECT_DIR$/../课件/about_orm/.idea/about_orm.iml" />
-      <change beforePath="$PROJECT_DIR$/../课件/about_orm/.idea/misc.xml" afterPath="$PROJECT_DIR$/../课件/about_orm/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/../课件/about_orm/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../课件/about_orm/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9c00a4e1-4e1f-45a9-9eff-ad228b84c752" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
