@@ -362,6 +362,7 @@ def edit_bsline_user(request):
         user = request.session.get("name")
         user_id = request.GET.get("id")
         obj = models.UserInfo.objects.filter(id=user_id).first()
+        print(obj.products.all())
         products = models.Product.objects.all()
         return render(request, "bsline_user/edit_user_bsline.html", {"data": obj, "products": products, "user": user})
     username = request.POST.get("username")
