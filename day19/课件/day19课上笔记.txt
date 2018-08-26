@@ -1,0 +1,132 @@
+day19 20180-08-26
+
+1.今日内容
+	1. form和model form:https://www.cnblogs.com/liwenzhou/p/8747872.html
+		1. Django Admin的简单用法：
+			1. 创建管理员账号
+				python3 manage.py createsuperuser
+			2. 在admin注册我们的表
+				在app目录下面的admin.py里面按以下语法注册
+				admin.site.register(models.类名)
+			3. 其他配置项
+				1. admin页面显示中文
+					settings.py中修改LANGUAGE_CODE = 'zh-hans'
+				2. 表名显示中文
+					类下面写如下配置项
+					    class Meta:
+							verbose_name = "出版社"
+							verbose_name_plural = verbose_name
+				3. 字段显示中文
+					address = models.TextField(verbose_name="出版社地址")		
+		2. form
+			1. form的作用
+				1. 生成HTML代码
+				2. 帮我们做数据有效性的校验
+				3. 保留上次输入内容，显示错误提示
+		
+			2. form组件生成html代码
+
+			3. form组件校验数据有效性
+				1. 内置的校验规则
+					1. require=True    该字段必填
+					2. max_length      该字段的最大长度
+					3. min_length      该字段的最小长度
+					
+				2. 自定义校验规则
+					1. phone的格式 利用内置的正则校验器
+						from django.core.validators import RegexValidator
+						validators=[RegexValidator(r'^1[356789]\d{9}$', "手机号码格式不正确")],
+					2. 手机号的唯一性校验
+						手写一个校验函数
+					
+				3. 使用钩子函数做校验
+					1. 局部钩子（hook）
+						在form类内部定义一个 clean_字段名() 方法
+						
+					2. 全局钩子
+						在form类内部定义一个 clean() 方法 
+			4. form组合如何给html标签设置默认值
+				1. 每一个字段设置默认值
+					initial="默认值"			
+		3. model form
+			1. 必须继承forms.ModelForm
+
+			2. class Meta：
+				model = "一对一关联的model类名"
+				fields = "__all__"
+			3. 实例化
+				1. BookModelForm(instance=book_obj)
+				2. BookModelForm(request.POST, instance=book_obj)
+			4. form_obj.save()
+				
+			
+	2. auth模块+报障系统(BBS) :https://www.cnblogs.com/liwenzhou/p/9030211.html
+		1. 设计一套用户认证系统
+			1. 设计表
+			2. 登陆
+			3. 注册
+			4. 个人中心那些
+			5. 验证码
+			6. 登陆认证
+		2. auth模块的常用方法
+			1. authenticate()
+			2. login()
+			3. create_user()
+			4. create_superuser()
+			5. logout()
+			6. check_password()
+			7. set_password()
+		3. 扩展默认的auth_user表
+		   默认auth模块使用的是auth_user表，不满足实际需求
+			1. 必须继承AbstractUser
+			from django.contrib.auth.models import AbstractUser
+			class UserInfo(AbstractUser):
+				phone = models.CharField(max_length=11)
+			2. 告诉Django使用我们的用户表代替auth_user表
+		1. 登陆
+			1. 验证码
+				1. 自己生成验证码
+					1. pillow模块的使用
+						1. pip install pillow
+						2. 生成图片
+						3. 在图片上写字符
+						4. 在图片上画线
+					2. 内存操作
+						from io import BytesIO
+						f1 = BytesIO()
+					3. 验证码保存在哪里？
+						保存在session中，因为每个请求验证码都不同。
+					4. 点击验证码图片刷新
+			2. 滑动验证码
+				极验科技：https://docs.geetest.com/install/deploy/server/python
+				
+		
+		2. 注册
+			下周	
+		
+2. 今日任务
+	1. 回去复习下装饰器
+	2. 回去复习下时间模块（time、datetime）
+
+
+3. 本周作业
+	1. form组件和auth模块整理好博客
+	2. admin自己研究研究
+	3. 把今天项目的登陆功能自己独立写一遍
+	4. 个人中心页面
+		修改的密码功能
+	5. 报障系统设计表结果
+		需求：
+			普通的员工
+			运维员工（超级用户）
+			故障总结是一篇文章
+			评论你的故障总结
+			故障总结可以点 支持 和 反对
+			故障总结 根据产品线 做分类
+			故障总结 可以打标签
+		
+		作业是根据上面列出来的需求 设计表结构
+		
+	
+	
+	
