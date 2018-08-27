@@ -4,20 +4,96 @@ day19 20180-08-26
 	1. form和model form:https://www.cnblogs.com/liwenzhou/p/8747872.html
 		1. Django Admin的简单用法：
 			1. 创建管理员账号
-				python3 manage.py createsuperuser
+			    python manage.py makemigrations
+			    python manage.py migrate
+				python manage.py createsuperuser
+
 			2. 在admin注册我们的表
 				在app目录下面的admin.py里面按以下语法注册
-				admin.site.register(models.类名)
+				编辑：
+				    /project/app01/admin.py
+				增加：
+                    from app01 import models
+                    admin.site.register(models.类名)
+
+                    示例：
+                        from django.contrib import admin
+                        from app01 import models
+                        # Register your models here
+                        admin.site.register(models.Author)
+                        admin.site.register(models.Publisher)
+                        admin.site.register(models.Book)
+
+
 			3. 其他配置项
-				1. admin页面显示中文
+				1. admin页面显示中文（settings.py）
 					settings.py中修改LANGUAGE_CODE = 'zh-hans'
-				2. 表名显示中文
+				2. 表名显示中文（models.py）
 					类下面写如下配置项
 					    class Meta:
 							verbose_name = "出版社"
 							verbose_name_plural = verbose_name
-				3. 字段显示中文
-					address = models.TextField(verbose_name="出版社地址")		
+				3. 字段显示中文（models.py）
+					address = models.TextField(verbose_name="出版社地址")
+
+				示例：
+                    from django.db import models
+                    # Create your models here.
+                    class Book(models.Model):
+                        """
+                        书籍表
+                        """
+                        name = models.CharField(max_length=36, verbose_name="图书", unique=True)
+                        publisher = models.ForeignKey(to="Publisher", default=None, verbose_name="出版社")
+                        authors = models.ManyToManyField(to="Author", verbose_name="作者")
+                        create_time = models.DateField(auto_now_add=True, null=True)
+
+                        def __str__(self):
+                            return self.name
+
+                        class Meta:
+                            verbose_name = "图书管理"
+                            verbose_name_plural = verbose_name
+
+
+                    class Publisher(models.Model):
+                        """
+                        出版社表
+                        """
+                        name = models.CharField(max_length=36, verbose_name="出版社", unique=True)
+                        address = models.TextField(verbose_name="出版社地址")
+                        create_time = models.DateField(auto_now_add=True, null=True)
+
+                        def __str__(self):
+                            return self.name
+
+                        class Meta:
+                            verbose_name = "出版社管理"
+                            verbose_name_plural = verbose_name
+
+
+                    class Author(models.Model):
+                        """
+                        作者表
+                        """
+                        name = models.CharField(max_length=12, verbose_name="作者")
+                        sex = models.SmallIntegerField(
+                            choices=((0, "女"), (1, "男"), (2, "保密")),
+                            default=2,
+                            verbose_name="性别"
+                        )
+                        age = models.IntegerField(verbose_name="年龄", null=True)
+                        create_time = models.DateField(auto_now_add=True, null=True)
+
+                        def __str__(self):
+                            return self.name
+
+                        class Meta:
+                            verbose_name = "作者管理"
+                            verbose_name_plural = verbose_name
+
+
+
 		2. form
 			1. form的作用
 				1. 生成HTML代码

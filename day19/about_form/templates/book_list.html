@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍列表</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<a href="/add_book/" class="btn btn-success">添加书籍</a>
+<table class="table">
+    <thead>
+    <tr>
+        <td>#</td>
+        <td>名称</td>
+        <td>作者</td>
+        <td>出版社</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for datum in data %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ datum.name }}</td>
+            <td>
+                {% for author in datum.authors.all %}
+                    {% if forloop.last %}
+                        {{ author.name }}
+                    {% else %}
+                        {{ author.name }},
+                    {% endif %}
+                {% endfor %}
+            </td>
+            <td>{{ datum.publisher.name }}</td>
+            <td>
+                <a href="/edit_book/{{ datum.id }}/" class="btn btn-success">编辑</a>
+                <a href="" class="btn btn-warning">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+</body>
+</html>
