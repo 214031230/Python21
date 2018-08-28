@@ -24,17 +24,10 @@ class BookForm(forms.Form):
                                              widget=forms.widgets.SelectMultiple(attrs={"class": "form-control"}))
 
     # def clean_phone(self):
-    #     val = self.cleaned_data.get("phone")
-    #     obj = models.Book.objects.filter(phone=val)
-    #     if obj.exists():
-    #         raise ValidationError("手机号已经存在")
-    #     else:
-    #         return val
-    def clean_phone(self):
-        val1 = self.cleaned_data.get("name")
-        val2 = self.cleaned_data.get("phone")
-        if val1 != val2:
-            raise ValidationError("密码不一致")
+    #     val1 = self.cleaned_data.get("name")
+    #     val2 = self.cleaned_data.get("phone")
+    #     if val1 != val2:
+    #         raise ValidationError("密码不一致")
 
     def clean(self):
         pass
@@ -75,16 +68,16 @@ def edit_book(request, book_id):
     :return:
     """
     book_obj = models.Book.objects.filter(id=book_id).first()
+    from django.forms import model_to_dict
+    book_dict = model_to_dict(book_obj)
+    form_obj = BookForm(book_dict)
     if request.method == "POST":
-        book_name = request.POST.get("book_name")
-        publisher_name = request.POST.get("publisher_name")
-        author_name = request.POST.getlist("author_name")
-        book_obj.name = book_name
-        book_obj.publisher_id = publisher_name
-        book_obj.save()
-        book_obj.authors.set(author_name)
-        return redirect("/book_list/")
+        form_obj = BookForm(request.POST)
+        if form_obj.is_valid():
+            book_obj.name = form_obj.cleaned_data.get("name")
+            book_obj.publisher_id = form_obj.cleaned_data.get("publisher")
+            book_obj.save()
+            book_obj.authors.set(form_obj.cleaned_data.get("authors"))
+            return redirect("/book_list/")
 
-    authors = models.Author.objects.all()
-    publishers = models.Publisher.objects.all()
     return render(request, "edit_book.html", locals())

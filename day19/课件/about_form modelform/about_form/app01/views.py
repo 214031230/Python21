@@ -95,17 +95,12 @@ def add_book(request):
 
 def edit_book(request, pk):
     book_obj = models.Book.objects.filter(id=pk).first()
-    # book_dict = {
-    #     "title": book_obj.title,
-    #     "publish_date": book_obj.publish_date.strftime("%Y-%m-%d"),
-    # }
     # 把ORM中一个对象 快速转换成 字典格式
     from django.forms import model_to_dict
     book_dict = model_to_dict(book_obj)
     book_dict["publish_date"] = book_obj.publish_date.strftime("%Y-%m-%d")
     print(book_dict)
     print("=" * 120)
-    # form_obj = BookForm({"title": "书的默认值呀2", "publish_date": "2018-01-01"})
     form_obj = BookForm(book_dict)
     if request.method == "POST":
         # 从用户提交过来的数据中取数据

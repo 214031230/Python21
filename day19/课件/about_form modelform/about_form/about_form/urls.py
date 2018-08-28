@@ -19,7 +19,6 @@ from app01 import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
     url(r'^book_list/$', views.book_list),
     url(r'^add_book/$', views.add_book),
     url(r'^edit_book/(\d+)/$', views.edit_book),  # edit_book(request, id)

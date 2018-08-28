@@ -1,207 +1,729 @@
 day19 20180-08-26
 
-1.今日内容
-	1. form和model form:https://www.cnblogs.com/liwenzhou/p/8747872.html
-		1. Django Admin的简单用法：
-			1. 创建管理员账号
-			    python manage.py makemigrations
-			    python manage.py migrate
-				python manage.py createsuperuser
+1. Django Admin的简单用法：
+	1. 创建管理员账号
+		python manage.py makemigrations
+		python manage.py migrate
+		python manage.py createsuperuser
 
-			2. 在admin注册我们的表
-				在app目录下面的admin.py里面按以下语法注册
-				编辑：
-				    /project/app01/admin.py
-				增加：
-                    from app01 import models
-                    admin.site.register(models.类名)
+	2. 在admin注册我们的表
+		在app目录下面的admin.py里面按以下语法注册
+		编辑：
+			/project/app01/admin.py
+		增加：
+			from app01 import models
+			admin.site.register(models.类名)
 
-                    示例：
-                        from django.contrib import admin
-                        from app01 import models
-                        # Register your models here
-                        admin.site.register(models.Author)
-                        admin.site.register(models.Publisher)
-                        admin.site.register(models.Book)
+			示例：
+				from django.contrib import admin
+				from app01 import models
+				# Register your models here
+				admin.site.register(models.Author)
+				admin.site.register(models.Publisher)
+				admin.site.register(models.Book)
+
+	3. 其他配置项
+		1. admin页面显示中文（settings.py）
+			settings.py中修改LANGUAGE_CODE = 'zh-hans'
+		2. 表名显示中文（models.py）
+			类下面写如下配置项
+				class Meta:
+					verbose_name = "出版社"
+					verbose_name_plural = verbose_name
+		3. 字段显示中文（models.py）
+			address = models.TextField(verbose_name="出版社地址")
+
+		代码示例：
+			from django.db import models
 
 
-			3. 其他配置项
-				1. admin页面显示中文（settings.py）
-					settings.py中修改LANGUAGE_CODE = 'zh-hans'
-				2. 表名显示中文（models.py）
-					类下面写如下配置项
-					    class Meta:
+			# Create your models here.
+
+
+			class Publisher(models.Model):
+				name = models.CharField(max_length=32, unique=True, verbose_name="出版社名称")
+				address = models.TextField(verbose_name="出版社地址")
+
+				def __str__(self):
+					return self.name
+
+				class Meta:
+					verbose_name = "出版社"
+					verbose_name_plural = verbose_name
+
+
+			class Author(models.Model):
+				name = models.CharField(max_length=12, verbose_name="作者名称")
+				gender = models.SmallIntegerField(
+					choices=((0, "女"), (1, "男"), (2, "保密")),
+					default=2,
+					verbose_name="性别"
+				)
+				age = models.IntegerField(verbose_name="年龄")
+
+				def __str__(self):
+					return self.name
+
+				class Meta:
+					verbose_name = "作者管理"
+					verbose_name_plural = verbose_name
+
+
+			class Book(models.Model):
+				title = models.CharField(max_length=32, unique=True, verbose_name="书籍名称")
+				# auto_now_add:创建时间  auto_add:修改时间
+				publish_date = models.DateField(auto_now_add=True, verbose_name="出版时间")
+				phone = models.CharField(max_length=11, unique=True, null=True, blank=True, verbose_name="手机号")
+				publisher = models.ForeignKey(to="Publisher", on_delete=models.CASCADE, verbose_name="出版社")
+				authors = models.ManyToManyField(to="Author", verbose_name="作者")
+
+				def __str__(self):
+					return self.title
+				
+				class Meta:
+					verbose_name = "书籍管理"
+					verbose_name_plural = verbose_name
+
+					
+2. form和model form:https://www.cnblogs.com/liwenzhou/p/8747872.html
+	1. form
+		1. form的作用
+			1. 生成HTML代码
+			2. 帮我们做数据有效性的校验
+			3. 保留上次输入内容，显示错误提示
+		2. 代码示例
+			1. 手写版本
+				1. model.py
+
+					from django.db import models
+
+					# Create your models here.
+
+
+					class Book(models.Model):
+						"""
+						书籍表
+						"""
+						name = models.CharField(max_length=36, verbose_name="图书", unique=True)
+						publisher = models.ForeignKey(to="Publisher", default=None, verbose_name="出版社")
+						authors = models.ManyToManyField(to="Author", verbose_name="作者")
+						create_time = models.DateField(auto_now_add=True, null=True)
+
+						def __str__(self):
+							return self.name
+
+						class Meta:
+							verbose_name = "图书管理"
+							verbose_name_plural = verbose_name
+
+
+					class Publisher(models.Model):
+						"""
+						出版社表
+						"""
+						name = models.CharField(max_length=36, verbose_name="出版社", unique=True)
+						address = models.TextField(verbose_name="出版社地址")
+						create_time = models.DateField(auto_now_add=True, null=True)
+
+						def __str__(self):
+							return self.name
+
+						class Meta:
+							verbose_name = "出版社管理"
+							verbose_name_plural = verbose_name
+
+
+					class Author(models.Model):
+						"""
+						作者表
+						"""
+						name = models.CharField(max_length=12, verbose_name="作者")
+						sex = models.SmallIntegerField(
+							choices=((0, "女"), (1, "男"), (2, "保密")),
+							default=2,
+							verbose_name="性别"
+						)
+						age = models.IntegerField(verbose_name="年龄", null=True)
+						create_time = models.DateField(auto_now_add=True, null=True)
+
+						def __str__(self):
+							return self.name
+
+						class Meta:
+							verbose_name = "作者管理"
+							verbose_name_plural = verbose_name
+				2. urls.py
+					from django.conf.urls import url
+					from django.contrib import admin
+					from app01 import views
+
+					urlpatterns = [
+						url(r'^admin/', admin.site.urls),
+						url(r'^book_list/$', views.book_list),
+						url(r'^add_book/$', views.add_book),
+						url(r'^edit_book/(\d+)/', views.edit_book),
+					]
+				3. views.py
+					from django.shortcuts import render, redirect
+					from app01 import models
+
+
+					# Create your views here.
+
+					def book_list(request):
+						"""
+						书籍列表
+						:param request:
+						:return:
+						"""
+						data = models.Book.objects.all()
+						return render(request, "book_list.html", locals())
+
+
+					def add_book(request):
+						"""
+						添加书籍
+						:param request:
+						:return:
+						"""
+
+						if request.method == "POST":
+							book_name = request.POST.get("book_name")
+							publisher_name = request.POST.get("publisher_name")
+							author_name = request.POST.getlist("author_name")
+							book_obj = models.Book.objects.create(name=book_name, publisher_id=publisher_name)
+							book_obj.authors.add(*author_name)
+							return redirect("/book_list/")
+						authors = models.Author.objects.all()
+						publishers = models.Publisher.objects.all()
+						return render(request, "add_book.html", locals())
+
+
+					def edit_book(request, book_id):
+						"""
+						编辑书籍
+						:param request:
+						:return:
+						"""
+						book_obj = models.Book.objects.filter(id=book_id).first()
+						if request.method == "POST":
+							book_name = request.POST.get("book_name")
+							publisher_name = request.POST.get("publisher_name")
+							author_name = request.POST.getlist("author_name")
+							book_obj.name = book_name
+							book_obj.publisher_id = publisher_name
+							book_obj.save()
+							book_obj.authors.set(author_name)
+							return redirect("/book_list/")
+
+						authors = models.Author.objects.all()
+						publishers = models.Publisher.objects.all()
+						return render(request, "edit_book.html", locals())
+				4. html
+					1. book_list.html
+						<!DOCTYPE html>
+						<html lang="en">
+						<head>
+							<meta charset="UTF-8">
+							<title>书籍列表</title>
+							<link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+						</head>
+						<body>
+						<a href="/add_book/" class="btn btn-success">添加书籍</a>
+						<table class="table">
+							<thead>
+							<tr>
+								<td>#</td>
+								<td>名称</td>
+								<td>作者</td>
+								<td>出版社</td>
+								<td>操作</td>
+							</tr>
+							</thead>
+							<tbody>
+							{% for datum in data %}
+								<tr>
+									<td>{{ forloop.counter }}</td>
+									<td>{{ datum.name }}</td>
+									<td>
+										{% for author in datum.authors.all %}
+											{% if forloop.last %}
+												{{ author.name }}
+											{% else %}
+												{{ author.name }},
+											{% endif %}
+										{% endfor %}
+									</td>
+									<td>{{ datum.publisher.name }}</td>
+									<td>
+										<a href="/edit_book/{{ datum.id }}/" class="btn btn-success">编辑</a>
+										<a href="" class="btn btn-warning">删除</a>
+									</td>
+								</tr>
+							{% endfor %}
+
+							</tbody>
+						</table>
+						</body>
+						</html>
+					2. add_book.html
+						<!DOCTYPE html>
+						<html lang="en">
+						<head>
+							<meta charset="UTF-8">
+							<title>添加书籍</title>
+							<link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+						</head>
+						<body>
+
+						<form action="" method="post">
+						{% csrf_token %}
+							<div class="form-group">
+								<label for="book_name">书籍名称</label>
+								<input type="text" class="form-control" id="book_name" placeholder="书籍名称" name="book_name">
+							</div>
+							<div class="form-group">
+							<label for="publisher_name">出版社</label>
+								<select name="publisher_name" id="" class="form-control">
+									{% for publisher in publishers %}
+										<option value="{{ publisher.id }}">{{ publisher.name }}</option>
+									{% endfor %}
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="author_name">作者</label>
+								<select name="author_name" id="" class="form-control" multiple>
+									{% for author in authors %}
+										<option value="{{ author.id }}">{{ author.name }}</option>
+									{% endfor %}
+								</select>
+							</div>
+							<button type="submit" class="btn btn-default">提交</button>
+						</form>
+						</body>
+						</html>
+					3. edit_book.html
+						<!DOCTYPE html>
+						<html lang="en">
+						<head>
+							<meta charset="UTF-8">
+							<title>编辑书籍</title>
+							<link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+						</head>
+						<body>
+
+						<form action="" method="post">
+							{% csrf_token %}
+							<div class="form-group">
+								<label for="book_name">书籍名称</label>
+								<input type="text" class="form-control" id="book_name" value="{{ book_obj.name }}" name="book_name">
+							</div>
+							<div class="form-group">
+								<label for="publisher_name">出版社</label>
+								<select name="publisher_name" id="" class="form-control">
+									{% for publisher in publishers %}
+										{% if book_obj.publisher_id == publisher.id %}
+											<option value="{{ publisher.id }}" selected>{{ publisher.name }}</option>
+										{% else %}
+											<option value="{{ publisher.id }}">{{ publisher.name }}</option>
+										{% endif %}
+									{% endfor %}
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="author_name">作者</label>
+								<select name="author_name" id="" class="form-control" multiple>
+									{% for author in authors %}
+										{% if author in  book_obj.authors.all %}
+											<option value="{{ author.id }}" selected>{{ author.name }}</option>
+											{% else %}
+											 <option value="{{ author.id }}">{{ author.name }}</option>
+										{% endif %}
+									{% endfor %}
+								</select>
+							</div>
+							<button type="submit" class="btn btn-default">提交</button>
+						</form>
+						</body>
+						</html>
+			2. form 版本
+				1. model.py
+					from django.db import models
+
+
+					# Create your models here.
+
+
+					class Publisher(models.Model):
+						name = models.CharField(max_length=32, unique=True, verbose_name="出版社名称")
+						address = models.TextField(verbose_name="出版社地址")
+
+						def __str__(self):
+							return self.name
+
+						class Meta:
 							verbose_name = "出版社"
 							verbose_name_plural = verbose_name
-				3. 字段显示中文（models.py）
-					address = models.TextField(verbose_name="出版社地址")
-
-				示例：
-                    from django.db import models
-                    # Create your models here.
-                    class Book(models.Model):
-                        """
-                        书籍表
-                        """
-                        name = models.CharField(max_length=36, verbose_name="图书", unique=True)
-                        publisher = models.ForeignKey(to="Publisher", default=None, verbose_name="出版社")
-                        authors = models.ManyToManyField(to="Author", verbose_name="作者")
-                        create_time = models.DateField(auto_now_add=True, null=True)
-
-                        def __str__(self):
-                            return self.name
-
-                        class Meta:
-                            verbose_name = "图书管理"
-                            verbose_name_plural = verbose_name
 
 
-                    class Publisher(models.Model):
-                        """
-                        出版社表
-                        """
-                        name = models.CharField(max_length=36, verbose_name="出版社", unique=True)
-                        address = models.TextField(verbose_name="出版社地址")
-                        create_time = models.DateField(auto_now_add=True, null=True)
+					class Author(models.Model):
+						name = models.CharField(max_length=12, verbose_name="作者名称")
+						gender = models.SmallIntegerField(
+							choices=((0, "女"), (1, "男"), (2, "保密")),
+							default=2,
+							verbose_name="性别"
+						)
+						age = models.IntegerField(verbose_name="年龄")
 
-                        def __str__(self):
-                            return self.name
+						def __str__(self):
+							return self.name
 
-                        class Meta:
-                            verbose_name = "出版社管理"
-                            verbose_name_plural = verbose_name
-
-
-                    class Author(models.Model):
-                        """
-                        作者表
-                        """
-                        name = models.CharField(max_length=12, verbose_name="作者")
-                        sex = models.SmallIntegerField(
-                            choices=((0, "女"), (1, "男"), (2, "保密")),
-                            default=2,
-                            verbose_name="性别"
-                        )
-                        age = models.IntegerField(verbose_name="年龄", null=True)
-                        create_time = models.DateField(auto_now_add=True, null=True)
-
-                        def __str__(self):
-                            return self.name
-
-                        class Meta:
-                            verbose_name = "作者管理"
-                            verbose_name_plural = verbose_name
+						class Meta:
+							verbose_name = "作者管理"
+							verbose_name_plural = verbose_name
 
 
+					class Book(models.Model):
+						title = models.CharField(max_length=32, unique=True, verbose_name="书籍名称")
+						# auto_now_add:创建时间  auto_add:修改时间
+						publish_date = models.DateField(auto_now_add=True, verbose_name="出版时间")
+						phone = models.CharField(max_length=11, unique=True, null=True, blank=True, verbose_name="手机号")
+						publisher = models.ForeignKey(to="Publisher", on_delete=models.CASCADE, verbose_name="出版社")
+						authors = models.ManyToManyField(to="Author", verbose_name="作者")
 
-		2. form
-			1. form的作用
-				1. 生成HTML代码
-				2. 帮我们做数据有效性的校验
-				3. 保留上次输入内容，显示错误提示
-		
-			2. form组件生成html代码
+						def __str__(self):
+							return self.title
 
-			3. form组件校验数据有效性
-				1. 内置的校验规则
-					1. require=True    该字段必填
-					2. max_length      该字段的最大长度
-					3. min_length      该字段的最小长度
-					
-				2. 自定义校验规则
-					1. phone的格式 利用内置的正则校验器
-						from django.core.validators import RegexValidator
-						validators=[RegexValidator(r'^1[356789]\d{9}$', "手机号码格式不正确")],
-					2. 手机号的唯一性校验
-						手写一个校验函数
-					
-				3. 使用钩子函数做校验
-					1. 局部钩子（hook）
-						在form类内部定义一个 clean_字段名() 方法
-						
-					2. 全局钩子
-						在form类内部定义一个 clean() 方法 
-			4. form组合如何给html标签设置默认值
-				1. 每一个字段设置默认值
-					initial="默认值"			
-		3. model form
-			1. 必须继承forms.ModelForm
+						class Meta:
+							verbose_name = "书籍管理"
+							verbose_name_plural = verbose_name
+				2. urls.py
+					from django.conf.urls import url
+					from django.contrib import admin
+					from app01 import views
 
-			2. class Meta：
-				model = "一对一关联的model类名"
-				fields = "__all__"
-			3. 实例化
-				1. BookModelForm(instance=book_obj)
-				2. BookModelForm(request.POST, instance=book_obj)
-			4. form_obj.save()
+					urlpatterns = [
+						url(r'^admin/', admin.site.urls),
+						url(r'^book_list/$', views.book_list),
+						url(r'^add_book/$', views.add_book),
+						url(r'^edit_book/(\d+)/$', views.edit_book),  # edit_book(request, id)
+					]
+				3. views.py
+					from django.shortcuts import render, redirect, HttpResponse
+					from app01 import models
+					from django import forms
+					from django.core.validators import RegexValidator
+					from django.core.exceptions import ValidationError
+					# Create your views here.
+
+
+					# 自定义一个字段的校验规则函数
+					def phone_validate(value):
+						# 拿用户填写的手机号去数据库查找有没有
+						is_exist = models.Book.objects.filter(phone=value)
+						if is_exist:
+							# 如果该手机号已经被使用就不能再注册
+							raise ValidationError("该手机号已经被注册！")
+						else:
+							return value
+
+
+					# 自定义一个form类
+					class BookForm(forms.Form):
+						title = forms.CharField(
+							max_length=12,
+							min_length=6,
+							label="书名",
+							# initial="书名的默认值",
+							widget=forms.widgets.TextInput(attrs={"class": "form-control"})
+						)
+						publish_date = forms.DateField(
+							label="出版日期",
+							widget=forms.widgets.DateInput(attrs={"type": "date", "class": "form-control"})
+						)
+						phone = forms.CharField(
+							max_length=11,
+							# required=False,
+							# validators=[RegexValidator(r'^1[356789]\d{9}$', "手机号码格式不正确"), phone_validate],
+							validators=[RegexValidator(r'^1[356789]\d{9}$', "手机号码格式不正确")],
+							widget=forms.widgets.TextInput(attrs={"class": "form-control"})
+						)
+						# publisher = forms.ChoiceField(
+						#     # choices=models.Publisher.objects.values_list("id", "name"),
+						#     widget=forms.widgets.Select()
+						# )
+						publisher = forms.ModelChoiceField(
+							queryset=models.Publisher.objects.all(),
+							widget=forms.widgets.Select(attrs={"class": "form-control"})
+						)
+						authors = forms.ModelMultipleChoiceField(
+							queryset=models.Author.objects.all(),
+							widget=forms.widgets.SelectMultiple(attrs={"class": "form-control"})
+						)
+
+						# 自定义一个局部钩子函数
+						def clean_title(self):
+							value = self.cleaned_data.get("title")
+							# 判断有没有敏感词
+							if "alex" in value:
+								raise ValidationError("alex已被河蟹...")
+							else:
+								return value
+
+						# 全局钩子函数
+						def clean(self):
+							# 可以从self.cleaned_data取到所有字段的数据
+							# self.add_error("字段", "密码和确认密码不一致")
+							pass
+
+
+					def book_list(request):
+						data = models.Book.objects.all()
+						# return render(request, "book_list.html", {"data": data})
+						# locals()以字典的形式把当前作用域的变量表示出来
+						return render(request, "book_list.html", locals())
+
+
+					def add_book(request):
+						form_obj = BookForm()
+						if request.method == "POST":
+							# 从用户提交过来的数据中取数据
+							# 做校验
+							form_obj = BookForm(request.POST)
+							if form_obj.is_valid():  # 做数据有效性的校验
+								# 去数据库创建新的数据
+								print(form_obj.cleaned_data)
+								# 因为有多对多的字段，所以需要额外处理
+								authors = form_obj.cleaned_data.pop("authors")
+								# 创建新书籍对象
+								book_obj = models.Book.objects.create(**form_obj.cleaned_data)
+								# 将书籍对象和作者建立关联
+								book_obj.authors.add(*authors)
+								return redirect("/book_list/")
+
+						return render(request, "add_book.html", locals())
+
+
+					def edit_book(request, pk):
+						book_obj = models.Book.objects.filter(id=pk).first()
+						# book_dict = {
+						#     "title": book_obj.title,
+						#     "publish_date": book_obj.publish_date.strftime("%Y-%m-%d"),
+						# }
+						# 把ORM中一个对象 快速转换成 字典格式
+						from django.forms import model_to_dict
+						book_dict = model_to_dict(book_obj)
+						book_dict["publish_date"] = book_obj.publish_date.strftime("%Y-%m-%d")
+						print(book_dict)
+						print("=" * 120)
+						# form_obj = BookForm({"title": "书的默认值呀2", "publish_date": "2018-01-01"})
+						form_obj = BookForm(book_dict)
+						if request.method == "POST":
+							# 从用户提交过来的数据中取数据
+							form_obj = BookForm(request.POST)
+							if form_obj.is_valid():
+								# 去数据库更新对应的书籍
+								book_obj.title = form_obj.cleaned_data.get("title")
+								book_obj.publish_date = form_obj.cleaned_data.get("publish_date")
+								book_obj.publisher_id = form_obj.cleaned_data.get("publisher")
+								book_obj.save()
+								book_obj.authors.set(form_obj.cleaned_data.get("authors"))  # 让ORM去更新第三张关系表
+								return redirect("/book_list/")
+
+						return render(request, "edit_book.html", locals())
+				4. html
+					1. book_list.html
+						<!DOCTYPE html>
+						<html lang="en">
+						<head>
+							<meta charset="UTF-8">
+							<title>Title</title>
+						</head>
+						<body>
+
+						<a href="/add_book/">添加书籍</a>
+						<table border="1">
+							<tbody>
+							{% for book in data %}
+								<tr>
+								<td>{{ forloop.counter }}</td>
+								<td>{{ book.id }}</td>
+								<td>{{ book.title }}</td>
+								<td>{{ book.publish_date }}</td>
+								<td>{{ book.publisher }}</td>
+								<td>{{ book.authors.all }}</td>
+								<td>
+									<a href="">删除</a>
+									<a href="/edit_book/{{ book.id }}/">编辑</a>
+								</td>
+								</tr>
+							{% endfor %}
+
+							</tbody>
+						</table>
+						</body>
+						</html>
+					2. add_book.html
+						<!DOCTYPE html>
+						<html lang="en">
+						<head>
+							<meta charset="UTF-8">
+							<title>添加书籍</title>
+							<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+						</head>
+						<body>
+
+						<div class="container">
+							<div class="row">
+								<div class="col-md-8 col-md-offset-2">
+									<h1>添加书籍</h1>
+
+									<form action="" method="post" novalidate autocomplete="off">
+										{% csrf_token %}
+										{% for field in form_obj %}
+											<div class="form-group">
+												<label for="{{ field.id_for_label }}">{{ field.label }}</label>
+												{{ field }}
+												<p>{{ field.errors.0 }}</p>
+											</div>
+										{% endfor %}
+										<input type="submit" class="btn btn-success">
+									</form>
+								</div>
+							</div>
+						</div>
+
+						</body>
+						</html>
+					3. edit_book.html
+						<!DOCTYPE html>
+						<html lang="en">
+						<head>
+							<meta charset="UTF-8">
+							<title>编辑书籍</title>
+							<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+						</head>
+						<body>
+
+						<div class="container">
+							<div class="row">
+								<div class="col-md-8 col-md-offset-2">
+									<h1>编辑书籍</h1>
+									<form action="" method="post">
+										{% csrf_token %}
+										{% for field in form_obj %}
+											<div class="form-group">
+												<label for="{{ field.id_for_label }}">{{ field.label }}</label>
+												{{ field }}
+												<p>{{ field.errors.0 }}</p>
+											</div>
+										{% endfor %}
+										<input type="submit" class="btn btn-success">
+									</form>
+								</div>
+							</div>
+						</div>
+
+						</body>
+						</html>
+
+		3. form组件校验数据有效性
+			1. 内置的校验规则
+				1. require=True    该字段必填
+				2. max_length      该字段的最大长度
+				3. min_length      该字段的最小长度
 				
+			2. 自定义校验规则
+				1. phone的格式 利用内置的正则校验器
+					from django.core.validators import RegexValidator
+					validators=[RegexValidator(r'^1[356789]\d{9}$', "手机号码格式不正确")],
+				2. 手机号的唯一性校验
+					手写一个校验函数
+				
+			3. 使用钩子函数做校验
+				1. 局部钩子（hook）
+					在form类内部定义一个 clean_字段名() 方法
+					
+				2. 全局钩子
+					在form类内部定义一个 clean() 方法 
+		4. form组合如何给html标签设置默认值
+			1. 每一个字段设置默认值
+				initial="默认值"			
+	2. model form
+		1. 必须继承forms.ModelForm
+
+		2. class Meta：
+			model = "一对一关联的model类名"
+			fields = "__all__"
+		3. 实例化
+			1. BookModelForm(instance=book_obj)
+			2. BookModelForm(request.POST, instance=book_obj)
+		4. form_obj.save()
 			
-	2. auth模块+报障系统(BBS) :https://www.cnblogs.com/liwenzhou/p/9030211.html
-		1. 设计一套用户认证系统
-			1. 设计表
-			2. 登陆
-			3. 注册
-			4. 个人中心那些
-			5. 验证码
-			6. 登陆认证
-		2. auth模块的常用方法
-			1. authenticate()
-			2. login()
-			3. create_user()
-			4. create_superuser()
-			5. logout()
-			6. check_password()
-			7. set_password()
-		3. 扩展默认的auth_user表
-		   默认auth模块使用的是auth_user表，不满足实际需求
-			1. 必须继承AbstractUser
-			from django.contrib.auth.models import AbstractUser
-			class UserInfo(AbstractUser):
-				phone = models.CharField(max_length=11)
-			2. 告诉Django使用我们的用户表代替auth_user表
-		1. 登陆
-			1. 验证码
-				1. 自己生成验证码
-					1. pillow模块的使用
-						1. pip install pillow
-						2. 生成图片
-						3. 在图片上写字符
-						4. 在图片上画线
-					2. 内存操作
-						from io import BytesIO
-						f1 = BytesIO()
-					3. 验证码保存在哪里？
-						保存在session中，因为每个请求验证码都不同。
-					4. 点击验证码图片刷新
-			2. 滑动验证码
-				极验科技：https://docs.geetest.com/install/deploy/server/python
-				
 		
-		2. 注册
-			下周	
+3. auth模块+报障系统(BBS) :https://www.cnblogs.com/liwenzhou/p/9030211.html
+	1. 设计一套用户认证系统
+		1. 设计表
+		2. 登陆
+		3. 注册
+		4. 个人中心那些
+		5. 验证码
+		6. 登陆认证
+	2. auth模块的常用方法
+		1. authenticate()
+		2. login()
+		3. create_user()
+		4. create_superuser()
+		5. logout()
+		6. check_password()
+		7. set_password()
+	3. 扩展默认的auth_user表
+	   默认auth模块使用的是auth_user表，不满足实际需求
+		1. 必须继承AbstractUser
+		from django.contrib.auth.models import AbstractUser
+		class UserInfo(AbstractUser):
+			phone = models.CharField(max_length=11)
+		2. 告诉Django使用我们的用户表代替auth_user表
+	1. 登陆
+		1. 验证码
+			1. 自己生成验证码
+				1. pillow模块的使用
+					1. pip install pillow
+					2. 生成图片
+					3. 在图片上写字符
+					4. 在图片上画线
+				2. 内存操作
+					from io import BytesIO
+					f1 = BytesIO()
+				3. 验证码保存在哪里？
+					保存在session中，因为每个请求验证码都不同。
+				4. 点击验证码图片刷新
+		2. 滑动验证码
+			极验科技：https://docs.geetest.com/install/deploy/server/python
+			
+	
+	2. 注册
+		下周	
 		
-2. 今日任务
-	1. 回去复习下装饰器
-	2. 回去复习下时间模块（time、datetime）
 
 
-3. 本周作业
-	1. form组件和auth模块整理好博客
-	2. admin自己研究研究
-	3. 把今天项目的登陆功能自己独立写一遍
-	4. 个人中心页面
-		修改的密码功能
-	5. 报障系统设计表结果
-		需求：
-			普通的员工
-			运维员工（超级用户）
-			故障总结是一篇文章
-			评论你的故障总结
-			故障总结可以点 支持 和 反对
-			故障总结 根据产品线 做分类
-			故障总结 可以打标签
-		
-		作业是根据上面列出来的需求 设计表结构
+本周作业
+1. form组件和auth模块整理好博客
+2. admin自己研究研究
+3. 把今天项目的登陆功能自己独立写一遍
+4. 个人中心页面
+	修改的密码功能
+5. 报障系统设计表结果
+	需求：
+		普通的员工
+		运维员工（超级用户）
+		故障总结是一篇文章
+		评论你的故障总结
+		故障总结可以点 支持 和 反对
+		故障总结 根据产品线 做分类
+		故障总结 可以打标签
+	
+	作业是根据上面列出来的需求 设计表结构
 		
 	
 	
