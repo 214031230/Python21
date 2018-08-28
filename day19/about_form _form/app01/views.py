@@ -36,6 +36,9 @@ class BookForm(forms.Form):
         if val1 != val2:
             raise ValidationError("密码不一致")
 
+    def clean(self):
+        pass
+
 
 def book_list(request):
     """
