@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'about_form.urls'
+ROOT_URLCONF = 'about_form_shouxie.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'about_form.wsgi.application'
+WSGI_APPLICATION = 'about_form_shouxie.wsgi.application'
 
 
 # Database

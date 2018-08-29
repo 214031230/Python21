@@ -35,8 +35,25 @@ class BookForm(forms.Form):
 
 class BookModelForm(forms.ModelForm):
     class Meta:
-        models = models.Book
+        model = models.Book
         fields = "__all__"
+        labels = {
+            "name": "书籍名称",
+            "phone": "手机号",
+            "publisher": "出版社",
+            "authors": "作者"
+        }
+        widgets = {
+            "name": forms.widgets.TextInput(attrs={"class": "form-control"}),
+            "phone": forms.widgets.TextInput(attrs={"class": "form-control"}),
+            "publisher": forms.widgets.Select(attrs={"class": "form-control"}),
+            "authors": forms.widgets.SelectMultiple(attrs={"class": "form-control"})
+        }
+        error_messages = {
+            "publisher": {
+                "required": "必须选择一个出版社"
+            }
+        }
 
 
 def book_list(request):
@@ -59,9 +76,7 @@ def add_book(request):
     if request.method == "POST":
         form_obj = BookModelForm(request.POST)
         if form_obj.is_valid():
-            authors = form_obj.cleaned_data.pop("authors")
-            book_obj = models.Book.objects.create(**form_obj.cleaned_data)
-            book_obj.authors.add(*authors)
+            form_obj.save()
             return redirect("/book_list/")
 
     return render(request, "add_book.html", locals())
@@ -74,16 +89,11 @@ def edit_book(request, book_id):
     :return:
     """
     book_obj = models.Book.objects.filter(id=book_id).first()
-    from django.forms import model_to_dict
-    book_dict = model_to_dict(book_obj)
-    form_obj = BookForm(book_dict)
+    form_obj = BookModelForm(instance=book_obj)
     if request.method == "POST":
-        form_obj = BookForm(request.POST)
+        form_obj = BookModelForm(request.POST, instance=book_obj)
         if form_obj.is_valid():
-            book_obj.name = form_obj.cleaned_data.get("name")
-            book_obj.publisher_id = form_obj.cleaned_data.get("publisher")
-            book_obj.save()
-            book_obj.authors.set(form_obj.cleaned_data.get("authors"))
+            form_obj.save()
             return redirect("/book_list/")
 
     return render(request, "edit_book.html", locals())
