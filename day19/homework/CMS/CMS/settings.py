@@ -120,3 +120,4 @@ STATICFILES_DIRS = [
 ]
 
 # AUTH_USER_MODEL = "fault_reporting.UserInfo"
+LOGIN_URL = "/login/"

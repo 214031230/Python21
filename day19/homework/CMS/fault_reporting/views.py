@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import auth
 import random
-
-
+from django.contrib.auth.decorators import  login_required
 # Create your views here.
 
 
@@ -32,6 +31,7 @@ def login(request):
         if v_code.upper() == request.session.get("v_code"):
             user = auth.authenticate(request, username=username, password=password)
             if user:
+                auth.login(request, user)
                 return redirect(next)
             else:
                 return render(request, "login.html", {"error_msg": "*用户或者密码错误！"})
@@ -39,6 +39,16 @@ def login(request):
             return render(request, "login.html", {"code_msg": "*验证码有误！"})
 
     return render(request, "login.html")
+
+
+@login_required
+def index(request):
+    """
+    首页
+    :param request: 
+    :return: 
+    """
+    return render(request, "index.html")
 
 
 def v_code(request):
