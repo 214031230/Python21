@@ -34,7 +34,6 @@ def index(request):
 # 专门返回验证码图片的视图函数
 def vcode(request):
     from PIL import Image, ImageDraw, ImageFont
-
     # 定义一个生成随机颜色代码的函数
     def random_color():
         return random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
@@ -75,16 +74,9 @@ def vcode(request):
     #     x = random.randint(0, width)
     #     y = random.randint(0, height)
     #     draw_obj.arc((x, y, x+4, y+4), 0, 90, fill=random_color())
-
     v_code = "".join(tmp).upper()
     # 将生成的验证码保存
     request.session["v_code"] = v_code
-
-    # with open("static/images/vcode.png", "wb") as f1:
-    #     image_obj.save(f1, format="PNG")
-    #
-    # with open("static/images/vcode.png", "rb") as f:
-    #     img_data = f.read()
     # 直接在内存中保存图片替代io操作
     from io import BytesIO
     f1 = BytesIO()
