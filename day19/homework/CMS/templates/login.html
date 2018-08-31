@@ -20,13 +20,13 @@
                     <form class="form-horizontal" action="" method="post" novalidate autocomplete="off">
                         {% csrf_token %}
                         <div class="form-group">
-                            <label for="username" class="col-sm-3 control-label">用户名</label>
+                            <label for="username" class="col-sm-2 control-label">用户名</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control username" id="username" placeholder="用户名" name="username">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="password" class="col-sm-3 control-label">密码</label>
+                            <label for="password" class="col-sm-2 control-label">密码</label>
                             <div class="col-sm-6">
                                 <input type="password" class="form-control password" id="password" placeholder="密码"
                                        name="password">
@@ -34,7 +34,7 @@
                             <span id="msg" class="error_msg">{{ error_msg }}</span>
                         </div>
                         <div class="form-group">
-                            <label for="v_code" class="col-sm-3 control-label">验证码</label>
+                            <label for="v_code" class="col-sm-2 control-label">验证码</label>
                             <div class="col-sm-3">
                                 <input type="text" class="form-control v_code" id="v_code" placeholder="请输验证码" name="v_code">
                             </div>
@@ -45,7 +45,7 @@
                             <div class="code_msg">{{ code_msg }}</div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-10">
+                            <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-success login-btn">登录</button>
                                 <a href="/register/" class="btn btn-warning login-btn  login-btn-l">注册</a>
                             </div>
