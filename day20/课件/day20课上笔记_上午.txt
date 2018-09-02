@@ -1,0 +1,36 @@
+day20  2018-09-02
+
+1. 今日内容
+	1. 补充label标签
+		1. label标签是用来和获取用户输入的那些标签搭配使用的
+			input
+				文本类
+				checkbox
+				radio
+				file
+			select
+			textarea
+		2. 两种搭配方式
+			1. 通过for属性建立关联，关联的是id值
+			2. 直接用label标签包输入框
+	2. 注册功能
+		1. ajax上传文件
+		2. js展示错误提示信息
+		3. 头像预览
+	
+
+JS ES6语法：https://www.cnblogs.com/liwenzhou/p/9249932.html
+
+2. 本周任务
+	1. 回去复习下正则模块的知识点（re）
+
+
+
+
+
+
+ajax上传文件
+CMS 注册功能
+
+CMS表结构设计
+CMS首页和个人中心页面实现
