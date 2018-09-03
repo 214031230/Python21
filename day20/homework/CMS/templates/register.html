@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href="/static/css/error.css">
+</head>
+<body>
+<div class="panel panel-default">
+    <div class="panel-heading"><h3> 注册账号</h3></div>
+    <div class="panel-body panel-success">
+        <form class="form-horizontal" action="" method="post" autocomplete="off" novalidate>
+            {% csrf_token %}
+            {% for field in form_obj %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}" class="col-sm-2 control-label">{{ field.label }}</label>
+                    <div class="col-sm-3">
+                        {{ field }}
+                    </div>
+                    <p class="error">{{ field.errors.0 }}</p>
+                </div>
+            {% endfor %}
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-4">
+                    <button type="submit" class="btn btn-success">注册</button>
+                    <a href="/index/" class="btn btn-warning">取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

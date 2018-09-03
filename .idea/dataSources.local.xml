@@ -6,7 +6,7 @@
     </data-source>
     <data-source name="db" uuid="e6fecf84-ba4d-480f-87ed-74bd4af95d13">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-      <introspection-schemas>*:@</introspection-schemas>
+      <introspection-schemas>*:main</introspection-schemas>
     </data-source>
   </component>
 </project>

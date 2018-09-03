@@ -1,0 +1,21 @@
+.login-page {
+    margin-top: 100px;
+}
+
+.login-btn {
+    width: 110px;
+}
+
+.login-btn-l {
+    margin-left: 15px;
+}
+
+.code_msg {
+    color: red;
+    font-size: 17px;
+}
+
+#msg {
+    color: red;
+    font-size: 17px;
+}
