@@ -119,5 +119,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
-# AUTH_USER_MODEL = "fault_reporting.UserInfo"
+AUTH_USER_MODEL = "fault_reporting.UserInfo"
 LOGIN_URL = "/login/"

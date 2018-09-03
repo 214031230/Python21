@@ -19,12 +19,12 @@ from fault_reporting import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^register/', views.register),
-    url(r'^login/', views.login),
-    url(r'^v_code/', views.v_code),
-    url(r'^index/', views.index),
-    url(r'^logout/', views.logout),
-    url(r'^p_center/', views.p_center),
-    url(r'^set_password/', views.set_password),
+    url(r'^register/$', views.register),
+    url(r'^login/$', views.login),
+    url(r'^v_code/$', views.v_code),
+    url(r'^index/$', views.index),
+    url(r'^logout/$', views.logout),
+    url(r'^p_center/$', views.p_center),
+    url(r'^set_password/$', views.set_password),
     
 ]

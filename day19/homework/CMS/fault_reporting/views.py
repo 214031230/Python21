@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import auth
 import random
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 from fault_reporting.forms import UserModelForm
 from fault_reporting.forms import RegisterModelForm
+from fault_reporting import models
 
 
 # Create your views here.
@@ -34,23 +34,23 @@ def login(request):
     :param request: 
     :return: 
     """
+
     if request.method == "POST":
-        username = request.POST.get("username")
+        username = request.POST.get("username", "")
         password = request.POST.get("password")
         next = request.GET.get("next", "/index/")
         v_code = request.POST.get("v_code")
-        # if v_code.upper() == request.session.get("v_code"):
-        if True:
+        if v_code.upper() == request.session.get("v_code"):
             user = auth.authenticate(request, username=username, password=password)
             if user:
                 auth.login(request, user)
                 return redirect(next)
             else:
-                return render(request, "login.html", {"error_msg": "*用户或者密码错误！"})
+                return render(request, "login.html", {"error_msg": "*用户或者密码错误！", "user": username})
         else:
-            return render(request, "login.html", {"code_msg": "*验证码有误！"})
+            return render(request, "login.html", {"code_msg": "*验证码有误！", "user": username})
 
-    return render(request, "login.html")
+    return render(request, "login.html", {"user": ""})
 
 
 @login_required
@@ -82,7 +82,7 @@ def p_center(request):
     :return: 
     """
     user = auth.get_user(request)
-    obj = User.objects.filter(username=user).first()
+    obj = models.UserInfo.objects.filter(username=user).first()
     form_obj = UserModelForm(instance=obj)
     if request.method == "POST":
         form_obj = UserModelForm(request.POST, instance=obj)
