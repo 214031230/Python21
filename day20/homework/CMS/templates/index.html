@@ -2,34 +2,54 @@
 {% block title %}
     <title>报障系统首页</title>
 {% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/fault.css">
+{% endblock %}
 {% block view %}
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4>业务线</h4>
         </div>
         <div class="panel-body">
-            内容
-        </div>
-    </div>    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4>标签</h4>
-        </div>
-        <div class="panel-body">
-            内容
+            {% for foo in class_list %}
+{#                <p><a href="">{{ foo.name }}({{ foo.fault_set.count }})</a></p>#}
+                <p><a href="">{{ foo.name }}({{ foo.num }})</a></p>
+            {% endfor %}
         </div>
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4>日期分组</h4>
+            <h4>标签</h4>
         </div>
         <div class="panel-body">
-            内容
+            {% for foo in tag_list %}
+{#                <p><a href="">{{ foo.name }}({{ foo.fault_set.count }})</a></p>#}
+                <p><a href="">{{ foo.name }}({{ foo.num }})</a></p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>日期归档</h4>
+        </div>
+        <div class="panel-body">
+            {% for archive in archive_list %}
+                <p><a href="">{{ archive.ym }}({{ archive.num }})</a></p>
+            {% endfor %}
+
         </div>
     </div>
 {% endblock %}
+
 {% block context %}
-    <div class="jumbotron">
-        <h1>欢迎访问报障系统</h1>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">暂无报障</a></p>
-    </div>
+    {% for fault in fault_list %}
+        <div class="fault_title"><h3><a href="">{{ fault.title }}</a></h3></div>
+        <div class="fault_desc">{{ fault.summary }}</div>
+        <div class="fault_comment">
+            <span>{{ fault.user.username }}发布于{{ fault.create_time }}</span>
+            <span class="glyphicon glyphicon-comment" aria-hidden="true">评论({{ fault.comment_count }})</span>
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">点赞({{ fault.up_count }})</span>
+        </div>
+        <hr>
+    {% endfor %}
 {% endblock %}

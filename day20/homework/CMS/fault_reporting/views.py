@@ -7,6 +7,7 @@ from fault_reporting.forms import RegisterForm
 from fault_reporting import models
 from django.http import JsonResponse
 from django.forms import model_to_dict
+from django.db.models import Count
 
 
 # Create your views here.
@@ -68,6 +69,15 @@ def index(request):
     :return:
     """
     user = auth.get_user(request).username
+    fault_list = models.Fault.objects.all()
+    # class_list = models.Classify.objects.all()  # 反向查询取值
+    class_list = models.Classify.objects.all().annotate(num=Count("fault")).values("name", "num")  # 反向查询取值
+    # tag_list = models.Tag.objects.all()  # 反向查询取值
+    tag_list = models.Tag.objects.all().annotate(num=Count("fault")).values("name", "num")  # 反向查询取值
+    archive_list = models.Fault.objects.all().extra(
+        # select={"ym": "date_format(create_time, '%%Y-%%m')"}  # MySQL日期格式化的写法
+        select={"ym": "strftime('%%Y-%%m', create_time)"}  # sqlite数据库日期格式化的写法
+    ).values("ym").annotate(num=Count("id")).values("ym", "num")
     return render(request, "index.html", locals())
 
 
