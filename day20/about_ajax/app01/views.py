@@ -30,3 +30,12 @@ def upload_ajax(request):
     :return:
     """
     return render(request, "upload_ajax.html")
+
+
+def upload_avatar(request):
+    """
+    预览头像并上传
+    :param request:
+    :return:
+    """
+    return render(request, "upload_avatar.html")

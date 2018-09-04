@@ -19,3 +19,16 @@
     color: red;
     font-size: 17px;
 }
+#id_img_avatar{
+    width: 50px;
+    border-radius: 50%;
+    display: block;
+    margin-left: 220px;
+}
+#id_avatar{
+    display: none;
+}
+.btn{
+    width: 130px;
+    margin-right: 20px;
+}

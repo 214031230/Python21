@@ -123,3 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+# 所有用户上传的文件
+# 告诉Django项目将用户上传的文件保存在服务器端的哪个目录下
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

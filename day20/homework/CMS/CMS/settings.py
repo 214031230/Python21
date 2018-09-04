@@ -121,3 +121,11 @@ STATICFILES_DIRS = [
 
 AUTH_USER_MODEL = "fault_reporting.UserInfo"
 LOGIN_URL = "/login/"
+
+# 配置用户上传文件目录
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# 告诉Django项目用户通过什么前缀来访问刚才定义的那个目录
+MEDIA_URL = "/media/"
+
+

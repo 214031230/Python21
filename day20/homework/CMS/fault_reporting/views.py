@@ -2,9 +2,11 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import auth
 import random
 from django.contrib.auth.decorators import login_required
-from fault_reporting.forms import UserModelForm
-from fault_reporting.forms import RegisterModelForm
+from fault_reporting.forms import UserUpdate
+from fault_reporting.forms import RegisterForm
 from fault_reporting import models
+from django.http import JsonResponse
+from django.forms import model_to_dict
 
 
 # Create your views here.
@@ -16,14 +18,19 @@ def register(request):
     :param request:
     :return:
     """
-    form_obj = RegisterModelForm()
+    form_obj = RegisterForm()
     if request.method == "POST":
-        form_obj = RegisterModelForm(request.POST)
+        res = {"code": 0}
+        form_obj = RegisterForm(request.POST)
         if form_obj.is_valid():
-            obj = form_obj.save(commit=False)
-            obj.set_password(form_obj.cleaned_data["password"])
-            obj.save()
-            return redirect("/login/")
+            form_obj.cleaned_data.pop("re_password")
+            avatar_obj = request.FILES.get("avatar")
+            models.UserInfo.objects.create_user(**form_obj.cleaned_data, avatar=avatar_obj)
+            res["url"] = "/login/"
+        else:
+            res["code"] = 1
+            res["error"] = form_obj.errors
+        return JsonResponse(res)
 
     return render(request, "register.html", locals())
 
@@ -31,8 +38,8 @@ def register(request):
 def login(request):
     """
     用户登录页面
-    :param request: 
-    :return: 
+    :param request:
+    :return:
     """
 
     if request.method == "POST":
@@ -40,7 +47,8 @@ def login(request):
         password = request.POST.get("password")
         next = request.GET.get("next", "/index/")
         v_code = request.POST.get("v_code")
-        if v_code.upper() == request.session.get("v_code"):
+        # if v_code.upper() == request.session.get("v_code"):
+        if True:
             user = auth.authenticate(request, username=username, password=password)
             if user:
                 auth.login(request, user)
@@ -53,14 +61,13 @@ def login(request):
     return render(request, "login.html", {"user": ""})
 
 
-@login_required
 def index(request):
     """
     首页
-    :param request: 
-    :return: 
+    :param request:
+    :return:
     """
-    user = auth.get_user(request)
+    user = auth.get_user(request).username
     return render(request, "index.html", locals())
 
 
@@ -75,17 +82,19 @@ def logout(request):
     return redirect("/login/")
 
 
+@login_required
 def p_center(request):
     """
-    编辑中心    
-    :param request: 
-    :return: 
+    编辑中心
+    :param request:
+    :return:
     """
     user = auth.get_user(request)
     obj = models.UserInfo.objects.filter(username=user).first()
-    form_obj = UserModelForm(instance=obj)
+    user_dict = model_to_dict(obj)
+    form_obj = UserUpdate(user_dict)
     if request.method == "POST":
-        form_obj = UserModelForm(request.POST, instance=obj)
+        form_obj = UserUpdate(request.POST, instance=obj)
         if form_obj.is_valid():
             obj.save()
             return redirect("/index/")
@@ -95,9 +104,9 @@ def p_center(request):
 @login_required
 def set_password(request):
     """
-    修改密码    
-    :param request: 
-    :return: 
+    修改密码
+    :param request:
+    :return:
     """
     user = auth.get_user(request)
     if request.method == "POST":

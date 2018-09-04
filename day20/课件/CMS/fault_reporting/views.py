@@ -9,6 +9,7 @@ from fault_reporting import models
 
 from utils.geetest import GeetestLib
 
+
 #请在官网申请ID使用，示例ID不可使用
 pc_geetest_id = "b46d1900d0a894591916ea94ea91bd2c"
 pc_geetest_key = "36fc3fe98530eea08dfc6ce76e3d24c4"

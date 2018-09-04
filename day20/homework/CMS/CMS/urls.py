@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from fault_reporting import views
+from django.views.static import serve
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,5 +28,6 @@ urlpatterns = [
     url(r'^logout/$', views.logout),
     url(r'^p_center/$', views.p_center),
     url(r'^set_password/$', views.set_password),
-    
+    url(r'^media/(?P<path>.*)$', serve, {"document_root": settings.MEDIA_ROOT}),
+
 ]

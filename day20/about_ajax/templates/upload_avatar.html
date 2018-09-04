@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件</title>
+</head>
+<body>
+{% csrf_token %}
+{#style="width: 40px; border-radius: 50% 设置图片大小并修改成圆头像#}
+{#accept="image/*" 只显示图片类型的文件#}
+<label><img src="/static/images/default.png" alt="" style="width: 40px; border-radius: 50%">
+    <input type="file" name="avatar" class="f1" style="display: none;" accept="image/*">
+</label>
+<input type="button" class="b1" value="上传">
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+    // Ajax上传头像
+    $(".b1").click(function () {
+        // 先生成一个FromData对象
+        var fd = new FormData();
+        // 将要提交的数据
+        fd.append("csrfmiddlewaretoken", $("[name='csrfmiddlewaretoken']").val());
+        fd.append("avatar", $(".f1")[0].files[0]);
+        $.ajax({
+            url: "/upload/",
+            type: "post",
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                console.log(res)
+            }
+        })
+    });
+    // 预览头像
+    $(".f1").change(function () {
+       // 取到用户选中的头像文件
+       var fileobj = this.files[0];
+       // 新新建一个FileReader对象， 从本地磁盘加载文件数据
+        var fr = new FileReader();
+        fr.readAsDataURL(fileobj);
+        // 读取文件需要时间
+        fr.onload=function () {
+            // 找到预览头像的img标签,把踏的src属性设置成读取的用户选中的图片
+            $("img").attr("src", fr.result)
+        }
+    });
+</script>
+</body>
+</html>

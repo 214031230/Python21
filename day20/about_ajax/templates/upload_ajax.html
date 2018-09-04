@@ -5,26 +5,28 @@
     <title>上传文件</title>
 </head>
 <body>
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <label>
-        <input type="file" name="avatar">
-    </label>
-    <label>
-        <input type="button" class="b1" value="上传">
-    </label>
-</form>
+{% csrf_token %}
+<input type="file" name="avatar" class="f1">
+<input type="button" class="b1" value="上传">
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 <script>
     $(".b1").click(function () {
         // 先生成一个FromData对象
         var fd = new FormData();
         // 将要提交的数据
+        fd.append("csrfmiddlewaretoken", $("[name='csrfmiddlewaretoken']").val());
+        fd.append("avatar", $(".f1")[0].files[0]);
         $.ajax({
-
+            url: "/upload/",
+            type: "post",
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                console.log(res)
+            }
         })
     });
-
 </script>
 </body>
 </html>

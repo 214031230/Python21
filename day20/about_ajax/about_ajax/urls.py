@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^upload/$', views.upload),
     url(r'^upload_ajax/$', views.upload_ajax),
+    url(r'^upload_avatar/$', views.upload_avatar),
 ]
