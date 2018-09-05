@@ -1,54 +1,181 @@
 day20  2018-09-02
 
-1. 今日内容
-	1. 补充label标签
-		1. label标签是用来和获取用户输入的那些标签搭配使用的
-			input
-				文本类
-				checkbox
-				radio
-				file
-			select
-			textarea
-		2. 两种搭配方式
-			1. 通过for属性建立关联，关联的是id值
-			2. 直接用label标签包输入框
-	2. 注册功能
-		1. ajax上传文件
-		2. js展示错误提示信息
-		3. 头像预览
-		4. Django项目上传文件之后怎么查看
-			1. 上传的文件保存在哪里？
-				settings.py中 MEDIA_ROOT
-			2. 如何查看上传的文件
-				/media/xx/oo.jpg
-				1. settings.py中设置 MEDIA_URL="/media/"(别名)
-				2. urls.py中设置 media开头的路径用什么视图函数处理
-					url(r'^media/(?P<path>.*)', serve, {"document_root": settings.MEDIA_ROOT}),
+
+一. 注册功能
+	1. ajax上传文件
+		代码示例：
+			1. views.py
+				from django.shortcuts import render, HttpResponse
+				def upload(request):
+					"""
+					上传文件操作
+					:param request: 
+					:return: 
+					"""
+					if request.method == "POST":
+						# 从上传的文件数据中拿到 avatar对应的文件对象
+						file_obj = request.FILES.get("avatar")
+						# 在服务端新建一个和上传文件同名的新文件
+						with open(file_obj.name, "wb") as f:
+							# 从上传文件对象中一点一点读数据
+							for i in file_obj:
+								# 写入服务端新建的文件
+								f.write(i)
+						return HttpResponse("上传成功")
+
+					return render(request, "upload.html")
+
+
+				def upload_ajax(request):
+					"""
+					使用ajax方式上传
+					:param request:
+					:return:
+					"""
+					return render(request, "upload_ajax.html")
+			2. upload.html
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<title>上传文件</title>
+				</head>
+				<body>
+				<form action="" method="post" enctype="multipart/form-data"> // 必须加 enctype="multipart/form-data"
+					{% csrf_token %}
+					<label>
+						<input type="file" name="avatar">
+					</label>
+					<label>
+						<input type="submit" value="上传">
+					</label>
+				</form>
+				</body>
+				</html>
+			3. upload_ajax.html
+				<!DOCTYPE html>
+				<html lang="en">
+				<head>
+					<meta charset="UTF-8">
+					<title>上传文件</title>
+				</head>
+				<body>
+				{% csrf_token %}
+				<input type="file" name="avatar" class="f1">
+				<input type="button" class="b1" value="上传">  // 使用ajax时候不要用submit
+				<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+				<script>
+					$(".b1").click(function () {
+						// 先生成一个FromData对象
+						var fd = new FormData();
+						// 将要提交的数据
+						fd.append("csrfmiddlewaretoken", $("[name='csrfmiddlewaretoken']").val());
+						fd.append("avatar", $(".f1")[0].files[0]);
+						$.ajax({
+							url: "/upload/",
+							type: "post",
+							data: fd,
+							contentType: false,
+							processData: false,
+							success: function (res) {
+								console.log(res)
+							}
+						})
+					});
+				</script>
+				</body>
+				</html>
+
 			
-	3. CMS表结构设计
-		1. 外键自己关联自己
-		2. ManytoMany 使用自定义的表
-			1. 为什么要用自己写的第三张关系表，而不用自动生成的？
-				第三张关系表有一些额外的数据需要保存的时候
-	
-	4. CMS首页和个人中心页面实现
-		ORM 高阶用法都在 --> https://www.cnblogs.com/liwenzhou/p/8660826.html
-		1. ORM分组和聚合查询 
-			annotate()
-			annotate()前面查的是什么就按照什么分组
-			.values("dept").annotate()就表示按照dept分组
-			
-		2. 时间格式化函数
-				1. MySQL
-					DATE_FORMAT(字段, '格式')
-				2. sqlite
-					strftime('格式', 字段)
-		3. Django ORM执行原生SQL语句
-			1. 使用extra()执行部分sql语句
-			2. 类似pymysql执行方式
-		4. 二级路由
-			1. 保障系统4合1
+	2. 头像预览
+		代码示例：
+			<!DOCTYPE html>
+			<html lang="en">
+			<head>
+				<meta charset="UTF-8">
+				<title>上传文件</title>
+			</head>
+			<body>
+			{% csrf_token %}
+			{#style="width: 40px; border-radius: 50% 设置图片大小并修改成圆头像#}
+			{#accept="image/*" 只显示图片类型的文件#}
+			<label><img src="/static/images/default.png" alt="" style="width: 40px; border-radius: 50%">
+				<input type="file" name="avatar" class="f1" style="display: none;" accept="image/*">
+			</label>
+			<input type="button" class="b1" value="上传">
+			<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+			<script>
+				// Ajax上传头像
+				$(".b1").click(function () {
+					// 先生成一个FromData对象
+					var fd = new FormData();
+					// 将要提交的数据
+					fd.append("csrfmiddlewaretoken", $("[name='csrfmiddlewaretoken']").val());
+					fd.append("avatar", $(".f1")[0].files[0]);
+					$.ajax({
+						url: "/upload/",
+						type: "post",
+						data: fd,
+						contentType: false,
+						processData: false,
+						success: function (res) {
+							console.log(res)
+						}
+					})
+				});
+				// 预览头像
+				$(".f1").change(function () {
+				   // 取到用户选中的头像文件
+				   var fileobj = this.files[0];
+				   // 新新建一个FileReader对象， 从本地磁盘加载文件数据
+					var fr = new FileReader();
+					fr.readAsDataURL(fileobj);
+					// 读取文件需要时间
+					fr.onload=function () {
+						// 找到预览头像的img标签,把踏的src属性设置成读取的用户选中的图片
+						$("img").attr("src", fr.result)
+					}
+				});
+			</script>
+			</body>
+			</html>
+	3. Django项目上传文件之后怎么查看
+		1. 配置上传的文件保存在哪里
+			settings.py中 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+			上传文件需要注意两点：
+				1. 前端使用form表单上传需要配置 enctype="multipart/form-data"
+					<form class="form-horizontal" action="" method="post" novalidate enctype="multipart/form-data">
+				2. 后端接收
+					avatar_obj = request.FILES.get("avatar")
+		2. 如何查看上传的文件
+			/media/xx/oo.jpg
+			1. settings.py中设置 MEDIA_URL="/media/"(别名)
+			2. urls.py中设置 media开头的路径用什么视图函数处理
+				url(r'^media/(?P<path>.*)', serve, {"document_root": settings.MEDIA_ROOT}),
+		
+二. CMS表结构设计
+	1. 外键自己关联自己
+	2. ManytoMany 使用自定义的表
+		1. 为什么要用自己写的第三张关系表，而不用自动生成的？
+			第三张关系表有一些额外的数据需要保存的时候
+
+三. CMS首页和个人中心页面实现
+	ORM 高阶用法都在 --> https://www.cnblogs.com/liwenzhou/p/8660826.html
+	1. ORM分组和聚合查询 
+		annotate()
+		annotate()前面查的是什么就按照什么分组
+		.values("dept").annotate()就表示按照dept分组
+		
+	2. 时间格式化函数
+			1. MySQL
+				DATE_FORMAT(字段, '格式')
+			2. sqlite
+				strftime('格式', 字段)
+	3. Django ORM执行原生SQL语句
+		1. 使用extra()执行部分sql语句
+		2. 类似pymysql执行方式
+	4. 二级路由
+		1. 保障系统4合1
 		
 
 JS ES6语法：https://www.cnblogs.com/liwenzhou/p/9249932.html
