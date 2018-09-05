@@ -62,22 +62,31 @@ def login(request):
     return render(request, "login.html", {"user": ""})
 
 
-def index(request):
+def index(request, *args):
     """
     首页
     :param request:
     :return:
     """
     user = auth.get_user(request).username
-    fault_list = models.Fault.objects.all()
-    # class_list = models.Classify.objects.all()  # 反向查询取值
-    class_list = models.Classify.objects.all().annotate(num=Count("fault")).values("name", "num")  # 反向查询取值
-    # tag_list = models.Tag.objects.all()  # 反向查询取值
-    tag_list = models.Tag.objects.all().annotate(num=Count("fault")).values("name", "num")  # 反向查询取值
+    class_list = models.Classify.objects.all().annotate(num=Count("fault")).values("name", "num")
+    tag_list = models.Tag.objects.all().annotate(num=Count("fault")).values("name", "num")
     archive_list = models.Fault.objects.all().extra(
-        # select={"ym": "date_format(create_time, '%%Y-%%m')"}  # MySQL日期格式化的写法
-        select={"ym": "strftime('%%Y-%%m', create_time)"}  # sqlite数据库日期格式化的写法
+        select={"ym": "strftime('%%Y-%%m', create_time)"}
     ).values("ym").annotate(num=Count("id")).values("ym", "num")
+    fault_list = models.Fault.objects.all()
+    if args and len(args) == 2:
+        if args[0] == "class":
+            fault_list = fault_list.filter(classify__name=args[1])
+        elif args[0] == "tag":
+            fault_list = fault_list.filter(tags__name=args[1])
+        else:
+            try:
+                year, month = args[1].split("-")
+                fault_list = fault_list.filter(create_time__year=year, create_time__month=month)
+            except Exception:
+                fault_list = []
+
     return render(request, "index.html", locals())
 
 
@@ -100,14 +109,18 @@ def p_center(request):
     :return:
     """
     user = auth.get_user(request)
-    obj = models.UserInfo.objects.filter(username=user).first()
-    user_dict = model_to_dict(obj)
+    user_obj = models.UserInfo.objects.filter(username=user).first()
+    user_dict = model_to_dict(user_obj)
     form_obj = UserUpdate(user_dict)
     if request.method == "POST":
-        form_obj = UserUpdate(request.POST, instance=obj)
+        form_obj = UserUpdate(request.POST)
         if form_obj.is_valid():
-            obj.save()
-            return redirect("/index/")
+            user_obj.phone = form_obj.cleaned_data.get("phone")
+            user_obj.email = form_obj.cleaned_data.get("email")
+            user_obj.avatar = request.FILES.get("avatar") if request.FILES.get("avatar") else user_obj.avatar
+            user_obj.save()
+            return redirect("/p_center/")
+
     return render(request, "p_center.html", locals())
 
 
@@ -152,7 +165,6 @@ def v_code(request):
         "RGB",
         (100, 33),
         (255, 255, 140)
-        # random_color()
     )
     draw_obj = ImageDraw.Draw(image_obj)
     font_obj = ImageFont.truetype('static/fonts/kumo.ttf', 28)

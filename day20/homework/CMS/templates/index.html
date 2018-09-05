@@ -8,35 +8,34 @@
 {% block view %}
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4>业务线</h4>
+            <h5>业务线</h5>
         </div>
         <div class="panel-body">
             {% for foo in class_list %}
 {#                <p><a href="">{{ foo.name }}({{ foo.fault_set.count }})</a></p>#}
-                <p><a href="">{{ foo.name }}({{ foo.num }})</a></p>
+                <p><a href="/fault-report/class/{{ foo.name }}">{{ foo.name }}({{ foo.num }})</a></p>
             {% endfor %}
         </div>
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4>标签</h4>
+            <h5>标签分组</h5>
         </div>
         <div class="panel-body">
             {% for foo in tag_list %}
 {#                <p><a href="">{{ foo.name }}({{ foo.fault_set.count }})</a></p>#}
-                <p><a href="">{{ foo.name }}({{ foo.num }})</a></p>
+                <p><a href="/fault-report/tag/{{ foo.name }}">{{ foo.name }}({{ foo.num }})</a></p>
             {% endfor %}
         </div>
     </div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h4>日期归档</h4>
+            <h5>日期归档</h5>
         </div>
         <div class="panel-body">
             {% for archive in archive_list %}
-                <p><a href="">{{ archive.ym }}({{ archive.num }})</a></p>
+                <p><a href="/fault-report/archive/{{ archive.ym }}">{{ archive.ym }}({{ archive.num }})</a></p>
             {% endfor %}
-
         </div>
     </div>
 {% endblock %}

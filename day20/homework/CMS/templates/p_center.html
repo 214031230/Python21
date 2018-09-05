@@ -15,7 +15,7 @@
             <h3> 编辑信息</h3>
         </div>
         <div class="panel-body">
-            <form class="form-horizontal" action="" method="post" novalidate>
+            <form class="form-horizontal" action="" method="post" novalidate enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form_obj %}
                     <div class="form-group">
@@ -27,10 +27,10 @@
                     </div>
                 {% endfor %}
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="id_avatar">请选择头像
+                    <label class="col-sm-2 control-label" for="id_avatar">编辑头像
                         <img id="id_img_avatar" src="/media/{{ request.user.avatar }}" alt="头像">
                     </label>
-                    <input type="file" id="id_avatar" accept="image/*" class="form-control">
+                    <input type="file" id="id_avatar" name="avatar" accept="image/*" class="form-control">
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-4">
@@ -41,4 +41,7 @@
             </form>
         </div>
     </div>
+{% endblock %}
+{% block js %}
+    <script src="/static/js/edit_uesr.js"></script>
 {% endblock %}

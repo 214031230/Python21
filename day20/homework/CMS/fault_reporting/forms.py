@@ -1,11 +1,19 @@
 #!/usr/bin/env python3
 from django import forms
 from fault_reporting import models
-from django.core.validators import RegexValidator
-from django.core.exceptions import ValidationError
+from django.core.validators import RegexValidator  # form 正则校验
+from django.core.exceptions import ValidationError  # 抛出异常
 
 
 class UserModelForm(forms.ModelForm):
+    """
+    用户登录校验，使用modelform
+    labels 在页面显示的字段名称
+    fields 显示指定字段 这里必须和数据库字段对应
+    widgets input框的样式和属性  form-control 是bootstrap样式类(前端页面是循环生成的input框无法在添加增加样式)
+    model
+    """
+
     class Meta:
         model = models.UserInfo
         fields = ["username", "last_name", "phone", "email"]
@@ -25,7 +33,8 @@ class UserModelForm(forms.ModelForm):
 
 class RegisterForm(forms.Form):
     """
-    用户注册校验
+    用户注册校验 使用form组件
+    字段名称必须和数据库对应 re_password在数据库不存在，在存储数据前会删掉
     """
     username = forms.CharField(min_length=6,
                                label="用户名")
@@ -88,7 +97,8 @@ class UserUpdate(forms.Form):
     用户编辑校验
     """
     username = forms.CharField(min_length=6,
-                               label="用户名")
+                               label="用户名",
+                               widget=forms.TextInput(attrs={"readonly": "readonly"}))
     phone = forms.CharField(max_length=11,
                             min_length=11,
                             validators=[RegexValidator(r"^1[3-8]\d{9}$", "手机号格式不正确")],
@@ -96,19 +106,6 @@ class UserUpdate(forms.Form):
     email = forms.EmailField(label="邮箱",
                              validators=[RegexValidator(
                                  r"^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$", "邮箱格式不正确")])
-
-    def clean_username(self):
-        """
-        局部钩子
-        检测用户名唯一性
-        :return:
-        """
-        username = self.cleaned_data.get("username")
-        is_exist = models.UserInfo.objects.filter(username=username)
-        if is_exist.exists():
-            raise ValidationError("用户名已经存在")
-        else:
-            return username
 
     def __init__(self, *args, **kwargs):
         """

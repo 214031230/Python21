@@ -22,15 +22,12 @@ from fault_reporting import urls as fault_report_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
     url(r'^login/$', views.LoginView.as_view()),
     url(r'^index/$', views.index),
     url(r'^ooxx/', views.pcgetcaptcha),
-
     # 课件 ↓
     url(r'^register/$', views.RegisterView.as_view()),
     url(r'^logout/$', views.logout),
-
     # 故障总结主页面
     url(r'^fault-report/', include(fault_report_urls)),  # 以fault-report开头的所有路由都交给二级路由去处理
     # 给用户上传的那些文件的路径做一个对应关系
