@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1b183eb-0916-48e8-9037-c6ea87f37cb0" name="Default" comment="" />
+    <list default="true" id="a1b183eb-0916-48e8-9037-c6ea87f37cb0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../p1/.idea/dataSources.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../p1/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../p1/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../p1/.idea/p1.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../p1/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/Python21.iml" afterPath="$PROJECT_DIR$/../../../.idea/Python21.iml" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/CMS/settings.py" afterPath="$PROJECT_DIR$/CMS/settings.py" />
+      <change beforePath="$PROJECT_DIR$/CMS/urls.py" afterPath="$PROJECT_DIR$/CMS/urls.py" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change beforePath="$PROJECT_DIR$/fault_reporting/admin.py" afterPath="$PROJECT_DIR$/fault_reporting/admin.py" />
+      <change beforePath="$PROJECT_DIR$/fault_reporting/forms.py" afterPath="$PROJECT_DIR$/fault_reporting/forms.py" />
+      <change beforePath="$PROJECT_DIR$/fault_reporting/models.py" afterPath="$PROJECT_DIR$/fault_reporting/models.py" />
+      <change beforePath="$PROJECT_DIR$/fault_reporting/urls.py" afterPath="$PROJECT_DIR$/fault_reporting/urls.py" />
+      <change beforePath="$PROJECT_DIR$/fault_reporting/views.py" afterPath="$PROJECT_DIR$/fault_reporting/views.py" />
+      <change beforePath="$PROJECT_DIR$/static/css/login.css" afterPath="$PROJECT_DIR$/static/css/login.css" />
+      <change beforePath="$PROJECT_DIR$/static/js/login.js" afterPath="$PROJECT_DIR$/static/js/login.js" />
+      <change beforePath="$PROJECT_DIR$/static/js/register.js" afterPath="$PROJECT_DIR$/static/js/register.js" />
+      <change beforePath="$PROJECT_DIR$/static/js/set_password.js" afterPath="$PROJECT_DIR$/static/js/set_password.js" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
+      <change beforePath="$PROJECT_DIR$/templates/p_center.html" afterPath="$PROJECT_DIR$/templates/p_center.html" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" afterPath="$PROJECT_DIR$/templates/register.html" />
+      <change beforePath="$PROJECT_DIR$/templates/set_password.html" afterPath="$PROJECT_DIR$/templates/set_password.html" />
+      <change beforePath="$PROJECT_DIR$/../../课件/day20课上笔记.txt" afterPath="$PROJECT_DIR$/../../课件/day20课上笔记.txt" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,26 +116,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMS/urls.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fault_reporting/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1353">
-              <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-              <folding>
-                <element signature="e#637#678#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fault_reporting/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-              <folding>
-                <element signature="e#23#47#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="369">
+              <caret line="91" column="27" lean-forward="true" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,31 +149,31 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/static/js/login.js" />
         <option value="$PROJECT_DIR$/static/css/error.css" />
-        <option value="$PROJECT_DIR$/static/js/set_password.js" />
         <option value="$PROJECT_DIR$/readme" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/static/css/login.css" />
-        <option value="$PROJECT_DIR$/templates/register.html" />
-        <option value="$PROJECT_DIR$/static/js/register.js" />
         <option value="$PROJECT_DIR$/templates/p_center_view.html" />
-        <option value="$PROJECT_DIR$/templates/set_password.html" />
-        <option value="$PROJECT_DIR$/CMS/settings.py" />
         <option value="$PROJECT_DIR$/templates/nav_tp.html" />
         <option value="$PROJECT_DIR$/static/css/edit_user.css" />
-        <option value="$PROJECT_DIR$/fault_reporting/admin.py" />
-        <option value="$PROJECT_DIR$/fault_reporting/models.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/templates/index_tp.html" />
         <option value="$PROJECT_DIR$/static/css/fault.css" />
-        <option value="$PROJECT_DIR$/fault_reporting/urls.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/p_center.html" />
         <option value="$PROJECT_DIR$/static/js/edit_uesr.js" />
-        <option value="$PROJECT_DIR$/fault_reporting/views.py" />
-        <option value="$PROJECT_DIR$/CMS/urls.py" />
+        <option value="$PROJECT_DIR$/templates/register.html" />
+        <option value="$PROJECT_DIR$/static/js/register.js" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/static/js/login.js" />
+        <option value="$PROJECT_DIR$/static/css/login.css" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/fault_reporting/forms.py" />
+        <option value="$PROJECT_DIR$/templates/p_center.html" />
+        <option value="$PROJECT_DIR$/static/js/set_password.js" />
+        <option value="$PROJECT_DIR$/templates/set_password.html" />
+        <option value="$PROJECT_DIR$/CMS/urls.py" />
+        <option value="$PROJECT_DIR$/fault_reporting/urls.py" />
+        <option value="$PROJECT_DIR$/fault_reporting/views.py" />
+        <option value="$PROJECT_DIR$/CMS/settings.py" />
+        <option value="$PROJECT_DIR$/fault_reporting/admin.py" />
+        <option value="$PROJECT_DIR$/fault_reporting/models.py" />
       </list>
     </option>
   </component>
@@ -171,8 +184,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1383" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -199,6 +214,16 @@
               <item name="CMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMS" type="462c0819:PsiDirectoryNode" />
+              <item name="CMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMS" type="462c0819:PsiDirectoryNode" />
+              <item name="fault_reporting" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -212,7 +237,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/lanpa/Desktop/Python自动化21期/Python21/day19/homework/CMS/CMS/urls.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../p1" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -312,6 +337,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -322,7 +348,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18520518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28509718" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -372,23 +398,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CMS/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1353">
-          <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
-          <folding>
-            <element signature="e#637#678#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fault_reporting/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3828">
           <caret line="116" column="39" lean-forward="true" selection-start-line="116" selection-start-column="39" selection-end-line="116" selection-end-column="39" />
-          <folding>
-            <element signature="e#23#47#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -407,7 +421,7 @@
         <state relative-caret-position="2343">
           <caret line="80" column="50" lean-forward="true" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
           <folding>
-            <element signature="e#0#59#0" expanded="false" />
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -416,6 +430,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1188">
           <caret line="36" column="61" lean-forward="false" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -434,13 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/2552036b/c0266abe-b582-452d-8c0e-39a51252bf3d/main.auth_user" />
     <entry file="das://table:/bca2b629/c0266abe-b582-452d-8c0e-39a51252bf3d/main.auth_user" />
     <entry file="file://$PROJECT_DIR$/static/css/error.css">
@@ -451,13 +459,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/contrib/auth/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/static/js/set_password.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/bca2b629/9c277a3f-c9c0-490a-9446-69e7f5c1078c/main.auth_user" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/contrib/auth/models.py" />
     <entry file="das://table:/2552036b/9c277a3f-c9c0-490a-9446-69e7f5c1078c/main.auth_user" />
@@ -472,49 +473,14 @@
     <entry file="das://table:/2552036b/49dcccf7-8be6-4cbe-98e6-f39cee0cc390/main.fault_reporting_tag" />
     <entry file="das://table:/2552036b/49dcccf7-8be6-4cbe-98e6-f39cee0cc390/main.fault_reporting_fault" />
     <entry file="das://table:/2552036b/49dcccf7-8be6-4cbe-98e6-f39cee0cc390/main.fault_reporting_comment" />
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="24" column="127" lean-forward="false" selection-start-line="24" selection-start-column="123" selection-end-line="24" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fault_reporting/forms_bak.py" />
-    <entry file="file://$PROJECT_DIR$/static/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="838">
-          <caret line="32" column="22" lean-forward="false" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/forms/forms.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/core/handlers/exception.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/core/handlers/base.py" />
-    <entry file="file://$PROJECT_DIR$/templates/set_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1551">
-          <caret line="47" column="10" lean-forward="true" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="29" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/edit_user.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="607">
           <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fault_reporting/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -548,33 +514,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fault_reporting/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37">
-          <caret line="116" column="7" lean-forward="false" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/media/avatars/1_jCL8PFt.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/edit_uesr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-        </state>
       </provider>
     </entry>
     <entry file="das://table:/25b209d3/9dedc20f-d21f-464c-8565-6a34ebaeb776/main.fault_reporting_userinfo">
@@ -591,42 +533,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fault_reporting/urls.py">
+    <entry file="file://$PROJECT_DIR$/static/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        <state relative-caret-position="456">
+          <caret line="50" column="54" lean-forward="true" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="54" column="28" lean-forward="true" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="56" column="82" lean-forward="false" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        <state relative-caret-position="402">
+          <caret line="67" column="20" lean-forward="false" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/edit_uesr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/p_center.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        <state relative-caret-position="522">
+          <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fault_reporting/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="103" column="20" lean-forward="false" selection-start-line="103" selection-start-column="6" selection-end-line="103" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/set_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="37" column="70" lean-forward="true" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fault_reporting/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fault_reporting/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="-3999">
+          <caret line="108" column="24" lean-forward="true" selection-start-line="108" selection-start-column="24" selection-end-line="110" selection-end-column="19" />
           <folding>
-            <element signature="e#0#59#0" expanded="false" />
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/set_password.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMS/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1353">
-          <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+        <state relative-caret-position="456">
+          <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
           <folding>
             <element signature="e#637#678#0" expanded="true" />
           </folding>
@@ -635,19 +651,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMS/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="124" column="12" lean-forward="true" selection-start-line="124" selection-start-column="12" selection-end-line="124" selection-end-column="12" />
+        <state relative-caret-position="3828">
+          <caret line="116" column="10" lean-forward="false" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fault_reporting/forms.py">
+    <entry file="file://$PROJECT_DIR$/fault_reporting/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+        <state relative-caret-position="99">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
           <folding>
-            <element signature="e#23#47#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fault_reporting/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fault_reporting/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="91" column="27" lean-forward="true" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

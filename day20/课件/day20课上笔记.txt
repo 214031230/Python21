@@ -147,6 +147,7 @@ day20  2018-09-02
 					<form class="form-horizontal" action="" method="post" novalidate enctype="multipart/form-data">
 				2. 后端接收
 					avatar_obj = request.FILES.get("avatar")
+					
 		2. 如何查看上传的文件
 			/media/xx/oo.jpg
 			1. settings.py中设置 MEDIA_URL="/media/"(别名)
@@ -155,6 +156,7 @@ day20  2018-09-02
 		
 二. CMS表结构设计
 	1. 外键自己关联自己
+		
 	2. ManytoMany 使用自定义的表
 		1. 为什么要用自己写的第三张关系表，而不用自动生成的？
 			第三张关系表有一些额外的数据需要保存的时候

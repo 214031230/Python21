@@ -37,8 +37,8 @@ urlpatterns = [
     url(r'^p_center/$', views.p_center),
     # 修改密码
     url(r'^set_password/$', views.set_password),
-    # 用户上传文件展示路径
+    # 用户上传文件展示路径（需要结合settings配置）
     url(r'^media/(?P<path>.*)$', serve, {"document_root": settings.MEDIA_ROOT}),
-    # 报障分类二级路由
+    # 报障分类二级路由（用来根据产品线，标签，日期归档查询）
     url(r'^fault-report/', include(fault_urls))
 ]

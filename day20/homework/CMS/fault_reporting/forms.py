@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 from django import forms
 from fault_reporting import models
-from django.core.validators import RegexValidator  # form 正则校验
-from django.core.exceptions import ValidationError  # 抛出异常
+from django.core.validators import RegexValidator
+from django.core.exceptions import ValidationError
 
 
 class UserModelForm(forms.ModelForm):
@@ -35,6 +35,7 @@ class RegisterForm(forms.Form):
     """
     用户注册校验 使用form组件
     字段名称必须和数据库对应 re_password在数据库不存在，在存储数据前会删掉
+    RegexValidator  forms中使用正则过滤
     """
     username = forms.CharField(min_length=6,
                                label="用户名")
@@ -55,8 +56,11 @@ class RegisterForm(forms.Form):
     def clean_username(self):
         """
         局部钩子
+        clean_username   对username字段进行校验
         检测用户名唯一性
-        :return:
+        ValidationError 弹出异常
+        :return:  成功：用户名
+                  失败：错误信息
         """
         username = self.cleaned_data.get("username")
         is_exist = models.UserInfo.objects.filter(username=username)
@@ -67,9 +71,11 @@ class RegisterForm(forms.Form):
 
     def clean(self):
         """
-        全局钩子
+        全局钩子 获取cleaned_data中的所有数据
         检测两次输入的密码是否一致
         :return:
+                成功: 返回cleaned_data 数据
+                失败：返回错误信息，并指定那个input返回错误信息
         """
         pwd = self.cleaned_data.get("password")
         re_pwd = self.cleaned_data.get("re_password")
@@ -81,7 +87,10 @@ class RegisterForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         """
+        继承并修改父类的__init__
         循环给所有的标签添加样式
+        self.fields[field].widget.attrs： 拿到的是一个字典
+        update : 字典的update方法，把一个字典覆盖添加到当前字典
         :param args:
         :param kwargs:
         """
@@ -92,9 +101,12 @@ class RegisterForm(forms.Form):
             })
 
 
-class UserUpdate(forms.Form):
+class UserUpdateForm(forms.Form):
     """
     用户编辑校验
+    用户编辑校验相对比用户注册校验：
+        1. 少了密码和确定密码字段
+        2. 用户名不可修改，只读标签
     """
     username = forms.CharField(min_length=6,
                                label="用户名",

@@ -10,11 +10,15 @@ class UserInfo(AbstractUser):
     用户表，
         新增手机号字段
         新增头像字段
+        verbose_name 在admin中显示的字段名称
     """
     phone = models.CharField(max_length=11, verbose_name="手机号")
     avatar = models.FileField(upload_to="avatars", default="avatars/default.png", verbose_name="头像")
 
     class Meta:
+        """
+        verbose_name 在admin中显示的表名称
+        """
         verbose_name = "用户管理"
         verbose_name_plural = verbose_name
 

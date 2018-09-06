@@ -8,36 +8,51 @@
     <link rel="stylesheet" href="/static/css/error.css">
 </head>
 <body>
+<!--注册页面是独立的，不需要使用母版-->
+<!--注册页面开始 -->
 <div class="panel panel-default">
+    <!--使用面板标签-->
     <div class="panel-heading"><h3> 注册账号</h3></div>
     <div class="panel-body panel-success">
         <form class="form-horizontal">
             {% csrf_token %}
+            <!--使用post请求必须使用csrf_token-->
             {% for field in form_obj %}
+                <!--循环拿到form_obj中的所有标签，拿到的只是input标签，所以其他样式还是需要自己写的-->
                 <div class="form-group">
                     <label for="{{ field.id_for_label }}" class="col-sm-2 control-label">{{ field.label }}</label>
+                    <!--field.id_for_label 取到的是id_标签名称和input中的id对应, field.label等于form中定义的标签名称-->
                     <div class="col-sm-3">
                         {{ field }}
+                        <!--field 是 form生成的input标签，由于这里无法对input标签进行修改，所以在form中对标签添加样式-->
                         <span></span>
+                        <!--span用来显示错误信息-->
                     </div>
                 </div>
             {% endfor %}
             <div class="form-group">
-                <label  class="col-sm-2 control-label" for="id_avatar">请选择头像
+                <label class="col-sm-2 control-label" for="id_avatar">请选择头像
                     <img id="id_img_avatar" src="/static/images/default.png" alt="头像">
+                    <!--img配合JS用来预览用户上传的头像，default.png是默认头像，把img放到label中 点击img标签的时候可以
+                    选择头像
+                    -->
                 </label>
                 <input type="file" id="id_avatar" accept="image/*" class="form-control">
+                <!--input类似为file用户可以选择图片，accept用来控制用户选择的文件类型-->
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-4">
                     <button type="button" class="btn btn-success reg-btn">注册</button>
+                    <!--这里使用ajax提交代码，button不能是submit类型。-->
                     <a href="/index/" class="btn btn-warning">取消</a>
                 </div>
             </div>
         </form>
     </div>
 </div>
+<!--注册页面结束-->
 <script src="/static/plugins/jquery-3.3.1.min.js"></script>
 <script src="/static/js/register.js"></script>
+<!--注册js，包含ajax提交，图片预览，获取input焦点以后，删除错误信息-->
 </body>
 </html>
