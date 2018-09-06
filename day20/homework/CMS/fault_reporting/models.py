@@ -120,6 +120,7 @@ class UpDown(models.Model):
 class Fault2Tag(models.Model):
     """
     故障报告和标签多对多关联表
+    手动生产第三张表，可以在第三张表增加新的字段
     """
     fault = models.ForeignKey(to="Fault", verbose_name="故障总结")
     tag = models.ForeignKey(to="Tag", verbose_name="标签名称")

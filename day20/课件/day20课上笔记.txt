@@ -9,8 +9,8 @@ day20  2018-09-02
 				def upload(request):
 					"""
 					上传文件操作
-					:param request: 
-					:return: 
+					:param request:
+					:return:
 					"""
 					if request.method == "POST":
 						# 从上传的文件数据中拿到 avatar对应的文件对象
@@ -147,7 +147,7 @@ day20  2018-09-02
 					<form class="form-horizontal" action="" method="post" novalidate enctype="multipart/form-data">
 				2. 后端接收
 					avatar_obj = request.FILES.get("avatar")
-					
+
 		2. 如何查看上传的文件
 			/media/xx/oo.jpg
 			1. settings.py中设置 MEDIA_URL="/media/"(别名)
@@ -156,38 +156,113 @@ day20  2018-09-02
 		
 二. CMS表结构设计
 	1. 外键自己关联自己
-		
+		class Comment(models.Model):
+		    """
+		    评论表
+		    """
+		    content = models.CharField(max_length=100, verbose_name="评论内容")
+		    comment_date = models.DateTimeField(auto_now_add=True, verbose_name="评论时间")
+		    fault = models.ForeignKey(to="Fault", verbose_name="故障总结")
+		    user = models.ForeignKey(to="UserInfo", verbose_name="评论用户")
+		    parent_comment = models.ForeignKey(to="self", null=True, blank=True, verbose_name="父级评论")  # 自己关联自己，用户可以评论其他人的评论
+
+		    def __str__(self):
+		        return self.content
+
+		    class Meta:
+		        verbose_name = "评论管理"
+		        verbose_name_plural = verbose_name
 	2. ManytoMany 使用自定义的表
 		1. 为什么要用自己写的第三张关系表，而不用自动生成的？
 			第三张关系表有一些额外的数据需要保存的时候
+			class Fault(models.Model):
+			    """
+			    故障表
+			    """
+			    title = models.CharField(max_length=50, verbose_name="故障标题")
+			    summary = models.TextField(max_length=100, verbose_name="故障概述")
+			    create_time = models.DateTimeField(auto_now_add=True, verbose_name="发布时间")
+			    modify_time = models.DateTimeField(auto_now=True, verbose_name="最后修改时间")
+			    tags = models.ManyToManyField(to="Tag",
+			                                  through="Fault2Tag",  # 指定第三张关系表
+			                                  through_fields=("fault", "tag"),  # 通过哪些字段建立多对多关系
+			                                  verbose_name="标签")
+			    classify = models.ForeignKey(to="Classify", verbose_name="分类", null=True)
+			    user = models.ForeignKey(to="UserInfo", verbose_name="发布用户")
+
+			    comment_count = models.IntegerField(default=0, verbose_name="评论总数")
+			    up_count = models.IntegerField(default=0, verbose_name="点赞总数")
+			    down_count = models.IntegerField(default=0, verbose_name="反正总数")
+
+			    def __str__(self):
+			        return self.title
+
+			    class Meta:
+			        verbose_name = "故障管理"
+			        verbose_name_plural = verbose_name
+					
+			class Tag(models.Model):
+			    """
+			    标签表
+			    """
+			    name = models.CharField(max_length=30, verbose_name="标签名称", unique=True)
+
+			    def __str__(self):
+			        return self.name
+
+			    class Meta:
+			        verbose_name = "标签管理"
+			        verbose_name_plural = verbose_name
+			
+			class Fault2Tag(models.Model):
+			    """
+			    故障报告和标签多对多关联表
+			    """
+			    fault = models.ForeignKey(to="Fault", verbose_name="故障总结")
+			    tag = models.ForeignKey(to="Tag", verbose_name="标签名称")
+
+			    def __str__(self):
+			        return "{}-{}".format(self.fault.title, self.tag.name)
+
+			    class Meta:
+			        unique_together = (("fault", "tag"),)
+			        verbose_name = "故障-标签"
+			        verbose_name_plural = verbose_name
+			
 
 三. CMS首页和个人中心页面实现
 	ORM 高阶用法都在 --> https://www.cnblogs.com/liwenzhou/p/8660826.html
-	1. ORM分组和聚合查询 
+	1. ORM分组和聚合查询
+		聚合内置函数：from django.db.models import Avg, Sum, Max, Min, Count
+
 		annotate()
-		annotate()前面查的是什么就按照什么分组
-		.values("dept").annotate()就表示按照dept分组
-		
+			annotate()前面查的是什么就按照什么分组
+			.values("dept").annotate()就表示按照dept分组
+
 	2. 时间格式化函数
 			1. MySQL
 				DATE_FORMAT(字段, '格式')
+				示例：models.Fault.objects.all().extra(select={"ym": "date_format(create_time, '%%Y-%%m')"}).values("ym").annotate(num=Count("id")).values("ym", "num")
 			2. sqlite
 				strftime('格式', 字段)
+				示例：models.Fault.objects.all().extra(select={"ym": "strftime('%%Y-%%m', create_time)"}).values("ym").annotate(num=Count("id")).values("ym", "num")
 	3. Django ORM执行原生SQL语句
 		1. 使用extra()执行部分sql语句
+			示例：models.Fault.objects.all().extra(select={"ym": "date_format(create_time, '%%Y-%%m')"}).values("ym").annotate(num=Count("id")).values("ym", "num")
 		2. 类似pymysql执行方式
 	4. 二级路由
 		1. 保障系统4合1
-		
-
-JS ES6语法：https://www.cnblogs.com/liwenzhou/p/9249932.html
-
-2. 本周任务
-	1. 回去复习下正则模块的知识点（re）
-	2. 回去复习下 LEFT JOIN和INNER JOIN的区别？ MySQL查询语句
-
-3. 推荐
-	《漫画数据库》
+		代码示例：
+		CMS urls.py:
+			from fault_reporting import urls as fault_urls
+			urlpatterns = [
+			    url(r'^fault-report/', include(fault_urls))
+			]
+		fault_reporting urls.py:
+			urlpatterns = [
+			    # 根据产品线，标签，日期归档分类 ()在正则是分组的意思，这里分2个组传了2个参数
+			    url(r'(class|tag|archive)/(.*)/$', views.index)
+			]
 
 
 	

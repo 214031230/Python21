@@ -108,7 +108,7 @@ class UserUpdateForm(forms.Form):
         1. 少了密码和确定密码字段
         2. 用户名不可修改，只读标签
     """
-    username = forms.CharField(min_length=6,
+    username = forms.CharField(min_length=3,
                                label="用户名",
                                widget=forms.TextInput(attrs={"readonly": "readonly"}))
     phone = forms.CharField(max_length=11,

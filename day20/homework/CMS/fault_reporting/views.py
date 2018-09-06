@@ -116,9 +116,8 @@ def index(request, *args):
     user = auth.get_user(request).username
     class_list = models.Classify.objects.all().annotate(num=Count("fault")).values("name", "num")
     tag_list = models.Tag.objects.all().annotate(num=Count("fault")).values("name", "num")
-    archive_list = models.Fault.objects.all().extra(
-        select={"ym": "strftime('%%Y-%%m', create_time)"}
-    ).values("ym").annotate(num=Count("id")).values("ym", "num")
+    archive_list = models.Fault.objects.all().extra(select={
+        "ym": "strftime('%%Y-%%m', create_time)"}).values("ym").annotate(num=Count("id")).values("ym", "num")
     fault_list = models.Fault.objects.all()
     if args and len(args) == 2:
         if args[0] == "class":
