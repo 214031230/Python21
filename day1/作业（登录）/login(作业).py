@@ -47,7 +47,7 @@ while True:
             # while 作用让用户停留在选择界面
             while True:
                 choice = input("用户\033[0;31;0m<%s>\033[0m已经登录失败超过3次，是否继续尝试？\033[0;31;0mY继续/N退出\033[0m：" % (username,))
-                if choice == "y" or choice == "Y":
+                if choice.upper() == "Y":
                     # 用户选择继续尝试，则清除失败记录
                     temp_user.clear()
                     break

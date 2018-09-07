@@ -76,8 +76,7 @@ def login(request):
         password = request.POST.get("password")
         next = request.GET.get("next", "/index/")
         v_code = request.POST.get("v_code")
-        # if v_code.upper() == request.session.get("v_code"):
-        if True:
+        if v_code.upper() == request.session.get("v_code"):
             user = auth.authenticate(request, username=username, password=password)
             if user:
                 auth.login(request, user)
