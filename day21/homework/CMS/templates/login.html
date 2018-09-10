@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+<!--用户登录页面开始-->
+<div class="container login-page">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">
+                        运维报障系统
+                    </h2>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" action="" method="post" novalidate autocomplete="off">
+                        <!--novalidate 关闭浏览器的校验功能，使用代码校验
+                            autocomplete="off" 关闭input的历史记录
+                        -->
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label">用户名</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control username" id="username" placeholder="用户名" value="{{ user }}" name="username">
+                                <!--value 登录失败，值还是之前用户填写的用户名，第一次登录用户名则为空-->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-2 control-label">密码</label>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control password" id="password" placeholder="密码"
+                                       name="password">
+                            </div>
+                            <span id="msg" class="error_msg">{{ error_msg }}</span>
+                            <!--用户登录失败的错误信息-->
+                        </div>
+                        <div class="form-group">
+                            <label for="v_code" class="col-sm-2 control-label">验证码</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control v_code" id="v_code" placeholder="请输验证码" name="v_code">
+                            </div>
+
+                            <div class="col-sm-3">
+                                <img src="/v_code/" class="code_png" alt="">
+                                <!--验证码使用代码生成，通过路径获取验证码-->
+                            </div>
+                            <div class="code_msg">{{ code_msg }}</div>
+                            <!--验证码错误信息-->
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success login-btn">登录</button>
+                                <a href="/register/" class="btn btn-warning login-btn  login-btn-l">注册</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--用户登录页面结束-->
+<script src="/static/plugins/jquery-3.3.1.min.js"></script>
+<script src="/static/js/login.js"></script>
+<!--登录页面相关JS，验证码点击刷新功能，input获取焦点删除错误信息-->
+</body>
+</html>

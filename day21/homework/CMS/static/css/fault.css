@@ -1,0 +1,10 @@
+.fault_desc{
+    font-size: 20px;
+}
+.fault_comment{
+    font-size: 15px;
+    color: #8c8c8c;
+}
+.fault_comment span{
+    margin-right: 20px;
+}

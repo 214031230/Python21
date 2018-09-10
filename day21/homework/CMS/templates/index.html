@@ -1,0 +1,72 @@
+{% extends "index_tp.html" %}
+<!--使用母版-->
+{% block title %}
+    <title>报障系统首页</title>
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/fault.css">
+{% endblock %}
+{% block view %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>业务线</h5>
+        </div>
+       <!--页面左边的分类、标签、归档时间 需要传两个参数给后端 /fault-report/参数1（class|tag|archive）/参数2(（class_name|tag_name|archive_name)）)-->
+        <div class="panel-body">
+            <!--循环取所有业务名称展示-->
+            {% for foo in class_list %}
+{#                <p><a href="">{{ foo.name }}({{ foo.fault_set.count }})</a></p>#}
+                <!--上面使用就是反向查询-->
+                <p><a href="/fault-report/class/{{ foo.name }}">{{ foo.name }}({{ foo.num }})</a></p>
+{#                <!--href="/fault-report/class/{{ foo.name }} 给每个产品线生成对应的连接，用户点击以后把业务线名称传给后台代码进行#}
+{#                过滤并返回给页面#}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>标签分组</h5>
+        </div>
+        <div class="panel-body">
+           <!--循环取所有标签名称展示-->
+            {% for foo in tag_list %}
+{#                <p><a href="">{{ foo.name }}({{ foo.fault_set.count }})</a></p>#}
+                <p><a href="/fault-report/tag/{{ foo.name }}">{{ foo.name }}({{ foo.num }})</a></p>
+{#                 <!--href="/fault-report/tag/{{ foo.name }} 给每个标签生成对应的连接，用户点击以后把标签名称传给后台代码进行#}
+{#                过滤并返回给页面#}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>日期归档</h5>
+        </div>
+        <div class="panel-body">
+             <!--循环取所有日期归档展示-->
+            {% for archive in archive_list %}
+                <p><a href="/fault-report/archive/{{ archive.ym }}">{{ archive.ym }}({{ archive.num }})</a></p>
+{#                 <!--href="/fault-report/archive/{{ foo.name }} 给每个日期归档生成对应的连接，用户点击以后把归档日期传给后台代码进行#}
+{#                过滤并返回给页面#}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block context %}
+    <!--显示报障列表fault_list是一个变量，根据用户传参获取的变量-->
+    {% for fault in fault_list %}
+        <div class="fault_title"><h3><a href="">{{ fault.title }}</a></h3></div>
+        <!--显示标题-->
+        <div class="fault_desc">{{ fault.summary }}</div>
+        <!--显示报障简介-->
+        <div class="fault_comment">
+            <span>{{ fault.user.username }}发布于{{ fault.create_time }}</span>
+            <!--显示用户，发布时间-->
+            <span class="glyphicon glyphicon-comment" aria-hidden="true">评论({{ fault.comment_count }})</span>
+            <!--显示评论-->
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">点赞({{ fault.up_count }})</span>
+            <!--显示点赞-->
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}
