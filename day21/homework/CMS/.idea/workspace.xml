@@ -2,89 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1b183eb-0916-48e8-9037-c6ea87f37cb0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../.idea/homework.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../CMS.zip" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/CMS.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/07a2a105-03ff-4821-8ff5-b71db764a00d/storage_v2/_src_/schema/main.uQUzAA.meta" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/49dcccf7-8be6-4cbe-98e6-f39cee0cc390/storage_v2/_src_/schema/main.uQUzAA.meta" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/9c277a3f-c9c0-490a-9446-69e7f5c1078c/storage_v2/_src_/schema/main.uQUzAA.meta" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/9dedc20f-d21f-464c-8565-6a34ebaeb776.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/9dedc20f-d21f-464c-8565-6a34ebaeb776/storage_v2/_src_/schema/main.uQUzAA.meta" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/c0266abe-b582-452d-8c0e-39a51252bf3d/storage_v2/_src_/schema/main.uQUzAA.meta" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/f5472cb6-5c35-4a57-be51-c168908b1ad0/storage_v2/_src_/schema/main.uQUzAA.meta" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/CMS/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/CMS/settings.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/CMS/urls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/CMS/wsgi.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/forms.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/migrations/0001_initial.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/migrations/0002_auto_20180904_1721.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/migrations/0003_auto_20180904_1724.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/migrations/0004_auto_20180904_1752.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/urls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/fault_reporting/views.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/manage.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/avatars/1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/avatars/1_5HeJUbj.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/avatars/1_5KgqMqt.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/avatars/1_EAsQHph.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/avatars/1_jCL8PFt.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/avatars/1_mFUYwTA.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/avatars/2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/media/avatars/u4233882545270382672fm214gp0.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/readme" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/css/edit_user.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/css/error.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/css/fault.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/css/login.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/fonts/kumo.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/images/default.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/edit_uesr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/login.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/register.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/js/set_password.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/css/bootstrap-theme.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/css/bootstrap-theme.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/css/bootstrap-theme.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/css/bootstrap.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/css/bootstrap.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/css/bootstrap.min.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/js/bootstrap.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/js/bootstrap.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/bootstrap/js/npm.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/plugins/jquery-3.3.1.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/index_tp.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/login.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/nav_tp.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/p_center.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/p_center_view.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/register.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/set_password.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../课件.zip" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../demo/.idea/dataSources.local.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../demo/.idea/dataSources.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../demo/.idea/demo.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../demo/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../demo/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../test.py" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/Python21.iml" afterPath="$PROJECT_DIR$/../../../.idea/Python21.iml" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/CMS.iml" afterPath="$PROJECT_DIR$/.idea/CMS.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change beforePath="$PROJECT_DIR$/fault_reporting/urls.py" afterPath="$PROJECT_DIR$/fault_reporting/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -165,12 +95,36 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fault_reporting/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="266">
+              <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+              <folding>
+                <element signature="e#637#669#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fault_reporting/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="107" column="74" lean-forward="false" selection-start-line="107" selection-start-column="74" selection-end-line="107" selection-end-column="74" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fault_reporting/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2508">
+              <caret line="133" column="42" lean-forward="false" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -219,11 +173,11 @@
         <option value="$PROJECT_DIR$/CMS/urls.py" />
         <option value="$PROJECT_DIR$/CMS/settings.py" />
         <option value="$PROJECT_DIR$/fault_reporting/admin.py" />
-        <option value="$PROJECT_DIR$/fault_reporting/models.py" />
         <option value="$PROJECT_DIR$/fault_reporting/forms.py" />
         <option value="$PROJECT_DIR$/readme" />
         <option value="$PROJECT_DIR$/fault_reporting/views.py" />
         <option value="$PROJECT_DIR$/fault_reporting/urls.py" />
+        <option value="$PROJECT_DIR$/fault_reporting/models.py" />
       </list>
     </option>
   </component>
@@ -255,8 +209,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,6 +225,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,16 +333,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36842105" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3677911" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951543" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6001765" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1938445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1977612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28360656" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -441,6 +394,44 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/fault_reporting/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="e#637#669#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fault_reporting/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2508">
+          <caret line="133" column="42" lean-forward="false" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fault_reporting/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2033">
+          <caret line="107" column="74" lean-forward="false" selection-start-line="107" selection-start-column="74" selection-end-line="107" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fault_reporting/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#637#669#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/plugins/bootstrap/js/npm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -614,13 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fault_reporting/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -635,21 +619,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fault_reporting/views.py">
+    <entry file="file://$PROJECT_DIR$/fault_reporting/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="249" column="20" lean-forward="false" selection-start-line="249" selection-start-column="20" selection-end-line="249" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2508">
+          <caret line="133" column="42" lean-forward="false" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fault_reporting/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="266">
+          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="e#637#669#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fault_reporting/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="107" column="74" lean-forward="false" selection-start-line="107" selection-start-column="74" selection-end-line="107" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

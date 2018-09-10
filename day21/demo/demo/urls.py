@@ -1,4 +1,4 @@
-"""CMS URL Configuration
+"""demo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -14,12 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from fault_reporting import views
-
+from django.contrib import admin
 
 urlpatterns = [
-    # 根据产品线，标签，日期归档分类 ()在正则是分组的意思，这里分2个组传了2个参数
-    url(r'(class|tag|archive)/(.*)/$', views.index),
-    # 后台首页 显示当前用户发布的报障
-    # url(r'info/$', views.info)
+    url(r'^admin/', admin.site.urls),
 ]
