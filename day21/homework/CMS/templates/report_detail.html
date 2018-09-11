@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>故障详情页</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+    <!--故障详情表CSS-->
+    <link rel="stylesheet" href="/static/css/report_det.css">
+</head>
+<body>
+{% include "nav_tp.html" %}
+<div class="container">
+    <div class="row">
+        <!--故障详情开始-->
+        <div class="col-md-12">
+            <!--故障标题-->
+            <div><h1>{{ report.title }}</h1></div>
+            <hr>
+            <!--故障详情，safe渲染html标签-->
+            <div>{{ report.faultdetail.content|safe }}</div>
+        </div>
+        <!--故障详情结束-->
+        <!--点赞开始-->
+        {% csrf_token %}
+        <div class="col-md-2 col-md-offset-10">
+            <div id="div_digg">
+                <div class="diggit updown">
+                    <span class="diggnum" id="digg_count">{{ report.up_count }}</span>
+                </div>
+                <div class="buryit updown">
+                    <span class="burynum" id="bury_count">{{ report.down_count }}</span>
+                </div>
+                <div class="clearfix"></div>
+                <div class="diggword" id="digg_tips">
+                </div>
+            </div>
+        </div>
+        <!--点赞结束-->
+        <!--评论展示区开始-->
+        <div class="col-md-12">
+            <hr>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>评论列表</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        {% for foo in report.comment_set.all %}
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--评论展示区开始-->
+
+    </div>
+</div>
+
+
+<script src="/static/plugins/jquery-3.3.1.min.js"></script>
+<script src="/static/plugins/bootstrap/js/bootstrap.js"></script>
+<script>
+    $(function () {
+        // 点赞JS开始
+        $(".updown").click(function () {
+            // 取到点赞必须的数据
+            // 1. 被点赞文章
+            var reportID ={{report.id}};
+            //  2. 点赞或者反对
+            var isUp = $(this).hasClass("diggit");
+
+            $.ajax({
+                url: "/fault-report/up_down/",
+                type: "post",
+                data: {
+                    "report_id": reportID,
+                    "is_up": isUp,
+                    "csrfmiddlewaretoken": $("[name='csrfmiddlewaretoken']").val()
+                },
+                success: function (res) {
+                    console.log("12312313123"+res);
+                    // 当code等于1的时候，点赞有错误,显示错误信息
+                    if (res.code === 1) {
+                        $("#digg_tips").text(res.msg)
+                    } else {
+                        // 点赞或者反对成功，展示点赞数据
+                        if (isUp) {
+                            // 点赞数+1 parseInt 把字符串转换成数字类型
+                            $("#digg_count").text(parseInt($("#digg_count").text()) + 1);
+                        } else {
+                            // 反对数+1  "+" 也可以把字符串转成数字类型
+                            $("#bury_count").text(+$("#bury_count").text() + 1);
+                        }
+                        // 2. 展示成功的提示信息
+                        $("#digg_tips").text(res.msg);
+                    }
+                }
+            })
+        });
+        // 点赞JS结束
+
+
+    });
+</script>
+</body>
+</html>

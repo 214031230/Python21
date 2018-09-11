@@ -141,10 +141,10 @@ class FaultDetail(models.Model):
         故障内容可能多，用户每次请求页面的时候都请求故障内容，就会很慢。
     """
     content = models.TextField(verbose_name="故障内容")
-    fault = models.ForeignKey(to="Fault", verbose_name="故障总结")
+    fault = models.OneToOneField(to="Fault", verbose_name="故障总结")
 
     def __str__(self):
-        return self.content
+        return self.content[0:150]
 
     class Meta:
         verbose_name = "故障详情"

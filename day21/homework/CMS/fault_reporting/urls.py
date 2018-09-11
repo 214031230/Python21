@@ -21,5 +21,11 @@ urlpatterns = [
     # 根据产品线，标签，日期归档分类 ()在正则是分组的意思，这里分2个组传了2个参数
     url(r'(class|tag|archive)/(.*)/$', views.index),
     # 后台首页 显示当前用户发布的报障
-    # url(r'info/$', views.info)
+    url(r'info/$', views.info),
+    # 故障详情页面,需要(\d+)传参，参数=故障ID
+    url(r'report_detail/(\d+)/$', views.report_detail),
+    # 点赞、反对
+    url(r'up_down/$', views.up_down),
+    # 评论
+    url(r'comment/$', views.comment)
 ]
