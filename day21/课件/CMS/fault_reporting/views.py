@@ -266,7 +266,7 @@ def add_report(request):
                 content=soup.prettify(),  # 格式化完整的HTML内容
                 fault_id=report_obj.id
             )
-        return redirect("/fault-report/info/")
+            return redirect("/fault-report/info/")
 
     lobs = models.LOB.objects.all()
     return render(request, "add_report.html", locals())
@@ -289,9 +289,6 @@ def upload_img(request):
 
 def edit_report(request, report_id):
     # 编辑之后的更新
-
-
-
 
 
     report_obj = models.FaultReport.objects.filter(id=report_id).first()

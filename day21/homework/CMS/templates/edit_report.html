@@ -1,0 +1,74 @@
+{% extends "index_tp.html" %}
+{% block title %}
+    <title>修改保障</title>
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="/static/css/error.css">
+{% endblock %}
+{% block view %}
+    {% include "p_center_view.html" %}
+{% endblock %}
+{% block context %}
+    <div class="panel panel-default">
+        <div class="panel-heading"><h4>修改报障</h4></div>
+        <div class="panel-body panel-success">
+            <form class="form-horizontal" action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="report_title" class="col-sm-2 control-label">标题</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="report_title" placeholder="标题"
+                               name="report_title" value="{{ report_obj.title }}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="report_content" class="col-sm-2 control-label">内容</label>
+                    <div class="col-sm-8">
+                        <textarea name="report_content" id="report_content" class="form-control" cols="100" rows="16"
+                        >
+                            {{ report_obj.faultdetail.content }}
+                        </textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="report_class" class="col-sm-2">选择业务线</label>
+                    <div class="col-sm-3">
+                        <select name="report_class" id="report_class" class="form-control">
+                            {% for class in class_obj %}
+                                {% if class ==  report_obj.classify %}
+                                    <option value="{{ class.id }}" selected>{{ class.name }}</option>
+                                {% else %}
+                                    <option value="{{ class.id }}">{{ class.name }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <p class="error error_dif">{{ error_msg_pwd }}</p>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-4">
+                        <button type="submit" class="btn btn-success">确认编辑</button>
+                        <a href="/index/" class="btn btn-warning">取消</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script src="/static/js/set_password.js"></script>
+    <!--富文本编辑框-->
+    <script charset="utf-8" src="/static/plugins/kindeditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" src="/static/plugins/kindeditor/lang/zh-CN.js"></script>
+    <!--前端JS校验两次密码是否一致，标签获取焦点删除错误信息-->
+    <script>
+        KindEditor.ready(function (K) {
+            window.editor = K.create('#report_content', {
+                uploadJson: "/fault-report/upload_img/",
+                extraFileUploadParams: {  // 上传文件时额外传递的参数
+                    csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+                }
+            });
+        });
+    </script>
+{% endblock %}

@@ -16,7 +16,6 @@ Including another URLconf
 from django.conf.urls import url
 from fault_reporting import views
 
-
 urlpatterns = [
     # 根据产品线，标签，日期归档分类 ()在正则是分组的意思，这里分2个组传了2个参数
     url(r'(class|tag|archive)/(.*)/$', views.index),
@@ -27,5 +26,17 @@ urlpatterns = [
     # 点赞、反对
     url(r'up_down/$', views.up_down),
     # 评论
-    url(r'comment/$', views.comment)
+    url(r'comment/$', views.comment),
+    # 新增报障
+    url(r'add_report/$', views.add_report),
+    # 富文本展示图片
+    url(r'upload_img/$', views.upload_img),
+    # 编辑故障详情
+    url(r'edit_report/(\d+)$', views.edit_report),
+    # 删除故障
+    url(r'delete_report/(\d+)$', views.delete_report),
+    # 查看我评论的
+    url(r'mycm/$', views.my_comment),
+    # 用户访问fault-report 跳转到index页面
+    url('^$', views.index),  # index(request)
 ]

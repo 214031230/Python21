@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import auth
 import random
+import os
 from django.contrib.auth.decorators import login_required
 from fault_reporting.forms import UserUpdateForm
 from fault_reporting.forms import RegisterForm
@@ -10,6 +11,7 @@ from django.forms import model_to_dict
 from django.db.models import Count
 from django.db import transaction
 from django.db.models import F
+from bs4 import BeautifulSoup
 
 
 # Create your views here.
@@ -309,13 +311,13 @@ def report_detail(request, detail_id):
     :return: 
     """
     report = models.Fault.objects.filter(id=detail_id).first()
+    print(report.comment_set.all())
     user = request.user.username
     if not report:
         return HttpResponse("404页面")
     return render(request, "report_detail.html", locals())
 
 
-# @login_required
 def up_down(request):
     """
     点赞或者反对
@@ -358,9 +360,9 @@ def up_down(request):
             )
 
             if is_up:
-                models.Fault.objects.filter(id=report_id).update(up_count=F("up_count")+1)
+                models.Fault.objects.filter(id=report_id).update(up_count=F("up_count") + 1)
             else:
-                models.Fault.objects.filter(id=report_id).update(up_count=F("down_count")+1)
+                models.Fault.objects.filter(id=report_id).update(up_count=F("down_count") + 1)
         res["msg"] = "点赞成功" if is_up else "反对成功"
 
     return JsonResponse(res)
@@ -369,9 +371,177 @@ def up_down(request):
 @login_required
 def comment(request):
     """
-
+    用户评论
+    1. 取到页面传递的参数
+        1. 取到文章ID
+        2. 取到评论内容
+        3. 取到评论的父评论ID
+    2. 往数据库中写评论，需要操作2张表（Comment和Fault），这里又用到了事务操作，要成功都成功，有一个失败则都失败
+    3. 操作Comment表判断是否有父评论
+        1. 如果没有父评论
+            1. 去ORM创建评论，只需要传递3个字段，评论内容，被评论的文章ID，评论用户
+        2. 如果有父评论
+            1. 去ORM创建评论，只需要传递3个字段，评论内容，被评论的文章ID，评论用户, 父评论ID
+    4. 操作Fault表，增加评论数 
+    5. 返回评论内容到前端页面进行展示
+          
     :param request:
     :return:
     """
+    res = {"code": 0}
+    report_id = request.POST.get("report_id")
+    content = request.POST.get("content")
+    parent_id = request.POST.get("parent_id", None)
+    user = request.user
+
+    with transaction.atomic():
+        if not parent_id:
+            comment_obj = models.Comment.objects.create(
+                content=content,
+                fault_id=report_id,
+                user=user,
+            )
+        else:
+            comment_obj = models.Comment.objects.create(
+                content=content,
+                fault_id=report_id,
+                user=user,
+                parent_comment_id=parent_id
+            )
+        models.Fault.objects.filter(id=report_id).update(comment_count=F("comment_count") + 1)
+
+    res["data"] = {
+        "id": comment_obj.id,
+        "n": models.Comment.objects.count(),
+        "create_time": comment_obj.comment_date,
+        "user": comment_obj.user.username,
+        "content": comment_obj.content,
+    }
+    return JsonResponse(res)
 
 
+@login_required
+def add_report(request):
+    """
+    新增报障
+        1. get请求：
+            1. 取到所有的业务线
+            2. 返回发布页面，并返回业务线
+        2. post请求
+            1. 取到故障标题
+            2. 取到故障内容
+            3. 取到所属业务线
+            4. 在发布故障之前，先清除script代码，防止跨站攻击.使用bs4模块
+            5. 发布故障需要同时操作两种表，又用到了事务操作, FaultDetail 和 Fault
+            6. 创建数据需要注意：
+                1. 由于用户内容是html文件，直接字符串切割简介是包含html内容的，需要使用BeautifulSoup
+                    切割
+                2. 同样保障详情也需要使用需要使用BeautifulSoup格式化
+            7. 发布成功以后跳转到故障详情页面
+    :param request:
+    :return:
+    """
+    class_obj = models.Classify.objects.all()
+    if request.method == "POST":
+        report_title = request.POST.get("report_title")
+        report_content = request.POST.get("report_content")
+        report_class = request.POST.get("report_class")
+
+        soup = BeautifulSoup(report_content, "html.parser")
+        for i in soup.find_all("script"):
+            i.decompose()
+
+        with transaction.atomic():
+            obj = models.Fault.objects.create(
+                title=report_title,
+                summary=soup.text[0:150],
+                classify_id=report_class,
+                user=request.user
+            )
+            models.FaultDetail.objects.create(
+                content=soup.prettify(),
+                fault_id=obj.id
+            )
+        return redirect("/fault-report/report_detail/%s/" % (obj.id,))
+    return render(request, "add_report.html", locals())
+
+
+def upload_img(request):
+    """
+    富文本框图片显示
+        1. 取到富文本框上传的图片
+        2. 保存文件
+        3. 将上传文件的url返回给富文本编辑器
+    :param request:
+    :return:
+    """
+    res = {"error": 0}
+    file_obj = request.FILES.get("imgFile")
+    file_path = os.path.join("media", "report_images", file_obj.name)
+    with open(file_path, "wb") as f:
+        for chunk in file_obj.chunks():
+            f.write(chunk)
+    res["url"] = "/media/report_images/{}".format(file_obj.name)
+    return JsonResponse(res)
+
+
+@login_required
+def edit_report(request, report_id):
+    """
+    编辑故障
+        1. get请求
+    :param request:
+    :return:
+    """
+    if request.method == "POST":
+        report_title = request.POST.get("report_title")
+        report_content = request.POST.get("report_content")
+        report_class = request.POST.get("report_class")
+        report = models.Fault.objects.filter(id=report_id).first()
+
+        soup = BeautifulSoup(report_content, "html.parser")
+        for i in soup.find_all("script"):
+            i.decompose()
+
+        with transaction.atomic():
+            obj = models.Fault.objects.filter(id=report_id).update(
+                title=report_title,
+                summary=soup.text[0:150],
+                classify_id=report_class,
+            )
+            models.FaultDetail.objects.filter(fault_id=report.id).update(
+                content=soup.prettify(),
+            )
+        return redirect("/fault-report/report_detail/%s/" % (report.id,))
+
+    report_obj = models.Fault.objects.filter(id=report_id).first()
+    class_obj = models.Classify.objects.all()
+    return render(request, "edit_report.html", locals())
+
+
+@login_required
+def delete_report(request, report_id):
+    """
+    删除故障
+    :param request:
+    :return:
+    """
+    obj_id = models.Fault.objects.filter(id=report_id).first()
+    with transaction.atomic():
+        models.Fault.objects.filter(id=report_id).delete()
+        models.FaultDetail.objects.filter(fault_id=obj_id).delete()
+
+    return redirect("/fault-report/info/")
+
+
+@login_required
+def my_comment(request):
+    """
+    查看我评论的
+    :param request:
+    :return:
+    """
+    user = request.user
+    obj = models.Comment.objects.filter(user=user)
+    fault_list_user = obj.values("fault__title")
+    return render(request, "my_comment.html", locals())

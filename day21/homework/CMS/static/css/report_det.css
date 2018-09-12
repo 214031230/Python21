@@ -35,3 +35,17 @@
     font-size: 12px;
     color: red;
 }
+
+.list-group-item span{
+    margin-right: 15px;
+}
+.reply{
+    float: right;
+}
+.counter{
+    font-size: 15px;
+}
+.com-content{
+    color: #2aabd2;
+    font-size: 15px;
+}

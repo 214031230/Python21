@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^comment/$', views.comment),  # 评论
 
     url(r'^add-report/$', views.add_report),  # 发布新的故障总结
-    url(r'^edit-report/(\d+)/$', views.edit_report),  # 发布新的故障总结
+    url(r'^edit-report/(\d+)/$', views.edit_report),  # 编辑故障总结
     url(r'^upload-img/$', views.upload_img),  # 富文本编辑器用到的上传图片的接口
 
 
