@@ -151,6 +151,9 @@ def index(request, *args):
             fault_list = fault_list.filter(classify__name=args[1])
         elif args[0] == "tag":
             fault_list = fault_list.filter(tags__name=args[1])
+        elif args[0] == "search":
+            obj = models.FaultDetail.objects.filter(content__contains=args[1]).values_list("id")
+            fault_list = fault_list.filter(id__in=[i[0] for i in obj])
         else:
             try:
                 year, month = args[1].split("-")
