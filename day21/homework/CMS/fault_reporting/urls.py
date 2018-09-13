@@ -34,7 +34,7 @@ urlpatterns = [
     # 编辑故障详情
     url(r'edit_report/(\d+)$', views.edit_report),
     # 删除故障
-    url(r'delete_report/(\d+)$', views.delete_report),
+    url(r'delete_report/$', views.delete_report),
     # 查看我评论的
     url(r'mycm/$', views.my_comment),
     # 用户访问fault-report 跳转到index页面

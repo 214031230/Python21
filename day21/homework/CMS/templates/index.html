@@ -54,7 +54,7 @@
 
 {% block context %}
     <!--显示报障列表fault_list是一个变量，根据用户传参获取的变量-->
-    {% for fault in fault_list %}
+    {% for fault in data %}
         <div class="fault_title"><h3><a href="/fault-report/report_detail/{{ fault.id }}">{{ fault.title }}</a></h3></div>
         <!--显示标题-->
         <div class="fault_desc">{{ fault.summary }}</div>
@@ -69,4 +69,5 @@
         </div>
         <hr>
     {% endfor %}
+    {{ page_html|safe }}
 {% endblock %}

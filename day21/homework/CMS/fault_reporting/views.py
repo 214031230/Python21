@@ -12,6 +12,7 @@ from django.db.models import Count
 from django.db import transaction
 from django.db.models import F
 from bs4 import BeautifulSoup
+from public.paging import Paging
 
 
 # Create your views here.
@@ -117,12 +118,34 @@ def index(request, *args):
                  args[1] = classify__name|tags__name|时间（2018-9）
     :return:
     """
+    # user = auth.get_user(request).username
+    # class_list = models.Classify.objects.all().annotate(num=Count("fault")).values("name", "num")
+    # tag_list = models.Tag.objects.all().annotate(num=Count("fault")).values("name", "num")
+    # archive_list = models.Fault.objects.all().extra(select={
+    #     "ym": "strftime('%%Y-%%m', create_time)"}).values("ym").annotate(num=Count("id")).values("ym", "num")
+    # fault_list = models.Fault.objects.all()
+    # if args and len(args) == 2:
+    #     if args[0] == "class":
+    #         fault_list = fault_list.filter(classify__name=args[1])
+    #     elif args[0] == "tag":
+    #         fault_list = fault_list.filter(tags__name=args[1])
+    #     else:
+    #         try:
+    #             year, month = args[1].split("-")
+    #             fault_list = fault_list.filter(create_time__year=year, create_time__month=month)
+    #         except Exception:
+    #             fault_list = []
+    #
+    # return render(request, "index.html", locals())
     user = auth.get_user(request).username
     class_list = models.Classify.objects.all().annotate(num=Count("fault")).values("name", "num")
     tag_list = models.Tag.objects.all().annotate(num=Count("fault")).values("name", "num")
     archive_list = models.Fault.objects.all().extra(select={
         "ym": "strftime('%%Y-%%m', create_time)"}).values("ym").annotate(num=Count("id")).values("ym", "num")
     fault_list = models.Fault.objects.all()
+    total_count = fault_list.count()
+    current_page = request.GET.get("page", None)
+    page_obj = Paging(current_page, total_count, url_prefix="index", max_show=5)
     if args and len(args) == 2:
         if args[0] == "class":
             fault_list = fault_list.filter(classify__name=args[1])
@@ -133,8 +156,15 @@ def index(request, *args):
                 year, month = args[1].split("-")
                 fault_list = fault_list.filter(create_time__year=year, create_time__month=month)
             except Exception:
-                fault_list = []
-
+                return HttpResponse("404页面不存在")
+        total_count = fault_list.count()
+        current_page = request.GET.get("page", None)
+        page_obj = Paging(current_page, total_count, url_prefix="fault-report/{}/{}".format(args[0], args[1]), max_show=5)
+    try:
+        data = fault_list[page_obj.start:page_obj.end]
+    except Exception:
+        data = []
+    page_html = page_obj.page_html()
     return render(request, "index.html", locals())
 
 
@@ -292,11 +322,20 @@ def info(request):
         1. 取到当前用户
         2. 使用数据库中取当前用户的发布的所有报障
         3. 返回给页面，交给html显示处理
+    新增功能：分页功能
     :param request:
     :return:
     """
+    # user = request.user
+    # fault_list_user = models.Fault.objects.filter(user=user)
+    # return render(request, "info.html", locals())
     user = request.user
     fault_list_user = models.Fault.objects.filter(user=user)
+    total_count = fault_list_user.count()
+    current_page = request.GET.get("page", None)
+    page_obj = Paging(current_page, total_count, url_prefix="fault-report/info", max_show=5)
+    data = fault_list_user[page_obj.start:page_obj.end]
+    page_html = page_obj.page_html()
     return render(request, "info.html", locals())
 
 
@@ -412,7 +451,7 @@ def comment(request):
 
     res["data"] = {
         "id": comment_obj.id,
-        "n": models.Comment.objects.count(),
+        "n": models.Comment.objects.filter(fault_id=report_id).count(),
         "create_time": comment_obj.comment_date,
         "user": comment_obj.user.username,
         "content": comment_obj.content,
@@ -520,18 +559,20 @@ def edit_report(request, report_id):
 
 
 @login_required
-def delete_report(request, report_id):
+def delete_report(request):
     """
     删除故障
     :param request:
     :return:
     """
+    report_id = request.GET.get("id")
     obj_id = models.Fault.objects.filter(id=report_id).first()
     with transaction.atomic():
         models.Fault.objects.filter(id=report_id).delete()
         models.FaultDetail.objects.filter(fault_id=obj_id).delete()
 
-    return redirect("/fault-report/info/")
+    return HttpResponse("1")
+    # return redirect("/fault-report/info/")
 
 
 @login_required
