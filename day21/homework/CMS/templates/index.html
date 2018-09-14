@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/static/css/fault.css">
 {% endblock %}
 {% block view %}
-    <div class="panel panel-default">
+    <div class="panel panel-warning">
         <div class="panel-heading">
             <h5>业务线</h5>
         </div>
@@ -23,7 +23,7 @@
             {% endfor %}
         </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-danger">
         <div class="panel-heading">
             <h5>标签分组</h5>
         </div>
@@ -37,7 +37,7 @@
             {% endfor %}
         </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-success">
         <div class="panel-heading">
             <h5>日期归档</h5>
         </div>
@@ -55,10 +55,11 @@
 {% block context %}
     <!--显示报障列表fault_list是一个变量，根据用户传参获取的变量-->
     {% for fault in data %}
-        <div class="fault_title"><h3><a href="/fault-report/report_detail/{{ fault.id }}">{{ fault.title }}</a></h3></div>
+        <div class="fault_title"><h4><a href="/fault-report/report_detail/{{ fault.id }}">{{ fault.title }}</a></h4></div>
         <!--显示标题-->
         <div class="fault_desc">{{ fault.summary }}</div>
         <!--显示报障简介-->
+        <br>
         <div class="fault_comment">
             <span>{{ fault.user.username }}发布于{{ fault.create_time }}</span>
             <!--显示用户，发布时间-->

@@ -1,5 +1,5 @@
 .fault_desc{
-    font-size: 20px;
+    font-size: 15px;
 }
 .fault_comment{
     font-size: 15px;
@@ -7,4 +7,5 @@
 }
 .fault_comment span{
     margin-right: 20px;
+    font-size: 12px;
 }

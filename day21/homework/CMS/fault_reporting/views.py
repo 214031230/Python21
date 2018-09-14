@@ -75,14 +75,12 @@ def login(request):
     :param request:
     :return:
     """
-
     if request.method == "POST":
         username = request.POST.get("username", "")
         password = request.POST.get("password")
         next = request.GET.get("next", "/index/")
         v_code = request.POST.get("v_code")
-        # if v_code.upper() == request.session.get("v_code"):
-        if True:
+        if v_code.upper() == request.session.get("v_code"):
             user = auth.authenticate(request, username=username, password=password)
             if user:
                 auth.login(request, user)
@@ -118,25 +116,6 @@ def index(request, *args):
                  args[1] = classify__name|tags__name|时间（2018-9）
     :return:
     """
-    # user = auth.get_user(request).username
-    # class_list = models.Classify.objects.all().annotate(num=Count("fault")).values("name", "num")
-    # tag_list = models.Tag.objects.all().annotate(num=Count("fault")).values("name", "num")
-    # archive_list = models.Fault.objects.all().extra(select={
-    #     "ym": "strftime('%%Y-%%m', create_time)"}).values("ym").annotate(num=Count("id")).values("ym", "num")
-    # fault_list = models.Fault.objects.all()
-    # if args and len(args) == 2:
-    #     if args[0] == "class":
-    #         fault_list = fault_list.filter(classify__name=args[1])
-    #     elif args[0] == "tag":
-    #         fault_list = fault_list.filter(tags__name=args[1])
-    #     else:
-    #         try:
-    #             year, month = args[1].split("-")
-    #             fault_list = fault_list.filter(create_time__year=year, create_time__month=month)
-    #         except Exception:
-    #             fault_list = []
-    #
-    # return render(request, "index.html", locals())
     user = auth.get_user(request).username
     class_list = models.Classify.objects.all().annotate(num=Count("fault")).values("name", "num")
     tag_list = models.Tag.objects.all().annotate(num=Count("fault")).values("name", "num")
@@ -329,9 +308,6 @@ def info(request):
     :param request:
     :return:
     """
-    # user = request.user
-    # fault_list_user = models.Fault.objects.filter(user=user)
-    # return render(request, "info.html", locals())
     user = request.user
     fault_list_user = models.Fault.objects.filter(user=user)
     total_count = fault_list_user.count()
@@ -532,6 +508,14 @@ def edit_report(request, report_id):
     """
     编辑故障
         1. get请求
+            1. 取到文章对象返回给页面
+            2. 取到业务列表返回给页面
+        2. post请求
+            1. 拿到需要更新的数据
+            2. 拿到需要更新的对象
+            3. 使用BeautifulSoup 剔除内容中的script标签
+            4. 更新故障需要操作两种表，涉及到事务操作
+            5. 更新成功以后跳转到详情页面
     :param request:
     :return:
     """
@@ -565,27 +549,17 @@ def edit_report(request, report_id):
 def delete_report(request):
     """
     删除故障
+    1. 拿到需要删除的故障ID
+    2. 拿到需要删除的故障对象
+    3. 开始事务操作
+        1. 根据故障ID删除故障表字段
+        2. 根据故障ID删除故障详情表字段
+    4. 删除成功返回"1"给页面处理
     :param request:
     :return:
     """
     report_id = request.GET.get("id")
-    obj_id = models.Fault.objects.filter(id=report_id).first()
     with transaction.atomic():
         models.Fault.objects.filter(id=report_id).delete()
-        models.FaultDetail.objects.filter(fault_id=obj_id).delete()
-
+        models.FaultDetail.objects.filter(fault_id=report_id).delete()
     return HttpResponse("1")
-    # return redirect("/fault-report/info/")
-
-
-@login_required
-def my_comment(request):
-    """
-    查看我评论的
-    :param request:
-    :return:
-    """
-    user = request.user
-    obj = models.Comment.objects.filter(user=user)
-    fault_list_user = obj.values("fault__title")
-    return render(request, "my_comment.html", locals())

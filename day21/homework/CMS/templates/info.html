@@ -25,18 +25,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                {#                {% for foo in fault_list_user %}#}
-                {#                    <tr>#}
-                {#                        <td>{{ forloop.counter }}</td>#}
-                {#                        <td><a href="/fault-report/report_detail/{{ foo.id }}">{{ foo.title }}</a></td>#}
-                {#                        <td>{{ foo.comment_count }}</td>#}
-                {#                        <td>{{ foo.up_count }}</td>#}
-                {#                        <td>#}
-                {#                            <a href="/fault-report/edit_report/{{ foo.id }}" class="btn btn-success btn-sm">编辑</a>#}
-                {#                            <a href="/fault-report/delete_report/{{ foo.id }}" class="btn btn-danger btn-sm">删除</a>#}
-                {#                        </td>#}
-                {#                    </tr>#}
-                {#                {% endfor %}#}
                 {% for obj in data %}
                     <tr>
                         <td>

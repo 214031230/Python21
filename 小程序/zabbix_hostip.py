@@ -116,22 +116,16 @@ class zabbix_api:
             "主机数量: \033[31m%s\033[0m" % (len(response['result']))
             return hostid_list
 
-
     def host_delete(self, hostid):
         """
         删除hostid
         :param hostid:  "2343,3344,333"
         :return:
         """
-        hostid_list = []
-        for i in hostid.split(','):
-            var = {}
-            var['hostid'] = self.host_get(i)
-            hostid_list.append(var)
         data = json.dumps({
             "jsonrpc": "2.0",
             "method": "host.delete",
-            "params": hostid_list,  # [{"hostid": v1},{"hostid": v2},{"hostid": v3}]
+            "params": hostid,  # [id1,id2,id3]
             "auth": self.user_login(),
             "id": 1
         })
@@ -162,7 +156,7 @@ def filter_hostid(val):
         if v in l1:
             l2.append(k)
         l1.append(v)
-    return ",".join(l2)
+    return l2
 
 
 if __name__ == "__main__":
