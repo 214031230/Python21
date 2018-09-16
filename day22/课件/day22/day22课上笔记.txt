@@ -1,0 +1,235 @@
+day22 2018-09-16
+
+1. 今日内容
+	CRM(客户管理系统)
+		- 权限系统
+		- 业务逻辑
+	
+	初恋版代码：
+	是一个简单的增删改查项目，
+	其中你们可以看一下批量导入功能是如何实现的。
+	
+	
+2. 权限系统
+	1. 什么叫权限？
+	对于一个系统来说，不同用户能做的事儿不一样！
+	用户的权限不一样。
+	
+	2. 我们为什么要讲权限系统？
+		1. 只要是一个系统中涉及到不同的用户，都会有权限系统的需求。 
+		2. 咱们目标是写一套可以适用任何系统的权限系统。
+		3. 只需要写一次，跳槽用的着。
+		
+	3. 针对Web开发来说，权限是什么？
+		不同的权限   <--> 不同的URL
+		一个URL对应一个权限
+		
+	4. 权限系统设计？RBAC(基于角色的权限控制系统)
+		1. 做项目
+			1. 分析需求
+			2. 表结构设计      程序 = 数据 + 业务逻辑
+		2. 第一版表结构设计（详见excel第一个sheet）
+	
+			用户
+			id  name pwd
+			
+			
+			权限
+			id url
+			
+			
+			用户-权限
+			id 用户id 权限id
+	
+	
+		3. 第一版的表结构设计有缺陷？
+			1. 管理权限的时候太复杂了
+		4. 第二版（详见excel第二个sheet）
+			用户
+			id  name pwd
+	
+			权限
+			id url
+			
+			角色表
+			id title
+			
+			
+			角色-权限关系表
+			id  角色id  权限id
+		
+		考虑到公司中存在兼任的现象，将用户和角色表设计成多对多
+			用户-角色表关系表
+			id 用户id 角色id
+			
+	
+	5. 写代码
+		1. 为了实现项目结构的解耦，把权限系统单独写成一个app
+			1. 创建APP
+				复习下Django中创建app的步骤
+					1. python manage.py startapp rbac
+					2. 在settings.py中注册app
+			2. 执行两条命令，把表结构同步到数据库
+				1. python manage.py makemigrations
+				2. python manage.py migrate
+			3. 录入数据
+				借助Django Admin
+				预习下Django admin的用法
+					1. 创建超级用户，用来登陆admin管理后台
+						python manage.py createsuperuser
+					2. 将我们自己写的表注册到Django admin中
+						在app/admin.py中按照固定的格式注册model
+						
+						def __str__(): 作用是将一条记录在页面上展示可读的内容
+						
+						class Meta:
+							verbose_name = "权限表"
+							verbose_name_plural = verbose_name
+
+						settings.py
+							1. 改中文
+								LANGUAGE_CODE = 'zh-hans'
+							2. 改时区
+								TIME_ZONE = 'Asia/Shanghai'
+					3. 录入数据
+						
+					4. Django admin进阶
+						https://www.cnblogs.com/liwenzhou/p/9519321.html
+			
+			4. 权限系统开发
+				1. Django 请求的生命周期
+				
+				2. 权限系统功能分析
+					1. 用户必须登陆
+					2. 用户登陆成功之后
+						1. 拿到当前用户都有哪些权限
+					3. 用户访问网站的页面（url）
+						1. 判断当前访问的URL在不在该用户的权限里面
+							- 如果存在就放行
+							- 如果不存在就拒绝访问
+					
+				3. Django小知识点：
+					1. 视图函数可以拆分成不同的py文件
+					2. Django项目查找html文件的顺序
+						1. 先找项目根目录下的templates
+						2. 找app目录下的templates
+					
+				4. 权限的校验
+					1. 应该将权限的校验功能放在中间件中的process_request()方法
+					
+					2. 复习中间件
+						1. 中间件在Django中的settings.py注册的
+						2. 如何自定义中间件
+							1. 按照规定的格式写一个中间件的类
+								
+							2. 把自己写的类注册到Django中
+	
+	
+RBAC  --> admin --> 写代码 --> 权限的查询 --> 权限的校验	
+	
+	
+3. 菜单展示
+	1. 一级菜单
+		用户没有权限的菜单就不展示出来
+		1. 什么能做菜单？
+			URL是固定的可以作为菜单，不固定就不能
+		2. 如何展示菜单？
+			在权限表中增加 is_menu和icon两个字段
+			
+			1. 取到当前用户要显示哪些菜单
+			
+			2. 把该用户的菜单显示出来
+			
+4. font Awesome图标
+http://fontawesome.dashgame.com/
+
+	1. 字体图标相比图片的好处
+		1. 体积小
+		2. 放大不失真
+		3. 随意修改颜色
+		
+	2. 使用
+	
+5. Django模板语言
+https://www.cnblogs.com/liwenzhou/p/7931828.html
+	
+	1. filter 过滤器方法
+		对变量做一些修改/格式化等操作
+	2. 自定义filter函数
+		1. 在app目录下新建一个名为templatetags的python包
+		2. 创建一个py文件
+		3. 在py文件中定义一个函数，函数要按照filter的格式注册
+		
+	3. 使用自定义的filter方法
+		1. {% load py文件名 %}
+		2. {% 变量|自定义filter名 %}
+		
+	4. Django 模板语言的 tags
+		1. 内置的static
+			防止把静态文件的前缀写死
+			{% load static %}
+			{% static '静态文件的路径' %}
+		
+		2. 自定义simple_tag 类似于自定义filter
+		
+		
+	5. inclusion_tag
+		1. 当需要传递一些数据去渲染一部分HTML代码的时候
+		
+6. 权限系统的使用
+
+	8个步骤
+	
+	1. 拷贝rbac这个app到项目中
+	2. 把rbac/migrations目录下的迁移记录都删掉
+	3. 在项目中注册rbac这个app
+	4. 创建数据库迁移（执行那两条命令）
+	5. 注册admin，录入数据  --> 自动发现并录入权限URL
+	6. 在登录流程中初始化权限信息
+	7. 注册中间件
+	8. 在settings.py中设置权限相关的配置项
+		
+	
+	
+	
+补充一个 时间间隔
+datetime.timedelta(days=7)
+
+
+	
+放假回来，武Sir必看：
+	2. 二级菜单
+	3. 面包屑菜单
+	4. 权限粒度精确到按钮
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+
+	

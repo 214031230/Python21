@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.css' %}">
+</head>
+<body>
+
+{% load ooxx %}
+
+<p>{{ now|date:'Y-m-d H:i:s' }}</p>
+
+<p>{{ now|alex }}</p>
+
+<p>{{ now|alex:'5' }}</p>
+
+<p>
+    <i class="fa fa-heartbeat"></i>
+</p>
+
+<p>{% gold "燃烧" "我的" "卡路里" %}</p>
+
+<hr>
+<p>
+    {% show_menu 100 %}
+</p>
+
+
+</body>
+</html>

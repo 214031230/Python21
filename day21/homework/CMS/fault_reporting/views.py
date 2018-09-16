@@ -189,6 +189,7 @@ def p_center(request):
     if request.method == "POST":
         form_obj = UserUpdateForm(request.POST)
         if form_obj.is_valid():
+            print(request.FILES.get("avatar"))
             user_obj.phone = form_obj.cleaned_data.get("phone")
             user_obj.email = form_obj.cleaned_data.get("email")
             user_obj.avatar = request.FILES.get("avatar") if request.FILES.get("avatar") else user_obj.avatar
