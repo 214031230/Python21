@@ -113,8 +113,29 @@
 	4. 录入基础数据
 		
 5. 写登录页面
+
+6. 写初始化函数（init_permission）
+	1. 函数功能：根据登录的用户对象取到对象的权限和菜单保存到session中
+
+7. 在登录视图中调用init_permission
+
+8. 自定义中间件
+	1. 在rbac APP下创建middleware中间库目录
+	2. 创建中间件rbac.py
 	
-	
+	3. 注册中间件settings.py
+		MIDDLEWARE = [
+		'django.middleware.security.SecurityMiddleware',
+		'django.contrib.sessions.middleware.SessionMiddleware',
+		'django.middleware.common.CommonMiddleware',
+		'django.middleware.csrf.CsrfViewMiddleware',
+		'django.contrib.auth.middleware.AuthenticationMiddleware',
+		'django.contrib.messages.middleware.MessageMiddleware',
+		'django.middleware.clickjacking.XFrameOptionsMiddleware',
+		'rbac.middleware.rbac.RBACMiddleware',
+		]
+
+		
 		
 					
 			
