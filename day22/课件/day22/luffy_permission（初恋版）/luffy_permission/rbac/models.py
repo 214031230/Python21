@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -43,4 +44,3 @@ class Permission(models.Model):
     class Meta:
         verbose_name = "权限表"
         verbose_name_plural = verbose_name
-
