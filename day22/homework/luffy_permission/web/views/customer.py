@@ -15,6 +15,7 @@ def customer_list(request):
     :return:
     """
     data_list = models.Customer.objects.all()
+    print(request.session.get("menu_list"))
 
     return render(request, 'customer_list.html', {'data_list': data_list})
 

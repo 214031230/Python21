@@ -44,8 +44,11 @@ class RBACMiddleware(MiddlewareMixin):
             return redirect("/login/")
 
         for i in user_url:
-            ret = "^{}$".format(i)
-            if re.match(ret, i["Permissions__url"]):
+            ret = "^{}$".format(i["Permissions__url"])
+            print(ret, "333333333333")
+            print(url, "444444444444")
+            if re.match(ret, url):
+                print("{}验证通过了".format(url))
                 return None
-            else:
-                return HttpResponse("没有权限方法")
+        else:
+            return HttpResponse("没有权限方法")
