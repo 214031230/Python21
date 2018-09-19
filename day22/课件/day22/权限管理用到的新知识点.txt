@@ -1,0 +1,94 @@
+权限管理用到的知识点
+1. 时区和Admin中文配置：settings.py
+	1. 改中文
+		LANGUAGE_CODE = 'zh-hans'
+	2. 改时区
+		TIME_ZONE = 'Asia/Shanghai'
+		
+2. Django Admin进阶操作：https://www.cnblogs.com/liwenzhou/p/9519321.html
+
+3. Django小知识点：
+	1. 视图函数可以拆分成不同的py文件
+		示例：
+			1. 项目目录下的urls.py
+				from django.conf.urls import url,include
+				from django.contrib import admin
+
+				urlpatterns = [
+					url(r'^admin/', admin.site.urls),
+					url(r'^', include('web.urls')),
+				]
+			2. app目录下的urls.py
+				from django.conf.urls import url
+				from web.views import customer
+				from web.views import payment
+				from web.views import user
+
+				urlpatterns = [
+
+					url(r'^customer/list/$', customer.customer_list),
+					url(r'^customer/add/$', customer.customer_add),
+					url(r'^customer/edit/(?P<cid>\d+)/$', customer.customer_edit),
+					url(r'^customer/del/(?P<cid>\d+)/$', customer.customer_del),
+					url(r'^customer/import/$', customer.customer_import),
+					url(r'^customer/tpl/$', customer.customer_tpl),
+
+					url(r'^payment/list/$', payment.payment_list),
+					url(r'^payment/add/$', payment.payment_add),
+					url(r'^payment/edit/(?P<pid>\d+)/$', payment.payment_edit),
+					url(r'^payment/del/(?P<pid>\d+)/$', payment.payment_del),
+					
+					url(r'^login/$', user.login)
+
+				]
+			3. app目录下的views目录下的customer.py payment.py user.py
+
+	2. Django项目查找html文件的顺序
+		1. 先找项目根目录下的templates
+		2. 找app目录下的templates
+
+4. font Awesome图标：http://fontawesome.dashgame.com/ 
+	1. 字体图标的优点：
+		1. 体积小
+		2. 放大不失真
+		3. 随意修改颜色
+	2. 字体图标的使用
+		1. 引用css文件
+		2. 配置class ：<i class="fa fa-camera-retro"></i>
+		
+5. Django的模版语言：https://www.cnblogs.com/liwenzhou/p/7931828.html
+	1. filter 过滤器方法
+		对变量做一些修改/格式化等操作
+	2. 自定义filter函数
+		1. 在app目录下新建一个名为templatetags的python包
+		2. 创建一个py文件
+		3. 在py文件中定义一个函数，函数要按照filter的格式注册
+		
+	3. 使用自定义的filter方法
+		1. {% load py文件名 %}
+		2. {% 变量|自定义filter名 %}
+		
+	4. Django 模板语言的 tags
+		1. 内置的static
+			防止把静态文件的前缀写死
+			{% load static %}
+			{% static '静态文件的路径' %}
+		
+		2. 自定义simple_tag 类似于自定义filter
+		
+	5. inclusion_tag
+		1. 当需要传递一些数据去渲染一部分HTML代码的时候
+		
+6. 权限系统的使用9个步骤
+	1. 拷贝rbac这个app到项目中
+	2. 把rbac/migrations目录下的迁移记录都删掉
+	3. 在项目中注册rbac这个app
+	4. 创建数据库迁移（执行那两条命令）
+	5. 注册admin，录入数据  --> 自动发现并录入权限URL
+	6. 在登录流程中初始化权限信息
+	7. 注册中间件
+	8. 在settings.py中设置权限相关的配置项
+	9. 在菜单栏html使用自定义的filter
+	
+7. 时间间隔
+	datetime.timedelta(days=7)

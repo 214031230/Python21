@@ -87,8 +87,8 @@
 			verbose_name_plural = verbose_name
 			
 3. 创建表结构
-	python manage.py makemigrations
-	python manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
 	
 4. 使用Django Admin创建初始数据
 	1. python manage.py createsuperuser
@@ -116,11 +116,122 @@
 	4. 录入基础数据
 		
 5. 写登录页面
+	#!/usr/bin/env python3
+	from django.shortcuts import render, redirect
+	from rbac import models
+	from rbac.services import permission
+
+
+	def login(request):
+		"""
+		用户登录页面
+			1. Get请求
+				1. 返回登录页面
+			2. Post请求
+				1. 拿到页面通过post传过来的用户名和者密码
+				2. 使用orm进行过滤查找
+					1. 如果能找到值，则说明登录成功
+						1. 登录成功以后调用rbac函数初始化
+						2. 初始化的主要功能是获取用户的权限和菜单保存到session中
+						3. 跳转到客户列表页面
+					2. 登录失败,返回错误信息给页面展示
+		:param request: 
+		:return: 
+		"""
+		msg = {"msg": ""}
+		if request.method == "POST":
+			username = request.POST.get("username")
+			password = request.POST.get("password")
+			user_obj = models.UserInfo.objects.filter(username=username, password=password).first()
+			if user_obj:
+				permission.init_permission(request, user_obj)
+				return redirect("/customer/list/")
+			else:
+				msg["msg"] = "用户名或者密码错误!"
+
+		return render(request, "login.html", locals())
+
 
 6. 写初始化函数（init_permission）
 	1. 函数功能：根据登录的用户对象取到对象的权限和菜单保存到session中
+		#!/usr/bin/env python3
+		"""
+		用户登录成功以后，获取用户的的权限进行
+		"""
+		from django.conf import settings
+
+
+		def init_permission(request, user_obj):
+			"""
+			初始化rbac
+				1. 根据用户对象，取到用户对应的角色，根据角色在取到对应的权限。最后distinct做一个去重处理
+				2. permission_list 定义一个用来存储用户权限的列表
+				3. menus_list 定义一个用来存储用户菜单的列表
+				4. 循环ret，添加权限和菜单到对应的列表
+				5. 保存权限列表和菜单列表到session中
+				备注：使用settings来存session的key方便在其他模块中调用
+			:param request: 用户请求对象
+			:param user_obj: 用户orm对象
+			:return:
+			"""
+			ret = user_obj.roles.all().values(
+				"Permissions__name",
+				"Permissions__url",
+				"Permissions__is_menus",
+				"Permissions__icon"
+			).distinct()
+
+			permission_list = []
+			menus_list = []
+			
+			for item in ret:
+				permission_list.append({"Permissions__url": item["Permissions__url"]})  # 添加到权限列表
+				if item["Permissions__is_menus"]:  # 如果当前循环的权限可以作为菜单展示
+					menus_list.append({  # 把当前权限的信息添加到菜单列表
+						"name": item["Permissions__name"],
+						"icon": item["Permissions__icon"],
+						"url": item["Permissions__url"]
+					})
+			request.session[settings.PERMISSION_SESSION_KEY] = permission_list
+			request.session[settings.MENU_SESSION_KEY] = menus_list
+
 
 7. 在登录视图中调用init_permission
+	#!/usr/bin/env python3
+from django.shortcuts import render, redirect
+from rbac import models
+from rbac.services import permission
+
+
+def login(request):
+    """
+    用户登录页面
+        1. Get请求
+            1. 返回登录页面
+        2. Post请求
+            1. 拿到页面通过post传过来的用户名和者密码
+            2. 使用orm进行过滤查找
+                1. 如果能找到值，则说明登录成功
+                    1. 登录成功以后调用rbac函数初始化
+                    2. 初始化的主要功能是获取用户的权限和菜单保存到session中
+                    3. 跳转到客户列表页面
+                2. 登录失败,返回错误信息给页面展示
+    :param request: 
+    :return: 
+    """
+    msg = {"msg": ""}
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user_obj = models.UserInfo.objects.filter(username=username, password=password).first()
+        if user_obj:
+            permission.init_permission(request, user_obj)
+            return redirect("/customer/list/")
+        else:
+            msg["msg"] = "用户名或者密码错误!"
+
+    return render(request, "login.html", locals())
+
 
 8. 自定义中间件
 	1. 在rbac APP下创建middleware中间库目录
@@ -201,6 +312,28 @@
 		{% endfor %}
 	方法2：
 		使用模版语言的filter
+		1. 修改菜单html
+			{% load view %}
+			{% show_menu request %}
+		2. 创建app/templatetags/view.py
+			from django import template
+			from django.conf import settings
+
+			register = template.Library()
+
+
+			@register.inclusion_tag(filename="my_menu.html")
+			def show_menu(request):
+				menu_list = request.session.get(settings.MENU_SESSION_KEY)
+				return {"menu_list": menu_list}
+		3. 创建app/templates/my_menu.html
+			<div class="static-menu">
+				{% for menu in menu_list %}
+					<a href="{{ menu.url }}" class="active">
+						<span class="icon-wrap"><i class="fa {{ menu.icon }}"></i></span> {{ menu.name }}</a>
+				{% endfor %}
+			</div>
+
 		
 					
 			

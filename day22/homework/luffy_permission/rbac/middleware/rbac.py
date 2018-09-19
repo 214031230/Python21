@@ -29,6 +29,8 @@ class RBACMiddleware(MiddlewareMixin):
             3. 如果在白名单中则返回None代码继续往后执行
         3. 取到用户的访问权限
             1. 如果没有取到登录时存的session，则说明用户没有登录，跳转到登录页面
+        4. 循环用户的权限列表
+            1. 判断是否能匹配上，如果匹配不上则返回用户没有权限访问
         :param request:
         :return:
         """
@@ -45,10 +47,7 @@ class RBACMiddleware(MiddlewareMixin):
 
         for i in user_url:
             ret = "^{}$".format(i["Permissions__url"])
-            print(ret, "333333333333")
-            print(url, "444444444444")
             if re.match(ret, url):
-                print("{}验证通过了".format(url))
                 return None
         else:
             return HttpResponse("没有权限方法")

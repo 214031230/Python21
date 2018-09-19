@@ -38,4 +38,3 @@ def init_permission(request, user_obj):
             })
     request.session[settings.PERMISSION_SESSION_KEY] = permission_list
     request.session[settings.MENU_SESSION_KEY] = menus_list
-    
