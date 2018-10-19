@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <h1>添加用户</h1>
+    <form method="post" novalidate>
+        {% csrf_token %}
+
+        <p>
+            {{ form.name }} {{ form.name.errors.0 }}
+        </p>
+
+        <input type="submit" value="提交" class="btn btn-success">
+    </form>
+{% endblock %}
