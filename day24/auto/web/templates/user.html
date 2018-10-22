@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <h1>用户列表</h1>
+    <div>
+        <a href="/web/add_user/" class="btn btn-primary">添加</a>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>姓名</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in user_list %}
+            <tr>
+                <th>{{ row.id }}</th>
+                <td>{{ row.name }}</td>
+                <td>
+                    <a href="/web/edit_user/{{ row.id }}/">编辑</a>
+                    <a href="/web/del_user/{{ row.id }}/">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+{% endblock %}
