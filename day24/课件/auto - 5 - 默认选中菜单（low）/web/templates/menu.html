@@ -1,0 +1,18 @@
+<div class="multi-menu">
+	{% for item in menus %}
+		<div class="item">
+			<div class="title">
+				<span class="icon-wrap"><i class="fa {{ item.icon }}"></i></span> {{ item.title }}
+			</div>
+			<div class="body">
+				{% for child in item.children %}
+                    {% if current_url == child.url %}
+					    <a style="color: red;" href="{{ child.url }}">{{ child.title }}</a>
+                    {% else %}
+                        <a href="{{ child.url }}">{{ child.title }}</a>
+                    {% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	{% endfor %}
+</div>
