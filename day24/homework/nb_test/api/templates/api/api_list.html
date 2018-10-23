@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+{% block content %}
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h4>接口列表</h4>
+        </div>
+        <div class="panel-body">
+            {% if 'api_add'|permission:request %}
+                <a class="btn btn-primary" href="{% url 'api_add' %}">添加</a>
+            {% endif %}
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>接口名称</th>
+                    <th>所属应用</th>
+                    {% if "api_edit"|permission:request or "api_del"|permission:request or "api_check"|permission:request %}
+                        <th>操作</th>
+                    {% endif %}
+                    {% if "api_check"|permission:request %}
+                        <th>页面状态</th>
+                    {% endif %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in api_queryset %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ row.url }}</td>
+                        <td>{{ row.app.title }}</td>
+                        {% csrf_token %}
+                        {% if "api_edit"|permission:request or "api_del"|permission:request or "api_check"|permission:request %}
+                            <td>
+                                {% if "api_edit"|permission:request %}
+                                    <a href="{% url 'api_edit' row.id %}" class="btn btn-success">编辑</a>
+                                {% endif %}
+                                {% if "api_del"|permission:request %}
+                                    <a href="{% url 'api_del' row.id %}" class="btn btn-warning">删除</a>
+                                {% endif %}
+                                {% if "api_check"|permission:request %}
+                                    <a class="btn btn-danger test-btn" api-id="{{ row.id }}">测试</a>
+                                {% endif %}
+                            </td>
+                        {% endif %}
+                        {% if "api_check"|permission:request %}
+                            <td class="{{ row.id }}"></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+<script>
+    $(function () {
+        $(".test-btn").click(function () {
+            $.ajax({
+                url: "/api/api/check/",
+                type: "post",
+                data: {
+                    "id": $(this).attr("api-id"),
+                    "csrfmiddlewaretoken": $("[name = 'csrfmiddlewaretoken']").val()
+                },
+                success: function (res) {
+                    $("."+res.code).text(res.resp)
+                }
+            })
+        })
+    })
+</script>
+{% endblock %}
