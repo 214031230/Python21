@@ -2,206 +2,103 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c00a4e1-4e1f-45a9-9eff-ad228b84c752" name="Default Changelist" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/middlewares/rbac.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/readme" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/service/permission.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/css/commons.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/css/menu.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/css/nav.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/imgs/default.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/imgs/logo.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/imgs/luffy-study-logo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/imgs/luffy.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/js/jquery-3.3.1.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap.min.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/js/bootstrap.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/js/bootstrap.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/js/npm.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/HELP-US-OUT.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/css/font-awesome.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/css/font-awesome.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/FontAwesome.otf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/animated.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/bordered-pulled.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/core.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/fixed-width.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/font-awesome.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/icons.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/larger.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/list.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/mixins.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/path.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/rotated-flipped.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/screen-reader.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/stacked.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/variables.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_animated.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_bordered-pulled.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_core.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_fixed-width.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_icons.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_larger.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_list.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_mixins.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_path.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_rotated-flipped.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_screen-reader.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_stacked.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_variables.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/font-awesome.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/templates/layout.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/templates/rbac/menu.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/templatetags/rbac.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/rbac/views.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/web/templates/web/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../day24/TestManage/web/urls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/.idea/DataMarker.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/.idea/dataSources.local.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/.idea/dataSources.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/20180719_IMG_1229.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/DataMarker/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/DataMarker/settings.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/DataMarker/urls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/DataMarker/wsgi.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/db.sqlite3" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/dist/svg/icon-a.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/dist/svg/icon-b.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/dist/svg/icon-c.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/dist/svg/icon-d.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/import.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/manage.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1229.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1230.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1231.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1232.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1233.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1234.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1235.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1253.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1254.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1255.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1256.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1257.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1390.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1391.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1392.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1393.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1394.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1425.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1426.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1427.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1428.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1429.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1430.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1810.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1811.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1812.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1813.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1814.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1815.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1816.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1817.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1818.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1819.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1820.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/media/images/20180719_IMG_1821.JPG" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/bootstrap-theme.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/bootstrap-theme.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/bootstrap-theme.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/bootstrap-theme.min.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/bootstrap.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/bootstrap.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/bootstrap.min.css.map" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/login.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/tagpage.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/tui-color-picker.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/tui-image-editor.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/css/tui-image-editor.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/fonts/glyphicons-halflings-regular.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/fonts/glyphicons-halflings-regular.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/fonts/glyphicons-halflings-regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/fonts/glyphicons-halflings-regular.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/fonts/glyphicons-halflings-regular.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/js/bootstrap.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/js/bootstrap.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/js/npm.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/FileSaver.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/black-theme.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/fabric.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/jquery-3.3.1.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-code-snippet.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-color-picker.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-Editor-all.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-Editor-all.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-Editor.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-Editor.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-Viewer-all.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-Viewer-all.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-Viewer.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-Viewer.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-extChart.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-extChart.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-extColorSyntax.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-extColorSyntax.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-extScrollSync.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-extScrollSync.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-extTable.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-extTable.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-extUML.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-editor-extUML.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-image-editor.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/tui-image-editor.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/static/plugins/white-theme.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/templates/faceCluster.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/templates/login.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/templates/nav.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/templates/tagPage.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/templates/test.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/test1.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/test2.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/user/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/user/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/user/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/user/migrations/0001_initial.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/user/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/user/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/user/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/DataMarker/user/views.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../../小程序/图片拉框/js/jquery-3.3.1.min.js" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/HostManagement.iml" afterPath="$PROJECT_DIR$/.idea/HostManagement.iml" />
-      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../day24/TestManage/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/TestManage/settings.py" afterPath="$PROJECT_DIR$/../../day24/TestManage/TestManage/settings.py" />
-      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/TestManage/urls.py" afterPath="$PROJECT_DIR$/../../day24/TestManage/TestManage/urls.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/.idea/TestManage.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/TestManage/__init__.py" afterPath="$PROJECT_DIR$/rbac/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/TestManage/settings.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/TestManage/wsgi.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/db.sqlite3" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/manage.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/__init__.py" afterPath="$PROJECT_DIR$/rbac/migrations/__init__.py" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/admin.py" afterPath="$PROJECT_DIR$/rbac/admin.py" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/apps.py" afterPath="$PROJECT_DIR$/rbac/apps.py" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/middlewares/rbac.py" afterPath="$PROJECT_DIR$/rbac/middlewares/rbac.py" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/migrations/0001_initial.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/migrations/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/models.py" afterPath="$PROJECT_DIR$/rbac/models.py" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/readme" afterPath="$PROJECT_DIR$/rbac/readme" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/service/permission.py" afterPath="$PROJECT_DIR$/rbac/service/permission.py" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/css/commons.css" afterPath="$PROJECT_DIR$/rbac/static/rbac/css/commons.css" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/css/menu.css" afterPath="$PROJECT_DIR$/rbac/static/rbac/css/menu.css" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/css/nav.css" afterPath="$PROJECT_DIR$/rbac/static/rbac/css/nav.css" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/imgs/default.png" afterPath="$PROJECT_DIR$/rbac/static/rbac/imgs/default.png" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/imgs/logo.svg" afterPath="$PROJECT_DIR$/rbac/static/rbac/imgs/logo.svg" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/imgs/luffy-study-logo.png" afterPath="$PROJECT_DIR$/rbac/static/rbac/imgs/luffy-study-logo.png" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/imgs/luffy.png" afterPath="$PROJECT_DIR$/rbac/static/rbac/imgs/luffy.png" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/js/jquery-3.3.1.min.js" afterPath="$PROJECT_DIR$/rbac/static/rbac/js/jquery-3.3.1.min.js" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.css" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.css.map" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.min.css" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.min.css.map" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/css/bootstrap-theme.min.css.map" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/css/bootstrap.css" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/css/bootstrap.css.map" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/css/bootstrap.min.css" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/css/bootstrap.min.css.map" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/css/bootstrap.min.css.map" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/js/bootstrap.js" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/js/bootstrap.min.js" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/bootstrap/js/npm.js" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/bootstrap/js/npm.js" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/HELP-US-OUT.txt" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/HELP-US-OUT.txt" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/css/font-awesome.css" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/css/font-awesome.min.css" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/fonts/FontAwesome.otf" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/fonts/fontawesome-webfont.woff2" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/animated.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/animated.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/bordered-pulled.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/core.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/fixed-width.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/fixed-width.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/font-awesome.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/icons.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/larger.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/list.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/mixins.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/path.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/rotated-flipped.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/screen-reader.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/screen-reader.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/stacked.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/less/variables.less" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_animated.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_animated.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_bordered-pulled.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_core.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_core.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_fixed-width.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_icons.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_larger.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_list.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_mixins.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_path.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_rotated-flipped.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_screen-reader.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_stacked.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/_variables.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/static/rbac/plugins/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/rbac/static/rbac/plugins/font-awesome/scss/font-awesome.scss" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/templates/layout.html" afterPath="$PROJECT_DIR$/rbac/templates/layout.html" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/templates/rbac/menu.html" afterPath="$PROJECT_DIR$/rbac/templates/rbac/menu.html" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/templatetags/rbac.py" afterPath="$PROJECT_DIR$/rbac/templatetags/rbac.py" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/tests.py" afterPath="$PROJECT_DIR$/rbac/tests.py" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/rbac/views.py" afterPath="$PROJECT_DIR$/rbac/views.py" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/web/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/web/admin.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/web/apps.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/web/migrations/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/web/models.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/web/templates/web/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/web/tests.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/web/urls.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../day24/TestManage/web/views.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -380,7 +277,28 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="readme" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rbac/readme">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -498,10 +416,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-157" />
-    <option name="y" value="60" />
-    <option name="width" value="1624" />
-    <option name="height" value="945" />
+    <option name="x" value="2869" />
+    <option name="y" value="-11" />
+    <option name="width" value="2422" />
+    <option name="height" value="1372" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -606,6 +524,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -617,8 +537,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -641,18 +559,18 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\templates\index" />
+      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\templates" />
+      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day16\HostManagement\templates\user" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day18\HostManagement" />
       <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day18\HostManagement\templates" />
       <recent name="$PROJECT_DIR$/templates/user_bsline" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/static/js" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static" />
-      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\templates\index" />
-      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day17\HostManagement\templates" />
-      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\day16\HostManagement\templates\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -748,12 +666,12 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="HostManagement.settings" />
+        <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Users\lanpa\AppData\Local\Programs\Python\Python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="HostManagement" />
@@ -800,15 +718,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
+    <frame x="2869" y="-11" width="2422" height="1372" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30008826" sideWeight="0.50171524" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34796238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34774935" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962328" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32791096" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.49828473" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1787257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14451115" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -877,13 +796,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/404.html" />
-    <entry file="file://$PROJECT_DIR$/HostManagement/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2538">
-          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/template/base.py" />
     <entry file="file://$PROJECT_DIR$/templates/paging.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -930,13 +842,6 @@
     <entry file="das://e1546986-1807-4749-abd8-02f4ead40b3e/schema/main/table/user_userinfo" />
     <entry file="das://e1546986-1807-4749-abd8-02f4ead40b3e/schema/main/table/user_userinfo_products" />
     <entry file="das://table:/1d78bdb8/9e4530f1-2f30-4a4d-9453-b39840755805/main.user_userinfo" />
-    <entry file="file://$PROJECT_DIR$/user/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/add_user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -1071,13 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HostManagement/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user/user_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -1085,17 +983,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="72" column="41" lean-forward="false" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HostManagement/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HostManagement/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264">
+          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rbac/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
