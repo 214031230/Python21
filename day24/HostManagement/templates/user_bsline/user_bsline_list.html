@@ -1,0 +1,50 @@
+{% extends "tp.html" %}
+{% block left %}
+    {% include "user_bsline/tp_left.html" %}
+{% endblock %}
+{% block rigth %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>业务权限管理</h5>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>业务线名称</th>
+                    <th>管理员列表</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in data %}
+                    <tr>
+                        <td>
+                            {{ forloop.counter|add:num }}
+                        </td>
+                        <td>
+                            {{ obj.name }}
+                        </td>
+                        <td>
+                            <select class="form-control">
+
+                                {% for i in  obj.userinfos.all %}
+                                    <option>{{ i.username }}  </option>
+                                {% endfor %}
+
+                            </select>
+                        </td>
+                        <td>
+                            <a href="/edit_user_bsline/?id={{ obj.id }}" class="btn btn-success">
+                                编辑
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {{ page_html|safe }}
+        </div>
+    </div>
+{% endblock %}
