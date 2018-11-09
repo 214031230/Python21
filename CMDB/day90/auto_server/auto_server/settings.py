@@ -129,3 +129,6 @@ PLUGIN_ITEMS = {
     "disk": "api.plugins.disk.Disk",
     "memory": "api.plugins.memory.Memory",
 }
+
+# API验证Key
+KEY = "324SD2342SD242FSFS2"

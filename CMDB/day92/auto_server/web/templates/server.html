@@ -1,0 +1,107 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" %}">
+    <style>
+        .loading {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: white;
+            opacity: 0.4;
+            z-index: 1000;
+        }
+
+        .loading .img {
+            height: 32px;
+            width: 32px;
+            background: url('{% static 'img/loading.gif'%}');
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin-left: -16px;
+            margin-top: -16px;
+            z-index: 1001;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>服务器列表</h1>
+    <table class="table table-bordered">
+        <thead id="tHead">
+        <tr>
+
+        </tr>
+        </thead>
+        <tbody id="tBody">
+
+        </tbody>
+    </table>
+</div>
+{#加载框开始#}
+<div id="loading" class="loading hide">
+    <div class="img"></div>
+</div>
+{#加载框结束#}
+<script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+<script src="{% static "js/nb-list.js" %}"></script>
+<script>
+    $(function () {
+        $.nBList("/server_json.html")
+    })
+</script>
+{#<script>#}
+{#    // 页面加载完毕，执行#}
+{#    $(function () {#}
+{#        init()#}
+{#    });#}
+{#    // 获取数据#}
+{#    function init() {#}
+{#        $(".loading").removeClass("hide");#}
+{#        $.ajax({#}
+{#                url: "/server_json.html",#}
+{#                type: "GET",#}
+{#                data: {},#}
+{#                dataType: "JSON",#}
+{#                success: function (res) {#}
+{#                    initTableHead(res.table_config);#}
+{#                    initTableBody(res.data_list, res.table_config);#}
+{#                    $(".loading").addClass("hide");#}
+{#                }#}
+{#            }#}
+{#        )#}
+{#    }#}
+{##}
+{#    // 生成表头信息#}
+{#    function initTableHead(table_config) {#}
+{#        $("#tHead tr").empty();#}
+{#        $.each(table_config, function (k, conf) {#}
+{#            var th = document.createElement("th");#}
+{#            th.innerHTML = conf.title;#}
+{#            $("#tHead tr").append(th);#}
+{#        })#}
+{#    }#}
+{##}
+{#    // 生成表内容信息#}
+{#    function initTableBody(data_list, table_config) {#}
+{#        $("#tBody tr").empty();#}
+{#        $.each(data_list, function (k, row_dict) {#}
+{#            var tr = document.createElement("tr");#}
+{#            $.each(table_config, function (kk, vv) {#}
+{#                var td = document.createElement("td");#}
+{#                td.innerHTML = row_dict[vv.q];#}
+{#                $(tr).append(td);#}
+{#            });#}
+{#            $("#tBody").append(tr);#}
+{#        })#}
+{#    }#}
+{#</script>#}
+</body>
+</html>
