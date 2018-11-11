@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <div>
+        <a href="{% url 'customer_add' %}" class="btn btn-success">添加(推荐)</a>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>客户名称</th>
+            <th>联系方式</th>
+            <th>报名状态</th>
+            <th>性别</th>
+            <th>客户来源</th>
+            <th>介绍人</th>
+            <th>课程顾问</th>
+            <th>咨询课程</th>
+            <th>学历</th>
+            <th>毕业院校</th>
+            <th>所学专业</th>
+            <th>工作经验</th>
+            <th>职业状态</th>
+            <th>就职公司</th>
+            <th>目前薪资</th>
+            <th>咨询时间</th>
+            <th>最后跟进时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset %}
+            <tr>
+                <td>{{ row.name }}</td>
+                <td>{{ row.qq }}</td>
+                <td>{{ row.get_status_display }}</td>
+                <td>{{ row.get_gender_display }}</td>
+                <td>{{ row.get_source_display }}</td>
+                <td>{{ row.source }}</td>
+                <td>{{ row.referral_from.username }}</td>
+                <td>
+                    {% for ele in row.courses.all %}
+                        <span style="display: inline-block;padding: 5px;border: 1px solid #dddddd;">
+                                {{ ele.name }}
+                            </span>
+                    {% endfor %}
+                </td>
+                <td>{{ row.consultant.username }}</td>
+                <td>{{ row.education }}</td>
+                <td>{{ row.graduation_school }}</td>
+                <td>{{ row.experience }}</td>
+                <td>{{ row.work_status }}</td>
+                <td>{{ row.company }}</td>
+                <td>{{ row.salary }}</td>
+                <td>{{ row.date }}</td>
+                <td>{{ row.last_consult_date }}</td>
+                <td>
+                    <a href="{% url 'customer_edit' row.id %}">编辑</a>
+                    <a href="{% url 'customer_del' row.id %}">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -2,30 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1b183eb-0916-48e8-9037-c6ea87f37cb0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/templates/api/api_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/templates/api/api_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/templates/api/api_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.idea/Python21.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/Python21.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../100题.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../100题.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../day26/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../day18/HostManagement/.idea/HostManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day18/HostManagement/.idea/HostManagement.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../day18/HostManagement/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day18/HostManagement/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../day18/HostManagement/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day18/HostManagement/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../day18/HostManagement/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day18/HostManagement/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CMS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/auto/.idea/dataSources/2c6cd948-e2eb-4ca2-a283-0b6c44a166c3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/nb_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/nb_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/templates/api/app_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/templates/api/app_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/templates/api/app_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/templates/api/app_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/templates/api/app_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/templates/api/app_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/api/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../day24/课件/nb_test/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../../../day24/课件/nb_test/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../小程序/test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../小程序/test.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,11 +104,11 @@
     <session id="1155423334">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.1" value="4" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -129,8 +116,8 @@
           <entry key="fault_reporting_userinfo" value="2" />
           <entry key="html" value="16" />
           <entry key="js" value="9" />
-          <entry key="py" value="18" />
-          <entry key="readme" value="1" />
+          <entry key="py" value="22" />
+          <entry key="readme" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -138,8 +125,8 @@
           <entry key="Database Element" value="2" />
           <entry key="HTML" value="16" />
           <entry key="JavaScript" value="9" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="18" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -157,7 +144,62 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMS/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+              <folding>
+                <element signature="e#637#678#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fault_reporting/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
+              <caret line="81" column="43" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fault_reporting/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="149" column="29" lean-forward="true" selection-start-line="149" selection-start-column="29" selection-end-line="149" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readme">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="11" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="298" column="18" selection-start-line="298" selection-start-column="6" selection-end-line="298" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -229,7 +271,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="945" />
@@ -242,7 +284,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,6 +295,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,14 +405,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="945" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23992674" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24297924" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.42319748" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48795182" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -420,7 +463,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/bca2b629/9c277a3f-c9c0-490a-9446-69e7f5c1078c/main.auth_user" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/contrib/auth/models.py" />
     <entry file="das://table:/2552036b/9c277a3f-c9c0-490a-9446-69e7f5c1078c/main.auth_user" />
     <entry file="das://table:/2552036b/49dcccf7-8be6-4cbe-98e6-f39cee0cc390/main.fault_reporting_userinfo" />
@@ -519,30 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fault_reporting/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fault_reporting/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="437" column="5" lean-forward="true" selection-start-line="437" selection-start-column="5" selection-end-line="437" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fault_reporting/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -554,13 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="132" column="21" lean-forward="true" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -669,6 +680,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
           <caret line="164" column="67" selection-start-line="164" selection-start-column="66" selection-end-line="164" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding>
+            <element signature="e#637#678#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fault_reporting/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="81" column="43" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/contrib/auth/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="298" column="18" selection-start-line="298" selection-start-column="6" selection-end-line="298" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fault_reporting/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="149" column="29" lean-forward="true" selection-start-line="149" selection-start-column="29" selection-end-line="149" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {% if 'public_customer_add'|permission:request %}
+                <a class="btn btn-primary" href="{% url 'public_customer_add' %}">添加</a>
+            {% endif %}
+            <input type="submit" value="申请到我的私户" class="btn btn-primary">
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>选择</th>
+                <th>姓名</th>
+                <th>联系方式</th>
+                <th>状态</th>
+                <th>转介绍</th>
+                <th>咨询课程</th>
+                {% if "public_customer_edit"|permission:request or "public_customer_del"|permission:request %}
+                    <th>操作</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in queryset %}
+                <tr>
+                    <td>
+                        <input name="pk" type="checkbox" value="{{ row.id }}">
+                    </td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.qq }}</td>
+                    <td>{{ row.get_status_display }}</td>
+                    <td>{{ row.referral_from.name }}</td>
+                    <td>
+                        {% for ele in row.courses.all %}
+                            <span style="display: inline-block;padding: 5px;border: 1px solid #dddddd;">
+                                    {{ ele.name }}
+                                </span>
+                        {% endfor %}
+                    </td>
+                    {% if "public_customer_edit"|permission:request or "public_customer_del"|permission:request %}
+                        <td>
+                            {% if "public_customer_edit"|permission:request %}
+                                <a href="{% url 'public_customer_edit' row.id %}">编辑</a>
+                            {% endif %}
+                            {% if "public_customer_del"|permission:request %}
+                                <a href="{% url 'public_customer_del' row.id %}/">删除</a>
+                            {% endif %}
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </form>
+{% endblock %}

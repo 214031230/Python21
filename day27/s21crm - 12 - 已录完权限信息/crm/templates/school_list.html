@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+    <div>
+
+        {% if 'school_add'|permission:request %}
+            <a class="btn btn-primary" href="{% url 'school_add' %}">添加</a>
+        {% endif %}
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>校区</th>
+            {% if "school_edit"|permission:request or "school_del"|permission:request %}
+                <th>操作</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset %}
+            <tr>
+                <td>{{ row.title }}</td>
+                {% if "school_edit"|permission:request or "school_del"|permission:request %}
+                    <td>
+                        {% if "school_edit"|permission:request %}
+                            <a href="{% url 'school_edit' row.id %}">编辑</a>
+                        {% endif %}
+                        {% if "school_del"|permission:request %}
+                            <a href="{% url 'school_del' row.id %}/">删除</a>
+                        {% endif %}
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

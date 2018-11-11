@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <h1>部门列表</h1>
+    <div>
+        <a href="/depart/add/" class="btn btn-primary">添加</a>
+        <a href="{% url 'depart_add' %}" class="btn btn-success">添加(推荐)</a>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>标题</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in queryset %}
+                <tr>
+                    <td>{{ row.title }}</td>
+                    <td>
+                        <a href="{% url 'depart_edit' row.id %}">编辑</a>
+                        <a href="{% url 'depart_del' row.id %}">删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

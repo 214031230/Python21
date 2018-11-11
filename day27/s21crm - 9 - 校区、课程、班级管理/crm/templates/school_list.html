@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <div>
+        <a href="{% url 'school_add' %}" class="btn btn-success">添加(推荐)</a>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>校区</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in queryset %}
+                <tr>
+                    <td>{{ row.title }}</td>
+                    <td>
+                        <a href="{% url 'school_edit' row.id %}">编辑</a>
+                        <a href="{% url 'school_del' row.id %}">删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
