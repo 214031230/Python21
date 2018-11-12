@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {% if 'private_customer_add'|permission:request %}
+                <a class="btn btn-primary" href="{% url 'private_customer_add' %}">添加</a>
+            {% endif %}
+            <input type="submit" value="踢出到公户" class="btn btn-primary">
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>选择</th>
+                <th>姓名</th>
+                <th>联系方式</th>
+                <th>状态</th>
+                <th>转介绍</th>
+                <th>咨询课程</th>
+                <th>跟进</th>
+                {% if "private_customer_edit"|permission:request %}
+                    <th>操作</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in queryset %}
+                <tr>
+                    <td>
+                        <input name="pk" type="checkbox" value="{{ row.id }}">
+                    </td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.qq }}</td>
+                    <td>{{ row.get_status_display }}</td>
+                    <td>{{ row.referral_from.name }}</td>
+                    <td>
+                        {% for ele in row.courses.all %}
+                            <span style="display: inline-block;padding: 5px;border: 1px solid #dddddd;">
+                                    {{ ele.name }}
+                                </span>
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <a href="{% url 'record_list' row.id %}">跟进</a>
+                    </td>
+                    <td>
+                        {% if "private_customer_edit"|permission:request %}
+                            <a href="{% url 'private_customer_edit'  row.id %}">编辑</a>
+                        {% endif %}
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </form>
+{% endblock %}

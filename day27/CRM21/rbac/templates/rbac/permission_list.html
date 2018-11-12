@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+    <div>
+        {% if 'permission_add'|permission:request %}
+            <a class="btn btn-primary" href="{% url 'permission_add' %}">添加</a>
+        {% endif %}
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>URL(含正则)</th>
+            <th>名称</th>
+            <th>别名</th>
+            <th>管理菜单</th>
+            <th>父菜单</th>
+            {% if "permission_edit"|permission:request or "permission_del"|permission:request %}
+                <th>操作</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset %}
+            <tr>
+                <td>{{ row.url }}</td>
+                <td>{{ row.title }}</td>
+                <td>{{ row.name }}</td>
+                <td>{{ row.menu.title }}</td>
+                <td>{{ row.parent.title }}</td>
+                {% if "permission_edit"|permission:request or "permission_edit"|permission:request %}
+                    <td>
+                        {% if "permission_edit"|permission:request %}
+                            <a href="{% url 'permission_edit' row.id %}">编辑</a>
+                        {% endif %}
+                        {% if "permission_del"|permission:request %}
+                            <a href="{% url 'permission_del' row.id %}/">删除</a>
+                        {% endif %}
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

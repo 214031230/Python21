@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+    <div>
+        {% if 'record_add'|permission:request %}
+            <a class="btn btn-primary" href="{% url 'record_add' cid %}">添加</a>
+        {% endif %}
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>内容</th>
+            <th>顾问</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset %}
+            <tr>
+                <td>{{ row.note }}</td>
+                <td>{{ row.consultant.username }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+    <div>
+        {% if 'classes_add'|permission:request %}
+            <a class="btn btn-primary" href="{% url 'classes_add' %}">添加</a>
+        {% endif %}
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>班级名称</th>
+            <th>校区</th>
+            <th>开班日期</th>
+            <th>班主任</th>
+            <th>任课老师</th>
+            {% if "classes_edit"|permission:request or "classes_del"|permission:request %}
+                <th>操作</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset %}
+            <tr>
+                <td>{{ row.course.name }}{{ row.semester }}期</td>
+                <td>{{ row.school.title }}</td>
+                <td>{{ row.start_date }}</td>
+                <td>{{ row.tutor.username }}</td>
+                <td>
+                    {% for ele in row.teachers.all %}
+                        <span style="display: inline-block;padding: 5px;border: 1px solid #dddddd;">
+                                {{ ele.username }}
+                            </span>
+                    {% endfor %}
+                </td>
+                {% if "classes_edit"|permission:request or "classes_del"|permission:request %}
+                    <td>
+                        {% if "classes_edit"|permission:request %}
+                            <a href="{% url 'classes_edit' row.id %}">编辑</a>
+                        {% endif %}
+                        {% if "classes_del"|permission:request %}
+                            <a href="{% url 'classes_del' row.id %}/">删除</a>
+                        {% endif %}
+                    </td>
+                    {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

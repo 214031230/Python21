@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+    <div>
+        {% if 'roles_add'|permission:request %}
+            <a class="btn btn-primary" href="{% url 'roles_add' %}">添加</a>
+        {% endif %}
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>角色名称</th>
+            <th>关联权限</th>
+            {% if "roles_edit"|permission:request or "roles_del"|permission:request %}
+                <th>操作</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset %}
+            <tr>
+                <td>{{ row.title }}</td>
+                <td style="width: 600px">
+                    {% for i in row.permissions.all %}
+                        <span>{{ i.title }}</span>
+                    {% endfor %}
+                </td>
+                {% if "roles_edit"|permission:request or "roles_edit"|permission:request %}
+                    <td>
+                        {% if "roles_edit"|permission:request %}
+                            <a href="{% url 'roles_edit' row.id %}">编辑</a>
+                        {% endif %}
+                        {% if "roles_del"|permission:request %}
+                            <a href="{% url 'roles_del' row.id %}/">删除</a>
+                        {% endif %}
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

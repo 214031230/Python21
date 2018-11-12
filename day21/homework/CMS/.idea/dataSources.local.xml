@@ -2,12 +2,12 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="db" uuid="e2fd827d-9131-43a1-bc08-9ed00e82005f">
-      <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" family="SQLITE" exact-version="3.16.1" />
+      <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <introspection-schemas>*:main</introspection-schemas>
     </data-source>
     <data-source name="db [2]" uuid="1b0756ae-16ea-4ce8-8e40-8e98228d4344">
-      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" family="SQLITE" exact-version="3.20.1" />
+      <database-info product="SQLite" version="3.20.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.20.1.1" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <auth-required>false</auth-required>
       <introspection-schemas>*:@</introspection-schemas>

@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load rbac %}
+
+{% block content %}
+    <div>
+        {% if 'menus_add'|permission:request %}
+            <a class="btn btn-primary" href="{% url 'menus_add' %}">添加</a>
+        {% endif %}
+    </div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>一级菜单标题</th>
+            <th>图标</th>
+            {% if "menus_edit"|permission:request or "menus_del"|permission:request %}
+                <th>操作</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset %}
+            <tr>
+                <td>{{ row.title }}</td>
+                <td>{{ row.icon }}</td>
+                {% if "menus_edit"|permission:request or "menus_edit"|permission:request %}
+                    <td>
+                        {% if "menus_edit"|permission:request %}
+                            <a href="{% url 'menus_edit' row.id %}">编辑</a>
+                        {% endif %}
+                        {% if "menus_del"|permission:request %}
+                            <a href="{% url 'menus_del' row.id %}/">删除</a>
+                        {% endif %}
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
