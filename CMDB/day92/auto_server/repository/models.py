@@ -1,4 +1,5 @@
 from django.db import models
+from rbac.models import AbstractUserInfo
 
 
 class UserProfile(models.Model):
@@ -23,7 +24,7 @@ class UserProfile(models.Model):
         return self.name
 
 
-class AdminInfo(models.Model):
+class AdminInfo(AbstractUserInfo):
     """
     用户登录表:
         关系：
@@ -32,8 +33,6 @@ class AdminInfo(models.Model):
             只包含可以登录CMDB平台的用户
     """
     user = models.OneToOneField(verbose_name="关联用户", to="UserProfile")
-    username = models.CharField(verbose_name='用户名', max_length=32)
-    password = models.CharField(verbose_name='密码', max_length=32)
 
 
 class UserGroup(models.Model):

@@ -7,6 +7,7 @@ from crm.forms.course import CourseModelForm
 def course_list(request):
     """
     课程列表
+    参考部门列表
     :param request:
     :return:
     """
@@ -18,6 +19,7 @@ def course_list(request):
 def course_add(request):
     """
     课程添加
+    参考添加部门
     :param request:
     :return:
     """
@@ -35,6 +37,7 @@ def course_add(request):
 def course_edit(request, nid):
     """
     课程编辑
+    参考编辑部门
     :param request:
     :param nid:
     :return:
@@ -54,6 +57,7 @@ def course_edit(request, nid):
 def course_del(request, nid):
     """
     课程删除
+    参考删除部门
     :param request:
     :param nid:
     :return:

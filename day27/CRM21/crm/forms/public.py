@@ -7,7 +7,7 @@ class PublicCustomerModelForm(forms.ModelForm):
         model = models.Customer
         # fields = "__all__"
         # fields = ['name','qq']
-        exclude = ['consultant','status']
+        exclude = ['consultant', 'status']
         
     def __init__(self, *args, **kwargs):
         # 在父类的初始化方法中将7个字段当成字典放到了 self.fields 中。

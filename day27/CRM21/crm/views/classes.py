@@ -6,6 +6,8 @@ from crm.forms.classes import ClassesModelForm
 
 def classes_list(request):
     """
+    班级列表
+    参考部门列表
     :param request:
     :return:
     """
@@ -15,6 +17,8 @@ def classes_list(request):
 
 def classes_add(request):
     """
+    添加班级
+    参考添加部门
     :param request:
     :return:
     """
@@ -31,6 +35,8 @@ def classes_add(request):
 
 def classes_edit(request, nid):
     """
+    编辑班级
+    参考编辑部门
     :param request:
     :param nid:
     :return:
@@ -49,6 +55,8 @@ def classes_edit(request, nid):
 
 def classes_del(request, nid):
     """
+    删除班级
+    参考删除部门
     :param request:
     :param nid:
     :return:

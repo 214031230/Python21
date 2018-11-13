@@ -40,7 +40,7 @@
                             <a href="{% url 'classes_edit' row.id %}">编辑</a>
                         {% endif %}
                         {% if "classes_del"|permission:request %}
-                            <a href="{% url 'classes_del' row.id %}/">删除</a>
+                            <a href="{% url 'classes_del' row.id %}">删除</a>
                         {% endif %}
                     </td>
                     {% endif %}

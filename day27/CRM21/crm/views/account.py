@@ -119,5 +119,10 @@ def v_code(request):
 
 
 def index(request):
+    """
+    欢迎页面，用户登录成功跳转到此页面
+    :param request: 
+    :return: 
+    """
     msg = {"username": request.session.get("user_info").get("name")}
     return render(request, 'index.html', msg)

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'web.apps.WebConfig',
     'repository',
+    'rbac',
 ]
 
 MIDDLEWARE = [

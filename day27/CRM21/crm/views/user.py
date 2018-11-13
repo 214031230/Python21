@@ -7,6 +7,7 @@ from crm.forms.user import UserModelForm
 def user_list(request):
     """
     用户列表
+    参考部门列表
     :param request:
     :return:
     """
@@ -18,24 +19,25 @@ def user_list(request):
 def user_add(request):
     """
     用户添加
+    参考添加部门
     :param request:
     :return:
     """
     if request.method == 'GET':
         form = UserModelForm()
-        return render(request, 'user_add.html',
-                      {'form': form, "username": request.session.get("user_info").get("name")})
+        return render(request, 'form.html', {'form': form, "username": request.session.get("user_info").get("name")})
 
     form = UserModelForm(data=request.POST)
     if form.is_valid():
         form.save()
         return redirect(reverse('user_list'))
-    return render(request, 'user_add.html', {'form': form, "username": request.session.get("user_info").get("name")})
+    return render(request, 'form.html', {'form': form, "username": request.session.get("user_info").get("name")})
 
 
 def user_edit(request, nid):
     """
     用户编辑
+    参考编辑部门
     :param request:
     :param nid:
     :return:
@@ -43,18 +45,19 @@ def user_edit(request, nid):
     obj = models.UserInfo.objects.filter(id=nid).first()
     if request.method == 'GET':
         form = UserModelForm(instance=obj)
-        return render(request, 'user_edit.html', {'form': form, "username": request.session.get("user_info").get("name")})
+        return render(request, 'form.html', {'form': form, "username": request.session.get("user_info").get("name")})
     form = UserModelForm(data=request.POST, instance=obj)
     if form.is_valid():
         form.save()
         return redirect(reverse('user_list'))
     else:
-        return render(request, 'user_edit.html', {'form': form, "username": request.session.get("user_info").get("name")})
+        return render(request, 'form.html', {'form': form, "username": request.session.get("user_info").get("name")})
 
 
 def user_del(request, nid):
     """
     用户删除
+    参考删除部门
     :param request:
     :param nid:
     :return:
