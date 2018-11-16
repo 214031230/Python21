@@ -14,8 +14,7 @@ class UserProfile(models.Model):
     """
     name = models.CharField(verbose_name='姓名', max_length=32)
     email = models.EmailField(verbose_name='邮箱地址')
-    phone = models.CharField(verbose_name='座机号', max_length=32)
-    mobile = models.CharField(verbose_name='手机号', max_length=32)
+    mobile = models.CharField(verbose_name='手机号', max_length=11)
 
     class Meta:
         verbose_name_plural = "用户表"

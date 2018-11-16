@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% block content %}
+    <a href="{% url "admin_user_add" %}" class="btn btn-primary">添加</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>关联角色</th>
+            <th>关联用户</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset_list %}
+            <tr>
+                <td>{{ row.username }}</td>
+                <td>{{ row.password }}</td>
+                <td>
+                    {% for role in row.roles.all %}
+                        <span>{{ role.title }}</span>
+                    {% endfor %}
+                </td>
+                <td>{{ row.user.name }}</td>
+                <td>
+                    <a href="{% url 'admin_user_edit' row.id %}" class="btn btn-success">编辑</a>
+                    <a href="{% url 'admin_user_del' row.id %}" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

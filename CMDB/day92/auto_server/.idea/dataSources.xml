@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="db" uuid="e289b6f9-1e5a-4ccb-af6a-d19d7ba3c8ff">
+    <data-source source="LOCAL" name="db" uuid="fda0bf5d-9bfb-4b6c-949f-41c39ccdaeb7">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>SQLite</remarks>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\lanpa\Desktop\Python自动化21期\Python21\CMDB\day89\auto_server\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\lanpa\Desktop\Python自动化21期\Python21\CMDB\day92\auto_server\db.sqlite3</jdbc-url>
       <driver-properties>
         <property name="enable_load_extension" value="true" />
       </driver-properties>
