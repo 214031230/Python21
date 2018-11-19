@@ -1,0 +1,245 @@
+操作系统：Centos7.2
+一、发布Django项目用到的软件
+    0. python3
+        - 开发环境
+    1. virtualenv
+        - 在python开发中，如果出现多个项目共用一台服务器。难免碰到不同的工程依赖不同的版本库问题。
+          或者在开发过程中不像让物理环境充斥各种各样的库，引发未来的依赖灾难。virtualenv可以在系统
+          中建立多个不同并且互不干扰的虚拟环境
+    2. virtualenvwrapper
+        - virtualenv的一个最大缺点是 每次开启虚拟环境前要去虚拟环境所在目录下的bin目录下source一下
+          activate，这就需要我们记住每个虚拟机环境所在的目录。
+    3. uwsig
+        - 想比较django自带的web服务wsigref支持高并发，高性能。
+    4. nginx
+        - 提供负载功能
+        - 处理静态文件要比uwsig性能好,因为uwsgi启动django项目，
+          不会读取一个静态文件的配置参数(不像wigiref会自动读取配置文件的static配置)
+        - 性能更加
+    5. supervisor
+        - 是基于python开发的任务管理工具，用来管理和自动运行各种后台任务。
+
+
+二、python3的安装（编译安装）
+    1. 安装相关依赖包
+        # 安装所有的开放包
+        yum groupinstall "Development tools"
+        yum install gcc patch libffi-devel python-devel  zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel -y
+
+    2. 安装python3
+        - cd /opt/
+        - wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tgz
+        - tar xf  Python-3.6.2.tgz
+        -  ./configure  --prefix=/opt/python3.6
+        - make && make install
+
+    3. 配置环境变量
+        - echo "# python 环境变量" >>/etc/profile
+          echo "PATH=/opt/python3.6/bin/:\$PATH" >>/etc/profile
+        - source  /etc/profile  # 生效环境变量
+
+    4. 测试方法
+        - python3
+
+三、安装virtualenv
+    1. 指定pip源安装安装virtualenv
+        - pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple virtualenv
+
+    2. 虚拟环境管理
+        - 创建虚拟环境统一目录：mkdir /home/MyProject
+        - 进入虚拟环境统一目录：cd /home/MyProject/
+        - 创建虚拟环境：virtualenv --no-site-packages --python=python3  p1   # --python：指定解释器版本  p1：环境名称
+        - 进入虚拟环境：source p1/bin/activate
+        - 安装第三方包：pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple django==1.11.15
+        - 退出虚拟环境：deactivate
+
+    3. virtualenv是如何创建“独立”的Python运行环境的呢？
+        - 原理很简单，就是把系统Python复制一份到virtualenv的环境，用命令source venv/bin/activate进入一个virtualenv环境时，
+          virtualenv会修改相关环境变量，让命令python和pip均指向当前的virtualenv环境。
+
+    4. 如何保证项目上线环境包保持一致性？
+        - 通过命令保证环境的一致性，导出当前开发环境python环境的包。requirements.txt 包含环境所需的包和版本列表
+          pip3 freeze > requirements.txt
+        - 把requirements.txt上传到服务器，进行安装
+          pip3 install -r requirements.txt  -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+四、安装virtualenvwrapper
+    1.指定pip源安装virtualenvwrapper
+        - pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple virtualenvwrapper
+
+    2. 修改环境变量
+        - 打开：vim ~/.bashrc
+        - 添加一下内容：
+            #设置virtualenv的统一管理目录
+            export WORKON_HOME=/home/Envs
+            #添加virtualenvwrapper的参数，生成干净隔绝的环境
+            export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+            #指定宿主机python3解释器绝对路径
+            export VIRTUALENVWRAPPER_PYTHON=/opt/python3.6/bin/python3
+            #执行virtualenvwrapper安装脚本
+            source /opt/python3.6/bin/virtualenvwrapper.sh
+        - 重新登录当前linux用户
+
+    3. 基本使用virtualenvwrapper
+        - 创建虚拟环境：mkvirtualenv p2
+        - 激活进入虚拟环境：workon p2
+        - 创建第二个虚拟环境(任意位置执行命令即可)：mkvirtualenv p3
+        - 激活进入虚拟环境：workon p3
+        - 切换虚拟环境：workon p2
+        - 退出虚拟环境：deactivate
+        - 删除虚拟环境：rmvirtualenv p2
+        - 列出所有的虚拟环境：lsvirtualenv
+        - 导航到当前激活的虚拟环境目录中：cdvirtualenv
+        - 导航到site-packages：cdsitepackages
+
+    4. 使用virtualenvwrapper创建并允许一个django项目
+        - 创建虚拟环境：mkvirtualenv p5
+        - 激活：workon p5
+        - 安装django：pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple django==1.11.15
+        - 查看django是否安装成功：pip3 list
+        - 创建django项目：django-admin startproject mysite（可以上传一个已经写好的项目到此目录）
+        - 进入到项目路径：cd mysite
+        - 创建APP：python3 manage.py startapp app01
+        - 配置 vim mysite/settings.py
+            注册app：
+                INSTALLED_APPS = [
+                'django.contrib.admin',
+                'django.contrib.auth',
+                'django.contrib.contenttypes',
+                'django.contrib.sessions',
+                'django.contrib.messages',
+                'django.contrib.staticfiles',
+                'app01',
+                 ]
+            修改允许访问主机：
+                ALLOWED_HOSTS = ['*']
+        - 配置url：vim mysite/urls.py
+            from app01 import views
+            urlpatterns = [
+                url(r'^admin/', admin.site.urls),
+                url(r'^hello_django/', views.hello),
+            ]
+        - 配置视图：vim app01/views.py
+            from django.shortcuts import render,HttpResponse
+            def hello(request):
+                print('request is :',request)
+                return HttpResponse('django is ok ')
+        - 不需要启动，一会使用uwsgi启动
+
+五、安装uwsgi
+    0. 进入虚拟环境：workon p5
+
+    1. 指定pip源，安装uwsig
+        - pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple uwsgi
+
+    2. 运行简单的uwsgi
+        - uwsgi --http :8000 --wsgi-file test.py
+        - # test.py
+            def application(env, start_response):
+                start_response('200 OK', [('Content-Type','text/html')])
+                return [b"Hello World"] # python3
+        - http://IP:8000
+
+    3. uwsgi热加载python程序，启动p5项目（需要进入到项目目录下）
+        - uwsgi --http :8088 --module mysite.wsgi --py-autoreload=1
+
+    4. 测试页面：http://IP:8088/hello_django/
+
+    5. 配置文件方式启动uwsgi
+        - 进入虚拟环境：workon p5
+        - 进入：cdvirtualenv
+        - 打开文件写入一下内容：vim uwsgi.ini
+            # mysite_uwsgi.ini file
+            [uwsgi]
+            # 项目绝对路径
+            chdir           = /home/Envs/p5/mysite
+            # Django's wsgi file
+            module          = mysite.wsgi
+            # 虚拟环境路径
+            home            = /home/Envs/p5
+            # master
+            master          = true
+            # 进程数
+            processes       = 4
+            # 直接访问的时候使用http
+            http            = 0.0.0.0:8088
+            # 使用nginx代理的时候使用socket
+            #socket          = 0.0.0.0:8088
+            # chmod-socket    = 664
+            # clear environment on exit
+            vacuum          = true
+
+        - 启动：uwsgi --ini uwsgi.ini
+        - 访问测试页面即可
+
+六、安装nginx
+    1. 使用yum安装nginx
+        - yum install epel-*  -y
+        - yum install nginx -y
+    2. 启动nginx
+        - nginx
+    3. 配置nginx.conf
+        - vim /etc/nginx/nginx.conf 修改如下内容
+            location / {
+                    include /etc/nginx/uwsgi_params;
+                    uwsgi_pass 127.0.0.1:8088;
+            }
+            # 静态文件入口
+            location /static {
+                    alias /home/Envs/p5/static;
+            }
+
+        - 检测nginx是否正确：nginx -t
+        - 重启nginx：nginx -s reload
+
+    4. 收集静态文件到 /home/Envs/p5/static
+       - 配置django的settings.py
+            #指定静态文件存放路径
+            STATIC_ROOT='/home/Envs/p5/static'
+            #指定静态资源，请求入口
+            STATIC_URL = '/static/'
+            STATICFILES_DIRS=[
+                    os.path.join(BASE_DIR,"static"),
+            ]
+       - 创建静态文件目录：mkdir /home/Envs/p5/mysite/static
+       - 到项目的根目录执行：python3 manage.py collectstatic
+
+    5. 访问http://IP/admin 测试静态页面是否加载
+
+
+七、安装supervisor
+    1. 安装supervisor（注意一下操作退出虚拟环境执行）
+        - yum install python-setuptools
+          easy_install supervisor
+
+    2. 通过命令生成supervisor的配支文件
+        - echo_supervisord_conf > /etc/supervisord.conf
+
+    3. 然后再/etc/supervisord.conf末尾添加上如下代码
+        [program:p5]
+        ; 是被管理的进程配置参数，xx是进程的名称
+        command= /home/Envs/p5/bin/uwsgi --ini /home/Envs/p5/uwsgi.ini
+        ; 程序启动命令
+        autostart=true
+        ; 在supervisord启动的时候也自动启动
+
+    4. 启动supervisor：supervisord -c /etc/supervisord.conf
+
+    5. supervisor的基本操作
+        - 更新新的配置到supervisord：supervisorctl update
+        - 重新启动配置中的所有程序：supervisorctl reload
+        - 启动某个进程(program_name=你配置中写的程序名称)：supervisorctl start program_name
+        - 查看正在守候的进程：supervisorctl
+        - 停止某一进程 (program_name=你配置中写的程序名称)：spervisorctl stop program_name
+        - 重启某一进程 (program_name=你配置中写的程序名称)：supervisorctl restart program_name
+        - 停止全部进程：supervisorctl stop all （显示用stop停止掉的进程，用reload或者update都不会自动重启。）
+
+
+
+
+
+
+
+
+
+
