@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% block content %}
+    <a href="{% url "disk_add" %}" class="btn btn-primary">添加</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>插槽位</th>
+            <th>磁盘型号</th>
+            <th>磁盘容量GB</th>
+            <th>磁盘类型</th>
+            <th>所属服务器</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset_list %}
+            <tr>
+                <td>{{ row.slot }}</td>
+                <td>
+                    {{ row.model }}
+                </td>
+                <td>
+                    {{ row.capacity}}
+                </td>
+                <td>{{ row.pd_type }}</td>
+                <td>{{ row.server_obj.hostname }}</td>
+                <td>
+                    <a href="{% url 'disk_edit' row.id %}" class="btn btn-success">编辑</a>
+                    <a href="{% url 'disk_del' row.id %}" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

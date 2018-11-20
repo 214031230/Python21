@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% block content %}
+    <a href="{% url "idc_add" %}" class="btn btn-primary">添加</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>机房名称</th>
+            <th>所在楼层</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset_list %}
+            <tr>
+                <td>{{ row.name }}</td>
+                <td>
+                    {{ row.floor }}
+                </td>
+                <td>
+                    <a href="{% url 'idc_edit' row.id %}" class="btn btn-success">编辑</a>
+                    <a href="{% url 'idc_del' row.id %}" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

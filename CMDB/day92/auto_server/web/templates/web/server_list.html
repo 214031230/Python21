@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% block content %}
+    <a href="{% url "server_add" %}" class="btn btn-primary">添加</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>所属IDC机房</th>
+            <th>机柜号</th>
+            <th>机柜中序号</th>
+            <th>所属业务线</th>
+            <th>标签</th>
+            <th>服务器状态</th>
+            <th>主机名</th>
+            <th>sn</th>
+            <th>制造商</th>
+            <th>型号</th>
+            <th>管理IP</th>
+            <th>系统</th>
+            <th>系统版本</th>
+            <th>CPU个数</th>
+            <th>CPU物理个数</th>
+            <th>CPU型号</th>
+            <th>创建时间</th>
+            <th>上次更新时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset_list %}
+            <tr>
+                <td>{{ row.idc.name }}</td>
+                <td>{{ row.cabinet_num }}</td>
+                <td>{{ row.cabinet_order }}</td>
+                <td>{{ row.business_unit.name }}</td>
+                <td>{{ row.tags.name }}</td>
+                <td>{{ row.server_status_id }}</td>
+                <td>{{ row.hostname }}</td>
+                <td>{{ row.sn }}</td>
+                <td>{{ row.manufacturer }}</td>
+                <td>{{ row.model }}</td>
+                <td>{{ row.manage_ip }}</td>
+                <td>{{ row.os_platform }}</td>
+                <td>{{ row.os_version }}</td>
+                <td>{{ row.cpu_count }}</td>
+                <td>{{ row.cpu_physical_count }}</td>
+                <td>{{ row.cpu_model }}</td>
+                <td>{{ row.create_at }}</td>
+                <td>{{ row.latest_date }}</td>
+                <td>
+                    <a href="{% url 'server_edit' row.id %}" class="btn btn-success">编辑</a>
+                    <a href="{% url 'server_del' row.id %}" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

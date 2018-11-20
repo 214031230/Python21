@@ -9,3 +9,11 @@ def index(request):
     :return:
     """
     return render(request, "web/index.html")
+
+
+def login(request):
+    """
+    用户登录
+    :param request:
+    :return:
+    """

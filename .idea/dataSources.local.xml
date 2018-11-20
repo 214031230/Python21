@@ -18,5 +18,10 @@
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+    <data-source name="db [4]" uuid="7676caac-37f6-472f-b441-2f1effb22248">
+      <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <introspection-schemas>*:main</introspection-schemas>
+    </data-source>
   </component>
 </project>

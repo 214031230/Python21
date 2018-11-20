@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% block content %}
+    <a href="{% url "business_add" %}" class="btn btn-primary">添加</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>业务线名称</th>
+            <th>所属业务组</th>
+            <th>所属运维管理组</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset_list %}
+            <tr>
+                <td>{{ row.name }}</td>
+                <td>
+                    {{ row.contact.name }}
+                </td>
+                <td>
+                    {{ row.manager.name }}
+                </td>
+                <td>
+                    <a href="{% url 'business_edit' row.id %}" class="btn btn-success">编辑</a>
+                    <a href="{% url 'business_del' row.id %}" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

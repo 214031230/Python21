@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% block content %}
+    <a href="{% url "nic_add" %}" class="btn btn-primary">添加</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>网卡名称</th>
+            <th>网卡mac地址</th>
+            <th>掩码</th>
+            <th>ip地址</th>
+            <th>状态</th>
+            <th>所属服务器</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset_list %}
+            <tr>
+                <td>{{ row.name }}</td>
+                <td>
+                    {{ row.hwaddr }}
+                </td>
+                <td>
+                    {{ row.netmask}}
+                </td>
+                <td>{{ row.ipaddrs }}</td>
+                <td>{{ row.up }}</td>
+                <td>{{ row.server_obj.hostname }}</td>
+                <td>
+                    <a href="{% url 'nic_edit' row.id %}" class="btn btn-success">编辑</a>
+                    <a href="{% url 'nic_del' row.id %}" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

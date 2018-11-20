@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% block content %}
+    <a href="{% url "memory_add" %}" class="btn btn-primary">添加</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>插槽位</th>
+            <th>制造商</th>
+            <th>型号</th>
+            <th>容量</th>
+            <th>内存SN号</th>
+            <th>速度</th>
+            <th>所属服务器</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset_list %}
+            <tr>
+                <td>{{ row.slot }}</td>
+                <td>
+                    {{ row.manufacturer }}
+                </td>
+                <td>
+                    {{ row.model}}
+                </td>
+                <td>{{ row.capacity }}</td>
+                <td>{{ row.sn }}</td>
+                <td>{{ row.speed }}</td>
+                <td>{{ row.server_obj.hostname }}</td>
+                <td>
+                    <a href="{% url 'memory_edit' row.id %}" class="btn btn-success">编辑</a>
+                    <a href="{% url 'memory_del' row.id %}" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

@@ -202,7 +202,7 @@ class Server(models.Model):
     cpu_model = models.CharField('CPU型号', max_length=128, null=True, blank=True)
 
     create_at = models.DateTimeField(auto_now_add=True, blank=True)
-    latest_date = models.DateTimeField(null=True, blank=True, verbose_name="上次采集时间")
+    latest_date = models.DateTimeField(auto_now=True, null=True, blank=True, verbose_name="上次采集时间")
 
     class Meta:
         verbose_name_plural = "服务器表"
@@ -280,3 +280,6 @@ class ServerRecord(models.Model):
 
     def __str__(self):
         return self.server_obj.hostname
+    
+
+

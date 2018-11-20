@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% block content %}
+    <a href="{% url "server_record_add" %}" class="btn btn-primary">添加</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>服务器</th>
+            <th>变更内容</th>
+            <th>操作用户</th>
+            <th>变更时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in queryset_list %}
+            <tr>
+                <td>{{ row.server_obj.hostname }}</td>
+                <td>{{ row.content }}</td>
+                <td>{{ row.creator }}</td>
+                <td>{{ row.create_at }}</td>
+                <td>
+                    <a href="{% url 'server_record_edit' row.id %}" class="btn btn-success">编辑</a>
+                    <a href="{% url 'server_record_del' row.id %}" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
