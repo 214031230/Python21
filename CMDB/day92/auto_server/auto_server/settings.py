@@ -51,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'web.middlewares.login_check.LoginCheckMiddleware',
+    'rbac.middlewares.rbac.RBACMiddleware',
 ]
 
 ROOT_URLCONF = 'auto_server.urls'
@@ -134,3 +136,13 @@ PLUGIN_ITEMS = {
 
 # API验证Key
 KEY = "324SD2342SD242FSFS2"
+
+RBAC_PERMISSION_SESSION_KEY = "ijksdufwesdfs"
+RBAC_MENU_SESSION_KEY = "rtwsdfgwerffsd"
+
+VALID_LIST = [
+    '/login/',
+    '/logout/',
+    '/index/',
+    '/admin/.*'
+]

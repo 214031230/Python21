@@ -30,6 +30,7 @@ from web.views import server_record
 urlpatterns = [
     url(r'^index/$', basic.index, name="index"),
     url(r'^login/$', basic.login, name="login"),
+    url(r'^logout/$', basic.logout, name="logout"),
     
     
     # 所有用户管理
