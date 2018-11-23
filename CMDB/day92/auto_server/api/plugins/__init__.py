@@ -31,7 +31,7 @@ class PluginsManage:
             """
             # 自动发现开始
             # 增加server表开始
-            with transaction.atomic():
+            with transaction.atomic():  # 事务操作
                 tmp = {}
                 tmp.update(self.client_info[self.basic]["data"])
                 tmp.update(self.client_info[self.board]["data"])
