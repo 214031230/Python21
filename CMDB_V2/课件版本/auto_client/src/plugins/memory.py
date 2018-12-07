@@ -3,22 +3,35 @@
 import os
 from .base import BasePlugin
 from lib import convert
+
+
 class Memory(BasePlugin):
     def win(self, handler, hostname):
         """
-        获取内存信息
-        :return:
+        获取windows内存信息
+        :param handler: 采集器引擎
+        :param hostname: 需要采集的主机
+        :return: result
         """
         result = handler.cmd('wmic memorychip', hostname)
         return result
 
-    def linux(self,handler,hostname):
-
+    def linux(self, handler, hostname):
+        """
+        获取linux内存信息
+        1. 如果是debug模式，则读取本地文件处理
+        2. 如果是不是debug模式，则执行对象的命令
+            1. 拿到采集结果交给parse进行格式化处理
+        :param handler: 采集器引擎
+        :param hostname: 需要采集的主机
+        :return: self.parse(output)
+        """
         if self.debug:
             output = open(os.path.join(self.base_dir, 'files/memory.out'), 'r').read()
         else:
+            print("执行了memory")
             shell_command = "sudo dmidecode  -q -t 17 2>/dev/null"
-            output = handler.cmd(shell_command,hostname)
+            output = handler.cmd(shell_command, hostname)
         return self.parse(output)
 
     def parse(self, content):
@@ -60,4 +73,3 @@ class Memory(BasePlugin):
             ram_dict[segment['slot']] = segment
 
         return ram_dict
-

@@ -4,24 +4,36 @@ import re
 import os
 from .base import BasePlugin
 
+
 class Disk(BasePlugin):
-    def win(self,handler,hostname):
+    def win(self, handler, hostname):
         """
-        获取硬盘信息
-        :return:
+        获取windows硬盘信息
+        :param handler: 采集器引擎
+        :param hostname: 需要采集的主机
+        :return: result
         """
-        result = handler.cmd('dir',hostname)
+        result = handler.cmd('dir', hostname)
         return result
 
     def linux(self, handler, hostname):
-
+        """
+        获取linux内存信息
+        1. 如果是debug模式，则读取本地文件处理
+        2. 如果是不是debug模式，则执行对象的命令
+            1. 拿到采集结果交给parse进行格式化处理
+        :param handler: 采集器引擎
+        :param hostname: 需要采集的主机
+        :return: self.parse(output)
+        """
         if self.debug:
-            output = open(os.path.join(self.base_dir,'files/disk.out'), 'r').read()
+            output = open(os.path.join(self.base_dir, 'files/disk.out'), 'r').read()
         else:
+            print("执行了disk")
             shell_command = "sudo MegaCli  -PDList -aALL"
-            output = handler.cmd(shell_command,hostname)
-
+            output = handler.cmd(shell_command, hostname)
         return self.parse(output)
+
     def parse(self, content):
         """
         解析shell命令返回结果
@@ -61,4 +73,3 @@ class Disk(BasePlugin):
             if needle.startswith(key):
                 return value
         return False
-

@@ -4,26 +4,38 @@ import os
 import re
 from .base import BasePlugin
 
+
 class Network(BasePlugin):
     def win(self, handler, hostname):
         """
-        获取网络信息
-        :return:
+        获取windows网络信息
+        :param handler: 采集器引擎
+        :param hostname: 需要采集的主机
+        :return: result
         """
         result = handler.cmd('ipconfig', hostname)
         return result
 
-    def linux(self,handler,hostname):
+    def linux(self, handler, hostname):
+        """
+        获取linux网卡信息
+        1. 如果是debug模式，则读取本地文件处理交给self._interfaces_ip进行处理
+        2. 如果是不是debug模式，则调用self.linux_interface方法传递handler进行处理
+        3. 把处理交过交给self.standard解析返回
+        :param handler: 
+        :param hostname: 
+        :return: 
+        """
         if self.debug:
             output = open(os.path.join(self.base_dir, 'files/nic.out'), 'r').read()
             interfaces_info = self._interfaces_ip(output)
         else:
+            print("执行了network")
             interfaces_info = self.linux_interfaces(handler)
         self.standard(interfaces_info)
         return interfaces_info
 
-
-    def linux_interfaces(self,handler):
+    def linux_interfaces(self, handler):
         '''
         Obtain interface information for *NIX/BSD variants
         '''
@@ -61,10 +73,10 @@ class Network(BasePlugin):
                 # salt-call running from cron (which, depending on platform, may
                 # have a severely limited PATH).
                 search_path.extend(
-                        [
-                            x for x in default_path.split(os.pathsep)
-                            if x not in search_path
-                            ]
+                    [
+                        x for x in default_path.split(os.pathsep)
+                        if x not in search_path
+                    ]
                 )
             for path in search_path:
                 full_path = os.path.join(path, exe)

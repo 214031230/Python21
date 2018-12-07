@@ -44,14 +44,15 @@ def task(host):
 def ssh():
 
     # 1. 获取未采集服务器列表
-    r1 = requests.get(url="http://127.0.0.1:8000/api/asset/")
+    r1 = requests.get(url="http://192.168.17.58:8000/api/asset/")
     # print(r1.content, r1.text, r1.json() )
     host_list = r1.json()
-
-    from concurrent.futures import ThreadPoolExecutor
-    pool = ThreadPoolExecutor(10)
-    for host in host_list:
-        pool.submit(task,host)
+    print("---->", hostname_list)
+    print(host_list)
+    # from concurrent.futures import ThreadPoolExecutor
+    # pool = ThreadPoolExecutor(10)
+    # for host in host_list:
+    #     pool.submit(task,host)
 
 
 ssh()

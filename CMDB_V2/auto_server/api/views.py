@@ -1,6 +1,7 @@
 import json
 from django.shortcuts import render, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -18,6 +19,8 @@ def asset(request):
     :param request: 
     :return: 
     """
+    if request.method == "GET":
+        return JsonResponse(["192.168.186.133"], safe=False)
     info = json.loads(request.body)
     print(info)
     print(info.keys())

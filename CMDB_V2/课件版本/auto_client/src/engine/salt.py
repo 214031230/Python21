@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 from .base import SaltAndSSHHandler
 
+
 class SaltHandler(SaltAndSSHHandler):
     def cmd(self, command, hostname=None):
         """

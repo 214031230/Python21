@@ -5,12 +5,23 @@ import requests
 from config import settings
 from ..plugins import get_server_info
 
-class BaseHandler(object):
 
+class BaseHandler(object):
+    """
+    使用基类约束派生类
+    """
     def __init__(self):
+        """
+        初始化属性，派生类都会用到
+        """
         self.asset_api = settings.ASSET_API
 
-    def cmd(self,command, hostname=None):
+    def cmd(self, command, hostname=None):
+        """
+        约束所有的派生类都必须实现cmd方法
+        根据不同的引擎执行对应的方法执行对应的命令
+        :return:
+        """
         raise NotImplementedError('cmd must be implemented')
 
     def handler(self):
@@ -20,14 +31,20 @@ class BaseHandler(object):
         """
         raise NotImplementedError('handler must be implemented')
 
+
 class SaltAndSSHHandler(BaseHandler):
+    """
+    使用基类约束派生类, 派生类包括非agent引擎
+    """
     def handler(self):
         """
-        处理SSH模式下的资产采集
+        处理SSH/SALT模式下的资产采集
+        1. 通过api获取需要采集的主机列表
+        2. 使用线程池实现并发处理
+        3. 把所有的主机交给task方法去采集
         :return:
         """
         from concurrent.futures import ThreadPoolExecutor
-        # 1. 获取未采集的主机的列表
         r1 = requests.get(url=self.asset_api)
         hostname_list = r1.json()
         pool = ThreadPoolExecutor(20)
@@ -35,13 +52,19 @@ class SaltAndSSHHandler(BaseHandler):
             pool.submit(self.task, hostname)
 
     def task(self, hostname):
+        """
+        执行采集器，拿到采集结果汇报给API
+        1. 执行所有的采集器拿到info
+        2. 汇报info给api
+        :param hostname: 
+        :return: 
+        """
         info = get_server_info(self, hostname)
-        # 2. 发送到api
         r1 = requests.post(
-                url=self.asset_api,
-                data=json.dumps(info).encode('utf-8'),
-                headers={
-                    'Content-Type': 'application/json'
-                }
+            url=self.asset_api,
+            data=json.dumps(info).encode('utf-8'),
+            headers={
+                'Content-Type': 'application/json'
+            }
         )
         print(r1)
