@@ -1,24 +1,30 @@
-#!/usr/bin/env python3
-# 当前引擎
-ENGINE = "agent"
+#!/usr/bin/python
+# -*- coding:utf-8 -*-
 
-# SSH模式相关配置
-SSH_PRIVATE_KEY = "/root/.ssh/sefs.key"
+import os
+
+BASEDIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+ENGINE_HANDLERS = {
+    'agent': 'src.engine.agent.AgentHandler',
+    'ssh': 'src.engine.ssh.SSHHandler',
+    'salt': 'src.engine.salt.SaltHandler',
+}
+ENGINE = 'ssh'
+
+# ########### SSH模式 ###########
+# 私钥地址
+SSH_PRIVATE_KEY = '/xxx/xx/xx'
 SSH_PORT = 22
-SSH_USER = "root"
+SSH_USER = 'cmdb'
 
-# 引擎插件列表
-ENGINES_DICT = {
-    "ssh": "src.engines.ssh.SSHHandle",
-    "salt": "src.engines.salt.SaltHandle",
-    "agent": "src.engines.agent.AgentHandle",
+# ############################## 插件 ################################
+PLUGIN_DICT = {
+    'disk': 'src.plugins.disk.Disk',
+    'memory': 'src.plugins.memory.Memory',
+    'network': 'src.plugins.network.Network',
 }
 
-# 插件列表
-PLUGINS_DICT = {
-    "cpu": "src.plugins.cpu.CPU",
-    "disk": "src.plugins.disk.Disk",
-    "memory": "src.plugins.memory.Memory",
-}
+DEBUG = False
 
-
+ASSET_API = "http://192.168.0.22:8000/api/asset/"

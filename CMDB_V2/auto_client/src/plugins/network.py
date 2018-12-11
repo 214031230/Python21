@@ -30,20 +30,22 @@ class Network(BasePlugin):
             output = open(os.path.join(self.base_dir, 'files/nic.out'), 'r').read()
             interfaces_info = self._interfaces_ip(output)
         else:
-            print("执行了network")
-            interfaces_info = self.linux_interfaces(handler)
+            interfaces_info = self.linux_interfaces(handler, hostname)
         self.standard(interfaces_info)
         return interfaces_info
 
-    def linux_interfaces(self, handler):
+    def linux_interfaces(self, handler, hostname):
         '''
         Obtain interface information for *NIX/BSD variants
         '''
         ifaces = dict()
         ip_path = 'ip'
         if ip_path:
-            cmd1 = handler.cmd('sudo {0} link show'.format(ip_path))
-            cmd2 = handler.cmd('sudo {0} addr show'.format(ip_path))
+            cmd1 = handler.cmd('{0} link show'.format(ip_path), hostname)
+            cmd2 = handler.cmd('{0} addr show'.format(ip_path), hostname)
+            if type(cmd1) != str:
+                cmd1 = cmd1.decode("utf-8")
+                cmd2 = cmd2.decode("utf-8")
             ifaces = self._interfaces_ip(cmd1 + '\n' + cmd2)
         return ifaces
 

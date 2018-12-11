@@ -1,16 +1,18 @@
-#!/usr/bin/env python3
+#!/usr/bin/python
+# -*- coding:utf-8 -*-
 from config import settings
 from lib.module_string import import_string
 
 
 def run():
     """
-    根据配置文件处理不同的采集器模式
-    1. 获取配置文件采集器模块路径
-    2. 传递给import_string方法返回一个采集器对象
-    3. 执行对象的handle方法获取采集器数据
-    :return: 
+    采集资产的入口
+    1. 读取配置文件，获取当前采集器的模块路径。eq: src.engine.agent.AgentHandler
+    2. 把模块路径交给import_string模块进行解析，拿到采集器对象
+    3. 支持采集器对象的handler方法
+    :return:
     """
-    module_path = settings.ENGINES_DICT.get(settings.ENGINE)  # src.engines.ssh.SSHHandle
-    obj = import_string(module_path)
+    engine_path = settings.ENGINE_HANDLERS.get(settings.ENGINE)
+    cls = import_string(engine_path)
+    obj = cls()
     obj.handler()

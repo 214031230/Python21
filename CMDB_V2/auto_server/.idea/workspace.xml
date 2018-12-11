@@ -2,29 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15e8f82b-8336-4e30-a639-11989756140b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/script/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/auto_server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/auto_server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/.idea/auto_client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/.idea/auto_client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/bin/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/bin/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/lib/module_string.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/lib/module_string.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/engines/agent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/engines/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/engines/salt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/engines/ssh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/plugins/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/src/plugins/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/plugins/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/src/plugins/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/plugins/cpu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/plugins/disk.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/src/plugins/disk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/plugins/memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/src/plugins/memory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_client/src/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_client/src/script.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auto_server/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_server/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/bin/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/bin/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/lib/module_string.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/lib/module_string.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/salt.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/salt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/ssh.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/ssh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/disk.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/disk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/memory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/src/script.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/相关脚本/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/../课件版本/auto_client/相关脚本/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/auto_client.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/bin/client.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/config/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/files/board.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/files/cpuinfo.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/files/disk.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/files/memory.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/files/nic.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/lib/convert.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/lib/module_string.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/agent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/salt.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/ssh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/disk.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/memory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/相关脚本/1.错误堆栈信息.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/相关脚本/2.线程池.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/相关脚本/run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/test.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/test`.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +63,54 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auto_server/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auto_server/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+              <folding>
+                <element signature="e#645#686#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#154#179#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,11 +125,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/api/urls.py" />
         <option value="$PROJECT_DIR$/auto_server/urls.py" />
         <option value="$PROJECT_DIR$/readme" />
-        <option value="$PROJECT_DIR$/auto_server/settings.py" />
         <option value="$PROJECT_DIR$/script/test.py" />
+        <option value="$PROJECT_DIR$/api/urls.py" />
+        <option value="$PROJECT_DIR$/auto_server/settings.py" />
         <option value="$PROJECT_DIR$/api/views.py" />
       </list>
     </option>
@@ -123,7 +200,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
-      <option name="host" value="192.168.17.58" />
+      <option name="host" value="192.168.0.22" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
       <option name="runTestServer" value="false" />
@@ -144,22 +221,24 @@
       <option name="presentableId" value="Default" />
       <updated>1543905330095</updated>
       <workItem from="1544165594191" duration="6598000" />
+      <workItem from="1544423177623" duration="9475000" />
+      <workItem from="1544512781091" duration="3737000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6598000" />
+    <option name="totallyTimeSpent" value="19810000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12206952" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12530315" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38138688" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4270073" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -169,6 +248,7 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -190,27 +270,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auto_server/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/auto_server/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        <state relative-caret-position="218">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="e#645#686#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/auto_server/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        <state relative-caret-position="46">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -219,10 +299,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+        <state relative-caret-position="207">
+          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#154#179#0" />
           </folding>
         </state>
       </provider>

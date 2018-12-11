@@ -1,9 +1,11 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
-import json
 import requests
+import json
+import traceback
+from concurrent.futures import ThreadPoolExecutor
+from src.plugins import get_server_info
 from config import settings
-from ..plugins import get_server_info
 
 
 class BaseHandler(object):
@@ -32,10 +34,7 @@ class BaseHandler(object):
         raise NotImplementedError('handler must be implemented')
 
 
-class SaltAndSSHHandler(BaseHandler):
-    """
-    使用基类约束派生类, 派生类包括非agent引擎
-    """
+class SshAndSalt(BaseHandler):
     def handler(self):
         """
         处理SSH/SALT模式下的资产采集
@@ -44,7 +43,6 @@ class SaltAndSSHHandler(BaseHandler):
         3. 把所有的主机交给task方法去采集
         :return:
         """
-        from concurrent.futures import ThreadPoolExecutor
         r1 = requests.get(url=self.asset_api)
         hostname_list = r1.json()
         pool = ThreadPoolExecutor(20)
@@ -56,15 +54,19 @@ class SaltAndSSHHandler(BaseHandler):
         执行采集器，拿到采集结果汇报给API
         1. 执行所有的采集器拿到info
         2. 汇报info给api
-        :param hostname: 
-        :return: 
+        :param hostname:
+        :return:
         """
-        info = get_server_info(self, hostname)
-        r1 = requests.post(
-            url=self.asset_api,
-            data=json.dumps(info).encode('utf-8'),
-            headers={
-                'Content-Type': 'application/json'
-            }
-        )
-        print(r1)
+        try:
+            info = get_server_info(self, hostname)
+            r1 = requests.post(
+                url=self.asset_api,
+                data=json.dumps(info).encode('utf-8'),
+                headers={
+                    'Content-Type': 'application/json'
+                }
+            )
+            print(r1)
+        except Exception as e:
+            msg = traceback.format_exc()
+            print(msg)

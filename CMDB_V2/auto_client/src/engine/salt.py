@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
-from .base import SaltAndSSHHandler
+from .base import SshAndSalt
 
 
-class SaltHandler(SaltAndSSHHandler):
+class SaltHandler(SshAndSalt):
     def cmd(self, command, hostname=None):
         """
         调用saltstack远程连接主机并执行命令（saltstack的master）
