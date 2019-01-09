@@ -1,0 +1,123 @@
+2018-12-13 09:35:21,390  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:35:21,525  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:35:22,107  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:35:22,231  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:35:22,732  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:35:22,920  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:35:23,339  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:35:23,467  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:35:23,945  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:35:24,060  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:35:24,657  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:35:24,781  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:35:25,283  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:35:25,420  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:35:25,930  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:35:26,049  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:36:07,503  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:36:07,636  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:36:08,175  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:36:08,365  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:36:08,769  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:36:08,878  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:36:09,272  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:36:09,406  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:36:09,852  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:36:09,975  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:36:10,395  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:36:10,598  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:36:11,041  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:36:11,156  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:36:11,571  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:36:11,708  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:37:19,220  root   ERROR  Traceback (most recent call last):
+  File "C:\Users\lanpa\Desktop\Python自动化21期\Python21\CMDB_V2\auto_client\src\plugins\memory.py", line 35, in linux
+    output = open(os.path.join(self.base_dir, 'fildddes/memory.out'), 'r').read()
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lanpa\\Desktop\\Python自动化21期\\Python21\\CMDB_V2\\auto_client\\fildddes/memory.out'
+ File:<memory.py line 44>
+2018-12-13 09:37:45,066  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:37:45,176  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:37:46,131  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:37:46,236  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:37:46,668  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:37:46,844  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:37:47,415  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:37:47,778  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:37:48,293  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:37:48,446  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:37:48,900  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:37:49,073  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:37:49,600  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:37:49,728  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:37:50,237  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:37:50,370  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:55:58,138  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:55:58,305  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:55:58,751  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:55:58,869  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:55:59,274  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:55:59,375  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:55:59,884  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:55:59,985  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:56:00,500  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:56:00,607  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:56:01,187  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:56:01,292  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:56:01,728  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:56:01,836  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:56:03,354  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:56:03,473  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-13 09:56:06,159  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-13 09:56:06,284  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:06:18,680  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:06:19,139  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:06:24,149  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:06:24,311  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:06:25,094  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:06:25,196  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:06:25,712  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:06:25,842  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:06:26,310  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:06:26,414  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:06:26,853  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:06:26,956  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:06:27,589  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:06:27,688  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:06:28,196  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:06:28,308  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:07:12,853  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:07:13,007  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:07:13,514  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:07:13,628  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:07:14,174  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:07:14,278  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:07:14,826  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:07:15,038  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:07:15,642  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:07:15,744  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:07:16,329  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:07:16,456  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:07:16,897  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:07:17,005  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:07:17,490  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:07:17,675  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 14:07:18,268  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 14:07:18,366  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 15:34:58,959  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 15:34:59,217  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 15:35:00,201  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 15:35:00,397  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 15:35:01,012  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 15:35:01,123  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 15:35:01,621  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 15:35:01,724  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 15:35:02,173  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 15:35:02,276  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 15:35:02,787  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 15:35:02,920  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 15:35:03,392  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 15:35:03,515  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 15:35:04,109  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 15:35:04,280  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>
+2018-12-18 15:35:04,799  paramiko.transport   INFO  Connected (version 2.0, client OpenSSH_7.4) File:<transport.py line 1746>
+2018-12-18 15:35:04,931  paramiko.transport   INFO  Authentication (password) successful! File:<transport.py line 1746>

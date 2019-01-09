@@ -2,7 +2,9 @@
 # -*- coding:utf-8 -*-
 import re
 import os
+import traceback
 from .base import BasePlugin
+from lib.response import BaseResponse
 
 
 class Disk(BasePlugin):
@@ -26,12 +28,20 @@ class Disk(BasePlugin):
         :param hostname: 需要采集的主机
         :return: self.parse(output)
         """
-        if self.debug:
-            output = open(os.path.join(self.base_dir, 'files/disk.out'), 'r').read()
-        else:
-            shell_command = "MegaCli  -PDList -aALL"
-            output = handler.cmd(shell_command, hostname)
-        return self.parse(output)
+        result = BaseResponse()
+        try:
+            if self.debug:
+                output = open(os.path.join(self.base_dir, 'files/disk.out'), 'r').read()
+            else:
+                shell_command = "MegaCli  -PDList -aALL"
+                output = handler.cmd(shell_command, hostname)
+            result.data = self.parse(output)
+        except Exception as e:
+            msg = traceback.format_exc()
+            result.status = False
+            result.error = msg
+
+        return result.dict
 
     def parse(self, content):
         """

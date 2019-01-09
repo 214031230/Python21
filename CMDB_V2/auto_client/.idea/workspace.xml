@@ -2,59 +2,292 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="665cce69-bbac-4d80-b131-2e5cc834de74" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/auto_client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/auto_client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/log.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/response.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/plugins/basic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/plugins/cpu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/plugins/main_board.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/相关脚本/3.集合.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/相关脚本/4.api认证客户端.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/相关脚本/5.api认证客户端-黑客版.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/相关脚本/账单计算.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/api/handler/idc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/api/handler/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/api/lib/service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/api/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/api/stark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/forms/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/forms/widgets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/service/stark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/css/commons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/css/nav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/imgs/bk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/imgs/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/imgs/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/imgs/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/imgs/logo_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/imgs/luffy-study-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/imgs/luffy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/js/date_picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/js/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/bootstrap/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/datetimepicker/bootstrap-datetimepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/datetimepicker/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/datetimepicker/bootstrap-datetimepicker.zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/datetimepicker/less/datetimepicker.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/CHANGES.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/README.ru.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/highlight.pack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/agate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/androidstudio.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/arduino-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/arta.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/ascetic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-cave-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-cave-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-dune-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-dune-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-estuary-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-estuary-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-forest-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-forest-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-heath-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-heath-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-lakeside-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-lakeside-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-plateau-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-plateau-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-savanna-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-savanna-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-seaside-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-seaside-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-sulphurpool-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atelier-sulphurpool-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atom-one-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/atom-one-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/brown-paper.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/brown-papersq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/codepen-embed.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/color-brewer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/darcula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/darkula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/docco.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/dracula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/far.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/foundation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/github-gist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/github.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/googlecode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/grayscale.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/gruvbox-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/gruvbox-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/hopscotch.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/hybrid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/idea.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/ir-black.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/kimbie.dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/kimbie.light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/magula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/mono-blue.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/monokai-sublime.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/monokai.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/obsidian.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/ocean.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/paraiso-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/paraiso-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/pojoaque.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/pojoaque.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/purebasic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/qtcreator_dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/qtcreator_light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/railscasts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/rainbow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/routeros.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/school-book.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/school-book.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/solarized-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/solarized-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/sunburst.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/tomorrow-night-blue.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/tomorrow-night-bright.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/tomorrow-night-eighties.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/tomorrow-night.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/tomorrow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/vs.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/vs2015.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/xcode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/xt256.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/static/stark/plugins/highlight/styles/zenburn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/templates/layout_no_left.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/templates/stark/change.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/templates/stark/changelist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/templates/stark/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/templates/stark/form/date_picker_input.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/templates/stark/table.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/templatetags/stark.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/utils/convert.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/utils/pagination.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/stark/读我" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/css/commons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/css/nav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/imgs/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/imgs/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/imgs/luffy-study-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/imgs/luffy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/bootstrap/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/static/plugins/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/templates/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auto_server/web/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day1用户登录.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../复习2/作业/1.三次登录.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../小程序/check_network/check_network/cy_ip_list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../小程序/check_network/check_network/error_list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../小程序/check_network/check_network/get_school_name.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../小程序/check_network/check_network/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../小程序/jiaocai_update/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../小程序/jiaocai_update/sql_list/cebie.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../小程序/jiaocai_update/sql_list/jiaocai.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../小程序/jiaocai_update/sql_list/zhangjie.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CMDB概述.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/bin/client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/module_string.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/module_string.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engines/agent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engines/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engines/salt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engines/ssh.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plugins/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plugins/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plugins/cpu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/engine/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plugins/disk.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/disk.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plugins/memory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/memory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plugins/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/network.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/相关脚本/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/相关脚本/test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/相关脚本/test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/相关脚本/test3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auto_server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_server/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_server/api/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auto_server/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_server/api/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auto_server/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_server/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../auto_server/auto_server/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_server/auto_server/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/auto_client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/bin/client.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/config/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/files/board.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/files/cpuinfo.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/files/disk.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/files/memory.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/files/nic.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/lib/convert.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/lib/module_string.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/agent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/salt.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/engine/ssh.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/disk.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/memory.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/plugins/network.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/src/script.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/相关脚本/1.错误堆栈信息.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/相关脚本/2.线程池.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../课件版本/auto_client/相关脚本/run.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/test.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/test.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../小程序/test`.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../小程序/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_server/auto_server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_server/auto_server/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auto_server/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../auto_server/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../小程序/test.py" beforeDir="false" />
     </list>
     <ignored path="auto_client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,12 +300,18 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/auto_client$test.coverage" NAME="test Coverage Results" MODIFIED="1539400813948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/auto_client$4_api.coverage" NAME="4.api认证客户端 Coverage Results" MODIFIED="1545201968413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/相关脚本" />
     <SUITE FILE_PATH="coverage/auto_client$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1544431233238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/相关脚本" />
-    <SUITE FILE_PATH="coverage/auto_client$client.coverage" NAME="client Coverage Results" MODIFIED="1544518853597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
-    <SUITE FILE_PATH="coverage/auto_client$run.coverage" NAME="run Coverage Results" MODIFIED="1539403238118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/auto_client$5_api_.coverage" NAME="5.api认证客户端-黑客版 Coverage Results" MODIFIED="1545200101056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/相关脚本" />
+    <SUITE FILE_PATH="coverage/auto_client$client.coverage" NAME="client Coverage Results" MODIFIED="1545380819576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
     <SUITE FILE_PATH="coverage/auto_client$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1544168782484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/相关脚本" />
+    <SUITE FILE_PATH="coverage/auto_client$log.coverage" NAME="log Coverage Results" MODIFIED="1544610025801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
+    <SUITE FILE_PATH="coverage/auto_client$run.coverage" NAME="run Coverage Results" MODIFIED="1539403238118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/auto_client$.coverage" NAME="账单计算 Coverage Results" MODIFIED="1546933421739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/相关脚本" />
+    <SUITE FILE_PATH="coverage/auto_client$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1545646593903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/相关脚本" />
     <SUITE FILE_PATH="coverage/auto_client$2_.coverage" NAME="2.线程池 Coverage Results" MODIFIED="1539403110428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/auto_client$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1544426441232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/相关脚本" />
+    <SUITE FILE_PATH="coverage/auto_client$3_.coverage" NAME="3.集合 Coverage Results" MODIFIED="1544685161082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/相关脚本" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -81,63 +320,12 @@
     <favorites_list name="auto_client" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/client.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/base.py">
+        <entry file="file://$PROJECT_DIR$/相关脚本/账单计算.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
-              <caret line="64" selection-start-line="64" selection-end-line="66" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/agent.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-              <folding>
-                <element signature="e#41#52#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/salt.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/engine/ssh.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-              <folding>
-                <element signature="e#41#56#0" expanded="true" />
-              </folding>
+              <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -164,20 +352,33 @@
         <option value="$PROJECT_DIR$/cert" />
         <option value="$PROJECT_DIR$/src/script.py" />
         <option value="$PROJECT_DIR$/lib/module_string.py" />
-        <option value="$PROJECT_DIR$/src/engine/agent.py" />
         <option value="$PROJECT_DIR$/相关脚本/run.py" />
         <option value="$PROJECT_DIR$/src/plugins/base.py" />
         <option value="$PROJECT_DIR$/相关脚本/test.py" />
         <option value="$PROJECT_DIR$/src/plugins/__init__.py" />
-        <option value="$PROJECT_DIR$/src/plugins/memory.py" />
-        <option value="$PROJECT_DIR$/src/plugins/disk.py" />
-        <option value="$PROJECT_DIR$/相关脚本/test2.py" />
-        <option value="$PROJECT_DIR$/src/plugins/network.py" />
-        <option value="$PROJECT_DIR$/src/engine/base.py" />
         <option value="$PROJECT_DIR$/src/engine/ssh.py" />
         <option value="$PROJECT_DIR$/src/engine/salt.py" />
+        <option value="$PROJECT_DIR$/lib/base_response.py" />
+        <option value="$PROJECT_DIR$/lib/response.py" />
+        <option value="$PROJECT_DIR$/src/plugins/disk.py" />
+        <option value="$PROJECT_DIR$/src/plugins/network.py" />
+        <option value="$PROJECT_DIR$/src/plugins/cpu.py" />
+        <option value="$PROJECT_DIR$/src/plugins/main_board.py" />
+        <option value="$PROJECT_DIR$/src/plugins/basic.py" />
+        <option value="$PROJECT_DIR$/lib/log.py" />
+        <option value="$PROJECT_DIR$/log/run.log" />
+        <option value="$PROJECT_DIR$/src/plugins/memory.py" />
+        <option value="$PROJECT_DIR$/src/engine/base.py" />
+        <option value="$PROJECT_DIR$/config/crt" />
+        <option value="$PROJECT_DIR$/src/engine/agent.py" />
+        <option value="$PROJECT_DIR$/相关脚本/3.集合.py" />
+        <option value="$PROJECT_DIR$/相关脚本/test3.py" />
         <option value="$PROJECT_DIR$/config/settings.py" />
+        <option value="$PROJECT_DIR$/相关脚本/5.api认证客户端-黑客版.py" />
+        <option value="$PROJECT_DIR$/相关脚本/4.api认证客户端.py" />
         <option value="$PROJECT_DIR$/bin/client.py" />
+        <option value="$PROJECT_DIR$/相关脚本/test2.py" />
+        <option value="$PROJECT_DIR$/相关脚本/账单计算.py" />
       </list>
     </option>
   </component>
@@ -195,7 +396,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,21 +407,23 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\m1\auto_client\相关脚本" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lanpa\Desktop\Python自动化21期\Python21\CMDB_V2\auto_client\src\plugins" />
       <recent name="D:\m1\auto_client\lib" />
       <recent name="D:\m1\auto_client" />
       <recent name="D:\m1\auto_client\src\engine" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\m1\auto_client\相关脚本" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -236,7 +438,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.client">
+  <component name="RunManager" selected="Python.账单计算">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -256,6 +458,72 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <method />
+    </configuration>
+    <configuration name="账单计算" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="auto_client" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/相关脚本" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/相关脚本/账单计算.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="4.api认证客户端" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="auto_client" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/相关脚本" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/相关脚本/4.api认证客户端.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="5.api认证客户端-黑客版" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="auto_client" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/相关脚本" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/相关脚本/5.api认证客户端-黑客版.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="auto_client" />
@@ -279,7 +547,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="auto_client" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -292,73 +560,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/相关脚本/run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="auto_client" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\m1\auto_client\相关脚本\run.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="auto_client" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/相关脚本" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/相关脚本/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="auto_client" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/相关脚本" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/相关脚本/test2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/相关脚本/test3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -377,19 +579,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.run" />
       <item itemvalue="Python.client" />
-      <item itemvalue="Python.run (1)" />
-      <item itemvalue="Python.test (1)" />
-      <item itemvalue="Python.test2" />
+      <item itemvalue="Python.test3" />
+      <item itemvalue="Python.4.api认证客户端" />
+      <item itemvalue="Python.5.api认证客户端-黑客版" />
+      <item itemvalue="Python.账单计算" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.账单计算" />
+        <item itemvalue="Python.test3" />
         <item itemvalue="Python.client" />
-        <item itemvalue="Python.test2" />
-        <item itemvalue="Python.test (1)" />
-        <item itemvalue="Python.run (1)" />
-        <item itemvalue="Python.run" />
+        <item itemvalue="Python.4.api认证客户端" />
+        <item itemvalue="Python.5.api认证客户端-黑客版" />
       </list>
     </recent_temporary>
   </component>
@@ -407,27 +609,30 @@
       <workItem from="1544165529957" duration="9375000" />
       <workItem from="1544423166551" duration="7590000" />
       <workItem from="1544512931974" duration="6846000" />
+      <workItem from="1544580246661" duration="50640000" />
+      <workItem from="1545646580528" duration="17075000" />
+      <workItem from="1546421522914" duration="10090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24282000" />
+    <option name="totallyTimeSpent" value="102087000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1909" y="-11" width="1622" height="922" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1818766" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17930591" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4618474" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36144578" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32931727" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32951543" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -537,57 +742,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/相关脚本/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="22" />
-          <folding>
-            <element signature="e#23#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugins/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/disk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="e#41#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/memory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="51" selection-start-line="51" selection-end-line="52" selection-end-column="45" />
-          <folding>
-            <element signature="e#41#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugins/network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="99" column="31" lean-forward="true" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
-          <folding>
-            <element signature="e#41#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/相关脚本/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -601,68 +759,234 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/script.py">
+    <entry file="file://$PROJECT_DIR$/src/engine/salt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding>
-            <element signature="e#41#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state relative-caret-position="276">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/ssh.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#41#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/salt.py">
+    <entry file="file://$PROJECT_DIR$/src/plugins/disk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="207">
+          <caret line="36" column="47" lean-forward="true" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+          <folding>
+            <element signature="e#41#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+          <folding>
+            <element signature="e#41#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/cpu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding>
+            <element signature="e#45#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/main_board.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding>
+            <element signature="e#45#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/memory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+          <folding>
+            <element signature="e#41#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/run.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="39" column="124" selection-start-line="37" selection-start-column="52" selection-end-line="39" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/log.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#23#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/base.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-598">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#41#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/-1420666191/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="4437" column="18" selection-start-line="4437" selection-start-column="18" selection-end-line="4437" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/相关脚本/3.集合.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1426">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/相关脚本/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="22" />
+          <folding>
+            <element signature="e#23#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/cert">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/相关脚本/4.api认证客户端.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="18" selection-end-column="20" />
+          <folding>
+            <element signature="e#23#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/相关脚本/5.api认证客户端-黑客版.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/hashlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#41#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/相关脚本/test3.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="64" selection-start-line="64" selection-end-line="66" selection-end-column="17" />
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#41#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugins/basic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="63" column="15" lean-forward="true" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="15" />
+          <folding>
+            <element signature="e#45#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/相关脚本/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/engine/agent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="1472">
+          <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
           <folding>
             <element signature="e#41#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/client.py">
+    <entry file="file://$PROJECT_DIR$/相关脚本/账单计算.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        <state relative-caret-position="253">
+          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
         </state>
       </provider>
     </entry>

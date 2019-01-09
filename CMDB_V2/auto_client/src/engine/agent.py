@@ -2,6 +2,8 @@
 # -*- coding:utf-8 -*-
 import json
 import requests
+import os
+from config import settings
 from .base import BaseHandler
 from ..plugins import get_server_info
 
@@ -29,6 +31,28 @@ class AgentHandler(BaseHandler):
         :return:
         """
         info = get_server_info(self)
+        # 获取采集到的主机名
+        hostname = info.get("basic").get("data").get("hostname")
+
+        # 判断主机名是否修改
+        # 1. 新的主机，直接汇报
+        if not os.path.exists(settings.CERT_FILE_PATH):
+            """
+            如果文件不存在，则是新的主机，直接汇报即可
+            """
+            info["type"] = "create"
+        # 2. 已经存在的主机，更新
+        else:
+            with open(settings.CERT_FILE_PATH, "r") as f:
+                cert_hostname = f.read()
+            # 1. 如果没有更新主机名则直接汇报更新
+            if hostname == cert_hostname:
+                info["type"] = "update"
+            # 2. 更新了主机名，需要更新主机名
+            else:
+                info["cert"] = cert_hostname
+                info["type"] = "update_hostname"
+
         r1 = requests.post(
             url=self.asset_api,
             data=json.dumps(info).encode('utf-8'),
@@ -36,4 +60,9 @@ class AgentHandler(BaseHandler):
                 'Content-Type': 'application/json'
             }
         )
-        print(r1)
+        result = r1.json()
+
+        # 如果采集主机成功，则把主机名写入到cert文件中
+        if result.get("status"):
+            with open(settings.CERT_FILE_PATH, "w") as f:
+                f.write(result.get("hostname"))

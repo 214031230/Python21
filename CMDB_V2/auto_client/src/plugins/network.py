@@ -2,7 +2,10 @@
 # -*- coding:utf-8 -*-
 import os
 import re
+import traceback
 from .base import BasePlugin
+from lib.response import BaseResponse
+from lib.log import log
 
 
 class Network(BasePlugin):
@@ -26,13 +29,21 @@ class Network(BasePlugin):
         :param hostname: 
         :return: 
         """
-        if self.debug:
-            output = open(os.path.join(self.base_dir, 'files/nic.out'), 'r').read()
-            interfaces_info = self._interfaces_ip(output)
-        else:
-            interfaces_info = self.linux_interfaces(handler, hostname)
-        self.standard(interfaces_info)
-        return interfaces_info
+        result = BaseResponse()
+        try:
+            if self.debug:
+                output = open(os.path.join(self.base_dir, 'files/nic.out'), 'r').read()
+                interfaces_info = self._interfaces_ip(output)
+            else:
+                interfaces_info = self.linux_interfaces(handler, hostname)
+            result.data = interfaces_info
+            self.standard(interfaces_info)
+        except Exception as e:
+            msg = traceback.format_exc()
+            result.status = False
+            result.error = msg
+            log.error(msg)
+        return result.dict
 
     def linux_interfaces(self, handler, hostname):
         '''

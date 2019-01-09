@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from stark.service.stark import site
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r"^api/", include("api.urls"))
+    url(r"^api/", include("api.urls")),
+    url(r"^web/", site.urls),
 ]

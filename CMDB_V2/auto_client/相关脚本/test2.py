@@ -11,6 +11,7 @@
 #     t = ThreadPoolExecutor(20)
 #     for i in range(10):
 #         t.submit(task, i)
-a = b"123"
-if type(a) == str:
-    print(123)
+# a = b"123"
+# if type(a) == str:
+#     print(123)
+

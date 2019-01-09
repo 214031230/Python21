@@ -6,6 +6,7 @@ import traceback
 from concurrent.futures import ThreadPoolExecutor
 from src.plugins import get_server_info
 from config import settings
+from lib.log import log
 
 
 class BaseHandler(object):
@@ -69,4 +70,5 @@ class SshAndSalt(BaseHandler):
             print(r1)
         except Exception as e:
             msg = traceback.format_exc()
+            log.error(msg)
             print(msg)
